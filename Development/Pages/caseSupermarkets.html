@@ -1,0 +1,365 @@
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.CaseSupermarkets>
+    @using ContentModels = Umbraco.Web.PublishedContentModels;
+    @{
+        Layout = "MasterLayout.cshtml";
+    }
+    
+    <!--Custom styling: h1.title to remove unused headline space from TextImage Macro:  h1.title {display:none} -->
+    <head>
+        <style>
+            .quote-centered {padding:"200px"}
+        </style>
+    </head>
+
+<!-- The new header module -->
+<div class="container margin-top-60">
+    <div class="row">
+      <div class="col-xl-7">
+              <h1 class="title text-white padding-top-150 overflow-break-word pr-5">
+                  <p style="color: #414ba4;"><strong><u>The</u> workforce management software for supermarkets</strong></p>
+              </h1>
+          <p class="big-normal-text pt-2" style="color: #414ba4;">Join Europe's leading grocery retailers in reducing costs and improving employee retention. </p>
+          <a class="btn btn-tamigo-small white bg-orange anchor-plain overflow-hidden mt-4 mb-5 mw-100" href="https://www.tamigo.com/free-demo/" id="btnFrontPageFreeDemo"><span class="medium-normal-text">Get your free trial<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></span></a>
+      </div>
+      <div class="col pt-5">
+          <img alt="" src="/media/2292/screenshot-2022-01-28-at-100243.png" class="img-fluid" style="margin-top:60px;">
+      </div>
+    </div>
+  </div>
+
+    @Umbraco.RenderMacro("TextImage", new
+    {
+        header = @Umbraco.Field("topSectionTitle", removeParagraphTags: true),
+        body = @Umbraco.Field("topSectionBody"),
+        buttonText = @Umbraco.Field("topSectionButtonText"),
+        color = @Umbraco.Field("topSectionColor"),
+        image = @Umbraco.Field("topSectionImage"),
+        buttonAddress = "https://www.tamigo.com/free-demo/",
+        tile = "tile-7-tall",
+        visible = @Umbraco.Field("hiddenTextImage").ToString() == "False",
+        btn_bg = Umbraco.Field("topSectionButtonBackground"),
+        btn_color = Umbraco.Field("topSectionButtonColor"),
+        btn_id = Umbraco.Field("topSectionButtonId"),
+    })
+    
+    @Umbraco.RenderMacro("Space", new {color="white", heigth=100})
+    
+    
+    <!-- Template new customers carrusel -->
+    
+    <div class="offset-1 col-10">
+                <div class="row no-gutters" style="display: flex; justify-content: center;">
+                    <div class="offset-1 offset-xl-0 col-sm-10 col-md-4 col-xl-2 feature-icon">
+                        <img src="/media/2293/screenshot-2022-01-28-at-110519.png" class="img-fluid w-75">
+                    </div>
+                    <div class="offset-1-extended col-sm-10 col-md-4 col-xl-2 feature-icon">
+                        <img src="/media/2294/screenshot-2022-01-28-at-110530.png" class="img-fluid w-75">
+                    </div>
+                    <div class="offset-1-extended col-sm-10 col-md-4 col-xl-2 feature-icon">
+                        <img src="/media/2295/screenshot-2022-01-28-at-110537.png" class="img-fluid w-75">
+                    </div>
+                    <div class="offset-1-extended col-sm-10 col-md-4 col-xl-2 feature-icon">
+                        <img src="/media/2296/screenshot-2022-01-28-at-110547.png" class="img-fluid w-75">
+                    </div>
+                </div>
+        </div>
+    
+    
+    
+    @Umbraco.RenderMacro("TextImage", new {visible="1", header=@Umbraco.Field("sectionTwoTitle"), body=@Umbraco.Field("sectionTwoBodyText"), buttonText="", color="", image="4805", buttonAddress="", tile="", subHeader="", customClass="", downloadLink="", btn_bg="", btn_color="", btn_id="", hideVideo="0"})
+    
+    @Umbraco.RenderMacro("Space", new {color="", heigth="200"})
+    
+    <!-- Custom centered headline -->
+    <center>
+        <div class="title blue">
+            <strong>
+                <h2>Timesheet</h2>
+            </strong>
+        </div>
+    </center>
+    
+    @Umbraco.RenderMacro("TextImage", new {
+        visible="1", 
+        header="", 
+        body=@Umbraco.Field("bodyText"), 
+        buttonText="", 
+        color=@Umbraco.Field("backgroundColorHeadline"), 
+        image=@Umbraco.Field("image"), 
+        buttonAddress="", 
+        tile="", 
+        subHeader=@Umbraco.Field("subHeadline"), 
+        customClass=""
+    })
+    
+    
+    
+    
+    @Umbraco.RenderMacro("TextImageReverse", new {
+        visible="1", 
+        color=@Umbraco.Field("backgroundColorTextImageReverse"), 
+        header="", 
+        body=@Umbraco.Field("bodyTextReverse"),
+        image=@Umbraco.Field("imageReverse"),
+        subHeader=@Umbraco.Field("subheadlineReverse"),
+    })
+    
+    @Umbraco.RenderMacro("Space", new {color="white", heigth=100})
+    
+    <!-- Centered quote module -->
+    <div class="quote-centered" style="background-color:#414ba4; padding: 100px;" >
+        <center>
+            <img src="https://www.nicepng.com/png/full/41-412418_left-quote-quote-white-icon-png.png" style="width: 60px;" />
+            <div class="title blue">
+                <strong>
+                    <h3 style="color:white;">@Umbraco.Field("quoteText")</h3>
+                </strong>
+            </div>
+                <div class="small-title">
+                    <h4 style="color:white;">@Umbraco.Field("quoteAuthor")</h4>
+                    <div class="big-normal-text white mb-5 pr-1">
+                        <h5 style="color:white;">@Umbraco.Field("authorTitle")</h5>
+                    </div>
+                </div>
+        </center>
+    </div>
+    
+<!-- The new Text Right + Image Left module -->
+
+<div class="container" style="display: flex; align-items: center; justify-content: center; padding: 50px 0px 0px 0px;">
+    <div class="image" style="flex-basis: 100%;  padding:50px;">
+        <img src="https://www.tamigo.nl/media/2309/screenshot-2022-01-29-at-154342.png" style="max-width: 100%">
+    </div>
+    <div class="container"> 
+        <div class="big-normal-text pr-1">
+            <p>@Umbraco.Field("rightTextHeadline")</p>
+        </div>
+        <div class="text medium-normal-text">
+            <p>@Umbraco.Field("rightTextBodyText")</p>
+         </div>
+    </div>
+</div>
+
+
+<!-- The new Text Left + Image Right module -->
+
+ <div class="container" style="display: flex; align-items: center; justify-content: center; padding: 50px 0px 0px 0px;">
+    <div class="container"> 
+        <div class="big-normal-text pr-1">
+            <p>@Umbraco.Field("leftTextHeadline")</p>
+        </div>
+        <div class="text medium-normal-text">
+            <p>@Umbraco.Field("leftTextBody")</p>
+         </div>
+    </div>
+    <div class="image" style="flex-basis: 100%;  padding:50px;">
+        <img src="https://www.tamigo.nl/media/2306/screenshot-2022-01-29-at-152838.png" style="max-width: 100%">
+    </div>
+</div>
+    
+    <!-- Center quote module with tag and body -->
+    
+    <div class="quote-centered" style="padding: 100px 100px 0px 100px;" >
+        <center>
+            <div class="small-title">
+                    <h4>Lorem Ipsum</h4></h4>
+            </div>
+            <div class="title gray">
+                <strong>
+                    <h3>Optimal scheduling</h3>
+                </strong>
+            </div>
+                <div class="big-normal-text gray mb-5 pr-1">
+                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pretium tincidunt blandit. Nullam viverra viverra tristique. Class aptent taciti sociosqu ad</h5>
+                </div>
+        </center>
+    </div>
+    
+    <!-- Icons and vertical bulletpoints -->
+    
+    <div class="offset-1 col-10" style="padding: 0px 20px 100px 20px">
+                <div class="row no-gutters" style="display: flex; justify-content: center;">
+                    <div class="offset-1 offset-xl-0 col-sm-10 col-md-4 col-xl-2 feature-icon">
+                        <img src="/media/2310/screenshot-2022-01-29-at-190929.png" class="img-fluid w-75">
+                        <div class="feature-icon-text big-normal-text">
+                            The headline tells us what you're offering, and the form closes the deal
+                        </div>
+                    </div>
+                    <div class="offset-1-extended col-sm-10 col-md-4 col-xl-2 feature-icon">
+                        <img src="/media/2311/screenshot-2022-01-29-at-190942.png" class="img-fluid w-75">
+                        <div class="feature-icon-text big-normal-text">
+                            The headline tells us what you're offering, and the form closes the deal
+                        </div>
+                    </div>
+                    <div class="offset-1-extended col-sm-10 col-md-4 col-xl-2 feature-icon">
+                        <img src="/media/2312/screenshot-2022-01-29-at-190949.png" class="img-fluid w-75">
+                        <div class="feature-icon-text big-normal-text">
+                            The headline tells us what you're offering, and the form closes the deal
+                        </div>
+                    </div>
+                </div>
+        </div>
+            
+            
+    <!-- Centered quote module -->
+    <div class="quote-centered" style="background-color:#b44677; padding: 100px;" >
+        <center>
+            <img src="https://www.nicepng.com/png/full/41-412418_left-quote-quote-white-icon-png.png" style="width: 60px;" />
+            <div class="title blue">
+                <strong>
+                    <h3 style="color:white;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pretium tincidunt blandit. Nullam viverra viverra tristique. Class aptent taciti sociosqu ad</h3>
+                </strong>
+            </div>
+                <div class="small-title">
+                    <h4 style="color:white;">Name name</h4>
+                    <div class="big-normal-text white mb-5 pr-1">
+                        <h5 style="color:white;">Title title</h5>
+                    </div>
+                </div>
+        </center>
+    </div>
+    
+    
+    <!-- Center qoute module with tag and body -->
+    
+    <div class="quote-centered" style="padding: 100px 100px 10px 100px; background-color:#EBEBEB;" >
+        <center>
+            <div class="small-title">
+                    <h4>Lorem Ipsum</h4></h4>
+            </div>
+            <div class="title gray">
+                <strong>
+                    <h3>Optimal scheduling</h3>
+                </strong>
+            </div>
+                <div class="big-normal-text gray mb-5 pr-1">
+                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pretium tincidunt blandit. Nullam viverra viverra tristique. Class aptent taciti sociosqu ad</h5>
+                </div>
+        </center>
+    </div>
+    
+    
+    <!-- Icons and vertical bulletpoints -->
+    
+    <div class="contais" style="background-color:#EBEBEB;">
+    <div class="offset-1 col-10" style="padding-bottom: 100px; ">
+                <div class="row no-gutters" style="display: flex; justify-content: center;">
+                    <div class="offset-1 offset-xl-0 col-sm-10 col-md-4 col-xl-2 feature-icon">
+                        <img src="/media/1070/tamigo_icon_large__communication_sunlight_yellow_rgb.svg" class="img-fluid w-75">
+                        <div class="feature-icon-text big-normal-text">
+                            The headline tells us what you're offering, and the form closes the deal
+                        </div>
+                    </div>
+                    <div class="offset-1-extended col-sm-10 col-md-4 col-xl-2 feature-icon">
+                        <img src="/media/1052/tamigo_icon_large__absence_sunlight_yellow_rgb.svg" class="img-fluid w-75">
+                        <div class="feature-icon-text big-normal-text">
+                            The headline tells us what you're offering, and the form closes the deal
+                        </div>
+                    </div>
+                    <div class="offset-1-extended col-sm-10 col-md-4 col-xl-2 feature-icon">
+                        <img src="/media/1088/tamigo_icon_large__finance_and_forecast_sunlight_yellow_rgb.svg" class="img-fluid w-75">
+                        <div class="feature-icon-text big-normal-text">
+                            The headline tells us what you're offering, and the form closes the deal
+                        </div>
+                    </div>
+                    <div class="offset-1-extended col-sm-10 col-md-4 col-xl-2 feature-icon">
+                        <img src="/media/1112/tamigo_icon_large__rota_sunlight_yellow_rgb.svg" class="img-fluid w-75">
+                        <div class="feature-icon-text big-normal-text">
+                            The headline tells us what you're offering, and the form closes the deal
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    
+    
+    <!-- Center qoute module with tag and body -->
+    
+    <div class="quote-centered" style="padding: 100px 100px 10px 100px; background-color:white;" >
+        <center>
+            <div class="small-title">
+                    <p>WEBINAR</p>
+            </div>
+            <div class="title blue">
+                <strong>
+                    <h3>tamigo & Relex</h3>
+                </strong>
+            </div>
+                <div class="big-normal-text gray mb-5 pr-1">
+                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pretium tincidunt blandit. Nullam viverra viverra tristique. Class aptent taciti sociosqu ad</h5>
+                </div>
+        </center>
+    </div>
+    
+    <!-- Solo image centered -->
+    
+    <div class="soloimage-container" style="padding-bottom: 100px">
+        <center>
+            <img src="/media/2313/screenshot-2022-01-29-at-195800.png"></img>
+        </center>
+    </div>
+    
+    
+    <!-- 30 Day CTA --> 
+    <div class="30day-cta" style="background-color:#e4853e; display: flex; justify-content: center;">
+        <div class="text-container" style="padding:50px;">
+            <p style="color:white;">Test</p>
+            <h3 style="color:white;">Testtest</h3>
+        </div>
+        <div class="button-container" style="padding: 50px">
+            <div class="col-sm-12 text-center">
+                    <a class="btn btn-tamigo anchor-plain bg-white gray yellow" href="/free-trial/" id="btnFrontpageSolution"><span class="medium-normal-text">Start your free trial today<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></span></a>
+            </div>
+        </div>
+    </div>
+    
+
+<!-- 
+@Umbraco.RenderMacro("TextImage", new 
+{
+    header = @Umbraco.Field("topSectionTitle", removeParagraphTags: true),
+    body = @Umbraco.Field("topSectionBody"),
+    color = @Umbraco.Field("topSectionColor"),
+    image = @Umbraco.Field("topSectionImage"),
+    tile = "tile-7-tall",
+    visible = @Umbraco.Field("hiddenTextImage").ToString() == "False",
+})
+
+@Umbraco.RenderMacro("TextImage", new
+{
+    visible = @Umbraco.Field("sectionTwoHidden").ToString() == "False",
+    header = @Umbraco.Field("sectionTwoTitle", removeParagraphTags: true),
+    color = @Umbraco.Field("sectionTwoColor"),
+    background = @Umbraco.Field("sectionTwoBackgroundColor"),
+    image = @Umbraco.Field("differenceImage"),
+    body = @Umbraco.Field("sectionTwoBodyText")
+}) 
+
+---
+
+@Umbraco.RenderMacro("TextImage", new {
+    visible="1", 
+    header="", 
+    body=@Umbraco.Field("bodyText"), 
+    buttonText="", 
+    color=@Umbraco.Field("backgroundColorHeadline"), 
+    image=@Umbraco.Field("image"), 
+    buttonAddress="", 
+    tile="", 
+    subHeader=@Umbraco.Field("subHeadline"), 
+    customClass=""
+})
+
+
+
+
+@Umbraco.RenderMacro("TextImageReverse", new {
+    visible="1", 
+    color=@Umbraco.Field("backgroundColorTextImageReverse"), 
+    header="", 
+    body=@Umbraco.Field("bodyTextReverse"),
+    image=@Umbraco.Field("imageReverse"),
+    subHeader=@Umbraco.Field("subheadlineReverse"),
+})
+
+-->
