@@ -1,17 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
 
+<script>var myvar = "sometext" 
+alert("")</script>
 
-<!-- Header: Headline, paragraph, CTA + Image -->
+<p></p>
+    
+
+<!-- Header -->
 <div class="container margin-top-60">
     <div class="row">
-      <div class="col-xl-7">
-              <h1 class="title text-white padding-top-150 overflow-break-word pr-5">
-                  <p style="color: #414ba4;"><strong><u>The</u> workforce management software for supermarkets</strong></p>
-              </h1>
-          <p class="big-normal-text pt-2" style="color: #414ba4;">Join Europe's leading grocery retailers in reducing costs and improving employee retention. </p>
-          <a class="btn btn-tamigo-small white bg-orange anchor-plain overflow-hidden mt-4 mb-5 mw-100" href="https://www.tamigo.com/free-demo/" id="btnFrontPageFreeDemo"><span class="medium-normal-text">Get your free trial<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></span></a>
-      </div>
-      <div class="col pt-5">
-          <img alt="" src="/media/2292/screenshot-2022-01-28-at-100243.png" class="img-fluid" style="margin-top:60px;">
-      </div>
+    <div class="col-xl-7">
+            <h1 class="title text-white padding-top-150 overflow-break-word pr-5">
+                <p>@Umbraco.Field("headlineHeader")</p>
+            </h1>
+        <div class="big-normal-text pt-2">
+            <p>@Umbraco.Field("subheadlineHeader")</p>
+        </div>
+        <a class="btn btn-tamigo-small white bg-orange anchor-plain overflow-hidden mt-4 mb-5 mw-100" href="https://www.tamigo.com/free-demo/" id="btnFrontPageFreeDemo"><span class="medium-normal-text">Get your free trial<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></span></a>
     </div>
-  </div>
+    <div class="col pt-5">
+        <img alt="" src=@Umbraco.Field("imageHeader") class="img-fluid" style="margin-top:60px;">
+    </div>
+    </div>
+</div>
+
+
+<!-- Header hardcoded-->
+<div class="container margin-top-60">
+    <div class="row">
+    <div class="col-xl-7">
+            <h1 class="title text-white padding-top-150 overflow-break-word pr-5">
+                <p style="color: #414ba4;"><strong><u>The</u> workforce management software for supermarkets</strong></p>
+            </h1>
+        <p class="big-normal-text pt-2" style="color: #414ba4;">Join Europe's leading grocery retailers in reducing costs and improving employee retention. </p>
+        <a class="btn btn-tamigo-small white bg-orange anchor-plain overflow-hidden mt-4 mb-5 mw-100" href="https://www.tamigo.com/free-demo/" id="btnFrontPageFreeDemo"><span class="medium-normal-text">Get your free trial<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></span></a>
+    </div>
+    <div class="col pt-5">
+        <img alt="" src="/media/2292/screenshot-2022-01-28-at-100243.png" class="img-fluid" style="margin-top:60px;">
+    </div>
+    </div>
+</div>
+
+    <!-- Header: Headline, paragraph, CTA + Image -->
+    <div class="container margin-top-60">
+        <div class="row">
+        <div class="col-xl-7">
+                <h1 class="title text-white padding-top-150 overflow-break-word pr-5">
+                    <p style="color: #414ba4;"><strong><u>The</u> workforce management software for supermarkets</strong></p>
+                </h1>
+            <p class="big-normal-text pt-2" style="color: #414ba4;">Join Europe's leading grocery retailers in reducing costs and improving employee retention. </p>
+            <a class="btn btn-tamigo-small white bg-orange anchor-plain overflow-hidden mt-4 mb-5 mw-100" href="https://www.tamigo.com/free-demo/" id="btnFrontPageFreeDemo"><span class="medium-normal-text">Get your free trial<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></span></a>
+        </div>
+        <div class="col pt-5">
+            <img alt="" src="" class="img-fluid" style="margin-top:60px;">
+        </div>
+        </div>
+    </div>
+
+</body>
+</html>
+

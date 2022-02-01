@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<!-- Headline + Text + image -->
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6" style="margin:auto;">
+                <div class="small-title mb-3">@Umbraco.Field("headlineTextImage1")</div>
+                <div class="big-normal-text">@Umbraco.Field("bodytextTextImage1")</div>
+            </div>
+            <div class="col" style="margin:auto;">
+                <img class="img-fluid" src=@Umbraco.Field("imageTextImage1")></img>
+            </div>
+        </div>
+    </div> 
+
+
+<!-- Icon + Small Headline + Text + Image (left) -->
+<div class="backgroundcolorcontainer pt-3 pb-3" style="background-color:#EBEBEB;">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8">
+                <img src=@Umbraco.Field("imageTextImage2") class="img-fluid pr-5"></img>
+            </div>
+            <div class="col" style="margin:auto;">
+                <img src=@Umbraco.Field("iconTextImage2")></img>
+                <div class="big-normal-text">
+                    @Umbraco.Field("headlineTextImage2")
+                </div>
+                <p>@Umbraco.Field("bodyTextImage2")</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Icon + Small Headline + Text + Image (right) -->
+
+
+
+
+<!-- OLD image + text no headline -->
+
+
+<!-- Text Right + Image Left module -->
+<div class="contain" style="display: flex; align-items: center; justify-content: center; padding: 50px 90px 0px 90px; background-color:#EBEBEB;">
+    <div class="image" style="flex-basis: 100%;  padding:50px;">
+        <img src="/media/2303/screenshot-2022-01-29-at-113524.png" style="max-width: 100%">
+    </div>
+    <div class="container"> 
+        <div class="big-normal-text pr-1">
+            <p>@Umbraco.Field("rightTextHeadlineTop")</p>
+        </div>
+        <div class="text medium-normal-text">
+            <p>@Umbraco.Field("rightTextBodyTop")</p>
+         </div>
+    </div>
+</div>
+
+
+<!-- The new Text Left + Image Right module -->
+
+ <div class="contain" style="display: flex; align-items: center; justify-content: center; padding: 50px 90px 0px 90px; background-color:#EBEBEB;">
+    <div class="container"> 
+        <div class="big-normal-text pr-1">
+            <p>@Umbraco.Field("leftTextHeadlineTop")</p>
+        </div>
+        <div class="text medium-normal-text">
+            <p>@Umbraco.Field("leftTextBodyTop")</p>
+         </div>
+    </div>
+    <div class="image" style="flex-basis: 100%;  padding:50px;">
+        <img src="/media/2313/screenshot-2022-01-29-at-195800.png" style="max-width: 100%">
+    </div>
+</div>
+
+
+<!-- REVERSE -->
+
+
+<div class="backgroundcolorcontainer pt-3 pb-3" style="background-color:#EBEBEB;">
+    <div class="container flex-column-reverse">
+        <div class="row">
+            <div class="col-xl-8">
+                <img src=@Umbraco.Field("imageTextImage2") class="img-fluid pr-5"></img>
+            </div>
+            <div class="col" style="margin:auto;">
+                <img src=@Umbraco.Field("iconTextImage2")></img>
+                <div class="big-normal-text">
+                    @Umbraco.Field("headlineTextImage2")
+                </div>
+                <p>@Umbraco.Field("bodyTextImage2")</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="backgroundcolorcontainer pt-3 pb-3" style="background-color:#EBEBEB;">
+    <div class="container flex-column-reverse">
+        <div class="row flex-row-reverse">
+            <div class="col-xl-8">
+                <img src=@Umbraco.Field("imageTextImage2") class="img-fluid pr-5"></img>
+            </div>
+            <div class="col" style="margin:auto;">
+                <img src=@Umbraco.Field("iconTextImage2")></img>
+                <div class="big-normal-text">
+                    @Umbraco.Field("headlineTextImage2")
+                </div>
+                <p>@Umbraco.Field("bodyTextImage2")</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
