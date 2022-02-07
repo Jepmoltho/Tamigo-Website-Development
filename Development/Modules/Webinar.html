@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<!-- Webinar: Centered headline with tag, body and image -->
+<div class="backgroundcolorcontainer pt-3 pb-3" style="">
+    <div class="container">
+        <div class="quote-centered" style="" >
+            <center>
+                <div class="medium-normal-text">
+                        <p>@Umbraco.Field("webinarTag")</p>
+                </div>
+                <div class="title blue mb-4">
+                        <h3>@Umbraco.Field("webinarHeadline")</h3>
+                </div>
+                    <div class="big-normal-text gray mb-5 pr-1">
+                        <p>@Umbraco.Field("webinarBody")</p>
+                    </div>
+            </center>
+        </div>
+        <div class="soloimage-container mb-3" style="">
+            <center>
+                <img src=@Umbraco.Field("webinarImage") class="img-fluid"></img>
+            </center>
+        </div>
+        <center><a class="btn btn-tamigo-small white bg-orange anchor-plain overflow-hidden mt-4 mb-5 mw-100" href=@Umbraco.Field("webinarButtonLink") id="btnFrontPageFreeDemo"><span class="medium-normal-text">Save your seat<i class="fa ml-3" aria-hidden="true"></i></span></a></center>
+    </div>
+</div>
+    
+</body>
+</html>

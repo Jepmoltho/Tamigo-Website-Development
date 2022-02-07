@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+<!-- Text and Image (left) -->
+<div class="backgroundcolorcontainer pt-3 pb-3" style="background-color:#EBEBEB;">
+    <div class="container flex-column-reverse">
+        <div class="row">
+            <div class="col-xl">
+                <img src=@Umbraco.Field("imageTextImage4") class="img-fluid pr-5"></img>
+            </div>
+            <div class="col" style="margin:auto;">
+                <img src=@Umbraco.Field("iconTextImage4") style="max-height:60px;"></img>
+                <div class="big-normal-text">
+                    @Umbraco.Field("headlineTextImage4")
+                </div>
+                <p>@Umbraco.Field("bodyTextImage4")</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Text and Image (right) reverse -->
+<div class="backgroundcolorcontainer pt-3 pb-3" style="background-color:#EBEBEB;">
+    <div class="container flex-column-reverse">
+        <div class="row flex-row-reverse">
+            <div class="col-xl">
+                <img src=@Umbraco.Field("imageTextImage5") class="img-fluid pr-5"></img>
+            </div>
+            <div class="col" style="margin:auto;">
+                <img src=@Umbraco.Field("iconTextImage5") style="max-height:60px;"></img>
+                <div class="big-normal-text">
+                    @Umbraco.Field("headlineTextImage5")
+                </div>
+                <p>@Umbraco.Field("bodyTextImage5")</p>
+            </div>
+        </div>
+    </div>
+</div>
+    
+</body>
+</html>

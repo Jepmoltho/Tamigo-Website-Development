@@ -21,6 +21,85 @@
         </div>
     </div> 
 
+<!-- Text (large for mobile) and Image broad (left) v2 -->
+<div class="backgroundcolorcontainer pt-5 pb-5" style="background-color:#EBEBEB;">
+    <div class="container flex-column-reverse">
+        <div class="row">
+            <div class="col-xl-8" style="margin:auto;">
+                <img src=@Umbraco.Field("imageTextImage2") class="img-fluid pr-3"></img>
+            </div>
+            <div class="col" style="margin:auto;">
+                <img src=@Umbraco.Field("iconTextImage2" ) class="mt-4 mb-2" style="max-height:60px;"></img>
+                <div class="big-normal-text">
+                    @Umbraco.Field("headlineTextImage2")
+                </div>
+                <div class="big-normal-text">
+                    @Umbraco.Field("bodyTextImage2")
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Text (large for mobile) and Image broad (right) v2 -->
+<div class="backgroundcolorcontainer pt-5 pb-5" style="background-color:#EBEBEB;">
+    <div class="container flex-column-reverse">
+        <div class="row flex-row-reverse">
+            <div class="col-xl-8"  style="margin:auto;"> 
+                <img src=@Umbraco.Field("imageTextImage2") class="img-fluid"></img>
+            </div>
+            <div class="col" style="margin:auto;">
+                <img src=@Umbraco.Field("iconTextImage2") class="mt-4 mb-2" style="max-height:60px;"></img>
+                <div class="big-normal-text">
+                    @Umbraco.Field("headlineTextImage2")
+                </div>
+                <div class="big-normal-text pr-3">
+                    @Umbraco.Field("bodyTextImage2")
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Text and Image broad (left) -->
+<div class="backgroundcolorcontainer pt-3 pb-3" style="background-color:#EBEBEB;">
+    <div class="container flex-column-reverse">
+        <div class="row">
+            <div class="col-xl-8">
+                <img src=@Umbraco.Field("imageTextImage2") class="img-fluid pr-5"></img>
+            </div>
+            <div class="col" style="margin:auto;">
+                <img src=@Umbraco.Field("iconTextImage2" ) style="max-height:60px;"></img>
+                <div class="big-normal-text">
+                    @Umbraco.Field("headlineTextImage2")
+                </div>
+                <p>@Umbraco.Field("bodyTextImage2")</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Text and Image broad (right) reverse -->
+<div class="backgroundcolorcontainer pt-3 pb-3" style="background-color:#EBEBEB;">
+    <div class="container flex-column-reverse">
+        <div class="row flex-row-reverse">
+            <div class="col-xl-8">
+                <img src=@Umbraco.Field("imageTextImage2") class="img-fluid pr-5"></img>
+            </div>
+            <div class="col" style="margin:auto;">
+                <img src=@Umbraco.Field("iconTextImage2") style="max-height:60px;"></img>
+                <div class="big-normal-text">
+                    @Umbraco.Field("headlineTextImage2")
+                </div>
+                <p>@Umbraco.Field("bodyTextImage2")</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 <!-- Icon + Small Headline + Text + Image (left) -->
 <div class="backgroundcolorcontainer pt-3 pb-3" style="background-color:#EBEBEB;">
