@@ -424,7 +424,7 @@
             var pageLastScroll = 0;
             var pageScrolls = 5;
             var pageNavbarHeight = $("#mainPageNavBar").outerHeight();
-            var frontPage = @Model.Content.Level === 1;
+            // var frontPage = @Model.Content.Level === 1; //NOTE: This is the only line that doesn't compile ******************************************************************************************************
             var isMobile = window.matchMedia("only screen and (max-width: 991px)").matches;
             $("#freeTrialButton").hide();
     
