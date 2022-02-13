@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top min-height-60 align-items-start" id="mainPageNavBar" name="mainPageNavBar">
+        <button id="navbarButton" class="navbar-toggler bg-white mr-1 mt-3 mb-2 dark-gray" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa fa-bars nav-sandwich-button"></i>
+        </button>
+        <div class="navbar-brand pt-3">
+            <a href="@CurrentPage.AncestorsOrSelf(1).First().Url"><img alt="logo" src="~/Content/svg/Logo.svg" class="tamigo-logo" /></a>
+        </div>
+        <div class="collapse navbar-collapse normal-text txt-navbar row no-gutters" id="navbarSupportedContent">
+            <ul class="navbar-nav col-lg-11 col-sm-12 no-gutters">
+                @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("NavigationBar.Solution")))
+                {
+                    <li class="nav-item flex-fill">
+                        <a class="nav-link nav-home hover-@Umbraco.Field("navigationBarColor")" href="@Umbraco.GetDictionaryValue("NavigationBar.SolutionLink")">@Umbraco.GetDictionaryValue("NavigationBar.Solution")</a>
+                    </li>
+                }
+                @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("NavigationBar.Customers")))
+                {
+                    <li class="nav-item flex-fill">
+                        <a class="nav-link nav-home hover-@Umbraco.Field("navigationBarColor")" href="@Umbraco.GetDictionaryValue("NavigationBar.CustomersLink")">@Umbraco.GetDictionaryValue("NavigationBar.Customers")</a>
+                    </li>
+                }
+                @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("NavigationBar.Pricing")))
+                {
+                    <li class="nav-item flex-fill">
+                        <a class="nav-link nav-home hover-@Umbraco.Field("navigationBarColor")" href="@Umbraco.GetDictionaryValue("NavigationBar.PricingLink")">@Umbraco.GetDictionaryValue("NavigationBar.Pricing")</a>
+                    </li>
+                }
+                @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("NavigationBar.Integrations")))
+                {
+                    <li class="nav-item flex-fill">
+                        <a class="nav-link nav-home hover-@Umbraco.Field("navigationBarColor")" href="@Umbraco.GetDictionaryValue("NavigationBar.IntegrationsLink")">@Umbraco.GetDictionaryValue("NavigationBar.Integrations")</a>
+                    </li>
+                }
+                @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("NavigationBar.Support")))
+                {
+                    <li class="nav-item flex-fill">
+                        <a class="nav-link nav-home hover-@Umbraco.Field("navigationBarColor")" href="@Umbraco.GetDictionaryValue("NavigationBar.SupportLink")">@Umbraco.GetDictionaryValue("NavigationBar.Support")</a>
+                    </li>
+                }
+                @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("NavigationBar.AboutUs")))
+                {
+                    <li class="nav-item flex-fill">
+                        <a class="nav-link nav-home hover-@Umbraco.Field("navigationBarColor")" href="@Umbraco.GetDictionaryValue("NavigationBar.AboutUsLink")">@Umbraco.GetDictionaryValue("NavigationBar.AboutUs")</a>
+                    </li>
+                }
+                @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("NavigationBar.Careers")))
+                {
+                    <li class="nav-item flex-fill">
+                        <a class="nav-link nav-home hover-@Umbraco.Field("navigationBarColor")" href="@Umbraco.GetDictionaryValue("NavigationBar.CareersLink")">@Umbraco.GetDictionaryValue("NavigationBar.Careers")</a>
+                    </li>
+                }
+                @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("NavigationBar.Enterprise")))
+                {
+                    <li class="nav-item d-lg-none flex-fill">
+                        <a class="nav-link nav-home hover-@Umbraco.Field("navigationBarColor")" href="@Umbraco.GetDictionaryValue("NavigationBar.EnterpriseLink")">@Umbraco.GetDictionaryValue("NavigationBar.Enterprise")</a>
+                    </li>
+                }
+                @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("NavigationBar.Contact")))
+                {
+                    <li class="nav-item d-lg-none flex-fill">
+                        <a class="nav-link nav-home hover-@Umbraco.Field("navigationBarColor")" href="@Umbraco.GetDictionaryValue("NavigationBar.ContactLink")">@Umbraco.GetDictionaryValue("NavigationBar.Contact")</a>
+                    </li>
+                }
+                <li class="nav-item trial flex-fill" id="freeTrialNavigationButton">
+                    <a class="nav-link nav-home hover-@Umbraco.Field("navigationBarColor")" href="@Umbraco.GetDictionaryValue("NavigationBar.FreeTrialLink")">@Umbraco.GetDictionaryValue("NavigationBar.FreeTrial")</a>
+                </li>
+                <li class="nav-item flex-fill bg-medium-gray" id="loginNavigationButton">
+                    <a class="nav-link nav-home hover-@Umbraco.Field("navigationBarColor")" href="@Umbraco.GetDictionaryValue("NavigationBar.LoginLink")">
+                        <svg class="mr-1 d-none d-lg-inline-block" width="15" height="20" version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 13.5 17" xml:space="preserve">
+                        <path style="fill: #646464;" d="M10.8,5.7c0,2.1-1.2,4.3-4,4.3s-4-2.1-4-4.3C2.6,3.6,4.2,1.7,6.4,1.5c0.1,0,0.3,0,0.4,0
+                                            C9.5,1.5,10.8,3.6,10.8,5.7 M9.8,10.6c1.6-1.1,2.6-3,2.5-4.9c0.2-3-2-5.5-5-5.7C7.1,0,6.9,0,6.7,0c-3-0.1-5.4,2.3-5.5,5.2
+                                            c0,0.2,0,0.3,0,0.5c-0.1,2,0.9,3.8,2.5,4.9C1.3,11.8-0.1,14.3,0,17h1.5c0-3.3,2.1-5.6,5.2-5.6S12,13.7,12,17h1.5
+                                            C13.6,14.3,12.1,11.8,9.8,10.6" />
+                        </svg>
+                        <svg class="mr-1 d-lg-none" width="30" height="40" version="1.1" id="Ebene_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 13.5 17" xml:space="preserve">
+                        <path style="fill: #646464;" d="M10.8,5.7c0,2.1-1.2,4.3-4,4.3s-4-2.1-4-4.3C2.6,3.6,4.2,1.7,6.4,1.5c0.1,0,0.3,0,0.4,0
+                                            C9.5,1.5,10.8,3.6,10.8,5.7 M9.8,10.6c1.6-1.1,2.6-3,2.5-4.9c0.2-3-2-5.5-5-5.7C7.1,0,6.9,0,6.7,0c-3-0.1-5.4,2.3-5.5,5.2
+                                            c0,0.2,0,0.3,0,0.5c-0.1,2,0.9,3.8,2.5,4.9C1.3,11.8-0.1,14.3,0,17h1.5c0-3.3,2.1-5.6,5.2-5.6S12,13.7,12,17h1.5
+                                            C13.6,14.3,12.1,11.8,9.8,10.6" />
+                        </svg>
+                        <span style="color: #646464">@Umbraco.GetDictionaryValue("NavigationBar.Login")</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav col-lg-1 col-sm-12 no-gutters flex-fill">
+                @Umbraco.RenderMacro("Languages", new
+           {
+               class1 = "nav-item",
+               class2 = "nav-link",
+               maxPerColumn = "7"
+           })
+            </ul>
+        </div>
+    </nav>
+    <div id="freeTrialButton" class="sticky-top-button free-trial-button bg-orange text-white nav-item d-none d-lg-inline-block" style="right:-1000px">
+        <div class="position-relative" style="padding-top: 0.5rem;">
+            <a class="anchor-plain txt-navbar" href="@Umbraco.GetDictionaryValue("NavigationBar.FreeTrialLink")">
+                @Umbraco.GetDictionaryValue("NavigationBar.FreeTrial")
+            </a>
+        </div>
+    </div>
+    <div id="loginButton" class="sticky-top-button flex-fill nav-item bg-medium-gray d-none d-lg-inline-block" style="right:-1000px">
+        <div class="position-relative" style="padding-top: 0.5rem;">
+            <a class="nav-link login-button-link nav-home txt-navbar hover-@Umbraco.Field("navigationBarColor")" href="@Umbraco.GetDictionaryValue("NavigationBar.LoginLink")">
+                <svg class="mr-1 d-none d-lg-inline-block" width="15" height="20" version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 13.5 17" xml:space="preserve">
+                <path style="fill: #646464;" d="M10.8,5.7c0,2.1-1.2,4.3-4,4.3s-4-2.1-4-4.3C2.6,3.6,4.2,1.7,6.4,1.5c0.1,0,0.3,0,0.4,0
+                                            C9.5,1.5,10.8,3.6,10.8,5.7 M9.8,10.6c1.6-1.1,2.6-3,2.5-4.9c0.2-3-2-5.5-5-5.7C7.1,0,6.9,0,6.7,0c-3-0.1-5.4,2.3-5.5,5.2
+                                            c0,0.2,0,0.3,0,0.5c-0.1,2,0.9,3.8,2.5,4.9C1.3,11.8-0.1,14.3,0,17h1.5c0-3.3,2.1-5.6,5.2-5.6S12,13.7,12,17h1.5
+                                            C13.6,14.3,12.1,11.8,9.8,10.6" />
+                </svg>
+                <svg class="mr-1 d-lg-none" width="30" height="40" version="1.1" id="Ebene_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 13.5 17" xml:space="preserve">
+                <path style="fill: #646464;" d="M10.8,5.7c0,2.1-1.2,4.3-4,4.3s-4-2.1-4-4.3C2.6,3.6,4.2,1.7,6.4,1.5c0.1,0,0.3,0,0.4,0
+                                            C9.5,1.5,10.8,3.6,10.8,5.7 M9.8,10.6c1.6-1.1,2.6-3,2.5-4.9c0.2-3-2-5.5-5-5.7C7.1,0,6.9,0,6.7,0c-3-0.1-5.4,2.3-5.5,5.2
+                                            c0,0.2,0,0.3,0,0.5c-0.1,2,0.9,3.8,2.5,4.9C1.3,11.8-0.1,14.3,0,17h1.5c0-3.3,2.1-5.6,5.2-5.6S12,13.7,12,17h1.5
+                                            C13.6,14.3,12.1,11.8,9.8,10.6" />
+            </svg>
+                <span style="color: #646464">@Umbraco.GetDictionaryValue("NavigationBar.Login")</span>
+            </a>
+        </div>
+    </div>
+    
+</body>
+</html>

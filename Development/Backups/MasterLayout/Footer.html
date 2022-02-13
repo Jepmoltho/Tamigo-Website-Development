@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="row no-gutters bg-light-gray footer" id="footerLine1">
+        <div class="offset-1 col-lg-5 d-lg-block d-none padding-top-100">
+            @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("Footer.Solution")))
+            {
+                <div class="row">
+                    <a class="medium-normal-text footer-link" href="@Umbraco.GetDictionaryValue("Footer.SolutionLink")">@Umbraco.GetDictionaryValue("Footer.Solution")<img alt="arrow right image" class="d-inline-block ml-2 arrow-right" src="~/Content/svg/Arrow-Right.svg" /></a>
+                </div>
+            }
+
+            @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("Footer.Customers")))
+            {
+                <div class="row">
+                    <a class="medium-normal-text mt-4 footer-link" href="@Umbraco.GetDictionaryValue("Footer.CustomersLink")">@Umbraco.GetDictionaryValue("Footer.Customers")<img alt="arrow right image" class="d-inline-block ml-2 arrow-right" src="~/Content/svg/Arrow-Right.svg" /></a>
+                </div>
+            }
+
+            @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("Footer.Pricing")))
+            {
+                <div class="row">
+                    <a class="medium-normal-text mt-4 footer-link" href="@Umbraco.GetDictionaryValue("Footer.PricingLink")">@Umbraco.GetDictionaryValue("Footer.Pricing")<img alt="arrow right image" class="d-inline-block ml-2 arrow-right" src="~/Content/svg/Arrow-Right.svg" /></a>
+                </div>
+            }
+
+            @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("Footer.Integrations")))
+            {
+
+                <div class="row">
+                    <a class="medium-normal-text mt-4 footer-link" href="@Umbraco.GetDictionaryValue("Footer.IntegrationsLink")">@Umbraco.GetDictionaryValue("Footer.Integrations")<img alt="arrow right image" class="d-inline-block ml-2 arrow-right" src="~/Content/svg/Arrow-Right.svg" /></a>
+                </div>
+            }
+
+            @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("Footer.Support")))
+            {
+                <div class="row">
+                    <a class="medium-normal-text mt-4 footer-link" href="@Umbraco.GetDictionaryValue("Footer.SupportLink")">@Umbraco.GetDictionaryValue("Footer.Support")<img alt="arrow right image" class="d-inline-block ml-2 arrow-right" src="~/Content/svg/Arrow-Right.svg" /></a>
+                </div>
+            }
+
+            @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("Footer.AboutUs")))
+            {
+                <div class="row">
+                    <a class="medium-normal-text mt-4 footer-link" href="@Umbraco.GetDictionaryValue("Footer.AboutUsLink")">@Umbraco.GetDictionaryValue("Footer.AboutUs")<img alt="arrow right image" class="d-inline-block ml-2 arrow-right" src="~/Content/svg/Arrow-Right.svg" /></a>
+                </div>
+            }
+
+            @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("Footer.Enterprise")))
+            {
+                <div class="row">
+                    <a class="medium-normal-text mt-4 footer-link" href="@Umbraco.GetDictionaryValue("Footer.EnterpriseLink")">@Umbraco.GetDictionaryValue("Footer.Enterprise")<img alt="arrow right image" class="d-inline-block ml-2 arrow-right" src="~/Content/svg/Arrow-Right.svg" /></a>
+                </div>
+            }
+
+            @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("Footer.CustomerCases")))
+            {
+                <div class="row">
+                    <a class="medium-normal-text mt-4 footer-link" href="@Umbraco.GetDictionaryValue("Footer.CustomerCasesLink")">@Umbraco.GetDictionaryValue("Footer.CustomerCases")<img alt="arrow right image" class="d-inline-block ml-2 arrow-right" src="~/Content/svg/Arrow-Right.svg" /></a>
+                </div>
+            }
+
+            @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("Footer.Demo")))
+            {
+                <div class="row">
+                    <a class="medium-normal-text mt-4 footer-link" href="@Umbraco.GetDictionaryValue("Footer.DemoLink")">@Umbraco.GetDictionaryValue("Footer.Demo")<img alt="arrow right image" class="d-inline-block ml-2 arrow-right" src="~/Content/svg/Arrow-Right.svg" /></a>
+                </div>
+            }
+
+            @if (languageCode == "nl")
+            {
+                <div class="row">
+                    <script type="text/javascript">
+                        function MM_jumpMenu(targ, selObj, restore) { //v3.0
+                            eval(targ + ".location='" + selObj.options[selObj.selectedIndex].value + "'");
+                            if (restore) selObj.selectedIndex = 0;
+                        }
+                    </script>
+                    <select class="mt-4 footer-link bg-light-gray border-0" onchange="location.href=this.value">
+                        <option>--------------------------------------------</option>
+                        <option value="https://www.tamigo.nl/landings/maak-je-dienstrooster-gemakkelijk-met-tamigo/">Dienstrooster</option>
+                        <option value="https://www.tamigo.nl/landings/dienstrooster-maken-voor-de-horeca/">Dienstrooster horeca</option>
+                        <option value="https://www.tamigo.nl/landings/rooster-maken-voor-de-horeca/">Horeca rooster</option>
+                        <option value="https://www.tamigo.nl/landings/personeel-inroosteren/">Inroosteren personeel</option>
+                        <option value="https://www.tamigo.nl/landings/online-personeelsplanning/">Online personeelsplanning</option>
+                        <option value="https://www.tamigo.nl/landings/rooster-online-met-tamigo/">Online rooster</option>
+                        <option value="https://www.tamigo.nl/landings/online-rooster-maken/">Online rooster maken</option>
+                        <option value="https://www.tamigo.nl/landings/online-tijdregistratie/">Online tijdregistratie</option>
+                        <option value="https://www.tamigo.nl/landings/online-urenregistratie/">Online urenregistratie</option>
+                        <option value="https://www.tamigo.nl/landings/personeel-inplannen/">Personeel inplannen</option>
+                        <option value="https://www.tamigo.nl/landings/personeelsplanning-app/">Personeelsplanning app</option>
+                        <option value="https://www.tamigo.nl/landings/horeca-personeelsplanning-software/">Personeelsplanning horeca</option>
+                        <option value="https://www.tamigo.nl/landings/personeelsplanning-software/">Personeelsplanning software</option>
+                        <option value="https://www.tamigo.nl/landings/personeelsrooster-gemakkelijk-maken-met-tamigo/">Personeelsrooster</option>
+                        <option value="https://www.tamigo.nl/landings/planningssoftware-van-tamigo/">Planning software</option>
+                        <option value="https://www.tamigo.nl/landings/maak-je-rooster-met-de-rooster-app-van-tamigo/">Rooster app</option>
+                        <option value="https://www.tamigo.nl/landings/makkelijk-een-rooster-maken-met-tamigo/">Rooster maken</option>
+                        <option value="https://www.tamigo.nl/landings/tamigo-online-roosterplanner/">Roosterplanner online</option>
+                        <option value="https://www.tamigo.nl/landings/online-roosterplanning-maken/">Roosterplanning</option>
+                        <option value="https://www.tamigo.nl/landings/tamigo-rooster-software/">Rooster software</option>
+                        <option value="https://www.tamigo.nl/landings/app-voor-tijdregistratie/">Tijdregistratie app</option>
+                        <option value="https://www.tamigo.nl/landings/urenregistratie-software/">Urenregistratie software</option>
+                        <option value="https://www.tamigo.nl/landings/online-werkrooster/">Werkrooster</option>
+                        <option value="https://www.tamigo.nl/landings/eenvoudig-een-weekplanning-maken-met-tamigo/">Online weekplanning maken wordt eenvoudig met tamigo</option>
+                        <option value="https://www.tamigo.nl/landings/tamigo-de-online-roostermaker-van-tamigo/">De roostermaker van tamigo maakt plannen snel en makkelijk</option>
+                        <option value="https://www.tamigo.nl/landings/tamigo-de-werkrooster-app-van-tamigo/">Beheer overal jouw planning met de werkrooster app van tamigo</option>
+                        <option value="https://www.tamigo.nl/landings/tamigo-eenvoudig-een-werkplan-maken-met-tamigo/">tamigo laat je snel en eenvoudig een werkplan maken</option>
+                        <option value="https://www.tamigo.nl/landings/tamigo-het-eenvoudig-maken-van-een-dagplanning/">Het eenvoudig maken van een dagplanning</option>
+                        <option value="https://www.tamigo.nl/landings/tamigo-het-maken-van-werkroosters-met-tamigo/">Online werkrooster maken met tamigo</option>
+                        <option value="https://www.tamigo.nl/landings/tamigo-efficient-plannen-met-het-roosterprogramma-van-tamigo/">Efficiënt plannen met roosterprogramma van tamigo</option>
+                        <option value="https://www.tamigo.nl/landings/tamigo-het-eenvoudig-opstellen-van-een-weekschema-met-tamigo/">Een weekschema maken wordt eenvoudig met tamigo</option>
+                        <option value="https://www.tamigo.nl/landings/tamigo-het-eenvoudig-opstellen-van-een-maandplanning-met-tamigo/">Snel en eenvoudig een maandplanning maken met tamigo</option>
+                        <option value="https://www.tamigo.nl/landings/tamigo-het-eenvoudig-maken-van-een-werkschema-met-tamigo/">Een werkschema maken wordt eenvoudig met tamigo</option>
+                        <option value="https://www.tamigo.nl/landings/tamigo-de-gebruiksvriendelijke-dagplanning-app-van-tamigo/">tamigo biedt gebruiksvriendelijke dagplanning app</option>
+                        <option value="https://www.tamigo.nl/landings/tamigo-de-eenvoudige-tijdregistratie-software-van-tamigo/">Tijdsregistratie software van tamigo maakt tijdsregistratie eenvoudig</option>
+                        <option value="https://www.tamigo.nl/landings/tamigo-het-eenvoudige-urenregistratie-programma-van-tamigo/">Urenregistratie programma maakt tijdsregistratie simpel</option>
+                        <option value="https://www.tamigo.nl/landings/tamigo-eenvoudig-een-weekrooster-maken-met-tamigo/">Zo wordt een weekrooster maken simpel</option>
+                        <option value="https://www.tamigo.nl/landings/tamigo-de-weekplanning-app-van-tamigo/">Weekplanning app tamigo groot succes</option>
+                        <option value="https://www.tamigo.nl/landings/tamigo-het-eenvoudig-samenstellen-van-een-dienstrooster-met-tamigo/">Een dienstrooster maken wordt simpel met tamigo</option>
+                        <option value="https://www.tamigo.nl/landings/tamigo-het-eenvoudige-wfm-systeem-van-tamigo/">Het wfm systeem van tamigo neemt je veel werk uit handen</option>
+                        <option value="https://www.tamigo.nl/landings/tamigo-efficient-je-personeelsplanning-maken-met-tamigo/">Snel en eenvoudig je personeelsplanning maken met tamigo</option>
+                        <option value="https://www.tamigo.nl/landings/tamigo-eenvoudig-roosters-maken-met-de-roostertool-van-tamigo/">Roostertool voor personeelsplanning</option>
+                    </select>
+                </div>
+            }
+
+        </div>
+        <div class="col-10 col-lg-4 pale-gray padding-top-100">
+            @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("Footer.TamigoAuthorized")))
+            {
+                <div class="medium-normal-text ml-5">
+                    @Umbraco.GetDictionaryValue("Footer.TamigoAuthorized")
+                </div>
+            }
+            <div class="bold dark-gray medium-normal-text ml-5">
+                @Umbraco.GetDictionaryValue("Footer.Tamigo")
+            </div>
+            <p class="medium-normal-text ml-5 m-0">
+                <a class="simple-link" href="mailto:@Umbraco.GetDictionaryValue("Footer.Email")" target="_top">@Umbraco.GetDictionaryValue("Footer.Email")</a>
+            </p>
+            <p class="medium-normal-text ml-5">
+                <a class="simple-link" href="tel:@Umbraco.GetDictionaryValue("Footer.Phone")" target="_top">@Umbraco.GetDictionaryValue("Footer.Phone")</a>
+            </p>
+            <p class="medium-normal-text ml-5 mt-5 mb-0">
+                @Umbraco.GetDictionaryValue("Footer.Line1")
+            </p>
+            @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("Footer.Line2")))
+            {
+                <p class="medium-normal-text ml-5 mb-0">
+                    @Umbraco.GetDictionaryValue("Footer.Line2")
+                </p>
+            }
+            <p class="medium-normal-text ml-5 mb-0">
+                @Umbraco.GetDictionaryValue("Footer.City")
+            </p>
+            <p class="medium-normal-text ml-5">
+                @Umbraco.GetDictionaryValue("Footer.Country")
+            </p>
+            <p class="medium-normal-text ml-5 mt-5 mb-0">
+                @Umbraco.GetDictionaryValue("Footer.Vat")
+            </p>
+            @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("Footer.Vat2")))
+            {
+                <p class="medium-normal-text ml-5 mb-0">
+                    @Umbraco.GetDictionaryValue("Footer.Vat2")
+                </p>
+            }
+            @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("Footer.LinkedIn")))
+            {
+                <p class="medium-normal-text ml-5 mt-5 mb-0">
+                    <a class="medium-normal-text footer-link mb-0" href="@Umbraco.GetDictionaryValue("Footer.LinkedInAddress")">@Umbraco.GetDictionaryValue("Footer.LinkedIn")<img alt="right arrow image" class="d-inline-block ml-2 arrow-right" src="~/Content/svg/Arrow-Right.svg" /></a>
+                </p>
+            }
+            @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("Footer.MediaKit")))
+            {
+                <p class="medium-normal-text ml-5 mb-0">
+                    <a class="medium-normal-text footer-link mb-0" href="@Umbraco.GetDictionaryValue("Footer.MediaKitAddress")">@Umbraco.GetDictionaryValue("Footer.MediaKit")<img alt="right arrow image" class="d-inline-block ml-2 arrow-right" src="~/Content/svg/Arrow-Right.svg" /></a>
+                </p>
+            }
+        </div>
+        <div class="col-lg-2 col-1 text-center pale-gray padding-top-100">
+            <button class="btn-carousel" role="button" data-slide="prev" id="backToTop">
+                <span>
+                    <i class="fa fa-long-arrow-up" aria-hidden="true"></i>
+                </span>
+            </button>
+        </div>
+    </div>
+    <div class="row no-gutters bg-light-gray pb-5 footer" id="footerLine2">
+        <div class="offset-1 mt-5 col-lg-5 d-lg-block d-none pt-0">
+            <div class="row medium-normal-text mt-4 tamigo-rights-container">
+                <i class="fa fa-copyright copyright" aria-hidden="true" style="font-size: 1rem;"></i><span class="dark-gray mr-2 bold">tamigo</span><span id="year" class="dark-gray"></span>
+            </div>
+        </div>
+        <div class="col-11 col-lg-4 pale-gray pt-0">
+            <p class="medium-normal-text ml-5 mb-0">
+                <a class="medium-normal-text footer-link mb-0" href="@Umbraco.GetDictionaryValue("Footer.CookiesAddress")">@Umbraco.GetDictionaryValue("Footer.Cookies")<img alt="right arrow image" class="d-inline-block ml-2 arrow-right" src="~/Content/svg/Arrow-Right.svg" /></a>
+            </p>
+            <p class="medium-normal-text ml-5 mb-0">
+                <a class="medium-normal-text footer-link mb-0" href="@Umbraco.GetDictionaryValue("Footer.TermsAndConditionsAddress")">@Umbraco.GetDictionaryValue("Footer.TermsAndConditions")<img alt="right arrow image" class="d-inline-block ml-2 arrow-right" src="~/Content/svg/Arrow-Right.svg" /></a>
+            </p>
+            <p class="medium-normal-text ml-5 mb-0">
+                <a class="medium-normal-text footer-link mb-0" href="@Umbraco.GetDictionaryValue("Footer.SlaAddress")">@Umbraco.GetDictionaryValue("Footer.Sla")<img alt="right arrow image" class="d-inline-block ml-2 arrow-right" src="~/Content/svg/Arrow-Right.svg" /></a>
+            </p>
+            <p class="medium-normal-text ml-5 mb-0">
+                <a class="medium-normal-text footer-link mb-0" href="@Umbraco.GetDictionaryValue("Footer.PrivacyPolicyAddress")">@Umbraco.GetDictionaryValue("Footer.PrivacyPolicy")<img alt="right arrow image" class="d-inline-block ml-2 arrow-right" src="~/Content/svg/Arrow-Right.svg" /></a>
+            </p>
+            <p class="medium-normal-text ml-5">
+                <a class="medium-normal-text footer-link mb-0" href="@Umbraco.GetDictionaryValue("Footer.TrustCenterAddress")">@Umbraco.GetDictionaryValue("Footer.TrustCenter")<img alt="right arrow image" class="d-inline-block ml-2 arrow-right" src="~/Content/svg/Arrow-Right.svg" /></a>
+            </p>
+        </div>
+    </div>
+    
+</body>
+</html>
