@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<style>
+    .dropdown-content {
+        display: none;
+        background-color: #f1f1f1;
+        position: absolute;
+    }
+        
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+</style>
+
+
+<!-- Navbar: Note: Remove "fixed-top" class from top div class="navbar..." -->
+<nav class="navbar navbar-expand-lg min-height-60 align-items-start" id="mainPageNavBar" name="mainPageNavBar">
+    <button id="navbarButton" class="navbar-toggler bg-white mr-1 mt-3 mb-2 dark-gray" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa fa-bars nav-sandwich-button"></i>
+    </button>
+    <div class="navbar-brand pt-3">
+        <a href="@CurrentPage.AncestorsOrSelf(1).First().Url"><img alt="logo" src="~/Content/svg/Logo.svg" class="tamigo-logo" /></a>
+    </div>
+    <div class="collapse navbar-collapse normal-text txt-navbar row no-gutters" id="navbarSupportedContent">
+        <ul class="navbar-nav col-lg-11 col-sm-12 no-gutters">
+            <!-- ***************************** I instert my testcode from here ****************************** -->
+            @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("NavigationBar.Dropdown")))
+            {
+                <div class="dropdown" style="">
+                    <li class="nav-item flex-fill">
+                        <a class="nav-link nav-home hover-@Umbraco.Field("navigationBarColor")" href="@Umbraco.GetDictionaryValue("NavigationBar.DropdownLink")">@Umbraco.GetDictionaryValue("NavigationBar.Dropdown")</a>
+                    </li>
+                    <div class="dropdown-content" style="">
+                        <a class="nav-link nav-home hover-@Umbraco.Field("navigationBarColor")" href="@Umbraco.GetDictionaryValue("NavigationBar.DropdownLink")">@Umbraco.GetDictionaryValue("NavigationBar.Dropdown")</a>
+                        <a class="nav-link nav-home hover-@Umbraco.Field("navigationBarColor")" href="@Umbraco.GetDictionaryValue("NavigationBar.DropdownLink")">@Umbraco.GetDictionaryValue("NavigationBar.Dropdown")</a>
+                    </div>
+                </div>
+            }
+            <!-- *****************************  To here *****************************  -->
+            @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("NavigationBar.Solution")))
+            {
+                <li class="nav-item flex-fill">
+                    <a class="nav-link nav-home hover-@Umbraco.Field("navigationBarColor")" href="@Umbraco.GetDictionaryValue("NavigationBar.SolutionLink")">@Umbraco.GetDictionaryValue("NavigationBar.Solution")</a>
+                </li>
+            } 
+
+    
+</body>
+</html>
