@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    @inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.TestPage>
+        @using ContentModels = Umbraco.Web.PublishedContentModels;
+        @{
+            Layout = "MasterLayout.cshtml";
+    
+        }
+        
+    
+    <!-- Note to self: If you choose master layout as template, you get the header and footer. So you need to copyt the src code of the master template in here to get the same view, and then modify the copy of the src code on the test page before inserting it in the master template -->
+    <!-- To do next: Go to Dictionary -> Create new dictionary value -> Insert the dictionary value in the test nav bar (remember you removed the "fixed-top" class from it) and make it into a dropdown. To make it a dropdown, you probably need to create a new dictionary value for each drop item -->
+    
+    
+    <!-- This is a seperator --> 
+    @Umbraco.RenderMacro("Space", new {color="blue", heigth="500"})
+    
+    
+    <!-- ***************************** Specific styling of dropdown from here ****************************** -->
+    <style>
+    .dropdown-content {
+        display: none;
+        background-color: #f1f1f1;
+        position: absolute;
+    }
+    
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    </style>
+    <!-- ***************************** to here ****************************** -->
+    
+    
+    
+    <!-- Navbar: Note: Remove "fixed-top" class from top div class="navbar..." -->
+        <nav class="navbar navbar-expand-lg min-height-60 align-items-start" id="mainPageNavBar" name="mainPageNavBar">
+            <button id="navbarButton" class="navbar-toggler bg-white mr-1 mt-3 mb-2 dark-gray" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars nav-sandwich-button"></i>
+            </button>
+            <div class="navbar-brand pt-3">
+                <a href="@CurrentPage.AncestorsOrSelf(1).First().Url"><img alt="logo" src="~/Content/svg/Logo.svg" class="tamigo-logo" /></a>
+            </div>
+            <div class="collapse navbar-collapse normal-text txt-navbar row no-gutters" id="navbarSupportedContent">
+                <ul class="navbar-nav col-lg-11 col-sm-12 no-gutters">
+                    <!-- ***************************** I instert my testcode from here ****************************** -->
+                    @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("NavigationBar.Dropdown")))
+                    {
+                        <div class="dropdown" style="">
+                            <li class="nav-item flex-fill">
+                                <a class="nav-link nav-home hover-@Umbraco.Field("navigationBarColor")" href="@Umbraco.GetDictionaryValue("NavigationBar.DropdownLink")">@Umbraco.GetDictionaryValue("NavigationBar.Dropdown")<i class="fa fa-caret-down"></i></a>
+                            </li>
+                            <div class="dropdown-content" style="">
+                                <a class="nav-link nav-home hover-@Umbraco.Field("navigationBarColor")" href="@Umbraco.GetDictionaryValue("NavigationBar.SupermarketsLink")">@Umbraco.GetDictionaryValue("NavigationBar.Supermarkets")</a>
+                                <a class="nav-link nav-home hover-@Umbraco.Field("navigationBarColor")" href="@Umbraco.GetDictionaryValue("NavigationBar.SupermarketsLink")">@Umbraco.GetDictionaryValue("NavigationBar.Supermarkets")</a>
+                            </div>
+                        </div>
+                    }
+                    <!-- *****************************  To here *****************************  -->
+                    @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("NavigationBar.Solution")))
+                    {
+                        <li class="nav-item flex-fill">
+                            <a class="nav-link nav-home hover-@Umbraco.Field("navigationBarColor")" href="@Umbraco.GetDictionaryValue("NavigationBar.SolutionLink")">@Umbraco.GetDictionaryValue("NavigationBar.Solution")</a>
+                        </li>
+                    }
+                    @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("NavigationBar.Customers")))
+                    {
+                        <li class="nav-item flex-fill">
+                            <a class="nav-link nav-home hover-@Umbraco.Field("navigationBarColor")" href="@Umbraco.GetDictionaryValue("NavigationBar.CustomersLink")">@Umbraco.GetDictionaryValue("NavigationBar.Customers")</a>
+                        </li>
+                    }
+                    @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("NavigationBar.Pricing")))
+                    {
+                        <li class="nav-item flex-fill">
+                            <a class="nav-link nav-home hover-@Umbraco.Field("navigationBarColor")" href="@Umbraco.GetDictionaryValue("NavigationBar.PricingLink")">@Umbraco.GetDictionaryValue("NavigationBar.Pricing")</a>
+                        </li>
+                    }
+                    @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("NavigationBar.Integrations")))
+                    {
+                        <li class="nav-item flex-fill">
+                            <a class="nav-link nav-home hover-@Umbraco.Field("navigationBarColor")" href="@Umbraco.GetDictionaryValue("NavigationBar.IntegrationsLink")">@Umbraco.GetDictionaryValue("NavigationBar.Integrations")</a>
+                        </li>
+                    }
+                    @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("NavigationBar.Support")))
+                    {
+                        <li class="nav-item flex-fill">
+                            <a class="nav-link nav-home hover-@Umbraco.Field("navigationBarColor")" href="@Umbraco.GetDictionaryValue("NavigationBar.SupportLink")">@Umbraco.GetDictionaryValue("NavigationBar.Support")</a>
+                        </li>
+                    }
+                    @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("NavigationBar.AboutUs")))
+                    {
+                        <li class="nav-item flex-fill">
+                            <a class="nav-link nav-home hover-@Umbraco.Field("navigationBarColor")" href="@Umbraco.GetDictionaryValue("NavigationBar.AboutUsLink")">@Umbraco.GetDictionaryValue("NavigationBar.AboutUs")</a>
+                        </li>
+                    }
+                    @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("NavigationBar.Careers")))
+                    {
+                        <li class="nav-item flex-fill">
+                            <a class="nav-link nav-home hover-@Umbraco.Field("navigationBarColor")" href="@Umbraco.GetDictionaryValue("NavigationBar.CareersLink")">@Umbraco.GetDictionaryValue("NavigationBar.Careers")</a>
+                        </li>
+                    }
+                    @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("NavigationBar.Enterprise")))
+                    {
+                        <li class="nav-item d-lg-none flex-fill">
+                            <a class="nav-link nav-home hover-@Umbraco.Field("navigationBarColor")" href="@Umbraco.GetDictionaryValue("NavigationBar.EnterpriseLink")">@Umbraco.GetDictionaryValue("NavigationBar.Enterprise")</a>
+                        </li>
+                    }
+                    @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("NavigationBar.Contact")))
+                    {
+                        <li class="nav-item d-lg-none flex-fill">
+                            <a class="nav-link nav-home hover-@Umbraco.Field("navigationBarColor")" href="@Umbraco.GetDictionaryValue("NavigationBar.ContactLink")">@Umbraco.GetDictionaryValue("NavigationBar.Contact")</a>
+                        </li>
+                    }
+                    <li class="nav-item trial flex-fill" id="freeTrialNavigationButton">
+                        <a class="nav-link nav-home hover-@Umbraco.Field("navigationBarColor")" href="@Umbraco.GetDictionaryValue("NavigationBar.FreeTrialLink")">@Umbraco.GetDictionaryValue("NavigationBar.FreeTrial")</a>
+                    </li>
+                    <li class="nav-item flex-fill bg-medium-gray" id="loginNavigationButton">
+                        <a class="nav-link nav-home hover-@Umbraco.Field("navigationBarColor")" href="@Umbraco.GetDictionaryValue("NavigationBar.LoginLink")">
+                            <svg class="mr-1 d-none d-lg-inline-block" width="15" height="20" version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 13.5 17" xml:space="preserve">
+                            <path style="fill: #646464;" d="M10.8,5.7c0,2.1-1.2,4.3-4,4.3s-4-2.1-4-4.3C2.6,3.6,4.2,1.7,6.4,1.5c0.1,0,0.3,0,0.4,0
+                                                C9.5,1.5,10.8,3.6,10.8,5.7 M9.8,10.6c1.6-1.1,2.6-3,2.5-4.9c0.2-3-2-5.5-5-5.7C7.1,0,6.9,0,6.7,0c-3-0.1-5.4,2.3-5.5,5.2
+                                                c0,0.2,0,0.3,0,0.5c-0.1,2,0.9,3.8,2.5,4.9C1.3,11.8-0.1,14.3,0,17h1.5c0-3.3,2.1-5.6,5.2-5.6S12,13.7,12,17h1.5
+                                                C13.6,14.3,12.1,11.8,9.8,10.6" />
+                            </svg>
+                            <svg class="mr-1 d-lg-none" width="30" height="40" version="1.1" id="Ebene_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 13.5 17" xml:space="preserve">
+                            <path style="fill: #646464;" d="M10.8,5.7c0,2.1-1.2,4.3-4,4.3s-4-2.1-4-4.3C2.6,3.6,4.2,1.7,6.4,1.5c0.1,0,0.3,0,0.4,0
+                                                C9.5,1.5,10.8,3.6,10.8,5.7 M9.8,10.6c1.6-1.1,2.6-3,2.5-4.9c0.2-3-2-5.5-5-5.7C7.1,0,6.9,0,6.7,0c-3-0.1-5.4,2.3-5.5,5.2
+                                                c0,0.2,0,0.3,0,0.5c-0.1,2,0.9,3.8,2.5,4.9C1.3,11.8-0.1,14.3,0,17h1.5c0-3.3,2.1-5.6,5.2-5.6S12,13.7,12,17h1.5
+                                                C13.6,14.3,12.1,11.8,9.8,10.6" />
+                            </svg>
+                            <span style="color: #646464">@Umbraco.GetDictionaryValue("NavigationBar.Login")</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav col-lg-1 col-sm-12 no-gutters flex-fill">
+                    @Umbraco.RenderMacro("Languages", new
+               {
+                   class1 = "nav-item",
+                   class2 = "nav-link",
+                   maxPerColumn = "7"
+               })
+                </ul>
+            </div>
+        </nav>
+        <div id="freeTrialButton" class="sticky-top-button free-trial-button bg-orange text-white nav-item d-none d-lg-inline-block" style="right:-1000px">
+            <div class="position-relative" style="padding-top: 0.5rem;">
+                <a class="anchor-plain txt-navbar" href="@Umbraco.GetDictionaryValue("NavigationBar.FreeTrialLink")">
+                    @Umbraco.GetDictionaryValue("NavigationBar.FreeTrial")
+                </a>
+            </div>
+        </div>
+        <div id="loginButton" class="sticky-top-button flex-fill nav-item bg-medium-gray d-none d-lg-inline-block" style="right:-1000px">
+            <div class="position-relative" style="padding-top: 0.5rem;">
+                <a class="nav-link login-button-link nav-home txt-navbar hover-@Umbraco.Field("navigationBarColor")" href="@Umbraco.GetDictionaryValue("NavigationBar.LoginLink")">
+                    <svg class="mr-1 d-none d-lg-inline-block" width="15" height="20" version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 13.5 17" xml:space="preserve">
+                    <path style="fill: #646464;" d="M10.8,5.7c0,2.1-1.2,4.3-4,4.3s-4-2.1-4-4.3C2.6,3.6,4.2,1.7,6.4,1.5c0.1,0,0.3,0,0.4,0
+                                                C9.5,1.5,10.8,3.6,10.8,5.7 M9.8,10.6c1.6-1.1,2.6-3,2.5-4.9c0.2-3-2-5.5-5-5.7C7.1,0,6.9,0,6.7,0c-3-0.1-5.4,2.3-5.5,5.2
+                                                c0,0.2,0,0.3,0,0.5c-0.1,2,0.9,3.8,2.5,4.9C1.3,11.8-0.1,14.3,0,17h1.5c0-3.3,2.1-5.6,5.2-5.6S12,13.7,12,17h1.5
+                                                C13.6,14.3,12.1,11.8,9.8,10.6" />
+                    </svg>
+                    <svg class="mr-1 d-lg-none" width="30" height="40" version="1.1" id="Ebene_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 13.5 17" xml:space="preserve">
+                    <path style="fill: #646464;" d="M10.8,5.7c0,2.1-1.2,4.3-4,4.3s-4-2.1-4-4.3C2.6,3.6,4.2,1.7,6.4,1.5c0.1,0,0.3,0,0.4,0
+                                                C9.5,1.5,10.8,3.6,10.8,5.7 M9.8,10.6c1.6-1.1,2.6-3,2.5-4.9c0.2-3-2-5.5-5-5.7C7.1,0,6.9,0,6.7,0c-3-0.1-5.4,2.3-5.5,5.2
+                                                c0,0.2,0,0.3,0,0.5c-0.1,2,0.9,3.8,2.5,4.9C1.3,11.8-0.1,14.3,0,17h1.5c0-3.3,2.1-5.6,5.2-5.6S12,13.7,12,17h1.5
+                                                C13.6,14.3,12.1,11.8,9.8,10.6" />
+                </svg>
+                    <span style="color: #646464">@Umbraco.GetDictionaryValue("NavigationBar.Login")</span>
+                </a>
+            </div>
+        </div>
+    
+    
+    <!-- This is a seperator --> 
+    @Umbraco.RenderMacro("Space", new {color="blue", heigth="100"})
+    
+    
+    <!-- New Footer module without the netherlands if statement -->
+    <div class="backgroundcolorcontainer bg-light-gray pt-5 pb-5">
+        <div class="container">
+            <div class="row footer" id="footerLine1">
+                <div class="col pb-3">
+                    <div class="big-normal-text pb-3"><b>Solution</b></div>
+                    <div class="pb-3"><a class="normal-text footer-link">Workforce management</a></div>
+                    <div class="pb-3"><a class="normal-text footer-link" href="@Umbraco.GetDictionaryValue("Footer.EnterpriseLink")">@Umbraco.GetDictionaryValue("Footer.Enterprise")</a></div>
+                    <div class="pb-3"><a class="normal-text footer-link" href="@Umbraco.GetDictionaryValue("Footer.IntegrationsLink")">@Umbraco.GetDictionaryValue("Footer.Integrations")</a></div>    
+                    <div class="pb-3"><a class="normal-text footer-link" href="@Umbraco.GetDictionaryValue("Footer.DemoLink")">@Umbraco.GetDictionaryValue("Footer.Demo")</a></div>
+                </div>
+                <div class="col pb-3">
+                    <div class="big-normal-text pb-3"><b>Industries</b></div>
+                    <div class="pb-3"><a class="normal-text footer-link">tamigo for supermarkets</a></div>
+                    <div class="pb-3"><a class="normal-text footer-link">tamigo for Enterprises</a></div>
+                    <div class="pb-3"><a class="normal-text footer-link">tamigo for hotels</a></div>
+                    <div class="pb-3"><a class="normal-text footer-link">tamigo for retail stores</a></div>
+                </div>
+                <div class="col pb-3">
+                    <div class="big-normal-text pb-3"><b>Resources</b></div>
+                    <div class="pb-3"><a class="normal-text footer-link">Blog</a></div>
+                    <div class="pb-3"><a class="normal-text footer-link" href="@Umbraco.GetDictionaryValue("Footer.CustomerCasesLink")">@Umbraco.GetDictionaryValue("Footer.CustomerCases")</a></div>
+                    <div class="pb-3"><a class="normal-text footer-link">Guides</a></div>
+                    <div class="pb-3"><a class="normal-text footer-link">Videos</a></div>
+                </div>
+                <div class="col">
+                    <div class="big-normal-text pb-3"><b>Company</b></div>
+                    <div class="pb-3"><a class="normal-text footer-link" href="@Umbraco.GetDictionaryValue("Footer.AboutUsLink")">@Umbraco.GetDictionaryValue("Footer.AboutUs")</a></div>
+                    <div class="pb-3"><a class="normal-text footer-link" href="@Umbraco.GetDictionaryValue("Footer.PricingLink")">@Umbraco.GetDictionaryValue("Footer.Pricing")</a></div>
+                    <div class="pb-3"><a class="normal-text footer-link">Careers</a></div>
+                    <div class="pb-3"><a class="normal-text footer-link" href="@Umbraco.GetDictionaryValue("Footer.SupportLink")">@Umbraco.GetDictionaryValue("Footer.Support")</a></div>
+                </div>
+                <div class="col-md">
+                    <div class="big-normal-text pb-3" style=""><b>tamigo ApS</b></div>
+                    <div><a class="normal-text footer-link pb-3" href="mailto:@Umbraco.GetDictionaryValue("Footer.Email")">@Umbraco.GetDictionaryValue("Footer.Email")</a></div>
+                    <div><a class="normal-text footer-link" href="tel:@Umbraco.GetDictionaryValue("Footer.Phone")">@Umbraco.GetDictionaryValue("Footer.Phone")</a></div>
+                    </br>
+                    <div class="normal-text">Kristianiagade 8</div>
+                    <div class="normal-text">2100 Copenhagen</div>
+                    <div class="normal-text">Denmark</div>
+                    </br>
+                    <div class="normal-text">VAT 28277679</div>
+                    </br>
+                    <div class="normal-text pb-2">Cookies →</div>
+                    <div class="normal-text pb-2">Terms & Conditions →</div>
+                    <div class="normal-text pb-2" style=""><NOBR>Service Level Agreement →</NOBR></div>
+                    <div class="normal-text pb-2">Privacy Policy →</div>
+                    <div class="normal-text pb-2">Trust Center →</div>
+                </div>
+            </div>
+        </div>
+            <div class="offset-1 mt-5 col-lg-5 d-lg-block d-none pt-0">
+                <div class="row medium-normal-text mt-4 tamigo-rights-container">
+                    <i class="fa fa-copyright copyright" aria-hidden="true" style="font-size: 1rem;"></i><span class="dark-gray mr-2 bold">tamigo</span><span id="year" class="dark-gray"></span>
+                </div>
+            </div>
+    </div>
+    
+    <!-- 
+            <div class="offset-1 mt-5 col-lg-5 d-lg-block d-none pt-0">
+                <div class="row medium-normal-text mt-4 tamigo-rights-container">
+                    <i class="fa fa-copyright copyright" aria-hidden="true" style="font-size: 1rem;"></i><span class="dark-gray mr-2 bold">tamigo</span><span id="year" class="dark-gray"></span>
+                </div>
+            </div>
+    -->
+    
+    
+    
+    <!-- This is a seperator --> 
+    @Umbraco.RenderMacro("Space", new {color="blue", heigth="100"})
+    
+    
+    <!-- ORIGINAL Footer module without the netherlands if statement -->
+    <!-- Changed bg-light-gray to blue <div class="row no-gutters bg-light-gray footer" id="footerLine1"> -->
+    
+       <div class="row no-gutters bg-light-gray footer" id="footerLine1">
+            <div class="offset-1 col-lg-5 d-lg-block d-none padding-top-100">
+                @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("Footer.Solution")))
+                {
+                    <div class="row">
+                        <a class="medium-normal-text footer-link" href="@Umbraco.GetDictionaryValue("Footer.SolutionLink")">@Umbraco.GetDictionaryValue("Footer.Solution")<img alt="arrow right image" class="d-inline-block ml-2 arrow-right" src="~/Content/svg/Arrow-Right.svg" /></a>
+                    </div>
+                }
+    
+                @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("Footer.Customers")))
+                {
+                    <div class="row">
+                        <a class="medium-normal-text mt-4 footer-link" href="@Umbraco.GetDictionaryValue("Footer.CustomersLink")">@Umbraco.GetDictionaryValue("Footer.Customers")<img alt="arrow right image" class="d-inline-block ml-2 arrow-right" src="~/Content/svg/Arrow-Right.svg" /></a>
+                    </div>
+                }
+    
+                @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("Footer.Pricing")))
+                {
+                    <div class="row">
+                        <a class="medium-normal-text mt-4 footer-link" href="@Umbraco.GetDictionaryValue("Footer.PricingLink")">@Umbraco.GetDictionaryValue("Footer.Pricing")<img alt="arrow right image" class="d-inline-block ml-2 arrow-right" src="~/Content/svg/Arrow-Right.svg" /></a>
+                    </div>
+                }
+    
+                @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("Footer.Integrations")))
+                {
+    
+                    <div class="row">
+                        <a class="medium-normal-text mt-4 footer-link" href="@Umbraco.GetDictionaryValue("Footer.IntegrationsLink")">@Umbraco.GetDictionaryValue("Footer.Integrations")<img alt="arrow right image" class="d-inline-block ml-2 arrow-right" src="~/Content/svg/Arrow-Right.svg" /></a>
+                    </div>
+                }
+    
+                @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("Footer.Support")))
+                {
+                    <div class="row">
+                        <a class="medium-normal-text mt-4 footer-link" href="@Umbraco.GetDictionaryValue("Footer.SupportLink")">@Umbraco.GetDictionaryValue("Footer.Support")<img alt="arrow right image" class="d-inline-block ml-2 arrow-right" src="~/Content/svg/Arrow-Right.svg" /></a>
+                    </div>
+                }
+    
+                @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("Footer.AboutUs")))
+                {
+                    <div class="row">
+                        <a class="medium-normal-text mt-4 footer-link" href="@Umbraco.GetDictionaryValue("Footer.AboutUsLink")">@Umbraco.GetDictionaryValue("Footer.AboutUs")<img alt="arrow right image" class="d-inline-block ml-2 arrow-right" src="~/Content/svg/Arrow-Right.svg" /></a>
+                    </div>
+                }
+    
+                @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("Footer.Enterprise")))
+                {
+                    <div class="row">
+                        <a class="medium-normal-text mt-4 footer-link" href="@Umbraco.GetDictionaryValue("Footer.EnterpriseLink")">@Umbraco.GetDictionaryValue("Footer.Enterprise")<img alt="arrow right image" class="d-inline-block ml-2 arrow-right" src="~/Content/svg/Arrow-Right.svg" /></a>
+                    </div>
+                }
+    
+                @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("Footer.CustomerCases")))
+                {
+                    <div class="row">
+                        <a class="medium-normal-text mt-4 footer-link" href="@Umbraco.GetDictionaryValue("Footer.CustomerCasesLink")">@Umbraco.GetDictionaryValue("Footer.CustomerCases")<img alt="arrow right image" class="d-inline-block ml-2 arrow-right" src="~/Content/svg/Arrow-Right.svg" /></a>
+                    </div>
+                }
+    
+                @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("Footer.Demo")))
+                {
+                    <div class="row">
+                        <a class="medium-normal-text mt-4 footer-link" href="@Umbraco.GetDictionaryValue("Footer.DemoLink")">@Umbraco.GetDictionaryValue("Footer.Demo")<img alt="arrow right image" class="d-inline-block ml-2 arrow-right" src="~/Content/svg/Arrow-Right.svg" /></a>
+                    </div>
+                }
+            </div>
+            
+            <div class="col-10 col-lg-4 pale-gray padding-top-100">
+                @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("Footer.TamigoAuthorized")))
+                {
+                    <div class="medium-normal-text ml-5">
+                        @Umbraco.GetDictionaryValue("Footer.TamigoAuthorized")
+                    </div>
+                }
+                <!-- Tamigo ApS + email + phone -->
+                <div class="bold dark-gray medium-normal-text ml-5">
+                    @Umbraco.GetDictionaryValue("Footer.Tamigo")
+                </div>
+                <p class="medium-normal-text ml-5 m-0">
+                    <a class="simple-link" href="mailto:@Umbraco.GetDictionaryValue("Footer.Email")" target="_top">@Umbraco.GetDictionaryValue("Footer.Email")</a>
+                </p>
+                <p class="medium-normal-text ml-5">
+                    <a class="simple-link" href="tel:@Umbraco.GetDictionaryValue("Footer.Phone")" target="_top">@Umbraco.GetDictionaryValue("Footer.Phone")</a>
+                </p>
+                <p class="medium-normal-text ml-5 mt-5 mb-0">
+                    @Umbraco.GetDictionaryValue("Footer.Line1")
+                </p>
+                @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("Footer.Line2")))
+                {
+                    <p class="medium-normal-text ml-5 mb-0">
+                        @Umbraco.GetDictionaryValue("Footer.Line2")
+                    </p>
+                }
+                <p class="medium-normal-text ml-5 mb-0">
+                    @Umbraco.GetDictionaryValue("Footer.City")
+                </p>
+                <p class="medium-normal-text ml-5">
+                    @Umbraco.GetDictionaryValue("Footer.Country")
+                </p>
+                <p class="medium-normal-text ml-5 mt-5 mb-0">
+                    @Umbraco.GetDictionaryValue("Footer.Vat")
+                </p>
+                @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("Footer.Vat2")))
+                {
+                    <p class="medium-normal-text ml-5 mb-0">
+                        @Umbraco.GetDictionaryValue("Footer.Vat2")
+                    </p>
+                }
+                @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("Footer.LinkedIn")))
+                {
+                    <p class="medium-normal-text ml-5 mt-5 mb-0">
+                        <a class="medium-normal-text footer-link mb-0" href="@Umbraco.GetDictionaryValue("Footer.LinkedInAddress")">@Umbraco.GetDictionaryValue("Footer.LinkedIn")<img alt="right arrow image" class="d-inline-block ml-2 arrow-right" src="~/Content/svg/Arrow-Right.svg" /></a>
+                    </p>
+                }
+                @if (!string.IsNullOrEmpty(Umbraco.GetDictionaryValue("Footer.MediaKit")))
+                {
+                    <p class="medium-normal-text ml-5 mb-0">
+                        <a class="medium-normal-text footer-link mb-0" href="@Umbraco.GetDictionaryValue("Footer.MediaKitAddress")">@Umbraco.GetDictionaryValue("Footer.MediaKit")<img alt="right arrow image" class="d-inline-block ml-2 arrow-right" src="~/Content/svg/Arrow-Right.svg" /></a>
+                    </p>
+                }
+            </div>
+            <!-- Long arrow up (third column) -->
+            <div class="col-lg-2 col-1 text-center pale-gray padding-top-100">
+                <button class="btn-carousel" role="button" data-slide="prev" id="backToTop">
+                    <span>
+                        <i class="fa fa-long-arrow-up" aria-hidden="true"></i>
+                    </span>
+                </button>
+            </div>
+        </div>
+        <!-- Second row footer -->
+        <div class="row no-gutters bg-light-gray pb-5 footer" id="footerLine2">
+            <!-- (copyright + year) -->
+            <div class="offset-1 mt-5 col-lg-5 d-lg-block d-none pt-0">
+                <div class="row medium-normal-text mt-4 tamigo-rights-container">
+                    <i class="fa fa-copyright copyright" aria-hidden="true" style="font-size: 1rem;"></i><span class="dark-gray mr-2 bold">tamigo</span><span id="year" class="dark-gray"></span>
+                </div>
+            </div>
+            <!-- (copyright + year) -->
+            <div class="col-11 col-lg-4 pale-gray pt-0">
+                <p class="medium-normal-text ml-5 mb-0">
+                    <a class="medium-normal-text footer-link mb-0" href="@Umbraco.GetDictionaryValue("Footer.CookiesAddress")">@Umbraco.GetDictionaryValue("Footer.Cookies")<img alt="right arrow image" class="d-inline-block ml-2 arrow-right" src="~/Content/svg/Arrow-Right.svg" /></a>
+                </p>
+                <p class="medium-normal-text ml-5 mb-0">
+                    <a class="medium-normal-text footer-link mb-0" href="@Umbraco.GetDictionaryValue("Footer.TermsAndConditionsAddress")">@Umbraco.GetDictionaryValue("Footer.TermsAndConditions")<img alt="right arrow image" class="d-inline-block ml-2 arrow-right" src="~/Content/svg/Arrow-Right.svg" /></a>
+                </p>
+                <p class="medium-normal-text ml-5 mb-0">
+                    <a class="medium-normal-text footer-link mb-0" href="@Umbraco.GetDictionaryValue("Footer.SlaAddress")">@Umbraco.GetDictionaryValue("Footer.Sla")<img alt="right arrow image" class="d-inline-block ml-2 arrow-right" src="~/Content/svg/Arrow-Right.svg" /></a>
+                </p>
+                <p class="medium-normal-text ml-5 mb-0">
+                    <a class="medium-normal-text footer-link mb-0" href="@Umbraco.GetDictionaryValue("Footer.PrivacyPolicyAddress")">@Umbraco.GetDictionaryValue("Footer.PrivacyPolicy")<img alt="right arrow image" class="d-inline-block ml-2 arrow-right" src="~/Content/svg/Arrow-Right.svg" /></a>
+                </p>
+                <p class="medium-normal-text ml-5">
+                    <a class="medium-normal-text footer-link mb-0" href="@Umbraco.GetDictionaryValue("Footer.TrustCenterAddress")">@Umbraco.GetDictionaryValue("Footer.TrustCenter")<img alt="right arrow image" class="d-inline-block ml-2 arrow-right" src="~/Content/svg/Arrow-Right.svg" /></a>
+                </p>
+            </div>
+        </div>
+        
+        
+    <!-- Proof that you can write JavaScript directly without making it crash --> 
+    <!--  <script>alert("hello")</script> -->
+    
+    
+    <!-- This is a seperator --> 
+    @Umbraco.RenderMacro("Space", new {color="blue", heigth="100"})
+        
+    
+</body>
+</html>
