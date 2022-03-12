@@ -350,6 +350,14 @@
     <!-- This is a seperator --> 
     @Umbraco.RenderMacro("Space", new {color="blue", heigth="100"})
     
+    <!-- Messy notes -->
     
+    <div class="pb-2"><a class="normal-text footer-link" href="@Umbraco.GetDictionaryValue("Footer.CookiesAddress")"><span class="medium-normal-text">@Umbraco.GetDictionaryValue("Footer.Cookies")<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></span></a></div>
+    <div class="pb-2"><a class="normal-text footer-link" href="@Umbraco.GetDictionaryValue("Footer.TermsAndConditionsAddress")"><span class="medium-normal-text"><NOBR>@Umbraco.GetDictionaryValue("Footer.TermsAndConditions")<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></NOBR></span></a></div>
+    <div class="pb-2"><a class="normal-text footer-link" href="@Umbraco.GetDictionaryValue("Footer.SLAAddress")"><span class="medium-normal-text"><NOBR>@Umbraco.GetDictionaryValue("Footer.SLA")<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></NOBR></span></a></div>
+    <div class="pb-2"><a class="normal-text footer-link" href="@Umbraco.GetDictionaryValue("Footer.PrivacyPolicyAddress")"><span class="medium-normal-text">@Umbraco.GetDictionaryValue("Footer.PrivacyPolicy")<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></span></a></div>
+    <div class="pb-2"><a class="normal-text footer-link" href="@Umbraco.GetDictionaryValue("Footer.TrustCenterAddress")"><span class="medium-normal-text">@Umbraco.GetDictionaryValue("Footer.TrustCenter")<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></span></a></div>
+
+
 </body>
 </html>
