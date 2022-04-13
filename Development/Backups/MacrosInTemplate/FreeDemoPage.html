@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    @inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.RequestDemo>
+        @using ContentModels = Umbraco.Web.PublishedContentModels;
+        @{
+            Layout = "MasterLayout.cshtml";
+        }
+        
+        @Umbraco.RenderMacro("Demo", new
+        {
+            visible = @Umbraco.Field("hiddenDemo").ToString() == "False",
+            color = @Umbraco.Field("color"),
+            demoTitle = @Umbraco.Field("demoTitle", removeParagraphTags: true),
+            demoSubtitle = @Umbraco.Field("demoSubtitle"),
+            name = @Umbraco.Field("placeholderName"),
+            email = @Umbraco.Field("placeholderEmail"),
+            phone = @Umbraco.Field("placeholderPhone"),
+            companyName = @Umbraco.Field("placeholderCompany"),
+            privacy = @Umbraco.Field("privacy", removeParagraphTags: true),
+            buttonText = @Umbraco.Field("buttonText"),
+            buttonColor = "",
+            contactTitle = @Umbraco.Field("contactTitle"),
+            contactSubtitle = @Umbraco.Field("contactSubtitle"),
+            contactPhone = @Umbraco.Field("contactPhone"),
+            contactEmail = @Umbraco.Field("contactEmail"),
+            image = @Umbraco.Field("image"),
+            btn_bg = Umbraco.Field("buttonBackground"),
+            btn_color = Umbraco.Field("buttonColor"),
+            btn_id = Umbraco.Field("buttonId"),
+            showCaptcha = CurrentPage.AncestorOrSelf(1).showCaptcha
+        })
+        
+        @Umbraco.RenderMacro("DemoNew", new 
+        {   visible="0", 
+            color=@Umbraco.Field("color"), 
+            demoTitle=@Umbraco.Field("demoTitle"),
+            demoSubtitle=@Umbraco.Field("demoSubtitle"), 
+            privacy=@Umbraco.Field("privacy"), 
+            buttonText=@Umbraco.Field("buttonText"), 
+            buttonColor=@Umbraco.Field("buttonColor"), 
+            contactTitle=@Umbraco.Field("ContactTitleTextVersion"), 
+            contactSubtitle=@Umbraco.Field("contactSubtitleTextVersion"), 
+            contactPhone=@Umbraco.Field("contactPhone"), 
+            contactEmail=@Umbraco.Field("contactEmail"), 
+            name=@Umbraco.Field("placeholderName"), 
+            email=@Umbraco.Field("placeholderEmail"), 
+            phone=@Umbraco.Field("placeholderPhone"), 
+            btn_id=@Umbraco.Field("buttonId"), 
+            btn_color=@Umbraco.Field("buttonColor"), 
+            btn_bg=@Umbraco.Field("buttonBackground"), 
+            showCaptcha="0", 
+            companyName=@Umbraco.Field("placeholderCompany")
+        })
+        
+        
+        
+        
+        
+        <style>
+        .hbspt-form .cookie-reset-container,
+        .hbspt-form .submitted-message
+        {
+        color: #fff !important;
+        }
+        .hs-error-msgs:not(.visible) {
+            display: none !important;
+        }
+        
+        .legal-consent-container .hs-error-msgs,
+        .hs_error_rollup .hs-error-msgs {
+            position: static;
+        }
+        .legal-consent-container .hs-error-msgs label
+        {
+            color: #b44677;
+        }
+        
+            .hs-fieldtype-text {
+            margin-bottom: 1.75rem;
+            position: relative;
+        }
+        
+        .small-title {
+            
+        }
+        
+        .hs-form-field > label {
+            color: #fff;
+            font-size: 1.2rem;
+            display: none;
+        }
+        
+        .hs-error-msgs {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            z-index: 2;
+            
+            width: calc(100% - 8px);
+        }
+        
+        .hs-error-msgs li label {
+            font-size: 1rem;
+            line-height: 1.5;
+            padding: .5rem 1rem;
+            background-color: #fff;
+            color: #b44677;
+            display: block;
+        }
+        
+        .hs-input {
+            width: 100%;
+            font-size: 1.2rem;
+            background-color: transparent;
+            border: 2px solid #fff;
+            padding: 10px !important;
+            color: #fff;
+        }
+        
+        .hs-input::placeholder {
+            color: rgba(255,255,255, .5);
+            opacity: 1;
+        }
+        
+        .hs-input:focus {
+            outline: none;
+        }
+        
+        .hs-form .inputs-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            font-size: 1rem;
+            color: #fff;
+        }
+        
+        input[type="checkbox"].hs-input {
+            position: absolute;
+            left: -99999px;
+        }
+        
+        .hs-form-booleancheckbox-display input[type="checkbox"].hs-input + span {
+            margin-left: 0;
+        }
+        
+        .hs-form-booleancheckbox-display input[type="checkbox"].hs-input + span:before {
+            content: "\f323";
+            font: normal normal normal 14px/1 "FontAwesome";
+            display: inline-block;
+            vertical-align: middle;
+            margin: -4px 10px 0 0;
+        }
+        
+        .hs-form-booleancheckbox-display input[type="checkbox"].hs-input:checked + span:before {
+            content: "\f17f";
+        }
+        
+        .hs-button.primary {
+            padding: 8px 30px;
+            min-width: 10rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 0;
+            height: 59px;
+            border: 0;
+            cursor: pointer;
+            outline: none !important;
+            text-align: center;
+            -webkit-transform: perspective(1px) translateZ(0);
+            transform: perspective(1px) translateZ(0);
+            box-shadow: 0 0 1px transparent;
+            -webkit-transition-duration: .3s;
+            transition-duration: .3s;
+            -webkit-transition-property: transform;
+            transition-property: transform;
+            color: #fff !important;
+            background-color: #ff6e5a;
+        }
+        
+        .hs_error_rollup .hs-error-msgs {
+            position: static;
+        }
+        
+        
+        </style>
+    
+</body>
+</html>
+
+
+
+<!-- Old demo module: Note, all 'email-symbols' ommited -->
+<!-- 
+Umbraco.RenderMacro("Demo", new
+{
+    visible = Umbraco.Field("hiddenDemo").ToString() == "False",
+    color = Umbraco.Field("color"),
+    demoTitle = Umbraco.Field("demoTitle", removeParagraphTags: true),
+    demoSubtitle = Umbraco.Field("demoSubtitle"),
+    name = Umbraco.Field("placeholderName"),
+    email = Umbraco.Field("placeholderEmail"),
+    phone = Umbraco.Field("placeholderPhone"),
+    companyName = Umbraco.Field("placeholderCompany"),
+    privacy = Umbraco.Field("privacy", removeParagraphTags: true),
+    buttonText = Umbraco.Field("buttonText"),
+    buttonColor = "",
+    contactTitle = Umbraco.Field("contactTitle"),
+    contactSubtitle = Umbraco.Field("contactSubtitle"),
+    contactPhone = Umbraco.Field("contactPhone"),
+    contactEmail = Umbraco.Field("contactEmail"),
+    image = Umbraco.Field("image"),
+    btn_bg = Umbraco.Field("buttonBackground"),
+    btn_color = Umbraco.Field("buttonColor"),
+    btn_id = Umbraco.Field("buttonId"),
+    showCaptcha = CurrentPage.AncestorOrSelf(1).showCaptcha
+})
+
+
+<!-- 
+
+ <div class="row no-gutters" id="Demo">
+        <div class="col-sm-12 col-xl-6 div-image">
+            <div class="padding-top-150 pb-5">
+                <div class="row no-gutters">
+                    <div class="offset-xl-2 offset-1 col-xl-8 col-10 title Model.MacroParameters["color"] mb-3">
+                        Html.Raw(Model.MacroParameters["contactTitle"])
+                    </div>
+                    <div class="offset-xl-2 offset-1 col-xl-8 col-10 medium-normal-text mt-4  Model.MacroParameters["color"]">
+                        Html.Raw(Model.MacroParameters["contactSubtitle"])
+                    </div>
+                    <div class="offset-xl-2 offset-1 col-xl-8 col-10 medium-normal-text mt-5">
+                        Html.Raw(Model.MacroParameters["contactPhone"])
+                    </div>
+                    <div class="offset-xl-2 offset-1 col-xl-8 col-10 medium-normal-text">
+                        Html.Raw(Model.MacroParameters["contactEmail"])
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5 text-xl-left">
+                <img alt="Umbraco.Media(Model.MacroParameters["image"]).GetPropertyValue("altText")" alt="Umbraco.Media(Model.MacroParameters["image"]).GetPropertyValue("altText")" src=Umbraco.Media(Model.MacroParameters["image"]).Url class="img-fluid w-60" />
+            </div>
+        </div>
+        <div class="col-sm-12 col-xl-6 bg-Model.MacroParameters["color"] pb-5 pt-5 pt-xl-0">
+
+            if (useHubspotAsRequestDemoPage)
+            
+-->
+
+-->

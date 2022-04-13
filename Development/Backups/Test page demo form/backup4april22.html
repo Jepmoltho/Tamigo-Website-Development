@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    @inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.TestPageDemoForm>
+        @using ContentModels = Umbraco.Web.PublishedContentModels;
+        @{
+            Layout = "MasterLayout.cshtml";
+        }
+        
+        @Umbraco.RenderMacro("Space", new { color = "white", heigth = "50" })
+        
+        <!-- Next steps: Test if hardcoded form sends right info to sales. Backup front page template. Insert hardcoded component, but take the style and script tag into account (maybe find a better way: Maybe create your own harcoded macro that contains the JavaScript and possible the custom CSS based on the source code)   -->
+        <!-- Note: Calling macros, it doesn't work automatically, because you can't call values that are connected to other document types: That's why spacer macros work, because all values are hardcoded. Argument for hardocoded solution will work. Maybe connect a document type to test it out -->
+        @Umbraco.RenderMacro("Space", new { color = "white", heigth = "50" })
+        
+        <!-- Video auto play  -->
+        <div class="backgroundcolor-container bg-white d-">
+                <div class="container pt-5 pb-5" style="">
+                    <div class="row" style="padding-bottom: 30px; padding-top: 30px">
+                        <div class="col-lg pb-5" style="margin:auto;">
+                            <div class="small-title mb-3">Video autoplay</div>
+                            <div class="normal-text">Chromium (Chrome based browsers) only allows autoplay for muted videos</div>
+                            <div class="button-container d-" >
+                             <a class="btn btn-tamigo-small bg-orange white anchor-plain overflow-hidden mt-4 mb-5 mw-100" href=@Umbraco.Field("buttonLinkTextAndImage") id="btnFrontPageFreeDemo"><span class="medium-normal-text">Button text<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></span></a>
+                            </div>
+                        </div>
+                        <div class="col-lg" style="margin:auto;">
+                            <center>
+                                <video src="@Umbraco.Field("videoURL")" width="480" height="360" controls autoplay muted>The browser does not support videos.</video>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        
+        
+        <!-- Video press play  -->
+        <div class="backgroundcolor-container bg-white d-">
+            <div class="container pt-5 pb-5" style="">
+                <div class="row" style="padding-bottom: 30px; padding-top: 30px">
+                    <div class="col-lg pb-5" style="margin:auto;">
+                        <div class="small-title mb-3">Video press play</div>
+                        <div class="normal-text">You can have sound if the video does not autoplay. You can also style size, position etc. as you like</div>
+                        <div class="button-container d-" >
+                         <a class="btn btn-tamigo-small bg-orange white anchor-plain overflow-hidden mt-4 mb-5 mw-100" href=@Umbraco.Field("buttonLinkTextAndImage") id="btnFrontPageFreeDemo"><span class="medium-normal-text">Button text<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></span></a>
+                        </div>
+                    </div>
+                    <div class="col-lg" style="margin:auto;">
+                        <center>
+                            <video src="@Umbraco.Field("videoURL")" width="580" height="460" controls>The browser does not support videos.</video>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Video vimeo integration  -->
+        <div class="backgroundcolor-container bg-white d-">
+            <div class="container pt-5 pb-5" style="">
+                <div class="row" style="padding-bottom: 30px; padding-top: 30px">
+                    <div class="col-lg pb-5" style="margin:auto;">
+                        <div class="small-title mb-3">Vimeo integration standard size </div>
+                        <div class="normal-text">I have not yet found out how to autoplay iframe videos but if it is not an issue, then I won't research it</div>
+                        <div class="button-container d-" >
+                         <a class="btn btn-tamigo-small bg-orange white anchor-plain overflow-hidden mt-4 mb-5 mw-100" href=@Umbraco.Field("buttonLinkTextAndImage") id="btnFrontPageFreeDemo"><span class="medium-normal-text">Button text<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></span></a>
+                        </div>
+                    </div>
+                    <div class="col-lg" style="margin:auto;">
+                        <!-- <iframe width="420" height="345" src="https://vimeo.com/video/639907942?h=1f93d28f8b"></iframe> -->
+                        <iframe style="width: 800px; height: 450px;" src="https://player.vimeo.com/video/639907942?h=1f93d28f8b&texttrack=en" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Video vimeo integration  -->
+        <div class="backgroundcolor-container bg-white d-">
+            <div class="container pt-5 pb-5" style="">
+                <div class="row" style="padding-bottom: 30px; padding-top: 30px">
+                    <div class="col-lg pb-5" style="margin:auto;">
+                        <div class="small-title mb-3">Vimeo integration custom size </div>
+                        <div class="normal-text">I have not yet found out how to autoplay iframe videos but if it is not an issue, then I won't research it</div>
+                        <div class="button-container d-" >
+                         <a class="btn btn-tamigo-small bg-orange white anchor-plain overflow-hidden mt-4 mb-5 mw-100" href=@Umbraco.Field("buttonLinkTextAndImage") id="btnFrontPageFreeDemo"><span class="medium-normal-text">Button text<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></span></a>
+                        </div>
+                    </div>
+                    <div class="col-lg" style="margin:auto;">
+                        <!-- <iframe width="420" height="345" src="https://vimeo.com/video/639907942?h=1f93d28f8b"></iframe> -->
+                        <iframe style="width: 600px; height: 420px; border:none;" src="https://player.vimeo.com/video/639907942?h=1f93d28f8b&texttrack=en" allow="autoplay;" allowfullscreen></iframe> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <!-- New dropdown form CSS for --> 
+        
+        @Umbraco.RenderMacro("DemoNewImage", new 
+        {   visible="1", 
+            color=@Umbraco.Field("color"), 
+            demoTitle=@Umbraco.Field("demoTitle"), 
+            demoSubtitle=@Umbraco.Field("demoSubtitle"), 
+            privacy=@Umbraco.Field("privacy"), 
+            buttonText=@Umbraco.Field("buttonText"), 
+            buttonColor=@Umbraco.Field("buttonColor"), 
+            contactTitle=@Umbraco.Field("contactTitle"), 
+            contactSubtitle=@Umbraco.Field("contactSubtitle"), 
+            contactPhone=@Umbraco.Field("contactPhone"), 
+            contactEmail=@Umbraco.Field("contactEmail"), 
+            image=@Umbraco.Field("image"), 
+            name=@Umbraco.Field("placeholderName"), 
+            email=@Umbraco.Field("placeholderEmail"), 
+            phone=@Umbraco.Field("placeholderPhone"), 
+            btn_id=@Umbraco.Field("buttonId"), 
+            btn_color=@Umbraco.Field("buttonColor"), 
+            btn_bg=@Umbraco.Field("buttonBackground"), 
+            showCaptcha="0", 
+            companyName=@Umbraco.Field("placeholderCompany")
+        })
+        
+        
+        @Umbraco.RenderMacro("Space", new { color = "white", heigth = "50" })
+        
+        <!-- Goal: Render both versions of the demo form macro on the same page -->
+        
+        @Umbraco.RenderMacro("DemoNew", new 
+        {   visible="1", 
+            color=@Umbraco.Field("color"), 
+            demoTitle=@Umbraco.Field("demoTitle"), 
+            demoSubtitle=@Umbraco.Field("demoSubtitle"), 
+            privacy=@Umbraco.Field("privacy"), 
+            buttonText=@Umbraco.Field("buttonText"), 
+            buttonColor=@Umbraco.Field("buttonColor"), 
+            contactTitle=@Umbraco.Field("ContactTitleTextVersion"), 
+            contactSubtitle=@Umbraco.Field("contactSubtitleTextVersion"), 
+            contactPhone=@Umbraco.Field("contactPhone"), 
+            contactEmail=@Umbraco.Field("contactEmail"), 
+            name=@Umbraco.Field("placeholderName"), 
+            email=@Umbraco.Field("placeholderEmail"), 
+            phone=@Umbraco.Field("placeholderPhone"), 
+            btn_id=@Umbraco.Field("buttonId"), 
+            btn_color=@Umbraco.Field("buttonColor"), 
+            btn_bg=@Umbraco.Field("buttonBackground"), 
+            showCaptcha="0", 
+            companyName=@Umbraco.Field("placeholderCompany")
+        })
+        
+        <!-- Custom size hubspot input CSS -->
+        <style>
+        .hs-input {
+            width: 100%;
+            font-size: 1.2rem;
+            background-color: transparent;
+            border: 2px solid #fff;
+            padding: 10px !important;
+            color: #fff; }
+        @@media (max-width: 980px) {
+            .hs-input {
+            font-size: 2.2rem; }}
+        </style>
+        
+        <!-- Controls default size of button for desktop and a larger textsize and padding for mobile -->
+        <style>
+        .hs-button.primary {
+            padding: 8px 30px;
+            min-width: 10rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 0;
+            height: 59px;
+            border: 0;
+            cursor: pointer;
+            outline: none !important;
+            text-align: center;
+            -webkit-transform: perspective(1px) translateZ(0);
+            transform: perspective(1px) translateZ(0);
+            box-shadow: 0 0 1px transparent;
+            -webkit-transition-duration: .3s;
+            transition-duration: .3s;
+            -webkit-transition-property: transform;
+            transition-property: transform;
+            color: #fff !important;
+            background-color: #ff6e5a; }
+        @@media (max-width: 980px) {
+            .hs-button.primary {
+            font-size: 2.2rem;
+            padding: 16px 60px 70px 60px;}}   
+        </style>
+        
+        
+        <!-- Controls default size privacy text for desktop and larger privacy text for mobile -->
+        <style>
+        .hs-form-booleancheckbox-display input[type="checkbox"].hs-input + span {
+            margin-left: 0; }
+        @@media (max-width: 980px) {
+            .hs-form-booleancheckbox-display input[type="checkbox"].hs-input + span {
+            font-size: 1.5rem; }}
+        </style>
+        
+        <!-- Controls default size of checkbox for desktop and a larger size for mobile - note the before tag -->
+        <style>
+            .hs-form-booleancheckbox-display input[type="checkbox"].hs-input + span:before {
+            content: "\f323";
+            font: normal normal normal 14px/1 "FontAwesome";
+            display: inline-block;
+            vertical-align: middle;
+            margin: -4px 10px 0 0; }
+        @@media (max-width: 980px) {
+            .hs-form-booleancheckbox-display input[type="checkbox"].hs-input + span:before  {
+            font: normal normal normal 24px/1 "FontAwesome"; }}
+        </style>
+        
+        
+        <!-- Padding between select / dropdown input boxes -->
+        <style>
+            select{
+                margin-bottom:1.75rem;
+            }
+        </style>
+        
+        
+        
+        <style>
+        .hbspt-form .cookie-reset-container,
+        .hbspt-form .submitted-message
+        {
+        color: #fff !important;
+        }
+        .hs-error-msgs:not(.visible) {
+            display: none !important;
+        }
+        
+        .legal-consent-container .hs-error-msgs,
+        .hs_error_rollup .hs-error-msgs {
+            position: static;
+        }
+        .legal-consent-container .hs-error-msgs label
+        {
+            color: #b44677;
+        }
+        
+            .hs-fieldtype-text {
+            margin-bottom: 1.75rem;
+            position: relative;
+        }
+        
+        .small-title {
+            
+        }
+        
+        .hs-form-field > label {
+            color: #fff;
+            font-size: 1.2rem;
+            display: none;
+        }
+        
+        .hs-error-msgs {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            z-index: 2;
+            
+            width: calc(100% - 8px);
+        }
+        
+        .hs-error-msgs li label {
+            font-size: 1rem;
+            line-height: 1.5;
+            padding: .5rem 1rem;
+            background-color: #fff;
+            color: #b44677;
+            display: block;
+        }
+        
+        /*
+        .hs-input {
+            width: 100%;
+            font-size: 1.2rem;
+            background-color: transparent;
+            border: 2px solid #fff;
+            padding: 10px !important;
+            color: #fff;
+        }
+        */
+        
+        
+        .hs-input::placeholder {
+            color: rgba(255,255,255, .5);
+            opacity: 1;
+        }
+        
+        .hs-input:focus {
+            outline: none;
+        }
+        
+        .hs-form .inputs-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            font-size: 1rem;
+            color: #fff;
+        }
+        
+        input[type="checkbox"].hs-input {
+            position: absolute;
+            left: -99999px;
+        }
+        
+        
+        
+        /* Controls the font-size of privacy text (no size specified as default). Add to media query: font-size: 1.5rem; */
+        /*
+        .hs-form-booleancheckbox-display input[type="checkbox"].hs-input + span {
+            margin-left: 0;
+        }
+        */
+        
+        /* Controlse content before privacy text - eg. checkbox */
+        /*
+        .hs-form-booleancheckbox-display input[type="checkbox"].hs-input + span:before {
+            content: "\f323";
+            font: normal normal normal 14px/1 "FontAwesome";
+            display: inline-block;
+            vertical-align: middle;
+            margin: -4px 10px 0 0;
+        }
+        */
+        
+        .hs-form-booleancheckbox-display input[type="checkbox"].hs-input:checked + span:before {
+            content: "\f17f";
+        }
+        
+        /*
+        .hs-button.primary {
+            padding: 8px 30px;
+            min-width: 10rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 0;
+            height: 59px;
+            border: 0;
+            cursor: pointer;
+            outline: none !important;
+            text-align: center;
+            -webkit-transform: perspective(1px) translateZ(0);
+            transform: perspective(1px) translateZ(0);
+            box-shadow: 0 0 1px transparent;
+            -webkit-transition-duration: .3s;
+            transition-duration: .3s;
+            -webkit-transition-property: transform;
+            transition-property: transform;
+            color: #fff !important;
+            background-color: #ff6e5a;
+        }
+        */
+        
+        .hs_error_rollup .hs-error-msgs {
+            position: static;
+        }
+        
+        
+        </style>
+        
+        
+        
+        <!-- 
+        
+        <div class="bg-blue">
+            <div class="row">
+                <div class="col white">placeholder
+                
+                
+                </div>
+                <div class="col p-5">
+                    <!-- Beginning  
+                    <div class="hbspt-form" id="hbspt-form-1647361819194-4085896905">
+                        <form novalidate="" accept-charset="UTF-8" action="https://forms.hsforms.com/submissions/v3/public/submit/formsnext/multipart/7551280/092b6992-0eff-43bc-906d-016d207e4ec8" enctype="multipart/form-data" id="hsForm_092b6992-0eff-43bc-906d-016d207e4ec8" method="POST" class="hs-form stacked hs-custom-style hs-form-private hsForm_092b6992-0eff-43bc-906d-016d207e4ec8 hs-form-092b6992-0eff-43bc-906d-016d207e4ec8 hs-form-092b6992-0eff-43bc-906d-016d207e4ec8_1a19c853-4918-4e2f-a0e4-b826e5172347" data-form-id="092b6992-0eff-43bc-906d-016d207e4ec8" data-portal-id="7551280" target="target_iframe_092b6992-0eff-43bc-906d-016d207e4ec8" data-reactid=".hbspt-forms-0">
+                            <fieldset class="form-columns-1" data-reactid=".hbspt-forms-0.1:$0">
+                                <div class="hs_email hs-email hs-fieldtype-text field hs-form-field" data-reactid=".hbspt-forms-0.1:$0.1:$email">
+                                    <label id="label-email-092b6992-0eff-43bc-906d-016d207e4ec8" class="" placeholder="Enter your " for="email-092b6992-0eff-43bc-906d-016d207e4ec8" data-reactid=".hbspt-forms-0.1:$0.1:$email.0"><span data-reactid=".hbspt-forms-0.1:$0.1:$email.0.0"></span></label>
+                                    <legend class="hs-field-desc" style="display:none;" data-reactid=".hbspt-forms-0.1:$0.1:$email.1"></legend>
+                                    <div class="input" data-reactid=".hbspt-forms-0.1:$0.1:$email.$email">
+                                        <input id="email-092b6992-0eff-43bc-906d-016d207e4ec8" class="hs-input invalid error" type="email" name="email" required="" placeholder="company email" value="" autocomplete="email" data-reactid=".hbspt-forms-0.1:$0.1:$email.$email.0" inputmode="email">
+                                    </div>
+                                        <ul class="no-list hs-error-msgs inputs-list" style="display:block;" role="alert" data-reactid=".hbspt-forms-0.1:$0.1:$email.3"><li data-reactid=".hbspt-forms-0.1:$0.1:$email.3.$0"><label class="hs-error-msg" data-reactid=".hbspt-forms-0.1:$0.1:$email.3.$0.0">Please complete this required field.</label></li></ul>
+                                    </div>
+                            </fieldset>
+                            <fieldset class="form-columns-2" data-reactid=".hbspt-forms-0.1:$1">
+                                <div class="hs_firstname hs-firstname hs-fieldtype-text field hs-form-field" data-reactid=".hbspt-forms-0.1:$1.1:$firstname">
+                                    <label id="label-firstname-092b6992-0eff-43bc-906d-016d207e4ec8" class="" placeholder="Enter your " for="firstname-092b6992-0eff-43bc-906d-016d207e4ec8" data-reactid=".hbspt-forms-0.1:$1.1:$firstname.0"><span data-reactid=".hbspt-forms-0.1:$1.1:$firstname.0.0"></span></label>
+                                    <legend class="hs-field-desc" style="display:none;" data-reactid=".hbspt-forms-0.1:$1.1:$firstname.1"></legend>
+                                    <div class="input" data-reactid=".hbspt-forms-0.1:$1.1:$firstname.$firstname">
+                                        <input id="firstname-092b6992-0eff-43bc-906d-016d207e4ec8" class="hs-input invalid error" type="text" name="firstname" required="" value="" placeholder="First name*" autocomplete="given-name" data-reactid=".hbspt-forms-0.1:$1.1:$firstname.$firstname.0" inputmode="text">
+                                    </div>
+                                    <ul class="no-list hs-error-msgs inputs-list" style="display:block;" role="alert" data-reactid=".hbspt-forms-0.1:$1.1:$firstname.3"><li data-reactid=".hbspt-forms-0.1:$1.1:$firstname.3.$0"><label class="hs-error-msg" data-reactid=".hbspt-forms-0.1:$1.1:$firstname.3.$0.0">Please complete this required field.</label></li></ul>
+                                    </div>
+                                    <div class="hs_lastname hs-lastname hs-fieldtype-text field hs-form-field" data-reactid=".hbspt-forms-0.1:$1.1:$lastname">
+                                        <label id="label-lastname-092b6992-0eff-43bc-906d-016d207e4ec8" class="" placeholder="Enter your " for="lastname-092b6992-0eff-43bc-906d-016d207e4ec8" data-reactid=".hbspt-forms-0.1:$1.1:$lastname.0"><span data-reactid=".hbspt-forms-0.1:$1.1:$lastname.0.0"></span></label>
+                                        <legend class="hs-field-desc" style="display:none;" data-reactid=".hbspt-forms-0.1:$1.1:$lastname.1"></legend>
+                                        <div class="input" data-reactid=".hbspt-forms-0.1:$1.1:$lastname.$lastname">
+                                            <input id="lastname-092b6992-0eff-43bc-906d-016d207e4ec8" class="hs-input" type="text" name="lastname" required="" value="" placeholder="Last name*" autocomplete="family-name" data-reactid=".hbspt-forms-0.1:$1.1:$lastname.$lastname.0" inputmode="text">
+                                        </div>
+                                    </div>
+                            </fieldset>
+                            <fieldset class="form-columns-2" data-reactid=".hbspt-forms-0.1:$2">
+                                <div class="hs_jobtitle hs-jobtitle hs-fieldtype-text field hs-form-field smart-field" data-reactid=".hbspt-forms-0.1:$2.1:$jobtitle">
+                                    <label id="label-jobtitle-092b6992-0eff-43bc-906d-016d207e4ec8" class="" placeholder="Enter your " for="jobtitle-092b6992-0eff-43bc-906d-016d207e4ec8" data-reactid=".hbspt-forms-0.1:$2.1:$jobtitle.0"><span data-reactid=".hbspt-forms-0.1:$2.1:$jobtitle.0.0"></span></label>
+                                    <legend class="hs-field-desc" style="display:none;" data-reactid=".hbspt-forms-0.1:$2.1:$jobtitle.1"></legend>
+                                    <div class="input" data-reactid=".hbspt-forms-0.1:$2.1:$jobtitle.$jobtitle">
+                                        <input id="jobtitle-092b6992-0eff-43bc-906d-016d207e4ec8" class="hs-input" type="text" name="jobtitle" required="" value="" placeholder="Job title*" autocomplete="organization-title" data-reactid=".hbspt-forms-0.1:$2.1:$jobtitle.$jobtitle.0" inputmode="text">
+                                    </div>
+                                </div>
+                                <div class="hs_company hs-company hs-fieldtype-text field hs-form-field smart-field" data-reactid=".hbspt-forms-0.1:$2.1:$company">
+                                    <label id="label-company-092b6992-0eff-43bc-906d-016d207e4ec8" class="" placeholder="Enter your " for="company-092b6992-0eff-43bc-906d-016d207e4ec8" data-reactid=".hbspt-forms-0.1:$2.1:$company.0"><span data-reactid=".hbspt-forms-0.1:$2.1:$company.0.0"></span></label>
+                                    <legend class="hs-field-desc" style="display:none;" data-reactid=".hbspt-forms-0.1:$2.1:$company.1"></legend>
+                                    <div class="input" data-reactid=".hbspt-forms-0.1:$2.1:$company.$company">
+                                        <input id="company-092b6992-0eff-43bc-906d-016d207e4ec8" class="hs-input" type="text" name="company" required="" value="" placeholder="Company name*" autocomplete="organization" data-reactid=".hbspt-forms-0.1:$2.1:$company.$company.0" inputmode="text">
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <fieldset class="form-columns-1" data-reactid=".hbspt-forms-0.1:$3">
+                                <div class="hs_phone hs-phone hs-fieldtype-text field hs-form-field" data-reactid=".hbspt-forms-0.1:$3.1:$phone">
+                                    <label id="label-phone-092b6992-0eff-43bc-906d-016d207e4ec8" class="" placeholder="Enter your " for="phone-092b6992-0eff-43bc-906d-016d207e4ec8" data-reactid=".hbspt-forms-0.1:$3.1:$phone.0"><span data-reactid=".hbspt-forms-0.1:$3.1:$phone.0.0"></span></label>
+                                    <legend class="hs-field-desc" style="display:none;" data-reactid=".hbspt-forms-0.1:$3.1:$phone.1"></legend>
+                                    <div class="input" data-reactid=".hbspt-forms-0.1:$3.1:$phone.$phone">
+                                        <input id="phone-092b6992-0eff-43bc-906d-016d207e4ec8" class="hs-input" type="tel" name="phone" required="" value="" placeholder="Phone number*" autocomplete="tel" data-reactid=".hbspt-forms-0.1:$3.1:$phone.$phone.0" inputmode="tel">
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <fieldset class="form-columns-1" data-reactid=".hbspt-forms-0.2">
+                                <div class="legal-consent-container" data-reactid=".hbspt-forms-0.2.0">
+                                    <div data-reactid=".hbspt-forms-0.2.0.1:0">
+                                        <div class="hs-dependent-field" data-reactid=".hbspt-forms-0.2.0.1:0.$LEGAL_CONSENT=1subscription_type_9108400">
+                                        <div class="hs_LEGAL_CONSENT.subscription_type_9108400 hs-LEGAL_CONSENT.subscription_type_9108400 hs-fieldtype-booleancheckbox field hs-form-field" data-reactid=".hbspt-forms-0.2.0.1:0.$LEGAL_CONSENT=1subscription_type_9108400.$LEGAL_CONSENT=1subscription_type_9108400">
+                                            <legend class="hs-field-desc" style="display:none;" data-reactid=".hbspt-forms-0.2.0.1:0.$LEGAL_CONSENT=1subscription_type_9108400.$LEGAL_CONSENT=1subscription_type_9108400.1"></legend>
+                                            <div class="input" data-reactid=".hbspt-forms-0.2.0.1:0.$LEGAL_CONSENT=1subscription_type_9108400.$LEGAL_CONSENT=1subscription_type_9108400.$LEGAL_CONSENT=1subscription_type_9108400">
+                                                <ul class="inputs-list" data-reactid=".hbspt-forms-0.2.0.1:0.$LEGAL_CONSENT=1subscription_type_9108400.$LEGAL_CONSENT=1subscription_type_9108400.$LEGAL_CONSENT=1subscription_type_9108400.0">
+                                                    <li class="hs-form-booleancheckbox" data-reactid=".hbspt-forms-0.2.0.1:0.$LEGAL_CONSENT=1subscription_type_9108400.$LEGAL_CONSENT=1subscription_type_9108400.$LEGAL_CONSENT=1subscription_type_9108400.0.0">
+                                                        <label for="LEGAL_CONSENT.subscription_type_9108400-092b6992-0eff-43bc-906d-016d207e4ec8" class="hs-form-booleancheckbox-display" data-reactid=".hbspt-forms-0.2.0.1:0.$LEGAL_CONSENT=1subscription_type_9108400.$LEGAL_CONSENT=1subscription_type_9108400.$LEGAL_CONSENT=1subscription_type_9108400.0.0.0">
+                                                            <input id="LEGAL_CONSENT.subscription_type_9108400-092b6992-0eff-43bc-906d-016d207e4ec8" class="hs-input" type="checkbox" name="LEGAL_CONSENT.subscription_type_9108400" value="true" data-reactid=".hbspt-forms-0.2.0.1:0.$LEGAL_CONSENT=1subscription_type_9108400.$LEGAL_CONSENT=1subscription_type_9108400.$LEGAL_CONSENT=1subscription_type_9108400.0.0.0.0"><span data-reactid=".hbspt-forms-0.2.0.1:0.$LEGAL_CONSENT=1subscription_type_9108400.$LEGAL_CONSENT=1subscription_type_9108400.$LEGAL_CONSENT=1subscription_type_9108400.0.0.0.1">I agree to receive other communications from tamigo.com.</span>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <legend class="hs-field-desc checkbox-desc" style="display:none;" data-reactid=".hbspt-forms-0.2.0.1:0.1"></legend>
+                                    </div>
+                                    <div data-reactid=".hbspt-forms-0.2.0.3">
+                                        <div class="hs-dependent-field" data-reactid=".hbspt-forms-0.2.0.3.$LEGAL_CONSENT=1processing">
+                                            <div class="hs_LEGAL_CONSENT.processing hs-LEGAL_CONSENT.processing hs-fieldtype-booleancheckbox field hs-form-field" data-reactid=".hbspt-forms-0.2.0.3.$LEGAL_CONSENT=1processing.$LEGAL_CONSENT=1processing">
+                                                <legend class="hs-field-desc" style="display:none;" data-reactid=".hbspt-forms-0.2.0.3.$LEGAL_CONSENT=1processing.$LEGAL_CONSENT=1processing.1"></legend>
+                                                <div class="input" data-reactid=".hbspt-forms-0.2.0.3.$LEGAL_CONSENT=1processing.$LEGAL_CONSENT=1processing.$LEGAL_CONSENT=1processing">
+                                                    <ul class="inputs-list" required="" data-reactid=".hbspt-forms-0.2.0.3.$LEGAL_CONSENT=1processing.$LEGAL_CONSENT=1processing.$LEGAL_CONSENT=1processing.0">
+                                                        <li class="hs-form-booleancheckbox" data-reactid=".hbspt-forms-0.2.0.3.$LEGAL_CONSENT=1processing.$LEGAL_CONSENT=1processing.$LEGAL_CONSENT=1processing.0.0"><label for="LEGAL_CONSENT.processing-092b6992-0eff-43bc-906d-016d207e4ec8" class="hs-form-booleancheckbox-display" data-reactid=".hbspt-forms-0.2.0.3.$LEGAL_CONSENT=1processing.$LEGAL_CONSENT=1processing.$LEGAL_CONSENT=1processing.0.0.0">
+                                                            <input id="LEGAL_CONSENT.processing-092b6992-0eff-43bc-906d-016d207e4ec8" class="hs-input" type="checkbox" name="LEGAL_CONSENT.processing" value="true" data-reactid=".hbspt-forms-0.2.0.3.$LEGAL_CONSENT=1processing.$LEGAL_CONSENT=1processing.$LEGAL_CONSENT=1processing.0.0.0.0"><span data-reactid=".hbspt-forms-0.2.0.3.$LEGAL_CONSENT=1processing.$LEGAL_CONSENT=1processing.$LEGAL_CONSENT=1processing.0.0.0.1">I agree to allow tamigo.com to store and process my personal data.<span class="hs-form-required">*</span></span></label>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <legend class="hs-field-desc checkbox-desc" style="display:none;" data-reactid=".hbspt-forms-0.2.0.3.1"></legend>
+                                    </div>
+                                </div>
+                                </fieldset>
+                                <div class="hs_submit hs-submit" data-reactid=".hbspt-forms-0.5">
+                                    <div class="hs-field-desc" style="display:none;" data-reactid=".hbspt-forms-0.5.0"></div>
+                                    <div class="actions" data-reactid=".hbspt-forms-0.5.1">
+                                        <input type="submit" value="Book free demo" class="hs-button primary large" data-reactid=".hbspt-forms-0.5.1.0">
+                                    </div>
+                                </div>
+                                <noscript data-reactid=".hbspt-forms-0.6"></noscript>
+                                <input name="hs_context" type="hidden" value="{&quot;rumScriptExecuteTime&quot;:516.7000000178814,&quot;rumServiceResponseTime&quot;:680,&quot;rumFormRenderTime&quot;:1,&quot;rumTotalRenderTime&quot;:681.6000000238419,&quot;rumTotalRequestTime&quot;:161.09999999403954,&quot;allowCookieReset&quot;:&quot;true&quot;,&quot;lang&quot;:&quot;en&quot;,&quot;embedType&quot;:&quot;REGULAR&quot;,&quot;legalConsentOptions&quot;:&quot;{\&quot;communicationConsentCheckboxes\&quot;:[{\&quot;communicationTypeId\&quot;:9108400,\&quot;label\&quot;:\&quot;I agree to receive other communications from tamigo.com.\&quot;,\&quot;required\&quot;:false}],\&quot;legitimateInterestLegalBasis\&quot;:\&quot;LEGITIMATE_INTEREST_PQL\&quot;,\&quot;processingConsentType\&quot;:\&quot;REQUIRED_CHECKBOX\&quot;,\&quot;processingConsentCheckboxLabel\&quot;:\&quot;I agree to allow tamigo.com to store and process my personal data.\&quot;,\&quot;isLegitimateInterest\&quot;:false}&quot;,&quot;embedAtTimestamp&quot;:&quot;1647361819334&quot;,&quot;formDefinitionUpdatedAt&quot;:&quot;1643292902712&quot;,&quot;pageUrl&quot;:&quot;https://www.tamigo.com/free-demo/&quot;,&quot;pageTitle&quot;:&quot;tamigo – Free demo&quot;,&quot;source&quot;:&quot;FormsNext-static-5.458&quot;,&quot;sourceName&quot;:&quot;FormsNext&quot;,&quot;sourceVersion&quot;:&quot;5.458&quot;,&quot;sourceVersionMajor&quot;:&quot;5&quot;,&quot;sourceVersionMinor&quot;:&quot;458&quot;,&quot;timestamp&quot;:1647361819338,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36&quot;,&quot;originalEmbedContext&quot;:{&quot;region&quot;:&quot;na1&quot;,&quot;portalId&quot;:&quot;7551280&quot;,&quot;formId&quot;:&quot;092b6992-0eff-43bc-906d-016d207e4ec8&quot;,&quot;target&quot;:&quot;#hbspt-form-1647361819194-4085896905&quot;},&quot;boolCheckBoxFields&quot;:&quot;LEGAL_CONSENT.subscription_type_9108400,LEGAL_CONSENT.processing&quot;,&quot;redirectUrl&quot;:&quot;https://www.tamigo.com/free-demo/thank-you/&quot;,&quot;formValidity&quot;:{&quot;email&quot;:{&quot;valid&quot;:false,&quot;errors&quot;:[&quot;Please complete this required field.&quot;],&quot;errorTypes&quot;:[&quot;REQUIRED_FIELD&quot;]},&quot;firstname&quot;:{&quot;valid&quot;:false,&quot;errors&quot;:[&quot;Please complete this required field.&quot;],&quot;errorTypes&quot;:[&quot;REQUIRED_FIELD&quot;]}},&quot;renderedFieldsIds&quot;:[&quot;email&quot;,&quot;firstname&quot;,&quot;lastname&quot;,&quot;jobtitle&quot;,&quot;company&quot;,&quot;phone&quot;,&quot;LEGAL_CONSENT.subscription_type_9108400&quot;,&quot;LEGAL_CONSENT.processing&quot;],&quot;formTarget&quot;:&quot;#hbspt-form-1647361819194-4085896905&quot;,&quot;correlationId&quot;:&quot;10458712-f8c0-4f8c-bc09-3db0e7c47c94&quot;,&quot;captchaStatus&quot;:&quot;NOT_APPLICABLE&quot;}" data-reactid=".hbspt-forms-0.7">
+                                <iframe name="target_iframe_092b6992-0eff-43bc-906d-016d207e4ec8" style="display:none;" data-reactid=".hbspt-forms-0.8"></iframe>
+                        </form>
+                    </div>
+                    <!-- End 
+                </div>
+            </div>
+        </div>
+        -->
+        
+        <!--
+        <script type="text/javascript" data-hubspot-rendered="true">
+                                    hbspt.forms.create({
+                                        region: "na1",
+                                        portalId: "7551280",
+                                        formId: "092b6992-0eff-43bc-906d-016d207e4ec8",
+                                        css: '',
+                                        onFormReady: function () {
+                                            $('#hsForm_092b6992-0eff-43bc-906d-016d207e4ec8 .hs-button').on('click', function () {
+                                                $('.hs-error-msgs').addClass('visible');
+                                            });
+                                        }
+                                    });
+        </script>
+        
+        -->
+        
+        
+    
+</body>
+</html>

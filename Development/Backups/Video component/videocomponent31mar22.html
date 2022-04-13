@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<!-- Video press play  -->
+<div class="backgroundcolor-container bg-white d-">
+    <div class="container pt-5 pb-5" style="">
+        <div class="row" style="padding-bottom: 30px; padding-top: 30px">
+            <div class="col-lg pb-5" style="margin:auto;">
+                <div class="small-title mb-3">This is a headline</div>
+                <div class="normal-text">This is a subtitile</div>
+                <div class="button-container d-" >
+                 <a class="btn btn-tamigo-small bg-orange white anchor-plain overflow-hidden mt-4 mb-5 mw-100" href=@Umbraco.Field("buttonLinkTextAndImage") id="btnFrontPageFreeDemo"><span class="medium-normal-text">Button text<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></span></a>
+                </div>
+            </div>
+            <div class="col-lg" style="margin:auto;">
+                <center>
+                    <video src="https://media.geeksforgeeks.org/wp-content/uploads/20210314115545/sample-video.mp4" width="480" height="360" controls>The browser does not support videos.</video>
+                </center>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Video auto play (probably muted)-->
+<!-- Note: Chromium browsers do not allow autoplay in most cases. However, muted autoplay is always allowed. -->
+<div class="backgroundcolor-container bg-white d-">
+    <div class="container pt-5 pb-5" style="">
+        <div class="row" style="padding-bottom: 30px; padding-top: 30px">
+            <div class="col-lg pb-5" style="margin:auto;">
+                <div class="small-title mb-3">This is a headline</div>
+                <div class="normal-text">This is a subtitile</div>
+                <div class="button-container d-" >
+                 <a class="btn btn-tamigo-small bg-orange white anchor-plain overflow-hidden mt-4 mb-5 mw-100" href=@Umbraco.Field("buttonLinkTextAndImage") id="btnFrontPageFreeDemo"><span class="medium-normal-text">Button text<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></span></a>
+                </div>
+            </div>
+            <div class="col-lg" style="margin:auto;">
+                <center>
+                    <video src="https://www.tamigo.nl/media/1003/video-1_cafe.mp4" width="480" height="360" controls autoplay muted>The browser does not support videos.</video>
+                </center>
+            </div>
+        </div>
+    </div>
+</div>
+    
+</body>
+</html>

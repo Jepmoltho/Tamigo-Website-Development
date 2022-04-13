@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    @using System.Net.Mime
+@using System.Web.UI.WebControls
+@using umbraco.MacroEngines
+
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "MasterLayout.cshtml";
+}
+
+
+
+@Umbraco.RenderMacro("HeaderVideos", new
+{
+    visible = @Umbraco.Field("topVideosHidden").ToString() == "False",
+    header1 = @Umbraco.Field("topVideosTitle1", removeParagraphTags: true),
+    body1 = @Umbraco.Field("topVideosBody1", removeParagraphTags: true),
+    video1 = @Umbraco.Field("topVideosVideo1"),
+    header2 = @Umbraco.Field("topVideosTitle2", removeParagraphTags: true),
+    body2 = @Umbraco.Field("topVideosBody2", removeParagraphTags: true),
+    video2 = @Umbraco.Field("topVideosVideo2"),
+    header3 = @Umbraco.Field("topVideosTitle3", removeParagraphTags: true),
+    body3 = @Umbraco.Field("topVideosBody3", removeParagraphTags: true),
+    video3 = @Umbraco.Field("topVideosVideo3"),
+    header4 = @Umbraco.Field("topVideosTitle4", removeParagraphTags: true),
+    body4 = @Umbraco.Field("topVideosBody4", removeParagraphTags: true),
+    video4 = @Umbraco.Field("topVideosVideo4"),
+    color1 = Umbraco.Field("sectionOneTextColor1"),
+    color2 = Umbraco.Field("sectionOneTextColor2"),
+    color3 = Umbraco.Field("sectionOneTextColor3"),
+    color4 = Umbraco.Field("sectionOneTextColor4"),
+    buttonText1 = Umbraco.Field("topVideosBtnText1"),
+    buttonText2 = Umbraco.Field("topVideosBtnText2"),
+    buttonText3 = Umbraco.Field("topVideosBtnText3"),
+    buttonText4 = Umbraco.Field("topVideosBtnText4"),
+    buttonUrl1 = Umbraco.Field("topVideosBtnUrl1"),
+    buttonUrl2 = Umbraco.Field("topVideosBtnUrl2"),
+    buttonUrl3 = Umbraco.Field("topVideosBtnUrl3"),
+    buttonUrl4 = Umbraco.Field("topVideosBtnUrl4"),
+    id = "topVideos",
+    scrollId = "Text-Image",
+    btn_bg1 = Umbraco.Field("topVideosBtnBackground1"),
+    btn_color1 = Umbraco.Field("topVideosBtnColor1"),
+    btn_id1 = Umbraco.Field("topVideosBtnId1"),
+
+    btn_bg2 = Umbraco.Field("topVideosBtnBackground2"),
+    btn_color2 = Umbraco.Field("topVideosBtnColor2"),
+    btn_id2 = Umbraco.Field("topVideosBtnId2"),
+
+    btn_bg3 = Umbraco.Field("topVideosBtnBackground3"),
+    btn_color3 = Umbraco.Field("topVideosBtnColor3"),
+    btn_id3 = Umbraco.Field("topVideosBtnId3"),
+
+    btn_bg4 = Umbraco.Field("topVideosBtnBackground4"),
+    btn_color4 = Umbraco.Field("topVideosBtnColor4"),
+    btn_id4 = Umbraco.Field("topVideosBtnId4"),
+})
+
+
+@Umbraco.RenderMacro("TextImage", new
+{
+    visible = @Umbraco.Field("sectionOneHidden").ToString() == "False",
+    header = @Umbraco.Field("sectionOneHeader", removeParagraphTags: true),
+    subHeader = @Umbraco.Field("sectionOneBody", removeParagraphTags: true),
+    buttonText = @Umbraco.Field("sectionOneButton"),
+    buttonAddress = @Umbraco.Field("sectionOneButtonAddress"),
+    color = @Umbraco.Field("sectionOneBackgroundColor"),
+    image = @Umbraco.Field("sectionOneImage"),
+    tile = "tile-25",
+    customClass = "mt-0"
+})
+
+@Umbraco.RenderMacro("headerParagraphButton", new
+{
+    visible = @Umbraco.Field("sectionTwoHidden").ToString() == "False",
+    header = @Umbraco.Field("sectionTwoTitle", removeParagraphTags: true),
+    color = @Umbraco.Field("sectionTwoColor"),
+    background = @Umbraco.Field("sectionTwoBackgroundColor"),
+    buttonText = @Umbraco.Field("sectionTwoButtonText"),
+    buttonAddress = @Umbraco.Field("sectionTwoButtonAddress"),
+    btn_bg = Umbraco.Field("sectionTwoButtonBg"),
+    btn_color = Umbraco.Field("sectionTwoButtonColor"),
+    btn_id = Umbraco.Field("sectionTwoButtonId"),
+})
+
+
+@Umbraco.RenderMacro("LogosCarouselEdited", new
+{
+    visible = @Umbraco.Field("hiddenLogosCarousel").ToString() == "False",
+    color = @Umbraco.Field("logosColor"),
+    backgroundColor = @Umbraco.Field("logosBackgroundColor"),
+})
+
+
+@Umbraco.RenderMacro("FeatureList", new
+{
+    visible = @Umbraco.Field("featureHidden").ToString() == "False",
+    color = @Umbraco.Field("sectionFourColor"),
+    header = @Umbraco.Field("sectionFourHeader", removeParagraphTags: true),
+    icon1 = @Umbraco.Field("sectionFourIcon1"),
+    icon2 = @Umbraco.Field("sectionFourIcon2"),
+    icon3 = @Umbraco.Field("sectionFourIcon3"),
+    icon4 = @Umbraco.Field("sectionFourIcon4"),
+    icon5 = @Umbraco.Field("sectionFourIcon5"),
+    icon6 = @Umbraco.Field("sectionFourIcon6"),
+    icon7 = @Umbraco.Field("sectionFourIcon7"),
+    icon8 = @Umbraco.Field("sectionFourIcon8"),
+    iconText1 = @Umbraco.Field("sectionFourIconText1"),
+    iconText2 = @Umbraco.Field("sectionFourIconText2"),
+    iconText3 = @Umbraco.Field("sectionFourIconText3"),
+    iconText4 = @Umbraco.Field("sectionFourIconText4"),
+    iconText5 = @Umbraco.Field("sectionFourIconText5"),
+    iconText6 = @Umbraco.Field("sectionFourIconText6"),
+    iconText7 = @Umbraco.Field("sectionFourIconText7"),
+    iconText8 = @Umbraco.Field("sectionFourIconText8"),
+    address1 = @Umbraco.Field("featureAddress1"),
+    address2 = @Umbraco.Field("featureAddress2"),
+    address3 = @Umbraco.Field("featureAddress3"),
+    address4 = @Umbraco.Field("featureAddress4"),
+    address5 = @Umbraco.Field("featureAddress5"),
+    address6 = @Umbraco.Field("featureAddress6"),
+    address7 = @Umbraco.Field("featureAddress7"),
+    address8 = @Umbraco.Field("featureAddress8"),
+    button = @Umbraco.Field("sectionFourButtonText"),
+    buttonAddress = @Umbraco.Field("featureButtonAddress"),
+    btn_bg = Umbraco.Field("featureButtonBackground"),
+    btn_color = Umbraco.Field("featureButtonColor"),
+    btn_id = Umbraco.Field("featureButtonId"),
+})
+
+@Umbraco.RenderMacro("LearnMore", new
+{
+    visible = @Umbraco.Field("learnMoreHidden").ToString() == "False",
+    title = @Umbraco.Field("learnMoreTitle", removeParagraphTags: true),
+    body = @Umbraco.Field("learnMoreBody", removeParagraphTags: true),
+    color = @Umbraco.Field("learnMoreColor"),
+    backgroundColor = @Umbraco.Field("learnMoreBackgroundColor"),
+    button = @Umbraco.Field("learnMoreButtonText"),
+    buttonAddress = @Umbraco.Field("learnMoreButtonAddress"),
+    btn_bg = Umbraco.Field("learnMoreButtonBackground"),
+    btn_color = Umbraco.Field("learnMoreButtonColor"),
+    btn_id = Umbraco.Field("learnMoreButtonId"),
+})
+
+
+@Umbraco.RenderMacro("ProcessPath", new
+{
+    visible = @Umbraco.Field("progressHidden").ToString() == "False",
+    title1 = @Umbraco.Field("processTitle1"),
+    text1 = @Umbraco.Field("processText1", removeParagraphTags: true),
+    barTitle1 = @Umbraco.Field("progressBarTitle1"),
+    title2 = @Umbraco.Field("processTitle2"),
+    text2 = @Umbraco.Field("processText2", removeParagraphTags: true),
+    barTitle2 = @Umbraco.Field("progressBarTitle1"),
+    title3 = @Umbraco.Field("processTitle3"),
+    text3 = @Umbraco.Field("processText3", removeParagraphTags: true),
+    barTitle3 = @Umbraco.Field("progressBarTitle1"),
+    title4 = @Umbraco.Field("processTitle4"),
+    text4 = @Umbraco.Field("processText4", removeParagraphTags: true),
+    barTitle4 = @Umbraco.Field("progressBarTitle1"),
+    title5 = @Umbraco.Field("processTitle5"),
+    text5 = @Umbraco.Field("processText5", removeParagraphTags: true),
+    barTitle5 = @Umbraco.Field("progressBarTitle1"),
+    import = @Umbraco.Field("progressImportText"),
+    export = @Umbraco.Field("progressExportText"),
+    title = @Umbraco.Field("progressTitle"),
+    header = @Umbraco.Field("progressHeader")
+})
+
+
+@Umbraco.RenderMacro("UserStoryList", new
+{
+    visible = @Umbraco.Field("userStoryHidden").ToString() == "True",
+    title = @Umbraco.Field("userStoryListTitle", removeParagraphTags: true),
+    color = @Umbraco.Field("userStoryListColor"),
+    header1 = @Umbraco.Field("userStoryListHeader1"),
+    header2 = @Umbraco.Field("userStoryListHeader2"),
+    header3 = @Umbraco.Field("userStoryListHeader3"),
+    body1 = @Umbraco.Field("userStoryListBody1", removeParagraphTags: true),
+    body2 = @Umbraco.Field("userStoryListBody2", removeParagraphTags: true),
+    body3 = @Umbraco.Field("userStoryListBody3", removeParagraphTags: true),
+})
+
+@if (@Umbraco.Field("userStoryHidden").ToString() == "False")
+{
+    @Umbraco.Field("userStoryRow")
+}
+
+@Umbraco.RenderMacro("PictureCarousel", new
+{
+    quote1 = @Umbraco.Field("pictureCarouselQuote1", removeParagraphTags: true),
+    image1 = @Umbraco.Field("pictureCarouselImage1"),
+    person1 = @Umbraco.Field("pictureCarouselPerson1"),
+    title1 = @Umbraco.Field("pictureCarouselTitle1"),
+    logo1 = @Umbraco.Field("pictureCarouselLogo1"),
+    quote2 = @Umbraco.Field("pictureCarouselQuote2", removeParagraphTags: true),
+    image2 = @Umbraco.Field("pictureCarouselImage2"),
+    person2 = @Umbraco.Field("pictureCarouselPerson2"),
+    title2 = @Umbraco.Field("pictureCarouselTitle2"),
+    logo2 = @Umbraco.Field("pictureCarouselLogo2"),
+    quote3 = @Umbraco.Field("pictureCarouselQuote3", removeParagraphTags: true),
+    image3 = @Umbraco.Field("pictureCarouselImage3"),
+    person3 = @Umbraco.Field("pictureCarouselPerson3"),
+    title3 = @Umbraco.Field("pictureCarouselTitle3"),
+    logo3 = @Umbraco.Field("pictureCarouselLogo3"),
+    buttonText = @Umbraco.Field("pictureCarouselButtonText"),
+    buttonAddress = @Umbraco.Field("pictureCarouselButtonAddress"),
+    visible = @Umbraco.Field("pictureCarouselVisible").ToString() == "False",
+    color = @Umbraco.Field("pictureCarouselColor"),
+    btn_bg = Umbraco.Field("pictureCarouselButtonBackground"),
+    btn_color = Umbraco.Field("pictureCarouselButtonColor"),
+    btn_id = Umbraco.Field("pictureCarouselButtonId"),
+    rotationInterval = Umbraco.Field("pictureCarouselRotationInterval")
+})
+
+
+@Umbraco.RenderMacro("Space", new { color = "white", heigth = "50" })
+
+@Umbraco.RenderMacro("ContactUs", new
+{
+    visible = @Umbraco.Field("contactUsHidden").ToString() == "False",
+    color = @Umbraco.Field("contactUsColor"),
+    title = @Umbraco.Field("contactUsTitle", removeParagraphTags: true),
+    body = @Umbraco.Field("contactUsBody", removeParagraphTags: true),
+    button = @Umbraco.Field("contactUsButton"),
+    image = @Umbraco.Field("contactUsImage"),
+    btn_bg = Umbraco.Field("contactUsButtonBackground"),
+    btn_color = Umbraco.Field("contactUsButtonColor"),
+    btn_id = Umbraco.Field("contactUsButtonId"),
+    showCaptcha = CurrentPage.AncestorOrSelf(1).showCaptcha
+})
+
+
+@Umbraco.RenderMacro("DemoNewImage", new 
+{   visible="0", 
+    color=@Umbraco.Field("color"), 
+    demoTitle=@Umbraco.Field("demoTitle"), 
+    demoSubtitle=@Umbraco.Field("demoSubtitle"), 
+    privacy=@Umbraco.Field("privacy"), 
+    buttonText=@Umbraco.Field("buttonText"), 
+    buttonColor=@Umbraco.Field("buttonColor"), 
+    contactTitle=@Umbraco.Field("contactTitle"), 
+    contactSubtitle=@Umbraco.Field("contactSubtitle"), 
+    contactPhone=@Umbraco.Field("contactPhone"), 
+    contactEmail=@Umbraco.Field("contactEmail"), 
+    image=@Umbraco.Field("image"), 
+    name=@Umbraco.Field("placeholderName"), 
+    email=@Umbraco.Field("placeholderEmail"), 
+    phone=@Umbraco.Field("placeholderPhone"), 
+    btn_id=@Umbraco.Field("buttonId"), 
+    btn_color=@Umbraco.Field("buttonColor"), 
+    btn_bg=@Umbraco.Field("buttonBackground"), 
+    showCaptcha="0", 
+    companyName=@Umbraco.Field("placeholderCompany")
+})
+
+
+
+
+    
+</body>
+</html>

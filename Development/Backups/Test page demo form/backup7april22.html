@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    @inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.TestPageDemoForm>
+        @using ContentModels = Umbraco.Web.PublishedContentModels;
+        @{
+            Layout = "MasterLayout.cshtml";
+        }
+        
+        @Umbraco.RenderMacro("Space", new { color = "white", heigth = "50" })
+        
+        <!-- Next steps: Test if hardcoded form sends right info to sales. Backup front page template. Insert hardcoded component, but take the style and script tag into account (maybe find a better way: Maybe create your own harcoded macro that contains the JavaScript and possible the custom CSS based on the source code)   -->
+        <!-- Note: Calling macros, it doesn't work automatically, because you can't call values that are connected to other document types: That's why spacer macros work, because all values are hardcoded. Argument for hardocoded solution will work. Maybe connect a document type to test it out -->
+        @Umbraco.RenderMacro("Space", new { color = "white", heigth = "50" })
+        
+        <!-- Video auto play  -->
+        <div class="backgroundcolor-container bg-white d-">
+                <div class="container pt-5 pb-5" style="">
+                    <div class="row" style="padding-bottom: 30px; padding-top: 30px">
+                        <div class="col-lg pb-5" style="margin:auto;">
+                            <div class="small-title mb-3">Video autoplay</div>
+                            <div class="normal-text">Chromium (Chrome based browsers) only allows autoplay for muted videos</div>
+                            <div class="button-container d-" >
+                             <a class="btn btn-tamigo-small bg-orange white anchor-plain overflow-hidden mt-4 mb-5 mw-100" href=@Umbraco.Field("buttonLinkTextAndImage") id="btnFrontPageFreeDemo"><span class="medium-normal-text">Button text<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></span></a>
+                            </div>
+                        </div>
+                        <div class="col-lg" style="margin:auto;">
+                            <center>
+                                <video src="@Umbraco.Field("videoURL")" width="480" height="360" controls autoplay muted>The browser does not support videos.</video>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        
+        
+        <!-- Video press play  -->
+        <div class="backgroundcolor-container bg-white d-">
+            <div class="container pt-5 pb-5" style="">
+                <div class="row" style="padding-bottom: 30px; padding-top: 30px">
+                    <div class="col-lg pb-5" style="margin:auto;">
+                        <div class="small-title mb-3">Video press play</div>
+                        <div class="normal-text">You can have sound if the video does not autoplay. You can also style size, position etc. as you like</div>
+                        <div class="button-container d-" >
+                         <a class="btn btn-tamigo-small bg-orange white anchor-plain overflow-hidden mt-4 mb-5 mw-100" href=@Umbraco.Field("buttonLinkTextAndImage") id="btnFrontPageFreeDemo"><span class="medium-normal-text">Button text<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></span></a>
+                        </div>
+                    </div>
+                    <div class="col-lg" style="margin:auto;">
+                        <center>
+                            <video src="@Umbraco.Field("videoURL")" width="580" height="460" controls>The browser does not support videos.</video>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Video vimeo integration  -->
+        <div class="backgroundcolor-container bg-white d-">
+            <div class="container pt-5 pb-5" style="">
+                <div class="row" style="padding-bottom: 30px; padding-top: 30px">
+                    <div class="col-lg pb-5" style="margin:auto;">
+                        <div class="small-title mb-3">Vimeo integration standard size </div>
+                        <div class="normal-text">I have not yet found out how to autoplay iframe videos but if it is not an issue, then I won't research it</div>
+                        <div class="button-container d-" >
+                         <a class="btn btn-tamigo-small bg-orange white anchor-plain overflow-hidden mt-4 mb-5 mw-100" href=@Umbraco.Field("buttonLinkTextAndImage") id="btnFrontPageFreeDemo"><span class="medium-normal-text">Button text<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></span></a>
+                        </div>
+                    </div>
+                    <div class="col-lg" style="margin:auto;">
+                        <!-- <iframe width="420" height="345" src="https://vimeo.com/video/639907942?h=1f93d28f8b"></iframe> -->
+                        <iframe style="width: 800px; height: 450px;" src="https://player.vimeo.com/video/639907942?h=1f93d28f8b&texttrack=en" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Video vimeo integration  -->
+        <div class="backgroundcolor-container bg-white d-">
+            <div class="container pt-5 pb-5" style="">
+                <div class="row" style="padding-bottom: 30px; padding-top: 30px">
+                    <div class="col-lg pb-5" style="margin:auto;">
+                        <div class="small-title mb-3">Vimeo integration custom size </div>
+                        <div class="normal-text">I have not yet found out how to autoplay iframe videos but if it is not an issue, then I won't research it</div>
+                        <div class="button-container d-" >
+                         <a class="btn btn-tamigo-small bg-orange white anchor-plain overflow-hidden mt-4 mb-5 mw-100" href=@Umbraco.Field("buttonLinkTextAndImage") id="btnFrontPageFreeDemo"><span class="medium-normal-text">Button text<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></span></a>
+                        </div>
+                    </div>
+                    <div class="col-lg" style="margin:auto;">
+                        <!-- <iframe width="420" height="345" src="https://vimeo.com/video/639907942?h=1f93d28f8b"></iframe> -->
+                        <iframe style="width: 600px; height: 420px; border:none;" src="https://player.vimeo.com/video/639907942?h=1f93d28f8b&texttrack=en" allow="autoplay;" allowfullscreen></iframe> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+        @Umbraco.RenderMacro("DemoNewImage", new 
+        {   visible="1", 
+            color=@Umbraco.Field("color"), 
+            demoTitle=@Umbraco.Field("demoTitle"), 
+            demoSubtitle=@Umbraco.Field("demoSubtitle"), 
+            privacy=@Umbraco.Field("privacy"), 
+            buttonText=@Umbraco.Field("buttonText"), 
+            buttonColor=@Umbraco.Field("buttonColor"), 
+            contactTitle=@Umbraco.Field("contactTitle"), 
+            contactSubtitle=@Umbraco.Field("contactSubtitle"), 
+            contactPhone=@Umbraco.Field("contactPhone"), 
+            contactEmail=@Umbraco.Field("contactEmail"), 
+            image=@Umbraco.Field("image"), 
+            name=@Umbraco.Field("placeholderName"), 
+            email=@Umbraco.Field("placeholderEmail"), 
+            phone=@Umbraco.Field("placeholderPhone"), 
+            btn_id=@Umbraco.Field("buttonId"), 
+            btn_color=@Umbraco.Field("buttonColor"), 
+            btn_bg=@Umbraco.Field("buttonBackground"), 
+            showCaptcha="0", 
+            companyName=@Umbraco.Field("placeholderCompany")
+        })
+        
+        
+        @Umbraco.RenderMacro("Space", new { color = "white", heigth = "50" })
+        
+        
+        @Umbraco.RenderMacro("DemoNew", new 
+        {   visible="1", 
+            color=@Umbraco.Field("color"), 
+            demoTitle=@Umbraco.Field("demoTitle"), 
+            demoSubtitle=@Umbraco.Field("demoSubtitle"), 
+            privacy=@Umbraco.Field("privacy"), 
+            buttonText=@Umbraco.Field("buttonText"), 
+            buttonColor=@Umbraco.Field("buttonColor"), 
+            contactTitle=@Umbraco.Field("ContactTitleTextVersion"), 
+            contactSubtitle=@Umbraco.Field("contactSubtitleTextVersion"), 
+            contactPhone=@Umbraco.Field("contactPhone"), 
+            contactEmail=@Umbraco.Field("contactEmail"), 
+            name=@Umbraco.Field("placeholderName"), 
+            email=@Umbraco.Field("placeholderEmail"), 
+            phone=@Umbraco.Field("placeholderPhone"), 
+            btn_id=@Umbraco.Field("buttonId"), 
+            btn_color=@Umbraco.Field("buttonColor"), 
+            btn_bg=@Umbraco.Field("buttonBackground"), 
+            showCaptcha="0", 
+            companyName=@Umbraco.Field("placeholderCompany")
+        })
+        
+        
+        
+        <!-- New stylesheet --> 
+        <!-- Custom size hubspot input CSS -->
+        <style>
+        .hs-input {
+            width: 100%;
+            font-size: 1.2rem;
+            background-color: transparent;
+            border: 2px solid #fff;
+            padding: 10px !important;
+            color: #fff; }
+        @@media (max-width: 980px) {
+            .hs-input {
+            font-size: 2.2rem; }}
+        </style>
+        
+        <!-- Controls default size of button for desktop and a larger textsize and padding for mobile -->
+        <style>
+        .hs-button.primary {
+            padding: 8px 30px;
+            min-width: 10rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 0;
+            height: 59px;
+            border: 0;
+            cursor: pointer;
+            outline: none !important;
+            text-align: center;
+            -webkit-transform: perspective(1px) translateZ(0);
+            transform: perspective(1px) translateZ(0);
+            box-shadow: 0 0 1px transparent;
+            -webkit-transition-duration: .3s;
+            transition-duration: .3s;
+            -webkit-transition-property: transform;
+            transition-property: transform;
+            color: #fff !important;
+            background-color: #ff6e5a; }
+        @@media (max-width: 980px) {
+            .hs-button.primary {
+            font-size: 2.2rem;
+            padding: 16px 60px 70px 60px;}}   
+        </style>
+        
+        
+        <!-- Controls default size privacy text for desktop and larger privacy text for mobile -->
+        <style>
+        .hs-form-booleancheckbox-display input[type="checkbox"].hs-input + span {
+            margin-left: 0; }
+        @@media (max-width: 980px) {
+            .hs-form-booleancheckbox-display input[type="checkbox"].hs-input + span {
+            font-size: 1.5rem; }}
+        </style>
+        
+        <!-- Controls default size of checkbox for desktop and a larger size for mobile - note the before tag -->
+        <style>
+            .hs-form-booleancheckbox-display input[type="checkbox"].hs-input + span:before {
+            content: "\f323";
+            font: normal normal normal 14px/1 "FontAwesome";
+            display: inline-block;
+            vertical-align: middle;
+            margin: -4px 10px 0 0; }
+        @@media (max-width: 980px) {
+            .hs-form-booleancheckbox-display input[type="checkbox"].hs-input + span:before  {
+            font: normal normal normal 24px/1 "FontAwesome"; }}
+        </style>
+        
+        
+        <!-- New style sheet for new extended form elements -->
+        
+        <!-- Controls margin for radio checkbox button -->
+        <style>
+        input[type="radio"] {
+            margin-right: 15px;
+        }
+        </style>
+        
+        <!-- Controls size of text to the right of radio checkbox button -->
+        <style>
+            .hs-form-radio{
+            font-size: 1rem;
+            }
+        @@media (max-width: 980px) {
+            .hs-form-radio{
+            font-size: 1.6rem;
+            }}
+        </style>
+        
+        <!-- Controls size of any hubspot richtext element --> 
+        <style>
+            .hs-richtext {
+                color: white;
+                font-size: 1.2rem;}
+        @@media (max-width: 980px) {
+            .hs-richtext {
+            font-size: 1.75rem;
+            }}
+        </style>
+        
+        <!-- Padding between different elements -->
+        <style>
+        select{
+            margin-bottom:1.75rem;
+        }
+        
+        ul.inputs-list.multi-container{
+            margin-bottom: 0.75rem;
+        }
+        
+        div.hs_message.hs-message.hs-fieldtype-textarea.field.hs-form-field{
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+            
+        div.legal-consent-container{
+            margin-bottom: 1rem;
+        }
+        </style>
+        
+        
+        
+        
+        
+        <!-- Old stylesheet: Active CSS Queries still in use. Outcommented CSS queries have been updated and inserted in new stylesheet. -->
+        <style>
+        .hbspt-form .cookie-reset-container,
+        .hbspt-form .submitted-message
+        {
+        color: #fff !important;
+        }
+        .hs-error-msgs:not(.visible) {
+            display: none !important;
+        }
+        
+        .legal-consent-container .hs-error-msgs,
+        .hs_error_rollup .hs-error-msgs {
+            position: static;
+        }
+        .legal-consent-container .hs-error-msgs label
+        {
+            color: #b44677;
+        }
+        
+            .hs-fieldtype-text {
+            margin-bottom: 1.75rem;
+            position: relative;
+        }
+        
+        .small-title {
+            
+        }
+        
+        .hs-form-field > label {
+            color: #fff;
+            font-size: 1.2rem;
+            display: none;
+        }
+        
+        .hs-error-msgs {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            z-index: 2;
+            
+            width: calc(100% - 8px);
+        }
+        
+        .hs-error-msgs li label {
+            font-size: 1rem;
+            line-height: 1.5;
+            padding: .5rem 1rem;
+            background-color: #fff;
+            color: #b44677;
+            display: block;
+        }
+        
+        /*
+        .hs-input {
+            width: 100%;
+            font-size: 1.2rem;
+            background-color: transparent;
+            border: 2px solid #fff;
+            padding: 10px !important;
+            color: #fff;
+        }
+        */
+        
+        
+        .hs-input::placeholder {
+            color: rgba(255,255,255, .5);
+            opacity: 1;
+        }
+        
+        .hs-input:focus {
+            outline: none;
+        }
+        
+        .hs-form .inputs-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            font-size: 1rem;
+            color: #fff;
+        }
+        
+        input[type="checkbox"].hs-input {
+            position: absolute;
+            left: -99999px;
+        }
+        
+        
+        
+        /* Controls the font-size of privacy text (no size specified as default). Add to media query: font-size: 1.5rem; */
+        /*
+        .hs-form-booleancheckbox-display input[type="checkbox"].hs-input + span {
+            margin-left: 0;
+        }
+        */
+        
+        /* Controlse content before privacy text - eg. checkbox */
+        /*
+        .hs-form-booleancheckbox-display input[type="checkbox"].hs-input + span:before {
+            content: "\f323";
+            font: normal normal normal 14px/1 "FontAwesome";
+            display: inline-block;
+            vertical-align: middle;
+            margin: -4px 10px 0 0;
+        }
+        */
+        
+        .hs-form-booleancheckbox-display input[type="checkbox"].hs-input:checked + span:before {
+            content: "\f17f";
+        }
+        
+        /*
+        .hs-button.primary {
+            padding: 8px 30px;
+            min-width: 10rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 0;
+            height: 59px;
+            border: 0;
+            cursor: pointer;
+            outline: none !important;
+            text-align: center;
+            -webkit-transform: perspective(1px) translateZ(0);
+            transform: perspective(1px) translateZ(0);
+            box-shadow: 0 0 1px transparent;
+            -webkit-transition-duration: .3s;
+            transition-duration: .3s;
+            -webkit-transition-property: transform;
+            transition-property: transform;
+            color: #fff !important;
+            background-color: #ff6e5a;
+        }
+        */
+        
+        .hs_error_rollup .hs-error-msgs {
+            position: static;
+        }
+        
+        
+        </style>
+        
+        
+        
+    
+</body>
+</html>
