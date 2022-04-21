@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    @inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.CaseSupermarkets>
+        @using ContentModels = Umbraco.Web.PublishedContentModels;
+        @{
+            Layout = "MasterLayout.cshtml";
+        }
+        
+        <style>
+        .container-responsive {
+          width: 100%;
+          padding-right: 20px;
+          padding-left: 20px;
+          margin-right: auto;
+          margin-left: auto; }
+          @@media (min-width: 576px) {
+            .container-responsive {
+              max-width: 920px; } }
+          @@media (min-width: 768px) {
+            .container-responsive {
+              max-width: 920px; } }
+          @@media (min-width: 992px) {
+            .container-responsive {
+              max-width: 960px; } }
+          @@media (min-width: 1200px) {
+            .container-responsive {
+              max-width: 1140px; } }
+        </style>
+        
+        <style>
+            .logo-responsive {
+            max-width: 20px;}
+          @@media (min-width: 576px) {
+            .logo-responsive {
+              max-width: 90px; } }
+          @@media (min-width: 768px) {
+            .logo-responsive {
+              max-width: 90px; } }
+          @@media (min-width: 992px) {
+            .logo-responsive {
+              max-width: 43px; } }
+          @@media (min-width: 1200px) {
+            .logo-responsive {
+              max-width: 43px; } }
+        </style>
+        
+        <style>
+            .icon-responsive {
+            }
+          @@media (min-width: 576px) {
+            .icon-responsive {
+              width: 130px;
+              height: 130px; } }
+          @@media (min-width: 768px) {
+            .icon-responsive {
+              width: 130px;
+              height: 130px; } }
+          @@media (min-width: 992px) {
+            .icon-responsive {
+              width: 60px; 
+              height: 60px; } }
+          @@media (min-width: 1200px) {
+            .icon-responsive {
+              width: 60px;
+              height: 60px; } }
+        </style>
+        
+        <style>
+            .mini-icon-responsive {
+            }
+          @@media (min-width: 576px) {
+            .mini-icon-responsive {
+             display:none;
+               } }
+          @@media (min-width: 768px) {
+            .mini-icon-responsive {
+             display:none;
+               } }
+          @@media (min-width: 992px) {
+            .mini-icon-responsive {
+            display:flex;
+              } }
+          @@media (min-width: 1200px) {
+            .mini-icon-responsive {
+            display:flex; 
+             } }
+        </style>
+        
+        
+        <style>
+            .image-responsive {
+            }
+          @@media (min-width: 576px) {
+            .image-responsive  {
+             min-width: 820px;
+               } }
+          @@media (min-width: 768px) {
+            .image-responsive  {
+             min-width: 820px;
+               } }
+          @@media (min-width: 992px) {
+            .image-responsive  {
+            min-width: 300px;
+              } }
+          @@media (min-width: 1200px) {
+            .image-responsive  {
+            min-width: 300px;
+             } }
+        </style>
+        
+        
+        
+        
+        <!-- Header -->
+        <div class="backgroundcolor-container bg-@Umbraco.Field("backgroundColorHeader") d-@Umbraco.Field("visibleHeader")">
+            <div class="container-responsive margin-top-60 pb-5">
+                <div class="row" style="padding-bottom: 30px">
+                    <div class="col-lg-4">
+                        <h1 class="title padding-top-150 overflow-break-word">
+                                <p>@Umbraco.Field("headlineHeader")</p>
+                        </h1>
+                        <div class="big-normal-text pt-2">
+                            <p>@Umbraco.Field("subheadlineHeader")</p>
+                        </div>
+                        <div class="button-container">
+                             <a class="btn btn-tamigo-small bg-@Umbraco.Field("buttonColorHeader") @Umbraco.Field("buttonTextColorHeader") anchor-plain overflow-hidden mt-4 mb-5 mw-100" href=@Umbraco.Field("buttonLinkHeader") id="btnFrontPageFreeDemo"><span class="medium-normal-text">@Umbraco.Field("buttonTextHeader")<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></span></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 pt-5">
+                        <img alt="" src=@Umbraco.Field("imageHeader") class="img-fluid" style="margin-top:60px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Logo carrusel -->
+        <div class="backgroundcolorcontainer pt-5 bg-@Umbraco.Field("backgroundColorLogoCarrousel") d-@Umbraco.Field("visibleLogoCarousel")">
+            <div class="container-responsive pt-3 pb-3">
+                <div class="row"  style="padding-bottom: 0px; padding-top: 0px">
+                    <div class="col-lg mb-5" style="text-align:center;">
+                        <img src=@Umbraco.Field("logo1carousel") class="img-fluid" style="max-height:70px; min-height:70px;">
+                    </div>
+                    <div class="col-lg mb-5" style="text-align:center;">
+                        <img src=@Umbraco.Field("logo2carousel") class="img-fluid" style="max-height:70px; min-height:70px;">
+                    </div>
+                    <div class="col-lg mb-5" style="text-align:center;">
+                        <img src=@Umbraco.Field("logo3carousel") class="img-fluid" style="max-height:70px; min-height:70px;">
+                    </div>
+                    <div class="col-lg mb-5" style="text-align:center;">
+                        <img src=@Umbraco.Field("logo4carousel") class="img-fluid" style="max-height:70px; min-height:70px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <!-- Headline + Text + Image  -->
+        <div class="backgroundcolor-container bg-@Umbraco.Field("backgroundColorTextImage1") d-@Umbraco.Field("visibleTextImage1")">
+                <div class="container-responsive pt-5 pb-5" style="">
+                    <div class="row" style="padding-bottom: 30px; padding-top: 30px">
+                        <div class="col-lg pb-5" style="margin:auto;">
+                            <div class="small-title mb-3">@Umbraco.Field("headlineTextImage1")</div>
+                            <div class="normal-text">@Umbraco.Field("bodytextTextImage1")</div>
+                            <div class="button-container d-@Umbraco.Field("visibleButtonTextAndImage")" >
+                             <a class="btn btn-tamigo-small bg-@Umbraco.Field("buttonColorTextAndImage") @Umbraco.Field("buttonTextColorTextAndImage") anchor-plain overflow-hidden mt-4 mb-5 mw-100" href=@Umbraco.Field("buttonLinkTextAndImage") id="btnFrontPageFreeDemo"><span class="medium-normal-text">@Umbraco.Field("buttonTextTextAndImage")<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></span></a>
+                            </div>
+                        </div>
+                        <div class="col-lg" style="margin:auto;">
+                            <center>
+                                <img class="img image-responsive" style="" src=@Umbraco.Field("imageTextImage1")></img>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        
+        
+        <!-- Centered headline: For delete 
+        <div class="centered-headline pt-5 bg-Umbraco.Field("backgroundColorCenteredHeadline") d-Umbraco.Field("visibleCenteredHeadline")">
+            <div class="cont" style="padding-bottom: 0px; padding-top: 30px;">
+                <center>
+                    <div class="small-title">
+                        <h2>Umbraco.Field("textCenteredHeadline")</h2>
+                    </div>
+                </center>
+            </div>
+        </div>
+        -->
+            
+        @Umbraco.RenderMacro("CenteredHeadline", new {
+            visible=@Umbraco.Field("visibleCenteredHeadline"), 
+            backgroundColor=@Umbraco.Field("backgroundColorCenteredHeadline"), 
+            title=@Umbraco.Field("textCenteredHeadline")
+        })    
+            
+        
+        <!-- Text and Image broad (left) 
+        <div class="backgroundcolorcontainer pt-5 pb-5 bg-Umbraco.Field("backgroundColorTextImage2") d-Umbraco.Field("visibleTextImage2")">
+            <div class="container-responsive flex-column-reverse">
+                <div class="row" style="padding-bottom: 0px; padding-top: 0px">
+                    <div class="col-lg-8 pb-3" style="margin:auto;">
+                        <center>
+                            <img src=Umbraco.Field("imageTextImage2") class="img-fluid pr-2 pl-2 mb-4"></img>
+                        </center>
+                    </div>
+                    <div class="col-lg-4 pb-3" style="margin:auto;">
+                        <img src=Umbraco.Field("iconTextImage2" ) class="mb-2 mini-icon-responsive" style="max-height:60px;"></img>
+                        <div class="big-normal-text" style="padding-bottom: 10px;">
+                            Umbraco.Field("headlineTextImage2")
+                        </div>
+                        <div class="normal-text">
+                            Umbraco.Field("bodyTextImage2")
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        -->
+        
+        @Umbraco.RenderMacro("TextAndImageBroadLeftReverse", new {
+            visible=@Umbraco.Field("visibleTextImage2"), 
+            backgroundColor=@Umbraco.Field("backgroundColorTextImage2"), 
+            image=@Umbraco.Field("imagePickTextImage2"), 
+            icon=@Umbraco.Field("iconPickTextImage2"), 
+            title=@Umbraco.Field("headlineTextImage2"), 
+            subtitle=@Umbraco.Field("bodyTextImage2")
+        })
+        
+        
+        <!-- Text and Image broad (right) reverse 
+        <div class="backgroundcolorcontainer pt-5 pb-5 bg-Umbraco.Field("backgroundColorTextImage3") d-Umbraco.Field("visibleTextImage3")">
+            <div class="container-responsive flex-column-reverse">
+                <div class="row flex-row-reverse" style="padding-bottom: 30px; padding-top: 0px">
+                    <div class="col-lg-8"  style="margin:auto;"> 
+                        <center>
+                            <img src=Umbraco.Field("imageTextImage3") class="img-fluid pr-2 pl-2 mb-4"></img>
+                        </center>
+                    </div>
+                    <div class="col-lg-4" style="margin:auto;">
+                        <img src=Umbraco.Field("iconTextImage3") class="mb-2 mini-icon-responsive" style="max-height:60px;"></img>
+                        <div class="big-normal-text" style="padding-bottom: 10px;">
+                            Umbraco.Field("headlineTextImage3")
+                        </div>
+                        <div class="normal-text pr-3">
+                            Umbraco.Field("bodyTextImage3")
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        -->
+        
+        
+        @Umbraco.RenderMacro("TextAndImageBroadRightReverse", new {
+            visible=@Umbraco.Field("visibleTextImage3"), 
+            backgroundColor=@Umbraco.Field("backgroundColorTextImage3"), 
+            image=@Umbraco.Field("imagePickTextImage3"), 
+            icon=@Umbraco.Field("iconPickTextImage3"), 
+            title=@Umbraco.Field("headlineTextImage3"), 
+            subtitle=@Umbraco.Field("bodyTextImage3")
+        })
+        
+        <!-- Centered quote module: For delete 
+        <div class="quote-centered  pt-5 pb-5 bg-Umbraco.Field("backgroundColorQuote") d-Umbraco.Field("visibleQuote")">
+            <div class="container-responsive">
+                <div class="row pr-3 pl-3" style="padding-bottom: 30px; padding-top: 30px">
+                    <center>
+                        <img class="logo-responsive mb-3" src=Umbraco.Field("quoteSymbolImage2") />
+                        <div class="medium-text white pr-5 pl-5">
+                            <div class="pr-5 pl-5 mb-4" style="color:white;">Umbraco.Field("quoteText")</p>
+                        </div>
+                        <div class="mb-3 white medium-normal-text pt-3">
+                            <strong>Umbraco.Field("quoteAuthor")</strong>
+                        </div>
+                        <div class="medium-normal-text white">
+                           Umbraco.Field("authorTitle")
+                        </div>
+                    </center>
+                </div>
+            </div>
+        </div>
+        -->
+        
+        
+        @Umbraco.RenderMacro("CustomerQuote", new {
+            visible=@Umbraco.Field("visibleQuote"), 
+            image=@Umbraco.Field("imgPickQuote"), 
+            backgroundColor=@Umbraco.Field("backgroundColorQuote"), 
+            quoteText=@Umbraco.Field("quoteText"), 
+            quoteAuthor=@Umbraco.Field("quoteAuthor"), 
+            authorTitle=@Umbraco.Field("authorTitle")
+        })
+        
+        
+        
+        <!-- Centered headline FOR DElETE
+        <div class="centered-headline pt-5 bg-Umbraco.Field("backgroundColorCenteredHeadline2") d-Umbraco.Field("visibleCenteredHeadline2")">
+            <div class="cont" style="padding-bottom: 0px; padding-top: 30px">
+                <center>
+                    <div class="small-title">
+                        <h2>Umbraco.Field("centeredHeadline2")</h2>
+                    </div>
+                </center>
+            </div>
+        </div>
+            
+        
+        
+        <!-- Text and Image (left) reverse FOR DELETE
+        
+        <div class="backgroundcolorcontainer pt-5 pb-5 bg-Umbraco.Field("backgroundColorTextImage4") d-Umbraco.Field("visibleTextImage4")">
+            <div class="container-responsive flex-column-reverse">
+                <div class="row">
+                    <div class="col-lg pb-3" style="margin:auto;">
+                        <center>
+                            <img src=Umbraco.Field("imageTextImage4") class="img-fluid pr-5 mb-4"></img>
+                        </center>
+                    </div>
+                    <div class="col-lg" style="margin:auto;">
+                        <img src=Umbraco.Field("iconTextImage4") class="mb-2 mini-icon-responsive" style="max-height:60px;"></img>
+                        <div class="big-normal-text" style="padding-bottom: 10px;">
+                            Umbraco.Field("headlineTextImage4")
+                        </div>
+                        <div class="normal-text">
+                            Umbraco.Field("bodyTextImage4")</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        -->
+        
+        
+        
+        @Umbraco.RenderMacro("CenteredHeadline", new {
+            visible=@Umbraco.Field("visibleCenteredHeadline2"), 
+            backgroundColor=@Umbraco.Field("backgroundColorCenteredHeadline2"), 
+            title=@Umbraco.Field("centeredHeadline2")
+        })
+        
+        @Umbraco.RenderMacro("TextAndImageLeftReverse", new {
+            visible=@Umbraco.Field("visibleTextImage4"), 
+            backgroundColor=@Umbraco.Field("backgroundColorTextImage4"), 
+            image=@Umbraco.Field("imagePickTextImage4"), 
+            icon=@Umbraco.Field("iconPickTextImage4"), 
+            title=@Umbraco.Field("headlineTextImage4"),
+            subtitle=@Umbraco.Field("bodyTextImage4")
+        })
+        
+        
+        <!-- Text and Image (right) reverse: For delete
+        <div class="backgroundcolorcontainer pt-5 pb-5 bg-Umbraco.Field("backgroundColorTextImage5") d-Umbraco.Field("visibleTextImage5")">
+            <div class="container-responsive flex-column-reverse">
+                <div class="row flex-row-reverse pt-3 pb-5">
+                    <div class="col-lg pb-3" style="margin:auto;">
+                        <center>
+                            <img src=Umbraco.Field("imageTextImage5") class="img-fluid pr-5 mb-4"></img>
+                        </center>
+                    </div>
+                    <div class="col-lg" style="margin:auto;">
+                        <img src=Umbraco.Field("iconTextImage5") class="mb-2 mini-icon-responsive" style="max-height:60px;"></img>
+                        <div class="big-normal-text" style="padding-bottom: 10px;">
+                            Umbraco.Field("headlineTextImage5")
+                        </div>
+                        <div class="normal-text">
+                            Umbraco.Field("bodyTextImage5")
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        -->
+        
+        @Umbraco.RenderMacro("TextAndImageRightReverse", new {
+            visible=@Umbraco.Field("visibleTextImage5"), 
+            backgroundColor=@Umbraco.Field("backgroundColorTextImage5"), 
+            image=@Umbraco.Field("imagePickTextImage5"), 
+            icon=@Umbraco.Field("iconPickTextImage5"), 
+            title=@Umbraco.Field("headlineTextImage5"),
+            subtitle=@Umbraco.Field("bodyTextImage5")
+        })
+        
+        
+        <!-- SKIP AND MAKE NEW MODULE! Webinar: Centered headline with tag, body and image -->
+        <div class="webinar backgroundcolorcontainer pt-5 pb-5 bg-@Umbraco.Field("backgroundColorWebinar") d-@Umbraco.Field("visibleWebinar")">
+            <div class="container-responsive">
+                <div class="cont" style="padding-top: 30px; padding-bottom: 30px;">
+                    <div class="quote-centered" style="" >
+                        <center>
+                            <div class="medium-normal-text">
+                                    <p>@Umbraco.Field("webinarTag")</p>
+                            </div>
+                            <div class="title blue mb-4">
+                                    <h3>@Umbraco.Field("webinarHeadline")</h3>
+                            </div>
+                                <div class="big-normal-text gray mb-5 pr-1">
+                                    <p>@Umbraco.Field("webinarBody")</p>
+                                </div>
+                        </center>
+                    </div>
+                    <div class="soloimage-container mb-5" style="">
+                        <center>
+                            <img src=@Umbraco.Field("webinarImage") class="img-fluid"></img>
+                        </center>
+                    </div>
+                    <center>
+                        <div class="button-container">
+                            <a class="btn btn-tamigo-small @Umbraco.Field("textColorButtonWebinar") bg-@Umbraco.Field("backgroundColorButtonWebinar") anchor-plain overflow-hidden mw-100" href=@Umbraco.Field("webinarButtonLink") id="btnFrontpageSolution"><span class="medium-normal-text">@Umbraco.Field("webinarButtonText")<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></span></a>
+                        </div>
+                    </center>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <!-- Centered headline and text: For delete
+        <div class="centered-headline pt-5 bg-Umbraco.Field("backgroundColorCenteredHeadline3") d-Umbraco.Field("visibleCenteredHeadline3")">
+            <div class="container-responsive">
+                <div class="" style="padding-bottom: 30px; padding-top: 30px; text-align:center; ">
+                    <center>
+                        <div class="small-title pb-2" style="text-align:center; ">
+                            <h2>Umbraco.Field("centeredHeadline3")</h2>
+                        </div>
+                        <div class="medium-normal-text">
+                            <p>Umbraco.Field("bodyCenteredHeadline3")</p>
+                        </div>
+                    </center>
+                </div>
+            </div>
+        </div>
+        
+        -->
+        
+        @Umbraco.RenderMacro("CenteredHeadlineAndText", new {
+            visible=@Umbraco.Field("visibleCenteredHeadline3"), 
+            backgroundColor=@Umbraco.Field("backgroundColorCenteredHeadline3"), 
+            title=@Umbraco.Field("centeredHeadline3"), 
+            subtitle=@Umbraco.Field("bodyCenteredHeadline3")
+        })
+        
+        
+        <!-- Icons and horisontal bulletpoints: implemented for delete 
+        <div class="backgroundcolorcontainer pt-5 pb-5 bg-Umbraco.Field("backgroundColorIconsBullets") d-Umbraco.Field("visibleBulletsIcons")">
+            <div class="container-responsive" style="">
+                <div class="cont" style="padding-bottom: 0px;">
+                        <div class="row">
+                            <div class="col-lg mb-5" style="text-align:center; ">
+                                <img class="icon-responsive mb-3" src=Umbraco.Field("icon1")>
+                                <div class="feature-icon-text medium-normal-text">
+                                    Umbraco.Field("bullet1")
+                                </div>
+                            </div>
+                            <div class="col-lg mb-5" style="text-align:center; ">
+                                <img class="icon-responsive mb-3" src=Umbraco.Field("icon2")>
+                                <div class="feature-icon-text medium-normal-text">
+                                    Umbraco.Field("bullet2")
+                                </div>
+                            </div>
+                            <div class="col-lg mb-5" style="text-align:center;">
+                                <img class="icon-responsive mb-3" src=Umbraco.Field("icon3")>
+                                <div class="feature-icon-text medium-normal-text">
+                                    Umbraco.Field("bullet3")
+                                </div>
+                            </div>
+                            <div class="col-lg mb-5" style="text-align:center;">
+                                <img class="icon-responsive mb-3" src=Umbraco.Field("icon4")>
+                                <div class="feature-icon-text medium-normal-text">
+                                    Umbraco.Field("bullet4")
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        -->
+        
+        @Umbraco.RenderMacro("IconsAndBulletpoints", new {
+            visible=@Umbraco.Field("visibleBulletsIcons"), 
+            backgroundColor=@Umbraco.Field("backgroundColorIconsBullets"), 
+            icon1=@Umbraco.Field("icon1picker"), 
+            icon2=@Umbraco.Field("icon2picker"), 
+            icon3=@Umbraco.Field("icon3picker"), 
+            icon4=@Umbraco.Field("icon4picker"), 
+            bullet1=@Umbraco.Field("bullet1"), 
+            bullet2=@Umbraco.Field("bullet2"), 
+            bullet3=@Umbraco.Field("bullet3"), 
+            bullet4=@Umbraco.Field("bullet4")
+        })
+        
+        
+        
+        
+        <!-- 30 Day CTA: Macro implemented - for deletion 
+        <div class="backgroundcolor-container pb-5 pt-5 bg-Umbraco.Field("backgroundColorCTA") d-Umbraco.Field("visibleCTA")">
+            <div class="30day-cta" style="display: flex; justify-content: center;">
+                <div class="container-responsive">
+                    <div class="row pt-4" style="padding-bottom: 0px; padding-top: 30px">
+                        <div class="col-lg-7 pb-4 mb-4" style="margin:auto;">
+                            <div class="small-title mb-2">Umbraco.Field("headlineCTA")</div>
+                            <div class="big-normal-text white">Umbraco.Field("bodyCTA")</div>
+                        </div>
+                        <div class="col-lg-5" style="margin:auto;">
+                            <div class="button-container pb-3">
+                                <div class="col text-center">
+                                    <a class="btn btn-tamigo-small bg-Umbraco.Field("backgroundColorButtonCTA") Umbraco.Field("textColorButtonCTA") anchor-plain overflow-hidden mw-100" href=Umbraco.Field("buttonLinkCTA") id="btnFrontpageSolution"><span class="medium-normal-text">Umbraco.Field("buttonTextCTA")<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        -->
+        
+        
+        
+        @Umbraco.RenderMacro("DemoNewImage", new 
+        {   visible=@Umbraco.Field("demoVisible"), 
+            color=@Umbraco.Field("color"), 
+            demoTitle=@Umbraco.Field("demoTitle"), 
+            demoSubtitle=@Umbraco.Field("demoSubtitle"), 
+            privacy=@Umbraco.Field("privacy"), 
+            buttonText=@Umbraco.Field("buttonText"), 
+            buttonColor=@Umbraco.Field("buttonColor"), 
+            contactTitle=@Umbraco.Field("contactTitle"), 
+            contactSubtitle=@Umbraco.Field("contactSubtitle"), 
+            contactPhone=@Umbraco.Field("contactPhone"), 
+            contactEmail=@Umbraco.Field("contactEmail"), 
+            image=@Umbraco.Field("image"), 
+            name=@Umbraco.Field("placeholderName"), 
+            email=@Umbraco.Field("placeholderEmail"), 
+            phone=@Umbraco.Field("placeholderPhone"), 
+            btn_id=@Umbraco.Field("buttonId"), 
+            btn_color=@Umbraco.Field("buttonColor"), 
+            btn_bg=@Umbraco.Field("buttonBackground"), 
+            showCaptcha="0", 
+            companyName=@Umbraco.Field("placeholderCompany"),
+        })
+        
+        
+        
+        @Umbraco.RenderMacro("AlternateFreeDemo", new {
+            backgroundColor=@Umbraco.Field("backgroundColorBookDemoAlt"), 
+            visible=@Umbraco.Field("visibleBookDemoAlt", altText:"none"), 
+            title=@Umbraco.Field("titleBookDemoAlt"), 
+            subtitle=@Umbraco.Field("subtitleBookDemoAlt"), 
+            backgroundColorButton=@Umbraco.Field("backgroundColorButtonBookDemoAlt"), 
+            textColorButton=@Umbraco.Field("buttonTextColorBookDemoAlt"), 
+            buttonLink=@Umbraco.Field("buttonLinkBookDemoAlt"), 
+            buttonId=@Umbraco.Field("buttonIdBookDemoAlt"), 
+            buttonText=@Umbraco.Field("buttonTextBookDemoAlt"),
+            textColor=@Umbraco.Field("textColorBookDemoAlt")
+        })
+        
+        
+    
+</body>
+</html>
