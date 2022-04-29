@@ -1,0 +1,50 @@
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+<style>
+.container-responsive {
+  width: 100%;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+  margin-left: auto; }
+  @@media (min-width: 576px) {
+    .container-responsive {
+      max-width: 920px; } }
+  @@media (min-width: 768px) {
+    .container-responsive {
+      max-width: 920px; } }
+  @@media (min-width: 992px) {
+    .container-responsive {
+      max-width: 960px; } }
+  @@media (min-width: 1200px) {
+    .container-responsive {
+      max-width: 1140px; } }
+</style>
+
+<div class="backgroundcolor-container pb-5 pt-5 bg-@Model.MacroParameters["backgroundColor"] d-@Model.MacroParameters["visible"]">
+    <div class="30day-cta" style="display: flex; justify-content: center;">
+        <div class="container-responsive">
+            <div class="row pt-4" style="padding-bottom: 0px; padding-top: 30px">
+                <div class="col-lg-7 pb-4 mb-4" style="margin:auto;">
+                    <div class="small-title mb-2 @Model.MacroParameters["textColor"]">@Model.MacroParameters["title"]</div>
+                    <div class="big-normal-text @Model.MacroParameters["textColor"]">@Model.MacroParameters["subtitle"]</div>
+                </div>
+                <div class="col-lg-5" style="margin:auto;">
+                    <div class="button-container pb-3">
+                        <div class="col text-center">
+                            <a class="btn btn-tamigo-small bg-@Model.MacroParameters["backgroundColorButton"] @Model.MacroParameters["textColorButton"] anchor-plain overflow-hidden mw-100" href=@Model.MacroParameters["buttonLink"] id=@Model.MacroParameters["buttonId"]><span class="medium-normal-text">@Model.MacroParameters["buttonText"]<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Media --> 
+<!-- src=Umbraco.Media(Model.MacroParameters["mediaPickerTest"]).Url -->
+
+<!-- Values --> 
+<!-- Html.Raw(Model.MacroParameters["demoTitle"]) -->
+<!-- Model.MacroParameters["buttonText"] --> 

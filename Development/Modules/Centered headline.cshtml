@@ -1,0 +1,14 @@
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+<div class="centered-headline pt-5 bg-@Model.MacroParameters["backgroundColor"] d-@Model.MacroParameters["visible"]">
+    <div class="cont" style="padding-bottom: 0px; padding-top: 30px">
+        <center>
+            <div class="small-title @Model.MacroParameters["titleColor"]">
+                @Html.Raw(Model.MacroParameters["title"])
+            </div>
+        </center>
+    </div>
+</div>
+
+    
+    

@@ -1,0 +1,39 @@
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+<style>
+    .responsive-logo {
+    max-height: 70px;}
+  @@media (min-width: 576px) {
+    .responsive-logo {
+      max-height: 100px; } }
+  @@media (min-width: 768px) {
+    .responsive-logo {
+      max-height: 100px; } }
+  @@media (min-width: 992px) {
+    .responsive-logo {
+      max-height: 70px; } }
+  @@media (min-width: 1200px) {
+    .responsive-logo {
+      max-height: 70px; } }
+</style>
+
+
+<div class="backgroundcolorcontainer pt-5 bg-@Model.MacroParameters["backgroundColor"] d-@Model.MacroParameters["visible"]">
+    <div class="container-responsive pt-3 pb-3">
+        <div class="row"  style="padding-bottom: 0px; padding-top: 0px">
+            <div class="col-lg mb-5" style="text-align:center;">
+                <img src=@Umbraco.Media(Model.MacroParameters["logo1"]).Url class="img-fluid responsive-logo" style="">
+            </div>
+            <div class="col-lg mb-5" style="text-align:center;">
+                <img src=@Umbraco.Media(Model.MacroParameters["logo2"]).Url class="img-fluid responsive-logo" style="">
+            </div>
+            <div class="col-lg mb-5" style="text-align:center;">
+                <img src=@Umbraco.Media(Model.MacroParameters["logo3"]).Url class="img-fluid responsive-logo" style="">
+            </div>
+            <div class="col-lg mb-5" style="text-align:center;">
+                <img src=@Umbraco.Media(Model.MacroParameters["logo4"]).Url class="img-fluid responsive-logo" style="">
+            </div>
+        </div>
+    </div>
+</div>
+

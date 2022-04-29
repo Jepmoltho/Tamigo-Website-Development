@@ -1,0 +1,56 @@
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+<style>
+    .icon-responsive {
+    }
+  @@media (min-width: 576px) {
+    .icon-responsive {
+      width: 130px;
+      height: 130px; } }
+  @@media (min-width: 768px) {
+    .icon-responsive {
+      width: 130px;
+      height: 130px; } }
+  @@media (min-width: 992px) {
+    .icon-responsive {
+      width: 60px; 
+      height: 60px; } }
+  @@media (min-width: 1200px) {
+    .icon-responsive {
+      width: 60px;
+      height: 60px; } }
+</style>
+
+<!-- Icons and horisontal bulletpoints -->
+<div class="backgroundcolorcontainer pt-5 pb-5 bg-@Model.MacroParameters["backgroundColor"] d-@Model.MacroParameters["visible"]">
+    <div class="container-responsive" style="">
+        <div class="cont" style="padding-bottom: 0px;">
+                <div class="row">
+                    <div class="col-lg mb-5" style="text-align:center; ">
+                        <img class="icon-responsive mb-3" src=@Umbraco.Media(Model.MacroParameters["icon1"]).Url>
+                        <div class="feature-icon-text medium-normal-text">
+                            @Html.Raw(Model.MacroParameters["bullet1"])
+                        </div>
+                    </div>
+                    <div class="col-lg mb-5" style="text-align:center; ">
+                        <img class="icon-responsive mb-3" src=@Umbraco.Media(Model.MacroParameters["icon2"]).Url>
+                        <div class="feature-icon-text medium-normal-text">
+                            @Html.Raw(Model.MacroParameters["bullet2"])
+                        </div>
+                    </div>
+                    <div class="col-lg mb-5" style="text-align:center;">
+                        <img class="icon-responsive mb-3" src=@Umbraco.Media(Model.MacroParameters["icon3"]).Url>
+                        <div class="feature-icon-text medium-normal-text">
+                            @Html.Raw(Model.MacroParameters["bullet3"])
+                        </div>
+                    </div>
+                    <div class="col-lg mb-5" style="text-align:center;">
+                        <img class="icon-responsive mb-3" src=@Umbraco.Media(Model.MacroParameters["icon4"]).Url>
+                        <div class="feature-icon-text medium-normal-text">
+                            @Html.Raw(Model.MacroParameters["bullet4"])
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>

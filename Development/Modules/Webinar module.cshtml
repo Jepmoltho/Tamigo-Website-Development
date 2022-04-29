@@ -1,0 +1,33 @@
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+
+<div class="backgroundcolorcontainer pt-5 pb-4 bg-@Model.MacroParameters["backgroundColor"] d-@Model.MacroParameters["visible"]" style="background-color:@Model.MacroParameters["backgroundColorSpecial"]">
+    <div class="container-responsive flex-column-reverse pt-5 pb-5">
+        <div class="row">
+            <div class="col-lg-5 pb-5" style="margin:auto;">
+                <center>
+                    <img src=@Umbraco.Media(Model.MacroParameters["image"]).Url class="img-fluid pr-5 mb-4"></img>
+                </center>
+            </div>
+            <div class="col-lg-7" style="margin:auto;">
+                <div class="medium-normal-text pb-2 @Model.MacroParameters["textColor"]" style="letter-spacing:2px;">@Html.Raw(Model.MacroParameters["tag"])</div>
+                <div class="small-title @Model.MacroParameters["textColor"]" style="padding-bottom: 10px;">
+                    @Html.Raw(Model.MacroParameters["title"])
+                </div>
+                <div class="normal-text @Model.MacroParameters["textColor"]">
+                    @Html.Raw(Model.MacroParameters["subtitle"])
+                </div>
+                <div class="button-container"> 
+                    <a class="btn btn-tamigo-small bg-@Model.MacroParameters["buttonColor"] @Model.MacroParameters["buttonTextColor"] anchor-plain overflow-hidden mt-4 mb-5 mw-100" href=@Model.MacroParameters["buttonLink"] id="btnFrontPageFreeDemo"><span class="medium-normal-text">@Model.MacroParameters["buttonText"]<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- src=Umbraco.Media(Model.MacroParameters["mediaPickerTest"]).Url -->
+
+<!-- Values --> 
+<!-- Html.Raw(Model.MacroParameters["demoTitle"]) -->
+<!-- Model.MacroParameters["buttonText"] --> 

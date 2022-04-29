@@ -1,0 +1,39 @@
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+<style>
+    .logo-responsive {
+    max-width: 20px;}
+  @@media (min-width: 576px) {
+    .logo-responsive {
+      max-width: 90px; } }
+  @@media (min-width: 768px) {
+    .logo-responsive {
+      max-width: 90px; } }
+  @@media (min-width: 992px) {
+    .logo-responsive {
+      max-width: 43px; } }
+  @@media (min-width: 1200px) {
+    .logo-responsive {
+      max-width: 43px; } }
+</style>
+
+
+<!-- Centered quote module -->
+<div class="quote-centered  pt-5 pb-5 bg-@Model.MacroParameters["backgroundColor"] @Model.MacroParameters["visible"]">
+    <div class="container-responsive">
+        <div class="row pr-3 pl-3" style="padding-bottom: 30px; padding-top: 30px">
+            <center>
+                <img class="logo-responsive mb-3" src=@Umbraco.Media(Model.MacroParameters["image"]).Url />
+                <div class="medium-text pr-5 pl-5 @Model.MacroParameters["quoteTextColor"]">
+                    <div class="pr-5 pl-5 mb-4">@Html.Raw(Model.MacroParameters["quoteText"])</div>
+                </div>
+                <div class="mb-3 medium-normal-text pt-3 @Model.MacroParameters["quoteTextColor"]">
+                    <strong>@Html.Raw(Model.MacroParameters["quoteAuthor"])</strong>
+                </div>
+                <div class="medium-normal-text @Model.MacroParameters["quoteTextColor"]">
+                      @Html.Raw(Model.MacroParameters["authorTitle"])
+                </div>
+            </center>
+        </div>
+    </div>
+</div>
