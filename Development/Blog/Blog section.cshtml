@@ -1,0 +1,20 @@
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+<style>
+.blog-content-container{
+    position: relative; 
+    top:-150px;
+}
+</style>
+
+<div class="container-responsive blog-content-container pr-5 pl-5" style="">
+    <div class="title-container title blog-element @Model.MacroParameters["titleColor"]">@Html.Raw(Model.MacroParameters["title"])</div>
+    <div class="body-container big-text blog-element">@Html.Raw(Model.MacroParameters["bodyText"])</div>
+    <div class="unorderedlist-container big-text blog-element">@Html.Raw(Model.MacroParameters["bulletPointsUnsorted"])</div>
+    <div class="orderedlist-container big-text blog-element">@Html.Raw(Model.MacroParameters["bulletPointsSorted"])</div>
+    <div class="quote-container small-title blog-element @Model.MacroParameters["titleColor"]">@Html.Raw(Model.MacroParameters["quote"])</div>
+    <div class="quoteAuthor-container blog-element @Model.MacroParameters["titleColor"]">@Html.Raw(Model.MacroParameters["quoteAuthor"])</div>
+    <div class="body-container big-text blog-element">@Html.Raw(Model.MacroParameters["bodyTextSecond"])</div>
+    <div class="image-container blog-element"><img class="blog-image pt-3" src=@Umbraco.Media(Model.MacroParameters["image"]).Url></img></div>
+</div>
+

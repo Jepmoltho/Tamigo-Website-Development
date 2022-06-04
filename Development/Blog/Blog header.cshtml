@@ -1,0 +1,19 @@
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+<style>
+.header-image-container{
+    height: 700px;
+    overflow: hidden;
+}
+
+.header-image{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+</style>
+
+
+<div class="header-image-container"><img class="header-image" src=@Umbraco.Media(Model.MacroParameters["image"]).Url style=""></img></div>    
+

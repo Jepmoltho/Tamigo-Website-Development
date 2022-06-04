@@ -1,0 +1,314 @@
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.BlogPost>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "MasterLayout.cshtml";
+}
+
+@Umbraco.RenderMacro("Space", new {color="", heigth="63"})
+
+<style>
+    .blog-element{
+        padding-right:20px;
+        padding-left:20px;
+    }
+    
+    a:not(.nav-link):not(.btn):not(.footer-link){
+        color: #646464;
+        text-decoration-line: underline;
+    }
+    
+    p:not(.medium-normal-text){
+        padding-bottom: 1.2rem;  
+        margin-bottom: 0px;
+    }
+    
+    li:not(.nav-item){
+       padding-bottom: 1.2rem;
+    }
+    
+    ul:not(.navbar-nav) {
+        padding-top: 1.2rem;   
+    }
+    
+    ol {
+        padding-top: 1.2rem;   
+    }
+    
+    .image-container {
+        padding-bottom: 2.2rem;
+    }
+    
+    .blog-image{
+        max-width:100%;
+        max-height:100%;
+    }
+    
+    .body-container-second:empty{
+    }
+    
+    .body-container-second:not(:empty){
+        padding-top: 1.8rem;
+    }
+    
+    /*Selects quote containers without contents and defines that they should have no styling*/
+    .quote-container:empty {
+    }
+    
+    /*Selects quote containers with contents and defines that they should have styling*/
+    .quote-container:not(:empty){
+        padding-top: 2.0rem;
+    }
+    
+    /*Selects quoteAuthor containers with contents and defines that they should have styling*/
+    .quoteAuthor-container:not(:empty){
+        font-size: 2.2rem;
+    }
+
+    .container-responsive {
+      width: 100%;
+      padding-right: 20px;
+      padding-left: 20px;
+      margin-right: auto;
+      margin-left: auto; }
+      @@media (min-width: 576px) {
+        .container-responsive {
+          max-width: 920px; } }
+      @@media (min-width: 768px) {
+        .container-responsive {
+          max-width: 920px; } }
+      @@media (min-width: 992px) {
+        .container-responsive {
+          max-width: 920px; } }
+      @@media (min-width: 1200px) {
+        .container-responsive {
+          max-width: 920px; } }
+</style>
+
+<style>
+    .shadow-wrapper{
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    top:-80px;
+    position:relative;
+    max-width: 1140px;
+    box-shadow: -5px 0px 50px 15px rgb(0 0 0 / 10%);}
+    /*First two media queries are for mobile view*/
+    @@media (min-width: 576px) {
+        .shadow-wrapper {
+          max-width: 920px; } }
+    @@media (min-width: 768px) {
+        .shadow-wrapper {
+          max-width: 920px; } }
+    @@media (min-width: 992px) {
+        .shadow-wrapper {
+          max-width: 920px; } }
+    @@media (min-width: 1200px) {
+        .shadow-wrapper {
+          max-width: 920px;} }
+    }
+    
+</style>
+
+<!-- Headline -->
+<style>
+   .headline-inner-container{
+      line-height: 1.2;
+   }
+      @@media (max-width: 990px) {
+        .headline-inner-container {
+          font-size: 4.5rem  } }
+      @@media (min-width: 990px) {
+        .headline-inner-container {
+          font-size: 2.3rem } }
+</style>
+
+<!-- Titles -->
+<style>
+   .title-container{
+      line-height: 1.2;
+   }
+      @@media (max-width: 990px) {
+        .title-container {
+          font-size: 4rem  } }
+      @@media (min-width: 990px) {
+        .title-container {
+          font-size: 1.8rem } }
+</style>
+
+<!-- body text -->
+<style>
+   .body-container{
+      line-height: 1.2;
+   }
+      @@media (max-width: 990px) {
+        .body-container {
+          font-size: 3rem  } }
+      @@media (min-width: 990px) {
+        .body-container {
+          font-size: 1.2rem } }
+</style>
+
+<!-- Unordered lists -->
+<style>
+   .unorderedlist-container{
+      line-height: 1.2;
+   }
+      @@media (max-width: 990px) {
+        .unorderedlist-container {
+          font-size: 3rem  } }
+      @@media (min-width: 990px) {
+        .unorderedlist-container {
+          font-size: 1.2rem } }
+</style>
+
+<!-- Unordered lists -->
+<style>
+   .orderedlist-container{
+      line-height: 1.2; }
+      @@media (max-width: 990px) {
+        .orderedlist-container {
+          font-size: 3rem;
+          padding-left: 1rem;} }
+      @@media (min-width: 990px) {
+        .orderedlist-container {
+          font-size: 1.2rem;
+          padding-left: 1rem; } }
+</style>
+
+<!-- Quote  -->
+<style>
+   .quote-container{
+      line-height: 1.2;
+   }
+      @@media (max-width: 990px) {
+        .quote-container {
+          font-size: 3.8rem  } }
+      @@media (min-width: 990px) {
+        .quote-container {
+          font-size: 1.5rem } }
+</style>
+
+<!-- Quote author -->
+<style>
+   .quoteAuthor-container{
+      line-height: 1.2;
+   }
+      @@media (max-width: 990px) {
+        .quoteAuthor-container {
+          font-size: 3rem  } }
+      @@media (min-width: 990px) {
+        .quoteAuthor-container {
+          font-size: 1.4rem !important } }
+</style>
+
+
+@Umbraco.RenderMacro("BlogHeader", new {
+    image=@Umbraco.Field("headerImageBlog")
+})
+
+<div class="shadow-wrapper pb-5">
+
+@Umbraco.RenderMacro("BlogHeadline", new {
+    titleColor=@Umbraco.Field("headerTitleColorBlog"),
+    title=@Umbraco.Field("headerTitleBlog")
+})
+
+@Umbraco.RenderMacro("BlogSection", new {
+    titleColor=@Umbraco.Field("titleColorBlog"), 
+    title=@Umbraco.Field("titleBlog"), 
+    bodyText=@Umbraco.Field("bodyTextBlog"), 
+    bulletPointsUnsorted=@Umbraco.Field("bulletPointsUnsortedBlog"), 
+    bulletPointsSorted=@Umbraco.Field("bulletPointsSortedBlog"), 
+    quoteTextColor=@Umbraco.Field("quoteTextColorBlog"),
+    quote=@Umbraco.Field("quote"),
+    quoteAuthor=@Umbraco.Field("quoteAuthor"),
+    bodyTextSecond=@Umbraco.Field("bodyTextSecondBlog"), 
+    image=@Umbraco.Field("imageBlog"), 
+    imageLink=@Umbraco.Field("imageLinkBlog"),
+    video=@Umbraco.Field("videoBlog")
+})
+
+@Umbraco.RenderMacro("BlogSection", new {
+    titleColor=@Umbraco.Field("titleColorBlog2"), 
+    title=@Umbraco.Field("titleBlog2"), 
+    bodyText=@Umbraco.Field("bodyTextBlog2"), 
+    bulletPointsUnsorted=@Umbraco.Field("bulletPointsUnsortedBlog2"), 
+    bulletPointsSorted=@Umbraco.Field("bulletPointsSortedBlog2"), 
+    quoteTextColor=@Umbraco.Field("quoteTextColorBlog2"),
+    quote=@Umbraco.Field("quote2"),
+    quoteAuthor=@Umbraco.Field("quoteAuthor2"),
+    bodyTextSecond=@Umbraco.Field("bodyTextSecondBlog2"), 
+    image=@Umbraco.Field("imageBlog2"), 
+    imageLink=@Umbraco.Field("imageLinkBlog2"),
+    video=@Umbraco.Field("videoBlog2")
+})
+
+@Umbraco.RenderMacro("BlogSection", new {
+    titleColor=@Umbraco.Field("titleColorBlog3"), 
+    title=@Umbraco.Field("titleBlog3"), 
+    bodyText=@Umbraco.Field("bodyTextBlog3"), 
+    bulletPointsUnsorted=@Umbraco.Field("bulletPointsUnsortedBlog3"), 
+    bulletPointsSorted=@Umbraco.Field("bulletPointsSortedBlog3"), 
+    quoteTextColor=@Umbraco.Field("quoteTextColorBlog3"),
+    quote=@Umbraco.Field("quote3"),
+    quoteAuthor=@Umbraco.Field("quoteAuthor3"),
+    bodyTextSecond=@Umbraco.Field("bodyTextSecondBlog3"), 
+    image=@Umbraco.Field("imageBlog3"), 
+    imageLink=@Umbraco.Field("imageLinkBlog3"),
+    video=@Umbraco.Field("videoBlog3")
+})
+
+@Umbraco.RenderMacro("BlogSection", new {
+    titleColor=@Umbraco.Field("titleColorBlog4"), 
+    title=@Umbraco.Field("titleBlog4"), 
+    bodyText=@Umbraco.Field("bodyTextBlog4"), 
+    bulletPointsUnsorted=@Umbraco.Field("bulletPointsUnsortedBlog4"), 
+    bulletPointsSorted=@Umbraco.Field("bulletPointsSortedBlog4"), 
+    quoteTextColor=@Umbraco.Field("quoteTextColorBlog4"),
+    quote=@Umbraco.Field("quote4"),
+    quoteAuthor=@Umbraco.Field("quoteAuthor4"),
+    bodyTextSecond=@Umbraco.Field("bodyTextSecondBlog4"), 
+    image=@Umbraco.Field("imageBlog4"), 
+    imageLink=@Umbraco.Field("imageLinkBlog4"),
+    video=@Umbraco.Field("videoBlog4")
+})
+
+@Umbraco.RenderMacro("BlogSection", new {
+    titleColor=@Umbraco.Field("titleColorBlog5"), 
+    title=@Umbraco.Field("titleBlog5"), 
+    bodyText=@Umbraco.Field("bodyTextBlog5"), 
+    bulletPointsUnsorted=@Umbraco.Field("bulletPointsUnsortedBlog5"), 
+    bulletPointsSorted=@Umbraco.Field("bulletPointsSortedBlog5"), 
+    quoteTextColor=@Umbraco.Field("quoteTextColorBlog5"),
+    quote=@Umbraco.Field("quote5"),
+    quoteAuthor=@Umbraco.Field("quoteAuthor5"),    
+    bodyTextSecond=@Umbraco.Field("bodyTextSecondBlog5"), 
+    image=@Umbraco.Field("imageBlog5"), 
+    imageLink=@Umbraco.Field("imageLinkBlog5"),
+    video=@Umbraco.Field("videoBlog5")
+})
+
+@Umbraco.RenderMacro("BlogSection", new {
+    titleColor=@Umbraco.Field("titleColorBlog6"), 
+    title=@Umbraco.Field("titleBlog6"), 
+    bodyText=@Umbraco.Field("bodyTextBlog6"), 
+    bulletPointsUnsorted=@Umbraco.Field("bulletPointsUnsortedBlog6"), 
+    bulletPointsSorted=@Umbraco.Field("bulletPointsSortedBlog6"), 
+    quoteTextColor=@Umbraco.Field("quoteTextColorBlog6"),
+    quote=@Umbraco.Field("quote6"),
+    quoteAuthor=@Umbraco.Field("quoteAuthor6"),
+    bodyTextSecond=@Umbraco.Field("bodyTextSecondBlog6"), 
+    image=@Umbraco.Field("imageBlog6"), 
+    imageLink=@Umbraco.Field("imageLinkBlog6"),
+    video=@Umbraco.Field("videoBlog6")
+})
+
+@Umbraco.RenderMacro("BlogCta", new {
+    buttonText=@Umbraco.Field("buttonTextBlog"), 
+    buttonLink=@Umbraco.Field("buttonLinkBlog"), 
+    buttonColor=@Umbraco.Field("buttonColorBlog"), 
+    buttonTextColor=@Umbraco.Field("buttonTextColorBlog")
+})
+
+</div>

@@ -1,0 +1,219 @@
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.CaseSupermarkets>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "MasterLayout.cshtml";
+}
+
+<style>
+.container-responsive {
+  width: 100%;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+  margin-left: auto; }
+  @@media (min-width: 576px) {
+    .container-responsive {
+      max-width: 920px; } }
+  @@media (min-width: 768px) {
+    .container-responsive {
+      max-width: 920px; } }
+  @@media (min-width: 992px) {
+    .container-responsive {
+      max-width: 960px; } }
+  @@media (min-width: 1200px) {
+    .container-responsive {
+      max-width: 1140px; } }
+</style>
+
+
+@Umbraco.RenderMacro("HeaderIndustriesLandingPage", new {
+    visible=@Umbraco.Field("visibleHeader"), 
+    backgroundColor=@Umbraco.Field("backgroundColorHeader"), 
+    title=@Umbraco.Field("headlineHeader"), 
+    subtitle=@Umbraco.Field("subheadlineHeader"), 
+    image=@Umbraco.Field("imagePickHeader"), 
+    buttonColor=@Umbraco.Field("buttonColorHeader"), 
+    buttonTextColor=@Umbraco.Field("buttonTextColorHeader"), 
+    buttonText=@Umbraco.Field("buttonTextHeader"), 
+    buttonLink=@Umbraco.Field("buttonLinkHeader"),
+    titleColor=@Umbraco.Field("titleColorHeader"),
+    bodyColor=@Umbraco.Field("bodyColorHeader")
+})
+
+
+@Umbraco.RenderMacro("LogoSection", new {
+    visible=@Umbraco.Field("visibleLogoCarousel"), 
+    backgroundColor=@Umbraco.Field("backgroundColorLogoCarrousel"), 
+    logo1=@Umbraco.Field("imagePickLogo1"), 
+    logo2=@Umbraco.Field("imagePickLogo2"), 
+    logo3=@Umbraco.Field("imagePickLogo3"), 
+    logo4=@Umbraco.Field("imagePickLogo4")
+})
+
+
+@Umbraco.RenderMacro("HeadlineAndTextAndImage", new {
+    visible=@Umbraco.Field("visibleTextImage1"), 
+    backgroundColor=@Umbraco.Field("backgroundColorTextImage1"), 
+    image=@Umbraco.Field("imagePickNew"), 
+    title=@Umbraco.Field("headlineTextImage1"), 
+    subtitle=@Umbraco.Field("bodytextTextImage1"), 
+    buttonVisible=@Umbraco.Field("visibleButtonTextAndImage"), 
+    buttonBackgroundColor=@Umbraco.Field("buttonColorTextAndImage"), 
+    buttonTextColor=Umbraco.Field("buttonTextColorTextAndImage"), 
+    buttonText=@Umbraco.Field("buttonTextTextAndImage"), 
+    buttonLink=@Umbraco.Field("buttonLinkTextAndImage"),
+    titleColor=@Umbraco.Field("titleColorTextImage1"),
+    bodyColor=@Umbraco.Field("bodyColorTextImage1")
+})
+
+    
+@Umbraco.RenderMacro("CenteredHeadline", new {
+    visible=@Umbraco.Field("visibleCenteredHeadline"), 
+    backgroundColor=@Umbraco.Field("backgroundColorCenteredHeadline"), 
+    title=@Umbraco.Field("textCenteredHeadline"),
+    titleColor=@Umbraco.Field("titleColorCenteredHeadline")
+})    
+    
+
+@Umbraco.RenderMacro("TextAndImageBroadLeftReverse", new {
+    visible=@Umbraco.Field("visibleTextImage2"), 
+    backgroundColor=@Umbraco.Field("backgroundColorTextImage2"), 
+    image=@Umbraco.Field("imagePickTextImage2"), 
+    icon=@Umbraco.Field("iconPickTextImage2"), 
+    title=@Umbraco.Field("headlineTextImage2"), 
+    subtitle=@Umbraco.Field("bodyTextImage2"),
+    titleColor=@Umbraco.Field("titleColorTextImage2"),
+    bodyColor=@Umbraco.Field("bodyColorTextImage2")
+})
+
+
+@Umbraco.RenderMacro("TextAndImageBroadRightReverse", new {
+    visible=@Umbraco.Field("visibleTextImage3"), 
+    backgroundColor=@Umbraco.Field("backgroundColorTextImage3"), 
+    image=@Umbraco.Field("imagePickTextImage3"), 
+    icon=@Umbraco.Field("iconPickTextImage3"), 
+    title=@Umbraco.Field("headlineTextImage3"), 
+    subtitle=@Umbraco.Field("bodyTextImage3"),
+    titleColor=@Umbraco.Field("titleColorTextImage3"),
+    bodyColor=@Umbraco.Field("bodyColorTextImage3")
+})
+
+
+@Umbraco.RenderMacro("CustomerQuote", new {
+    visible=@Umbraco.Field("visibleQuote"), 
+    image=@Umbraco.Field("imgPickQuote"), 
+    backgroundColor=@Umbraco.Field("backgroundColorQuote"), 
+    quoteText=@Umbraco.Field("quoteText"), 
+    quoteAuthor=@Umbraco.Field("quoteAuthor"), 
+    authorTitle=@Umbraco.Field("authorTitle"),
+    quoteTextColor=@Umbraco.Field("quoteTextColor")
+})
+
+
+@Umbraco.RenderMacro("CenteredHeadline", new {
+    visible=@Umbraco.Field("visibleCenteredHeadline2"), 
+    backgroundColor=@Umbraco.Field("backgroundColorCenteredHeadline2"), 
+    title=@Umbraco.Field("centeredHeadline2"), 
+    titleColor=@Umbraco.Field("titleColorCenteredHeadline2")
+})
+
+
+@Umbraco.RenderMacro("TextAndImageLeftReverse", new {
+    visible=@Umbraco.Field("visibleTextImage4"), 
+    backgroundColor=@Umbraco.Field("backgroundColorTextImage4"), 
+    image=@Umbraco.Field("imagePickTextImage4"), 
+    icon=@Umbraco.Field("iconPickTextImage4"), 
+    title=@Umbraco.Field("headlineTextImage4"),
+    subtitle=@Umbraco.Field("bodyTextImage4"),
+    titleColor=@Umbraco.Field("titleColorTextImage4"),
+    bodyColor=@Umbraco.Field("bodyColorTextImage4")
+})
+
+
+@Umbraco.RenderMacro("TextAndImageRightReverse", new {
+    visible=@Umbraco.Field("visibleTextImage5"), 
+    backgroundColor=@Umbraco.Field("backgroundColorTextImage5"), 
+    image=@Umbraco.Field("imagePickTextImage5"), 
+    icon=@Umbraco.Field("iconPickTextImage5"), 
+    title=@Umbraco.Field("headlineTextImage5"),
+    subtitle=@Umbraco.Field("bodyTextImage5"),
+    titleColor=@Umbraco.Field("titleColorTextImage5"),
+    bodyColor=@Umbraco.Field("bodyColorTextImage5")
+})
+
+
+@Umbraco.RenderMacro("WebinarModule", new {
+    visible=@Umbraco.Field("visibleWebinar"),  
+    backgroundColor=@Umbraco.Field("backgroundColorWebinar"), 
+    image=@Umbraco.Field("webinarImagePick"), 
+    title=@Umbraco.Field("webinarHeadline"), 
+    subtitle=@Umbraco.Field("webinarBody"), 
+    tag=@Umbraco.Field("webinarTag"), 
+    buttonColor=@Umbraco.Field("backgroundColorButtonWebinar"), 
+    buttonTextColor=@Umbraco.Field("textColorButtonWebinar"), 
+    buttonText=@Umbraco.Field("webinarButtonText"), 
+    buttonLink=@Umbraco.Field("webinarButtonLink"),
+    backgroundColorSpecial=@Umbraco.Field("backgroundColorSpecial"),
+    textColor=@Umbraco.Field("textColorWebinar")
+})
+
+
+@Umbraco.RenderMacro("CenteredHeadlineAndText", new {
+    visible=@Umbraco.Field("visibleCenteredHeadline3"), 
+    backgroundColor=@Umbraco.Field("backgroundColorCenteredHeadline3"), 
+    title=@Umbraco.Field("centeredHeadline3"), 
+    subtitle=@Umbraco.Field("bodyCenteredHeadline3"),
+    titleColor=@Umbraco.Field("titleColorCenteredHeadline3")
+})
+
+
+@Umbraco.RenderMacro("IconsAndBulletpoints", new {
+    visible=@Umbraco.Field("visibleBulletsIcons"), 
+    backgroundColor=@Umbraco.Field("backgroundColorIconsBullets"), 
+    icon1=@Umbraco.Field("icon1picker"), 
+    icon2=@Umbraco.Field("icon2picker"), 
+    icon3=@Umbraco.Field("icon3picker"), 
+    icon4=@Umbraco.Field("icon4picker"), 
+    bullet1=@Umbraco.Field("bullet1"), 
+    bullet2=@Umbraco.Field("bullet2"), 
+    bullet3=@Umbraco.Field("bullet3"), 
+    bullet4=@Umbraco.Field("bullet4")
+})
+
+
+@Umbraco.RenderMacro("DemoNewImage", new 
+{   visible=@Umbraco.Field("demoVisible"), 
+    color=@Umbraco.Field("color"), 
+    demoTitle=@Umbraco.Field("demoTitle"), 
+    demoSubtitle=@Umbraco.Field("demoSubtitle"), 
+    privacy=@Umbraco.Field("privacy"), 
+    buttonText=@Umbraco.Field("buttonText"), 
+    buttonColor=@Umbraco.Field("buttonColor"), 
+    contactTitle=@Umbraco.Field("contactTitle"), 
+    contactSubtitle=@Umbraco.Field("contactSubtitle"), 
+    contactPhone=@Umbraco.Field("contactPhone"), 
+    contactEmail=@Umbraco.Field("contactEmail"), 
+    image=@Umbraco.Field("image"), 
+    name=@Umbraco.Field("placeholderName"), 
+    email=@Umbraco.Field("placeholderEmail"), 
+    phone=@Umbraco.Field("placeholderPhone"), 
+    btn_id=@Umbraco.Field("buttonId"), 
+    btn_color=@Umbraco.Field("buttonColor"), 
+    btn_bg=@Umbraco.Field("buttonBackground"), 
+    showCaptcha="0", 
+    companyName=@Umbraco.Field("placeholderCompany"),
+})
+
+
+@Umbraco.RenderMacro("AlternateFreeDemo", new {
+    backgroundColor=@Umbraco.Field("backgroundColorBookDemoAlt"), 
+    visible=@Umbraco.Field("visibleBookDemoAlt", altText:"none"), 
+    title=@Umbraco.Field("titleBookDemoAlt"), 
+    subtitle=@Umbraco.Field("subtitleBookDemoAlt"), 
+    backgroundColorButton=@Umbraco.Field("backgroundColorButtonBookDemoAlt"), 
+    textColorButton=@Umbraco.Field("buttonTextColorBookDemoAlt"), 
+    buttonLink=@Umbraco.Field("buttonLinkBookDemoAlt"), 
+    buttonId=@Umbraco.Field("buttonIdBookDemoAlt"), 
+    buttonText=@Umbraco.Field("buttonTextBookDemoAlt"),
+    textColor=@Umbraco.Field("textColorBookDemoAlt")
+})

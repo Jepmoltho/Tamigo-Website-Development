@@ -1,0 +1,157 @@
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = "MasterLayout.cshtml";
+}
+<style>
+    .blog-main-header{
+        min-height: 300px;
+        background-color: #690046;
+        margin-bottom: 2rem;
+    }
+    
+    /*
+    .less-purple-square{
+        position:relative;
+         right:0; 
+         bottom:0;
+         background-color: purple;
+         height: 100px;
+         width: 150px;
+    }
+    */
+    
+    .blog-featured-container{
+        background-color: #FFFFFF;
+        margin: 2rem;
+        max-width: 300px;
+        border-radius:4px 4px 4px 4pxpx;
+    }
+    
+    .blog-image{
+        max-width: 300px;
+        border-radius: 4px 4px 0px 0px;
+    }
+    
+    .read-more-link{
+        text-align: right;
+    }
+    
+    .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .nav-ele{
+        display:inline;
+        color: #646464; 
+    }
+    
+    #pageContent{
+         background-color: #F5F5F5;
+    }
+</style>
+
+
+@Umbraco.RenderMacro("Space", new {color="white", heigth="90"})
+
+@* the fun starts here *@
+<div class="blog-main-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="title white" style="padding-top: 18%; padding-bottom: 10%; margin-left: 2rem;" >tamigo blog</div>
+            </div>
+            <div class="col-sm-4">
+                <div class="first-square" style="min-height:150px"></div>
+                <NOBR>
+                    <div class="second-square" style="height: 150px; background-color: #B44677; min-width:505px"></div>
+                </NOBR>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="flex-container">
+        <div id="bl-snip" class="blog-featured-container">
+            <img class="blog-image" src="https://www.tamigo.com/media/1781/cph-office-38.jpg" />
+            <div class="normal-text pt-3 pr-3 pl-3 pb-3"><strong>An interesting long long long long title for a post</strong></div>
+            <div class="small-text pb-3 pr-3 pl-3">This is the start of the long long long long long long long long body copy from a blog post</div>
+            <div class="small-text read-more-link pb-3 pr-3"><u><a href="www.tamigo.com" style="color: #646464; text-decoration-line: underline;">Read more</u><i class="fa fa-long-arrow-right pl-2" aria-hidden="true" style="text-decoration-line: none;"></i></a></div>
+        </div>
+        <div id="bl-snip" class="blog-featured-container">
+            <img class="blog-image" src="https://www.tamigo.com/media/1781/cph-office-38.jpg" />
+            <div class="normal-text pt-3 pr-3 pl-3 pb-3"><strong>An interesting long long long long title for a post</strong></div>
+            <div class="small-text pb-3 pr-3 pl-3">This is the start of the long long long long long long long long body copy from a blog post</div>
+            <div class="small-text read-more-link pb-3 pr-3"><u><a href="www.tamigo.com" style="color: #646464; text-decoration-line: underline;">Read more</u><i class="fa fa-long-arrow-right pl-2" aria-hidden="true" style="text-decoration-line: none;"></i></a></div>
+        </div>
+                <div id="bl-snip" class="blog-featured-container">
+            <img class="blog-image" src="https://www.tamigo.com/media/1781/cph-office-38.jpg" />
+            <div class="normal-text pt-3 pr-3 pl-3 pb-3"><strong>An interesting long long long long title for a post</strong></div>
+            <div class="small-text pb-3 pr-3 pl-3">This is the start of the long long long long long long long long body copy from a blog post</div>
+            <div class="small-text read-more-link pb-3 pr-3"><u><a href="www.tamigo.com" style="color: #646464; text-decoration-line: underline;">Read more</u><i class="fa fa-long-arrow-right pl-2" aria-hidden="true" style="text-decoration-line: none;"></i></a></div>
+        </div>
+        <div id="bl-snip" class="blog-featured-container">
+            <img class="blog-image" src="https://www.tamigo.com/media/1781/cph-office-38.jpg" />
+            <div class="normal-text pt-3 pr-3 pl-3 pb-3"><strong>An interesting long long long long title for a post</strong></div>
+            <div class="small-text pb-3 pr-3 pl-3">This is the start of the long long long long long long long long body copy from a blog post</div>
+            <div class="small-text read-more-link pb-3 pr-3"><u><a href="www.tamigo.com" style="color: #646464; text-decoration-line: underline;">Read more</u><i class="fa fa-long-arrow-right pl-2" aria-hidden="true" style="text-decoration-line: none;"></i></a></div>
+        </div>
+        <div id="bl-snip" class="blog-featured-container">
+            <img class="blog-image" src="https://www.tamigo.com/media/1781/cph-office-38.jpg" />
+            <div class="normal-text pt-3 pr-3 pl-3 pb-3"><strong>An interesting long long long long title for a post</strong></div>
+            <div class="small-text pb-3 pr-3 pl-3">This is the start of the long long long long long long long long body copy from a blog post</div>
+            <div class="small-text read-more-link pb-3 pr-3"><u><a href="www.tamigo.com" style="color: #646464; text-decoration-line: underline;">Read more</u><i class="fa fa-long-arrow-right pl-2" aria-hidden="true" style="text-decoration-line: none;"></i></a></div>
+        </div>
+        <div id="bl-snip" class="blog-featured-container">
+            <img class="blog-image" src="https://www.tamigo.com/media/1781/cph-office-38.jpg" />
+            <div class="normal-text pt-3 pr-3 pl-3 pb-3"><strong>An interesting long long long long title for a post</strong></div>
+            <div class="small-text pb-3 pr-3 pl-3">This is the start of the long long long long long long long long body copy from a blog post</div>
+            <div class="small-text read-more-link pb-3 pr-3"><u><a href="www.tamigo.com" style="color: #646464; text-decoration-line: underline;">Read more</u><i class="fa fa-long-arrow-right pl-2" aria-hidden="true" style="text-decoration-line: none;"></i></a></div>
+        </div>
+        <div id="bl-snip" class="blog-featured-container">
+            <img class="blog-image" src="https://www.tamigo.com/media/1781/cph-office-38.jpg" />
+            <div class="normal-text pt-3 pr-3 pl-3 pb-3"><strong>An interesting long long long long title for a post</strong></div>
+            <div class="small-text pb-3 pr-3 pl-3">This is the start of the long long long long long long long long body copy from a blog post</div>
+            <div class="small-text read-more-link pb-3 pr-3"><u><a href="www.tamigo.com" style="color: #646464; text-decoration-line: underline;">Read more</u><i class="fa fa-long-arrow-right pl-2" aria-hidden="true" style="text-decoration-line: none;"></i></a></div>
+        </div>
+        <!--
+        <div id="bl-snip" class="blog-featured-container"></div>
+        -->
+    </div>
+    <div class="pb-5"></div>
+    <center>
+        <div class="blog-pagenavigation" style="display:inline;">
+            <div class="medium-text nav-ele">Page: </div>
+            <a class="nav-ele" href="https://blog.tamigo.com/page/1"><div class="medium-text nav-ele">1 </div></a>
+    		<a class="nav-ele" href="https://blog.tamigo.com/page/2"><div class="medium-text nav-ele">2 </div></a>
+    		<a class="nav-ele" href="https://blog.tamigo.com/page/3"><div class="medium-text nav-ele">3 </div></a>
+        </div>
+    </center>
+    
+<div class="pb-5"></div>
+<div class="pb-4"></div>
+
+</div>
+
+<script>
+    //var imgUrl = "https://www.tamigo.com/media/1781/cph-office-38.jpg"; 
+    var title = "test";
+    //document.getElementById("bl-snip").innerHTML = title;
+    //document.getElementsByClassName("bl-snip").innerHTML = title;
+    
+    /* This works: Need to target specific attributes not inner HTML
+    const collection = document.getElementsByClassName("blog-featured-container");
+        for (let i = 0; i < collection.length; i++) {
+          collection[i].innerHTML = title;
+    }
+    */
+    /*
+    const collectionOfImg = document.getElementsByClassName("blog-image");
+        for (let i = 0; i < collectionOfImg.length; i++) {
+          collectionOfImg[i].src = "https://www.tamigo.com/media/1781/cph-office-38.jpg";
+    }
+    */
+
+</script>
+

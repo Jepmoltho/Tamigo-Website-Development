@@ -1,0 +1,14 @@
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+<style>
+.headline-container{
+    position: relative;
+    top: -20px;
+    background-color: white;
+    border-radius: 6px 6px 0px 0px;
+}
+</style>
+
+<div class="headline-container container-responsive pt-3 pb-3">
+    <div class="headline-inner-container pr-5 pl-5 pt-4 @Model.MacroParameters["titleColor"]">@Html.Raw(Model.MacroParameters["title"])</div>
+</div>
