@@ -9,29 +9,53 @@
         margin-bottom: 2rem;
     }
     
-    /*
-    .less-purple-square{
-        position:relative;
-         right:0; 
-         bottom:0;
-         background-color: purple;
-         height: 100px;
-         width: 150px;
-    }
-    */
-    
-    .blog-featured-container{
+</style>
+<style>
+        .blog-featured-container{
         background-color: #FFFFFF;
         margin: 2rem;
         max-width: 300px;
-        border-radius:4px 4px 4px 4pxpx;
-    }
+        border-radius:4px 4px 4px 4px;
+        }
+      @@media (max-width: 990px) {
+        .blog-featured-container {
+            max-width: 800px; 
+            border-radius:10px 10px 10px 10px; } }
+        
+</style>
+<style>
+    .container-responsive {
+      width: 100%;
+      padding-right: 20px;
+      padding-left: 20px;
+      margin-right: auto;
+      margin-left: auto; }
+      @@media (min-width: 576px) {
+        .container-responsive {
+          max-width: 920px; } }
+      @@media (min-width: 768px) {
+        .container-responsive {
+          max-width: 920px; } }
+      @@media (min-width: 992px) {
+        .container-responsive {
+          max-width: 1140px; } }
+      @@media (min-width: 1200px) {
+        .container-responsive {
+          max-width: 1140px; } }
+</style>
     
+<style>
     .blog-image{
         max-width: 300px;
         border-radius: 4px 4px 0px 0px;
     }
-    
+    @@media (max-width: 990px) {
+        .blog-image {
+        max-width: 800px;
+        border-radius: 10px 10px 0px 0px;
+        min-height: 500px; } }
+</style>
+<style>
     .read-more-link{
         text-align: right;
     }
@@ -49,29 +73,26 @@
     #pageContent{
          background-color: #F5F5F5;
     }
+    
+
 </style>
 
 
 @Umbraco.RenderMacro("Space", new {color="white", heigth="90"})
 
-@* the fun starts here *@
-<div class="blog-main-header">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-8">
-                <div class="title white" style="padding-top: 18%; padding-bottom: 10%; margin-left: 2rem;" >tamigo blog</div>
-            </div>
-            <div class="col-sm-4">
-                <div class="first-square" style="min-height:150px"></div>
-                <NOBR>
-                    <div class="second-square" style="height: 150px; background-color: #B44677; min-width:505px"></div>
-                </NOBR>
-            </div>
+
+<div class="row no-gutters bg-dark-purple  position-relative" id="Text-Image">
+    <div class="container-responsive">
+        <span class="tile-25 tile-right tile-bottom bg-light-purple"></span>
+        <div class="col-lg-6 col-md-11 pt-5 pb-5 ">
+            <h1 class="title text-white pt-5 pl-3 pb-5 pr-5">
+                <p class="pt-5 pb-5">tamigo blog</p>
+            </h1>
         </div>
     </div>
 </div>
 
-<div class="container">
+<div class="container-responsive">
     <div class="flex-container">
         <div id="bl-snip" class="blog-featured-container">
             <img class="blog-image" src="https://www.tamigo.com/media/1781/cph-office-38.jpg" />
@@ -133,6 +154,35 @@
 <div class="pb-4"></div>
 
 </div>
+
+<!-- 
+<div class="blog-main-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="title white" style="padding-top: 18%; padding-bottom: 10%; margin-left: 2rem;" >tamigo blog</div>
+            </div>
+            <div class="col-sm-4">
+                <div class="first-square" style="min-height:150px"></div>
+                <NOBR>
+                    <div class="second-square" style="height: 150px; background-color: #B44677; min-width:505px"></div>
+                </NOBR>
+            </div>
+        </div>
+    </div>
+</div>
+-->
+
+<!--
+    .less-purple-square{
+        position:relative;
+         right:0; 
+         bottom:0;
+         background-color: purple;
+         height: 100px;
+         width: 150px;
+    }
+-->
 
 <script>
     //var imgUrl = "https://www.tamigo.com/media/1781/cph-office-38.jpg"; 
