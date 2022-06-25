@@ -37,6 +37,11 @@
     .image-container {
         padding-bottom: 2.2rem;
     }
+    /*
+    .blog-spacer {
+        padding-bottom: 2.2rem;
+    }
+    */
     
     .blog-image{
         max-width:100%;
@@ -215,6 +220,8 @@
 })
 
 @Umbraco.RenderMacro("BlogSection", new {
+    index="a",
+    visible=@Umbraco.Field("blogPostVisible"),
     titleColor=@Umbraco.Field("titleColorBlog"), 
     title=@Umbraco.Field("titleBlog"), 
     bodyText=@Umbraco.Field("bodyTextBlog"), 
@@ -230,6 +237,8 @@
 })
 
 @Umbraco.RenderMacro("BlogSection", new {
+    index="b",
+    visible=@Umbraco.Field("blogPostVisible2"),
     titleColor=@Umbraco.Field("titleColorBlog2"), 
     title=@Umbraco.Field("titleBlog2"), 
     bodyText=@Umbraco.Field("bodyTextBlog2"), 
@@ -245,6 +254,8 @@
 })
 
 @Umbraco.RenderMacro("BlogSection", new {
+    index="c",
+    visible=@Umbraco.Field("blogPostVisible3"),
     titleColor=@Umbraco.Field("titleColorBlog3"), 
     title=@Umbraco.Field("titleBlog3"), 
     bodyText=@Umbraco.Field("bodyTextBlog3"), 
@@ -260,6 +271,8 @@
 })
 
 @Umbraco.RenderMacro("BlogSection", new {
+    index="d",
+    visible=@Umbraco.Field("blogPostVisible4"),
     titleColor=@Umbraco.Field("titleColorBlog4"), 
     title=@Umbraco.Field("titleBlog4"), 
     bodyText=@Umbraco.Field("bodyTextBlog4"), 
@@ -275,6 +288,8 @@
 })
 
 @Umbraco.RenderMacro("BlogSection", new {
+    index="e",
+    visible=@Umbraco.Field("blogPostVisible5"),
     titleColor=@Umbraco.Field("titleColorBlog5"), 
     title=@Umbraco.Field("titleBlog5"), 
     bodyText=@Umbraco.Field("bodyTextBlog5"), 
@@ -290,6 +305,8 @@
 })
 
 @Umbraco.RenderMacro("BlogSection", new {
+    index="f",
+    visible=@Umbraco.Field("blogPostVisible6"),
     titleColor=@Umbraco.Field("titleColorBlog6"), 
     title=@Umbraco.Field("titleBlog6"), 
     bodyText=@Umbraco.Field("bodyTextBlog6"), 
@@ -304,6 +321,80 @@
     video=@Umbraco.Field("videoBlog6")
 })
 
+
+@Umbraco.RenderMacro("BlogSection", new {
+    index="g",
+    visible=@Umbraco.Field("blogPostVisible7"),
+    titleColor=@Umbraco.Field("titleColorBlog7"), 
+    title=@Umbraco.Field("titleBlog7"), 
+    bodyText=@Umbraco.Field("bodyTextBlog7"), 
+    bulletPointsUnsorted=@Umbraco.Field("bulletPointsUnsortedBlog7"), 
+    bulletPointsSorted=@Umbraco.Field("bulletPointsSortedBlog7"), 
+    quoteTextColor=@Umbraco.Field("quoteTextColorBlog7"),
+    quote=@Umbraco.Field("quote7"),
+    quoteAuthor=@Umbraco.Field("quoteAuthor7"),
+    bodyTextSecond=@Umbraco.Field("bodyTextSecondBlog7"), 
+    image=@Umbraco.Field("imageBlog7"), 
+    imageLink=@Umbraco.Field("imageLinkBlog7"),
+    video=@Umbraco.Field("videoBlog7")
+})
+
+
+@Umbraco.RenderMacro("BlogSection", new {
+    index="h",
+    visible=@Umbraco.Field("blogPostVisible8"),
+    titleColor=@Umbraco.Field("titleColorBlog8"), 
+    title=@Umbraco.Field("titleBlog8"), 
+    bodyText=@Umbraco.Field("bodyTextBlog8"), 
+    bulletPointsUnsorted=@Umbraco.Field("bulletPointsUnsortedBlog8"), 
+    bulletPointsSorted=@Umbraco.Field("bulletPointsSortedBlog8"), 
+    quoteTextColor=@Umbraco.Field("quoteTextColorBlog8"),
+    quote=@Umbraco.Field("quote8"),
+    quoteAuthor=@Umbraco.Field("quoteAuthor8"),
+    bodyTextSecond=@Umbraco.Field("bodyTextSecondBlog8"), 
+    image=@Umbraco.Field("imageBlog8"), 
+    imageLink=@Umbraco.Field("imageLinkBlog8"),
+    video=@Umbraco.Field("videoBlog8")
+})
+
+
+@Umbraco.RenderMacro("BlogSection", new {
+    index="i",
+    visible=@Umbraco.Field("blogPostVisible9"),
+    titleColor=@Umbraco.Field("titleColorBlog9"), 
+    title=@Umbraco.Field("titleBlog9"), 
+    bodyText=@Umbraco.Field("bodyTextBlog9"), 
+    bulletPointsUnsorted=@Umbraco.Field("bulletPointsUnsortedBlog9"), 
+    bulletPointsSorted=@Umbraco.Field("bulletPointsSortedBlog9"), 
+    quoteTextColor=@Umbraco.Field("quoteTextColorBlog9"),
+    quote=@Umbraco.Field("quote9"),
+    quoteAuthor=@Umbraco.Field("quoteAuthor9"),
+    bodyTextSecond=@Umbraco.Field("bodyTextSecondBlog9"), 
+    image=@Umbraco.Field("imageBlog9"), 
+    imageLink=@Umbraco.Field("imageLinkBlog9"),
+    video=Umbraco.Field("videoBlog9")
+})
+
+
+@Umbraco.RenderMacro("BlogSection", new {
+    index="j",
+    visible=@Umbraco.Field("blogPostVisible10"),
+    titleColor=@Umbraco.Field("titleColorBlog10"), 
+    title=@Umbraco.Field("titleBlog10"), 
+    bodyText=@Umbraco.Field("bodyTextBlog10"), 
+    bulletPointsUnsorted=@Umbraco.Field("bulletPointsUnsortedBlog10"), 
+    bulletPointsSorted=@Umbraco.Field("bulletPointsSortedBlog10"), 
+    quoteTextColor=@Umbraco.Field("quoteTextColorBlog10"),
+    quote=@Umbraco.Field("quote10"),
+    quoteAuthor=@Umbraco.Field("quoteAuthor10"),
+    bodyTextSecond=@Umbraco.Field("bodyTextSecondBlog10"), 
+    image=@Umbraco.Field("imageBlog10"), 
+    imageLink=@Umbraco.Field("imageLinkBlog10"),
+    video=@Umbraco.Field("videoBlog10")
+})
+
+@Umbraco.RenderMacro("Space", new {color="", heigth="70"})
+
 @Umbraco.RenderMacro("BlogCta", new {
     buttonText=@Umbraco.Field("buttonTextBlog"), 
     buttonLink=@Umbraco.Field("buttonLinkBlog"), 
@@ -312,3 +403,26 @@
 })
 
 </div>
+
+<script>
+
+    var indexes = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"];
+    
+    //Filtering blog sections to display by the value in visibility toggle 
+    for (let i = 0; i < indexes.length; i++){
+        if ($(".index-" + indexes[i]).hasClass("d-False") == true ){
+            $(".index-" + indexes[i]).css("display", "none");
+        }
+    }
+    
+    //Filtering empty image containers to not display 
+    for (let i = 0; i < indexes.length; i++){
+        if (document.getElementsByClassName('img-index-' + indexes[i])[0].innerHTML.includes("media") == false ){
+            console.log("hurra")
+            $(".img-index-" + indexes[i]).css("display", "none");
+        }
+    }
+    
+</script>
+
+

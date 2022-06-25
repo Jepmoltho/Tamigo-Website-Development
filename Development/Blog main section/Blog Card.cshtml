@@ -1,0 +1,10 @@
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+<div id="bl-snip" class="blog-card-container">
+    <div class="blog-card-image-container">
+        <a href=@Model.MacroParameters["link"]><img class="blog-image" src=@Umbraco.Media(Model.MacroParameters["image"]).Url /> </a>
+    </div>
+    <div class="normal-text bl-snip-headline pt-3 pr-3 pl-3 pb-3"><strong>@Html.Raw(Model.MacroParameters["headline"])</strong></div>
+    <div class="small-text bl-snip-body pb-3 pr-3 pl-3">@Html.Raw(Model.MacroParameters["body"])...</div>
+    <div class="small-text bl-snip-link read-more-link pb-3 pr-3"><u><a href=@Model.MacroParameters["link"] style="color: #646464; text-decoration-line: underline;">@Umbraco.GetDictionaryValue("Read more")</u><i class="fa fa-long-arrow-right pl-2" aria-hidden="true" style="text-decoration-line: none;"></i></a></div>
+</div>
