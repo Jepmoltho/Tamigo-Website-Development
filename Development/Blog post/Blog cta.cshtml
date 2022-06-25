@@ -1,11 +1,48 @@
 @inherits Umbraco.Web.Macros.PartialViewMacroPage
 
 <style>
-
+    .container-responsive {
+      width: 100%;
+      padding-right: 20px;
+      padding-left: 20px;
+      margin-right: auto;
+      margin-left: auto; }
+      @@media (min-width: 576px) {
+        .container-responsive {
+          max-width: 920px; } }
+      @@media (min-width: 768px) {
+        .container-responsive {
+          max-width: 920px; } }
+      @@media (min-width: 992px) {
+        .container-responsive {
+          max-width: 960px; } }
+      @@media (min-width: 1200px) {
+        .container-responsive {
+          max-width: 960px; } }
 </style>
 
-<div class="container-responsive pr-5 pl-5"  style="position: relative; top:-150px;">
+<style>
+   .button-text-container{
+      line-height: 1.2;
+   }
+      @@media (max-width: 990px) {
+        .button-text-container {
+          font-size: 3.3rem  } }
+      @@media (min-width: 990px) {
+        .button-text-container {
+          font-size: 1.6rem } }
+</style>
+
+
+<div class="container-responsive pr-5 pl-5"  style="position: relative; top:-60px;">
     <div class="blog-element">
-        <a class="anchor-plain btn btn-tamigo pt-3 pb-3 bg-@Model.MacroParameters["buttonColor"] @Model.MacroParameters["buttonTextColor"]" href="@Model.MacroParameters["buttonLink"]" id="btnFrontpageEnterprise"><span class="big-text">@Model.MacroParameters["buttonText"]<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></span></a>
+        <a class="anchor-plain btn btn-tamigo pt-2 pb-2 bg-@Model.MacroParameters["buttonColor"] @Model.MacroParameters["buttonTextColor"]" href="@Model.MacroParameters["buttonLink"]" id="btnFrontpageEnterprise">
+            <span class="button-text-container">
+                <div class="word-cont" style="">@Model.MacroParameters["buttonText"]
+                    <i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i>
+                </div>
+            </span>
+        </a>
     </div>
+    
 </div>
