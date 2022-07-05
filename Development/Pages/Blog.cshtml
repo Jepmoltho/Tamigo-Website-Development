@@ -70,11 +70,23 @@
     .flex-container {
         display: flex;
         flex-wrap: wrap;
-        /*HERE*/
     }
-    @@media (max-width: 990px) {
+    @@media (max-width: 1193px) {
         .flex-container {
             justify-content: center; } }
+</style>
+
+<!-- Logic centering the last line of blog cards if there is less cards than the line above --> 
+<style>
+    .with-after:after{
+        content: "";
+        box-sizing: border-box;
+        flex: auto;
+    } 
+    @@media (max-width: 1193px) {
+        .with-after:after {
+            display:none; } }
+
 </style>
 
 <!-- Blog cards -->
@@ -145,6 +157,7 @@
         color: #646464; 
     }
     
+
 </style>
 
 
@@ -163,7 +176,7 @@
 </div>
 
 <div class="container-responsive">
-    <div class="flex-container">
+    <div class="flex-container with-after">
         
         <!-- List of blog cards get rendered here -->
         @Umbraco.Field("blogCardCarouselCards")
