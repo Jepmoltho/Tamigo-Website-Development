@@ -1,7 +1,6 @@
 @using tamigo_website.Helpers
 @using tamigo_website.Models
-<!-- inherits Umbraco.Web.Macros.PartialViewMacroPage -->
-@inherits Umbraco.Web.Mvc.UmbracoTemplatePage 
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
 	Layout = "MasterLayout.cshtml";
 }
@@ -26,7 +25,6 @@
     @@media (max-width: 990px) {
         .title-container {
             margin-top: 50px; } }
-    
 </style>
 
 <!-- Containers  -->
@@ -86,7 +84,6 @@
     @@media (max-width: 1193px) {
         .with-after:after {
             display:none; } }
-
 </style>
 
 <!-- Blog cards -->
@@ -143,7 +140,6 @@
 </style>
 
 <style>
-
     #pageContent{
          background-color: #F5F5F5;
     }
@@ -156,8 +152,6 @@
         display:inline;
         color: #646464; 
     }
-    
-
 </style>
 
 
@@ -178,12 +172,9 @@
 <div class="container-responsive">
     <div class="flex-container with-after">
         
-        <!-- List of blog cards get rendered here -->
+        <!-- Blog cards renders here -->
         @Umbraco.Field("blogCardCarouselCards")
         
     </div>
-    
     @Umbraco.RenderMacro("Space", new {color="#F5F5F5", heigth="90"})
-
 </div>
-

@@ -2,7 +2,7 @@
 
 <style>
 .header-image-container{
-    height: 700px;
+    height: 600px;
     overflow: hidden;
 }
 
@@ -11,9 +11,10 @@
     display: flex;
     justify-content: center;
 }
-
 </style>
 
 
-<div class="header-image-container"><img class="header-image" src=@Umbraco.Media(Model.MacroParameters["image"]).Url style=""></img></div>    
+<div class="header-image-container">
+    <img class="header-image" src=@Umbraco.Media(Model.MacroParameters["image"]).Url style=""></img>
+</div>    
 

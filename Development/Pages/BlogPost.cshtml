@@ -203,7 +203,7 @@
 </style>
 
 
-<!-- Related articles section -->
+<!-- CSS for Related articles section -->
 <style>
         .blog-card-container{
         background-color: #FFFFFF;
@@ -279,7 +279,6 @@
 </style>
 
 <style>
-
     .read-more-link{
         text-align: right;
     }
@@ -288,11 +287,9 @@
         display:inline;
         color: #646464; 
     }
-    
-
 </style>
 
-<!-- End of related articles section -->
+<!-- End of CSS for related articles section -->
 
 
 @Umbraco.RenderMacro("BlogHeader", new {
@@ -492,7 +489,10 @@
 </div>
 
 @Umbraco.RenderMacro("RelatedArticles", new {
-    visible=@Umbraco.Field("blogPostVisible11")
+    visible=@Umbraco.Field("blogPostVisible11"), 
+    titleColor=@Umbraco.Field("titleColorBlog11"), 
+    backgroundColor=@Umbraco.Field("backgroundColorBlogRelatedArticles"), 
+    customBackgroundColor=@Umbraco.Field("customBackgroundColorRelatedArticlesBlogPost")
 })
 
 
@@ -514,18 +514,17 @@
         }
     }
     
+    //Hides Related articles section if visibility is turned off 
     if (document.getElementsByClassName('related-articles')[0].innerHTML.includes("d-False") == true){
         $(".related-articles").css("display","none");
     }
     
-    
+    //Wraps related article cards in bootstrap columns. Nessesary to reuse same card components as on the main blog page in bootstraps gridsystem 
     for (let i = 0; i < 3; i++){
          $(".blog-card-container")[i].classList.add("col-lg")
     }
     
 
-
-    
 </script>
 
 
