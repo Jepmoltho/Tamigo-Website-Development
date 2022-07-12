@@ -1,7 +1,7 @@
 @using tamigo_website.Helpers
 @using tamigo_website.Models
 @inherits Umbraco.Web.Macros.PartialViewMacroPage
-@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+<!-- inherits Umbraco.Web.Mvc.UmbracoTemplatePage -->
 @{
 	Layout = "MasterLayout.cshtml";
 }
@@ -161,7 +161,7 @@
 </style>
 
 
-@Umbraco.RenderMacro("Space", new {color="white", heigth="90"})
+@Umbraco.RenderMacro("Space", new {color="white", heigth="63"})
 
 
 <div class="top-section-container row no-gutters bg-@Umbraco.Field("blogTopBackgroundColor") position-relative" id="Text-Image">

@@ -37,11 +37,6 @@
     .image-container {
         padding-bottom: 2.2rem;
     }
-    /*
-    .blog-spacer {
-        padding-bottom: 2.2rem;
-    }
-    */
     
     .blog-image{
         max-width:100%;
@@ -206,6 +201,98 @@
         .quoteAuthor-container {
           font-size: 1.4rem !important } }
 </style>
+
+
+<!-- Related articles section -->
+<style>
+        .blog-card-container{
+        background-color: #FFFFFF;
+        margin: 1.5rem; /*HERE*/
+        max-width: 350px; /*HERE*/
+        border-radius:4px 4px 4px 4px;
+        position: relative;
+        min-height: 450px; /*HERE*/
+        }
+      @@media (max-width: 990px) {
+        .blog-card-container {
+            max-width: 800px; 
+            border-radius:10px 10px 10px 10px; 
+            min-height: 1120px;} }
+        
+</style>
+
+<!-- Blog cards -->
+<style>
+    .blog-card-image-container{
+        height: 200px; /*HERE*/
+        overflow: hidden;
+    }
+    @@media (max-width: 990px) {
+        .blog-card-image-container {
+        height: 450px;
+        overflow: hidden;
+        } }
+
+    .blog-image-related{
+        width: 350px;
+        border-radius: 4px 4px 0px 0px;
+    }
+    @@media (max-width: 990px) {
+        .blog-image-related {
+        min-width: 800px;
+        border-radius: 10px 10px 0px 0px;
+        } }
+</style>
+
+<!-- Blog cards text -->
+<style>
+    .bl-snip-headline{
+        text-align:left;
+    }
+    @@media (max-width: 990px) {
+        .bl-snip-headline {
+        padding: 40px 40px 0px 40px !important;
+        text-align:left;
+    } }
+
+    .bl-snip-body{
+        font-size: 1.1rem !important;
+        text-align:left;
+    }
+    @@media (max-width: 990px) {
+        .bl-snip-body {
+        padding: 40px 40px 0px 40px !important;
+        font-size: 2.9rem !important;
+        text-align:left;
+    } }
+    
+    .bl-snip-link{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+    @@media (max-width: 990px) {
+        .bl-snip-link {
+        padding: 20px 50px 50px 40px !important;
+        font-size: 2.5rem !important;
+    } }
+</style>
+
+<style>
+
+    .read-more-link{
+        text-align: right;
+    }
+    
+    .nav-ele{
+        display:inline;
+        color: #646464; 
+    }
+    
+
+</style>
+
+<!-- End of related articles section -->
 
 
 @Umbraco.RenderMacro("BlogHeader", new {
@@ -404,6 +491,11 @@
 
 </div>
 
+@Umbraco.RenderMacro("RelatedArticles", new {
+    visible=@Umbraco.Field("blogPostVisible11")
+})
+
+
 <script>
 
     var indexes = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"];
@@ -418,10 +510,21 @@
     //Filtering empty image containers to not display 
     for (let i = 0; i < indexes.length; i++){
         if (document.getElementsByClassName('img-index-' + indexes[i])[0].innerHTML.includes("media") == false ){
-            console.log("hurra")
             $(".img-index-" + indexes[i]).css("display", "none");
         }
     }
+    
+    if (document.getElementsByClassName('related-articles')[0].innerHTML.includes("d-False") == true){
+        $(".related-articles").css("display","none");
+    }
+    
+    
+    for (let i = 0; i < 3; i++){
+         $(".blog-card-container")[i].classList.add("col-lg")
+    }
+    
+
+
     
 </script>
 

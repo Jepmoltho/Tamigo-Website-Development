@@ -2,7 +2,7 @@
 
 <div id="bl-snip" class="blog-card-container">
     <div class="blog-card-image-container">
-        <a href=@Model.MacroParameters["link"]><img class="blog-image" src=@Umbraco.Media(Model.MacroParameters["image"]).Url /> </a>
+        <a href=@Model.MacroParameters["link"]><img class="blog-image blog-image-related" src=@Umbraco.Media(Model.MacroParameters["image"]).Url /> </a>
     </div>
     <div class="normal-text bl-snip-headline pt-3 pr-3 pl-3 pb-3"><strong>@Html.Raw(Model.MacroParameters["headline"])</strong></div>
     <div class="small-text bl-snip-body pb-3 pr-3 pl-3">@Html.Raw(Model.MacroParameters["body"])...</div>
