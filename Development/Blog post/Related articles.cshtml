@@ -27,28 +27,11 @@
     
 </style>
 
-<div class="background-color-container" style="background-color:#eef0f2;">
-<div class="pr-5 pl-5 related-articles">
-    <center><div class="title pt-5 pb-4">Related articles</div></center>
+<div class="background-color-container bg-@Model.MacroParameters["backgroundColor"]" style="background-color:@Model.MacroParameters["customBackgroundColor"];">
+    <div class="pr-5 pl-5 related-articles">
+        <center><div class="title pt-5 pb-4 @Model.MacroParameters["titleColor"]">@Umbraco.GetDictionaryValue("Related articles headline")</div></center>
         <div class="row pb-5 d-@Model.MacroParameters["visible"]" style="justify-content: center;">
-            <!-- <div class="card-container-related"> -->
-            
-                
-                @Umbraco.Field("relatedArticlesCarousel")
-                
-                <!--
-                    <center>Umbraco.RenderMacro("BlogCard", new {image="4856", headline="Headline", body="Body text", link=""})</center>
-            </div>
-            <div class="card-container-related">
-                <center>
-                    Umbraco.RenderMacro("BlogCard", new {image="4856", headline="Headline", body="Body text", link=""})
-                </center>
-            </div>
-            <div class="card-container-related">
-                    <center>Umbraco.RenderMacro("BlogCard", new {image="4856", headline="Headline", body="Body text", link=""})</center>
-            </div>
-                -->
-            
-        <!-- </div> -->
+            <!-- Related articles cards renders here -->
+            @Umbraco.Field("relatedArticlesCarousel")
     </div>
 </div>
