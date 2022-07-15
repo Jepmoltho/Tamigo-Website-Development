@@ -1,0 +1,268 @@
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+    <style>
+                .input-free-trial {
+                    padding: 10px;
+                    border-radius: 0;
+                    background-color: white;
+                    border: 2px solid;
+                    outline: 0;
+                    width: 100%;
+                    color:#414BA5;
+                }
+
+                .select-free-trial {
+                    padding: 13px;
+                    border-radius: 0;
+                    background-color: white;
+                    border: 2px solid;
+                    outline: 0;
+                    width: 100%;
+                    color: #414BA5;
+                    border-color: #fff;
+                }
+
+                    .select-free-trial option {
+                        background-color: white;
+                        border: #fff;
+                        color: #414BA5;
+                    }
+    </style>
+<div class="row no-gutters">
+    <div class="col-sm-12 col-xl-7 bg-@Model.MacroParameters["color"] text-white padding-top-100">
+        <div class="col-11 offset-1">
+            <div class="row no-gutters pb-5">
+                <div class="col-xl-10 col-sm-12 small-title-behind white">
+                    @Html.Raw(@Model.MacroParameters["header1"])
+                </div>
+                <div class="col-xl-10 col-sm-12 big-normal-text-behind white">
+                    @Html.Raw(@Model.MacroParameters["text1"])
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Form container begins -->
+    <div class="col-sm-12 col-xl-5 bg-@Model.MacroParameters["color"] free-trial padding-bottom-100">
+
+        @using (Html.BeginUmbracoForm<tamigo_website.Controllers.TryController>
+            ("CreateTry", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <div class="col-11">
+                <div class="row no-gutters">
+                    <div class="col-12 margin-top-100 text-white small-title-behind">
+                        <h1>@Model.MacroParameters["header2"]</h1>
+                    </div>
+                    @if (!string.IsNullOrEmpty(Model.MacroParameters["text2"].ToString()))
+                    {
+                        <div class="col-xl-10 col-sm-12 big-normal-text-behind white mt-5">
+                            @Html.Raw(@Model.MacroParameters["text2"])
+                        </div>
+                    }
+                    <!-- First line in form (company name and industry) --> 
+                    <div class="col-12 mt-5">
+                        <div class="row no-gutters">
+                            <div class="col-lg-6 col-sm-12 pr-lg-4 pr-sm-0">
+                                <input class="input-free-trial big-normal-text z-index-0" name="Firm" placeholder="@Umbraco.GetDictionaryValue("FreeTrial.CompanyName")" value="@(ViewBag.CompanyName)">
+                            </div>
+
+                            <div class="col-lg-6 col-sm-12 mt-sm-4 mt-lg-0 pl-lg-4 pl-sm-0">
+                                @Html.DropDownList("Industry", new SelectList(
+                                new List<SelectListItem>
+                                    {
+                                    new SelectListItem
+                                    {
+                                    Text = @Umbraco.GetDictionaryValue("FreeTrial.business").ToString(),
+                                    Value = "",
+                                    Selected = string.IsNullOrEmpty(ViewBag.Business)
+                                    },
+                                    new SelectListItem
+                                    {
+                                    Text = @Umbraco.GetDictionaryValue("FreeTrial.business1").ToString(),
+                                    Value = @Umbraco.GetDictionaryValue("FreeTrial.business1").ToString(),
+                                    Selected = ViewBag.Business == @Umbraco.GetDictionaryValue("FreeTrial.business1").ToString()
+                                    },
+                                    new SelectListItem
+                                    {
+                                    Text = @Umbraco.GetDictionaryValue("FreeTrial.business2").ToString(),
+                                    Value = @Umbraco.GetDictionaryValue("FreeTrial.business2").ToString(),
+                                    Selected = ViewBag.Business == @Umbraco.GetDictionaryValue("FreeTrial.business2").ToString()
+                                    },
+                                    new SelectListItem
+                                    {
+                                    Text = @Umbraco.GetDictionaryValue("FreeTrial.business3").ToString(),
+                                    Value = @Umbraco.GetDictionaryValue("FreeTrial.business3").ToString(),
+                                    Selected = ViewBag.Business == @Umbraco.GetDictionaryValue("FreeTrial.business3").ToString()
+                                    },
+                                    new SelectListItem
+                                    {
+                                    Text = @Umbraco.GetDictionaryValue("FreeTrial.business4").ToString(),
+                                    Value = @Umbraco.GetDictionaryValue("FreeTrial.business4").ToString(),
+                                    Selected = ViewBag.Business == @Umbraco.GetDictionaryValue("FreeTrial.business4").ToString(),
+                                    },
+                                    new SelectListItem
+                                    {
+                                    Text = @Umbraco.GetDictionaryValue("FreeTrial.business5").ToString(),
+                                    Value = @Umbraco.GetDictionaryValue("FreeTrial.business5").ToString(),
+                                    Selected = ViewBag.Business == @Umbraco.GetDictionaryValue("FreeTrial.business5").ToString(),
+                                    },
+                                    new SelectListItem
+                                    {
+                                    Text = @Umbraco.GetDictionaryValue("FreeTrial.business6").ToString(),
+                                    Value = @Umbraco.GetDictionaryValue("FreeTrial.business6").ToString(),
+                                    Selected = ViewBag.Business == @Umbraco.GetDictionaryValue("FreeTrial.business6").ToString(),
+                                    },
+                                    new SelectListItem
+                                    {
+                                    Text = @Umbraco.GetDictionaryValue("FreeTrial.business7").ToString(),
+                                    Value = @Umbraco.GetDictionaryValue("FreeTrial.business7").ToString(),
+                                    Selected = ViewBag.Business == @Umbraco.GetDictionaryValue("FreeTrial.business7").ToString(),
+                                    },
+                                    new SelectListItem
+                                    {
+                                    Text = @Umbraco.GetDictionaryValue("FreeTrial.business8").ToString(),
+                                    Value = @Umbraco.GetDictionaryValue("FreeTrial.business8").ToString(),
+                                    Selected = ViewBag.Business == @Umbraco.GetDictionaryValue("FreeTrial.business8").ToString(),
+                                    },
+                                    new SelectListItem
+                                    {
+                                    Text = @Umbraco.GetDictionaryValue("FreeTrial.business9").ToString(),
+                                    Value = @Umbraco.GetDictionaryValue("FreeTrial.business9").ToString(),
+                                    Selected = ViewBag.Business == @Umbraco.GetDictionaryValue("FreeTrial.business9").ToString(),
+                                    },
+                                    new SelectListItem
+                                    {
+                                    Text = @Umbraco.GetDictionaryValue("FreeTrial.business10").ToString(),
+                                    Value = @Umbraco.GetDictionaryValue("FreeTrial.business10").ToString(),
+                                    Selected = ViewBag.Business == @Umbraco.GetDictionaryValue("FreeTrial.business10").ToString(),
+                                    },
+                                    new SelectListItem
+                                    {
+                                    Text = @Umbraco.GetDictionaryValue("FreeTrial.business11").ToString(),
+                                    Value = @Umbraco.GetDictionaryValue("FreeTrial.business11").ToString(),
+                                    Selected = ViewBag.Business == @Umbraco.GetDictionaryValue("FreeTrial.business11").ToString(),
+                                    }
+                                    }, "Value", "Text"), new { @class = "select-free-trial big-normal-text z-index-0" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-4">
+                        <input class="input-free-trial big-normal-text z-index-0" name="ContactPerson" placeholder="@Umbraco.GetDictionaryValue("FreeTrial.CustomerName")" value="@(ViewBag.CustomerName)">
+                    </div>
+                    <div class="col-12 mt-4">
+                        <input class="input-free-trial big-normal-text z-index-0" name="Email" placeholder="@Umbraco.GetDictionaryValue("FreeTrial.Email")" value="@(ViewBag.Email)">
+                    </div>
+                    <div class="col-12 mt-4">
+                        <input class="input-free-trial big-normal-text z-index-0" name="Phone" placeholder="@Umbraco.GetDictionaryValue("FreeTrial.PhoneNumber")" value="@(ViewBag.Telephone)">
+                    </div>
+                    <div class="col-12 mt-4 white">
+                        <div class="d-flex flex-row no-gutters ">
+                            <div class="d-inline-block big-normal-text">
+                                <i class="fa fa-check-square-o mr-3 pointer" aria-hidden="true" id="policyApproved" style="display: none; "></i>
+                                <i class="fa fa-stop mr-3 pointer" aria-hidden="true" id="policyNotApproved"></i>
+                            </div>
+                            <div class="d-inline-block medium-normal-text">
+                                @Html.Raw(@Umbraco.GetDictionaryValue("FreeTrial.Privacy"))
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Captcha lives here -->
+                    <div class="col-12 mt-4">
+                        <div class="d-flex flex-row no-gutters ">
+                            <div class="col-12 g-recaptcha" data-sitekey="6LedjYgUAAAAAFFvelFuIjCrh9Yeoutt7LRKOq5e"></div>
+                        </div>
+                    </div>
+
+                    @if (ViewBag.ErrorMessage != null)
+                    {
+                        <div class="col-12 mt-4 bg-orange white">
+                            <div class="pl-1 big-normal-text">
+                                @Umbraco.GetDictionaryValue("Error")
+                            </div>
+                            <div class="pl-1 pt-2 mb-3 big-normal-text">
+                                @ViewBag.ErrorMessage
+                            </div>
+                        </div>
+                    }
+                    <div class="col-12 mt-4">
+                        <button class="medium-normal-text bg-white btn-tamigo-100 light-bold z-index-0 @Model.MacroParameters["color"]" id="btnCreateTry" type="submit" disabled>
+                            @Umbraco.GetDictionaryValue("FreeTrial.ButtonText")
+                            <i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i>
+                        </button>
+                        <div class="progress mt-1" id="progressTry" style="display: none;">
+                            <div id="progressTryContent" style="height: 3rem !important" class="bg-dark-yellow progress-bar " role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-4 text-white text-center small-text">
+                        @Umbraco.GetDictionaryValue("FreeTrial.AlreadyCustomer")<a id="alreadyCustomerLink" class="simple-link pointer ml-2" style="text-decoration: underline !important">@Umbraco.GetDictionaryValue("FreeTrial.LoginText")</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<footer>
+    @Html.Raw(@Umbraco.GetDictionaryValue("SEO.Footer"))
+</footer>
+
+<script>
+    $(document).ready(function () {
+        $("#policyApproved").click(function () {
+            $("#btnCreateTry").prop("disabled", true);
+            $("#policyNotApproved").show();
+            $(this).hide();
+        });
+
+        $("#policyNotApproved").click(function () {
+            $("#btnCreateTry").prop("disabled", false);
+            $("#policyApproved").show();
+            $(this).hide();
+        });
+
+        $("#btnCreateTry").click(function () {
+            $(this).hide();
+            $("#progressTry").show();
+
+            setInterval(function () {
+                var widthInPercentage = (($("#progressTryContent").width() / $('#progressTry').parent().width()) * 100) + 2;
+                if (widthInPercentage >= 101) {
+                    $("#progressTryContent").addClass("progress-bar-striped");
+                    $("#progressTryContent").addClass("progress-bar-animated");
+                }
+
+                $("#progressTryContent").width(widthInPercentage + '%');
+            }, 800);
+        });
+
+        $("#alreadyCustomerLink").click(function () {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            if (/android/i.test(userAgent)) {
+                window.location.href = 'https://play.google.com/store/apps/details?id=tamigo.android.activities&hl=en_US';
+            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                window.location.href = 'https://itunes.apple.com/app/tamigo/id442666309?mt=8';
+            } else {
+                window.location.href = '@Umbraco.GetDictionaryValue("FreeTrial.LoginAddress")';
+            }
+        });
+    });
+</script>
+
+
+@if (!string.IsNullOrEmpty(ViewBag.SuccessfullLoginLink))
+{
+    <script>
+        try {
+            @Html.Raw(Umbraco.GetDictionaryValue("FormSubmission.FreeTrialForm"))
+        }
+        catch(error) {
+            //ignore
+        }
+
+        setTimeout(function () {
+            window.location.replace('@ViewBag.SuccessfullLoginLink');
+        }, 1000);
+    </script>
+}
+

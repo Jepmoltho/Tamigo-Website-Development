@@ -1,0 +1,160 @@
+@using tamigo_website.Helpers
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+
+@if (MacroHelper.IsVisible(Model.MacroParameters))
+{
+    if (!string.IsNullOrEmpty(Model.MacroParameters["title"].ToString()))
+    {
+        @Html.Raw(@Umbraco.GetDictionaryValue("SEO.Body"))
+        <style>
+            .input-free-trial {
+                padding: 10px;
+                border-radius: 0;
+                background-color: white;
+                border: 2px solid;
+                outline: 0;
+                width: 100%;
+                color: #414BA5;
+            }
+
+            .select-free-trial {
+                padding: 13px;
+                border-radius: 0;
+                background-color: white;
+                border: 2px solid;
+                outline: 0;
+                width: 100%;
+                color: #414BA5;
+                border-color: #fff;
+            }
+
+                .select-free-trial option {
+                    background-color: white;
+                    border: #fff;
+                    color: #414BA5;
+                }
+        </style>
+        <div class="row no-gutters">
+            <div class="col-sm-12 col-xl-7 bg-@Model.MacroParameters["color"] text-white">
+                <div class="col-11 offset-1">
+                    <div class="row no-gutters pb-5">
+                        <div class="col-12 text-right normal-text pt-4 dark-gray d-xl-block d-none">
+                            @Umbraco.RenderMacro("Languages", new
+                       {
+                           class1 = "",
+                           class2 = "simple-link",
+                           maxPerColumn = "7"
+                       })
+                        </div>
+                        <div class="col-xl-10 col-sm-12 small-title-behind white padding-top-50">
+                            @Html.Raw(Model.MacroParameters["header"])
+                        </div>
+                        <div class="col-xl-10 col-sm-12 big-normal-text-behind white margin-top-60">
+                            @Html.Raw(Model.MacroParameters["subHeader"])
+                        </div>
+                        <div class="col-xl-10 col-sm-12 medium-normal-text mt-4">
+                            @Html.Raw(Model.MacroParameters["bodyText"])
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Form -->
+            <div class="col-sm-12 col-xl-5 bg-@Model.MacroParameters["color"] free-trial padding-bottom-100">
+
+                <div class="col-11">
+                    <div class="row no-gutters">
+                        <div class="col-12 margin-top-100 margin-bottom-100 text-white small-title-behind">
+                            <h1>@Html.Raw(Model.MacroParameters["title"])</h1>
+                        </div>
+                        <!-- Form --> 
+                        <div style="text-align: center; padding: 12px 0; width:100%;">
+                            <div id="sib-form-container">
+                                <div id="sib-container"
+                                     style="text-align:center; padding:0;">
+                                    <form id="sib-form" method="POST"
+                                          action="https://3a9aadef.sibforms.com/serve/MUIEAEtrrOxVHheuQCrHePdhQ8rJAtJ7zk_PYBEAKX-LvX59xBJtukEU2wZVB5das16WR85A1OgVXP_I5O9lSNtS5CbLIMc_EeBo34crmW_DqF5u1xTs7l43pOpacLJCLM20cJ325XEoJWxQOjEtGQxn5N0cRoQdFPq00o7BKWqV976htfjwe2xfqwPEZ1lu5xNE_H0NyYRyh4jy">
+                                        <div style="padding: 8px 0;">
+                                            <div style="padding:0;">
+
+                                                <input class="input-free-trial big-normal-text z-index-0" maxlength="200"
+                                                       type="text" id="COMPANY" name="COMPANY" autocomplete="off"
+                                                       placeholder="Company name" data-required="true" required />
+
+
+                                                <label style="font-size:16px; text-align:left; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
+                                                </label>
+
+                                            </div>
+                                        </div>
+                                        <div style="padding: 8px 0;  width: 49%; display: inline-block;">
+                                            <div style="padding:0;">
+
+                                                <input class="input-free-trial big-normal-text z-index-0" maxlength="200"
+                                                       type="text" id="FIRSTNAME" name="FIRSTNAME" autocomplete="off"
+                                                       placeholder="First name" data-required="true" required />
+
+
+                                                <label style="font-size:16px; text-align:left; color:#661d1d; background-color:#ffeded;">
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div style="padding: 8px 0 8px 2%; width: 49%; display: inline-block;">
+                                            <div style="padding:0;">
+
+                                                <input class="input-free-trial big-normal-text z-index-0" maxlength="200"
+                                                       type="text" id="LASTNAME" name="LASTNAME" autocomplete="off"
+                                                       placeholder="Last name" data-required="true" required />
+
+
+                                                <label style="font-size:16px; text-align:left; color:#661d1d; background-color:#ffeded;">
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div style="padding: 8px 0;">
+                                            <div style="padding:0;">
+
+                                                <input class="input-free-trial big-normal-text z-index-0" type="text" id="EMAIL"
+                                                       name="EMAIL" autocomplete="off" placeholder="Email" data-required="true"
+                                                       required />
+
+                                                <label style="font-size:16px; text-align:left; color:#661d1d; background-color:#ffeded;">
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div style="padding: 8px 0;">
+
+                                            <label>
+                                                <input class="d-inline" type="checkbox" value="1" id="OPT_IN" name="OPT_IN" /><p class="d-inline text-white medium-normal-text">I agree to receive your newsletters and to terms and conditions.</p>
+                                            </label>
+                                            <label style="font-size: 16px; text-align: left; color: #661d1d; background-color: #ffeded;">
+                                            </label>
+                                        </div>
+                                        <div style="padding: 8px 0;">
+                                            <div style="text-align: left; padding:0;">
+                                                <button class="medium-normal-text bg-dark-blue white btn-tamigo-100 light-bold z-index-0 "
+                                                        form="sib-form" type="submit">
+                                                    <svg class="d-none" viewBox="0 0 512 512">
+                                                        <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
+                                                    </svg>
+                                                    SUBSCRIBE
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <input type="text" name="email_address_check" class="d-none input--hidden" value="">
+                                        <input type="hidden" name="locale" value="en">
+                                        <input type="hidden" name="html_type" value="simple">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            @Html.Raw(@Umbraco.GetDictionaryValue("SEO.Footer"))
+        </footer>
+
+    }
+}
