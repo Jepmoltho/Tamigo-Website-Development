@@ -37,13 +37,13 @@
     }
     
     .quote-symbol{
-        max-width: 50px;
-        max-height: 50px;
+        max-width: 45px;
+        height: 45px;
     }
     @@media (max-width: 990px) {
         .quote-symbol {
-            max-width: 250px;
-            height: 350px;
+            max-width: 100px;
+            height: 70px;
             margin-top: 40px;
             margin-bottom: 20px;
     } }
@@ -92,62 +92,82 @@
 </style>
 
 
-<div class="capterra-container bg-@Model.MacroParameters["backgroundColor"] d-@Model.MacroParameters["visible"] background-color-container" >
+
+<!-- Swiper js -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+/>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<!-- Slider js end -->
+
+
+
+
+
+
+
+<div class="capterra-container bg-@Model.MacroParameters["backgroundColor"] d-@Model.MacroParameters["visible"] background-color-container" style="background-color:@Model.MacroParameters["backgroundColorCustom"];">
     
     <div class="capterra-desktop pt-5">
         <div class="container-responsive">
             <div class="row">
                 <div class="col-lg-4">
-                    <div class="headline-container purple mb-5">
+                    <div class="headline-container @Model.MacroParameters["titleColor"] mb-5">
                         @Html.Raw(Model.MacroParameters["title"])
                     </div>
-                    <div class="review-container-single review-container">
+                    <div class="review-container-single review-container" style="background-color:@Model.MacroParameters["backgroundColorCardsCustom"];">
                         <div class="quote-symbol-container">
-                            <center><img class="quote-symbol" src="https://www.tamigo.nl/media/2668/screenshot-2022-07-14-at-141200.png?width=500&mode=max&animationprocessmode=first"/></center>
+                            <center><img class="quote-symbol" src=@Umbraco.Media(Model.MacroParameters["quoteIcon"]).Url /></center>
                         </div>
                         <center>
-                            <div class="medium-normal-text pb-4">@Html.Raw(Model.MacroParameters["quote1"])</div>
-                            <div class="medium-normal-text pb-3">@Html.Raw(Model.MacroParameters["author1"])</div>
+                            <div class="normal-text pb-4">@Html.Raw(Model.MacroParameters["quote1"])</div>
+                            <div class="normal-text">@Html.Raw(Model.MacroParameters["author1"])</div>
+                            <div class="normal-text pb-3">@Html.Raw(Model.MacroParameters["author1line2"])</div>
                         </center>
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="review-container-double review-container">
+                    <div class="review-container-double review-container" style="background-color:@Model.MacroParameters["backgroundColorCardsCustom"];">
                         <div class="quote-symbol-container">
-                            <center><img class="quote-symbol" src="https://www.tamigo.nl/media/2668/screenshot-2022-07-14-at-141200.png?width=500&mode=max&animationprocessmode=first"/></center>
+                            <center><img class="quote-symbol" src=@Umbraco.Media(Model.MacroParameters["quoteIcon"]).Url /></center>
                         </div>
                         <center>
-                        <div class="medium-normal-text pb-4">@Html.Raw(Model.MacroParameters["quote2"])</div>
-                        <div class="medium-normal-text pb-3">@Html.Raw(Model.MacroParameters["author2"])</div>    
+                        <div class="normal-text pb-4">@Html.Raw(Model.MacroParameters["quote2"])</div>
+                        <div class="normal-text">@Html.Raw(Model.MacroParameters["author2"])</div>
+                        <div class="normal-text pb-3">@Html.Raw(Model.MacroParameters["author2line2"])</div>
                         </center>
                     </div>
-                    <div class="review-container-double review-container">
+                    <div class="review-container-double review-container" style="background-color:@Model.MacroParameters["backgroundColorCardsCustom"];">
                         <div class="quote-symbol-container">
-                            <center><img class="quote-symbol" src="https://www.tamigo.nl/media/2668/screenshot-2022-07-14-at-141200.png?width=500&mode=max&animationprocessmode=first"/></center>
+                            <center><img class="quote-symbol" src=@Umbraco.Media(Model.MacroParameters["quoteIcon"]).Url /></center>
                         </div>
                         <center>
-                        <div class="medium-normal-text pb-4">@Html.Raw(Model.MacroParameters["quote3"])</div>
-                        <div class="medium-normal-text pb-3">@Html.Raw(Model.MacroParameters["author3"])</div>            
+                        <div class="normal-text pb-4">@Html.Raw(Model.MacroParameters["quote3"])</div>
+                        <div class="normal-text">@Html.Raw(Model.MacroParameters["author3"])</div>            
+                        <div class="normal-text pb-3">@Html.Raw(Model.MacroParameters["author3line2"])</div>
                         </center>
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="review-container-double review-container">
+                    <div class="review-container-double review-container" style="background-color:@Model.MacroParameters["backgroundColorCardsCustom"];">
                         <div class="quote-symbol-container">
-                            <center><img class="quote-symbol" src="https://www.tamigo.nl/media/2668/screenshot-2022-07-14-at-141200.png?width=500&mode=max&animationprocessmode=first"/></center>
+                            <center><img class="quote-symbol" src=@Umbraco.Media(Model.MacroParameters["quoteIcon"]).Url /></center>
                         </div>                    
                         <center>
-                        <div class="medium-normal-text pb-4">@Html.Raw(Model.MacroParameters["quote4"])</div>
-                        <div class="medium-normal-text pb-3">@Html.Raw(Model.MacroParameters["author4"])</div>            
+                        <div class="normal-text pb-4">@Html.Raw(Model.MacroParameters["quote4"])</div>
+                        <div class="normal-text">@Html.Raw(Model.MacroParameters["author4"])</div>            
+                        <div class="normal-text pb-3">@Html.Raw(Model.MacroParameters["author4line2"])</div>
                         </center>
                     </div>
-                    <div class="review-container-double review-container">
+                    <div class="review-container-double review-container" style="background-color:@Model.MacroParameters["backgroundColorCardsCustom"];">
                         <div class="quote-symbol-container">
-                            <center><img class="quote-symbol" src="https://www.tamigo.nl/media/2668/screenshot-2022-07-14-at-141200.png?width=500&mode=max&animationprocessmode=first"/></center>
+                            <center><img class="quote-symbol" src=@Umbraco.Media(Model.MacroParameters["quoteIcon"]).Url /></center>
                         </div>
                         <center>
-                        <div class="medium-normal-text pb-4">@Html.Raw(Model.MacroParameters["quote5"])</div>
-                        <div class="medium-normal-text pb-3">@Html.Raw(Model.MacroParameters["author5"])</div>                
+                        <div class="normal-text pb-4">@Html.Raw(Model.MacroParameters["quote5"])</div>
+                        <div class="normal-text">@Html.Raw(Model.MacroParameters["author5"])</div>                
+                        <div class="normal-text pb-3">@Html.Raw(Model.MacroParameters["author5line2"])</div>
                         </center>
                     </div>
                 </div>
@@ -160,56 +180,85 @@
     </div>
 
     <!-- Capterra slideshow for mobile -->
-    <div class="capterra-mobile pt-4 pb-5 pl-5 pr-5 d-@Model.MacroParameters["visible"]">
-        <div class="headline-container purple pt-5 pb-5 mt-4">
+    <div class="capterra-mobile pt-4 pb-4 pl-5 pr-5 d-@Model.MacroParameters["visible"]">
+        <div class="headline-container @Model.MacroParameters["titleColor"] pt-5 pb-5 mt-4">
             @Html.Raw(Model.MacroParameters["title"])
         </div>
-        <div class="slideshow-container">
+        <div class="slideshow-container" id="pageone">
             
         <div class="mySlides">
           <div class="numbertext">1 / 5</div>
-                <div class="review-container-single review-container pl-5 pr-5">
+                <div class="review-container-single review-container pl-5 pr-5" style="background-color:@Model.MacroParameters["backgroundColorCardsCustom"];">
                         <div class="quote-symbol-container">
                             <center><img class="quote-symbol" src=@Umbraco.Media(Model.MacroParameters["quoteIcon"]).Url /></center>
                         </div>
                         <center>
                             <div class="medium-normal-text pb-5">@Html.Raw(Model.MacroParameters["quote1"])</div>
                             <br/>
-                            <div class="medium-normal-text pb-5">@Html.Raw(Model.MacroParameters["author1"])</div>
+                            <div class="medium-normal-text">@Html.Raw(Model.MacroParameters["author1"])</div>
+                            <div class="medium-normal-text pb-5">@Html.Raw(Model.MacroParameters["author1line2"])</div>
                         </center>
                 </div>
         </div>
         
         <div class="mySlides">
           <div class="numbertext">2 / 5</div>
-          <center>
-            <img src="https://dogecoin.com/assets/img/doge.png" style="width:50%">
-          </center>    
-          <div class="text">Caption Two</div>
+                <div class="review-container-single review-container pl-5 pr-5" style="background-color:@Model.MacroParameters["backgroundColorCardsCustom"];">
+                        <div class="quote-symbol-container">
+                            <center><img class="quote-symbol" src=@Umbraco.Media(Model.MacroParameters["quoteIcon"]).Url /></center>
+                        </div>
+                        <center>
+                            <div class="medium-normal-text pb-5">@Html.Raw(Model.MacroParameters["quote2"])</div>
+                            <br/>
+                            <div class="medium-normal-text">@Html.Raw(Model.MacroParameters["author2"])</div>
+                            <div class="medium-normal-text pb-5">@Html.Raw(Model.MacroParameters["author2line2"])</div>
+                        </center>
+                </div>
         </div>
         
         <div class="mySlides">
           <div class="numbertext">3 / 5</div>
-          <center>
-            <img src="https://dogecoin.com/assets/img/doge.png" style="width:50%">
-          </center>    
-          <div class="text">Caption Three</div>
+                <div class="review-container-single review-container pl-5 pr-5" style="background-color:@Model.MacroParameters["backgroundColorCardsCustom"];">
+                        <div class="quote-symbol-container">
+                            <center><img class="quote-symbol" src=@Umbraco.Media(Model.MacroParameters["quoteIcon"]).Url /></center>
+                        </div>
+                        <center>
+                            <div class="medium-normal-text pb-5">@Html.Raw(Model.MacroParameters["quote3"])</div>
+                            <br/>
+                            <div class="medium-normal-text">@Html.Raw(Model.MacroParameters["author3"])</div>
+                            <div class="medium-normal-text pb-5">@Html.Raw(Model.MacroParameters["author3line2"])</div>
+                        </center>
+                </div>
         </div>
         
         <div class="mySlides">
           <div class="numbertext">4 / 5</div>
-          <center>
-            <img src="https://dogecoin.com/assets/img/doge.png" style="width:50%">
-          </center>    
-          <div class="text">Caption Three</div>
+                <div class="review-container-single review-container pl-5 pr-5" style="background-color:@Model.MacroParameters["backgroundColorCardsCustom"];">
+                        <div class="quote-symbol-container">
+                            <center><img class="quote-symbol" src=@Umbraco.Media(Model.MacroParameters["quoteIcon"]).Url /></center>
+                        </div>
+                        <center>
+                            <div class="medium-normal-text pb-5">@Html.Raw(Model.MacroParameters["quote4"])</div>
+                            <br/>
+                            <div class="medium-normal-text">@Html.Raw(Model.MacroParameters["author4"])</div>
+                            <div class="medium-normal-text pb-5">@Html.Raw(Model.MacroParameters["author4line2"])</div>
+                        </center>
+                </div>
         </div>
-    
+        
         <div class="mySlides">
           <div class="numbertext">5 / 5</div>
-          <center>
-            <img src="https://www.tamigo.nl/media/2601/aldi_cusomercase.jpg?width=500&mode=max&animationprocessmode=first" style="width:50%">
-          </center>    
-          <div class="text">Caption Three</div>
+                <div class="review-container-single review-container pl-5 pr-5" style="background-color:@Model.MacroParameters["backgroundColorCardsCustom"];">
+                        <div class="quote-symbol-container">
+                            <center><img class="quote-symbol" src=@Umbraco.Media(Model.MacroParameters["quoteIcon"]).Url /></center>
+                        </div>
+                        <center>
+                            <div class="medium-normal-text pb-5">@Html.Raw(Model.MacroParameters["quote5"])</div>
+                            <br/>
+                            <div class="medium-normal-text">@Html.Raw(Model.MacroParameters["author5"])</div>
+                            <div class="medium-normal-text pb-5">@Html.Raw(Model.MacroParameters["author5line2"])</div>
+                        </center>
+                </div>
         </div>
         
         <a class="prev" onclick="plusSlides(-1)" style="font-size:40px;">❮</a>
@@ -227,12 +276,37 @@
         </div>
         
                     <!-- Capterra logo with stars-->
-        <div class="capterra-star-logo-container-mobil mt-5 mb-3">
+        <div class="capterra-star-logo-container-mobil pb-5 mt-5 mb-4">
             <center>
                 <img class="capterra-star-logo" src=@Umbraco.Media(Model.MacroParameters["capterraIcon"]).Url style="width:100%;height:100%;"/>
             </center>    
-        </div>      
+        </div>  
+        
+        
+        <div class="swiper-container" style="height:100vh;width:100vw;overflow:hidden;">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    Slide 1
+                </div>
+                <div class="swiper-slide">
+                    Slide 2
+                </div>
+                <div class="swiper-slide">
+                    Slide 3
+                </div>
+            </div>
+        </div>
+        
+        <script>
+          var mySwiper = new Swiper ('.swiper-container')
+        </script>
+
+<!-- End of swiper js --> 
+        
+        
     </div>
+    
+
 
 </div>
 
@@ -274,7 +348,7 @@ img {vertical-align: middle;}
 
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+  /*background-color: rgba(0,0,0,0.8);*/
 }
 
 /* Caption text */
@@ -320,6 +394,7 @@ img {vertical-align: middle;}
 }
 </style>
 
+
 <script>
     let slideIndex = 1;
 showSlides(slideIndex);
@@ -353,6 +428,51 @@ if (document.getElementsByClassName('capterra-container')[0].innerHTML.includes(
     $(".capterra-desktop").css("display","none");
     $(".capterra-mobile").css("display","none");
 }
+
+
+
+/*
+
+$(document).on("pagecreate","#pageone",function(){
+  $("mySlides").on("swipeleft",function(){
+    $(this).hide();
+  });                       
+});
+
+//Swiping functionality using jQuery
+$(document).on("pagecreate","#pageone",function(){
+  $("mySlides").on("swiperight",function(){
+    $(this).hide();
+  });                       
+});
+*/
+
 </script>
 
 
+
+
+<!-- 
+<script>
+    let slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}
+      slides[slideIndex-1].style.display = "block";
+      setTimeout(showSlides, 5000); // Change image every 2 seconds
+    }    
+    
+    //Hides capterra if visibility is turned off 
+    if (document.getElementsByClassName('capterra-container')[0].innerHTML.includes("d-False") == true){
+        $(".capterra-desktop").css("display","none");
+        $(".capterra-mobile").css("display","none");
+    }
+</script>
+-->

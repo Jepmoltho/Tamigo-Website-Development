@@ -7,27 +7,93 @@
 @Umbraco.RenderMacro("Space", new { color = "white", heigth = "200" })
 
 
+<!--Swiping functionality using jQuery
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script>
+
+//Swiping functionality using jQuery
+$(".mySlides").on("swipeleft",function(){
+    alert("Yeah!");
+  });                 
+
+//Swiping functionality using jQuery
+$(document).on("pagecreate","#pageone",function(){
+    $(".mySlides").on("swiperight",function(){
+        alert("Yeah!");
+     });       
+});
+
+
+$(document).on("pagecreate","#pageone",function(){
+  $("p").on("swipe",function(){
+    $(this).hide();
+  });                       
+});    
+    
+</script>
+-->
+
 @Umbraco.RenderMacro("CapterraReviews", new {
     visible=@Umbraco.Field("visible"), 
     backgroundColor=@Umbraco.Field("backgroundColor"), 
     backgroundColorCustom=@Umbraco.Field("backgroundColorCustom"), 
-    backgroundColorCards=@Umbraco.Field("backgroundColorCards"), 
     backgroundColorCardsCustom=@Umbraco.Field("backgroundColorCardsCustom"), 
     titleColor=@Umbraco.Field("titleColor"), 
     title=@Umbraco.Field("title"), 
     quote1=@Umbraco.Field("quote1"), 
-    author1=@Umbraco.Field("author1"), 
+    author1=@Umbraco.Field("author1"),
+    author1line2=@Umbraco.Field("author1line2"),
     quote2=@Umbraco.Field("quote2"), 
     author2=@Umbraco.Field("author2"), 
+    author2line2=@Umbraco.Field("author2line2"),
     quote3=@Umbraco.Field("quote3"), 
     author3=@Umbraco.Field("author3"), 
+    author3line2=@Umbraco.Field("author3line2"),
     quote4=@Umbraco.Field("quote4"), 
     author4=@Umbraco.Field("author4"), 
+    author4line2=@Umbraco.Field("author4line2"),
     quote5=@Umbraco.Field("quote5"), 
     author5=@Umbraco.Field("author5"),
+    author5line2=@Umbraco.Field("author5line2"),
     quoteIcon=@Umbraco.Field("quoteIcon"), 
     capterraIcon=@Umbraco.Field("capterraIcon")
 })
+
+
+
+<!-- Slider js -->
+<!--
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+/>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<!-- Slider js end -->
+
+<!--
+<link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+<script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+-->
+
+<div class="swiper-container" style="height:100vh;width:100vw;overflow:hidden;">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            Slide 1
+        </div>
+        <div class="swiper-slide">
+            Slide 2
+        </div>
+        <div class="swiper-slide">
+            Slide 3
+        </div>
+    </div>
+</div>
+
+<script>
+  var mySwiper = new Swiper ('.swiper-container')
+</script>
+-->
 
 <!--
 Umbraco.RenderMacro("CapterraReviewsSlideshow")
