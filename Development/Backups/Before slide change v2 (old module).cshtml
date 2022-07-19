@@ -1,0 +1,90 @@
+        <div class="slideshow-container">
+            
+        <div class="mySlides">
+          <div class="numbertext">1 / 5</div>
+                <div class="review-container-single review-container pl-5 pr-5" style="background-color:@Model.MacroParameters["backgroundColorCardsCustom"];">
+                        <div class="quote-symbol-container">
+                            <center><img class="quote-symbol" src=@Umbraco.Media(Model.MacroParameters["quoteIcon"]).Url /></center>
+                        </div>
+                        <center>
+                            <div class="medium-normal-text pb-5">@Html.Raw(Model.MacroParameters["quote1"])</div>
+                            <br/>
+                            <div class="medium-normal-text">@Html.Raw(Model.MacroParameters["author1"])</div>
+                            <div class="medium-normal-text pb-5">@Html.Raw(Model.MacroParameters["author1line2"])</div>
+                        </center>
+                </div>
+        </div>
+        
+        <div class="mySlides">
+          <div class="numbertext">2 / 5</div>
+                <div class="review-container-single review-container pl-5 pr-5" style="background-color:@Model.MacroParameters["backgroundColorCardsCustom"];">
+                        <div class="quote-symbol-container">
+                            <center><img class="quote-symbol" src=@Umbraco.Media(Model.MacroParameters["quoteIcon"]).Url /></center>
+                        </div>
+                        <center>
+                            <div class="medium-normal-text pb-5">@Html.Raw(Model.MacroParameters["quote2"])</div>
+                            <br/>
+                            <div class="medium-normal-text">@Html.Raw(Model.MacroParameters["author2"])</div>
+                            <div class="medium-normal-text pb-5">@Html.Raw(Model.MacroParameters["author2line2"])</div>
+                        </center>
+                </div>
+        </div>
+        
+        <div class="mySlides">
+          <div class="numbertext">3 / 5</div>
+                <div class="review-container-single review-container pl-5 pr-5" style="background-color:@Model.MacroParameters["backgroundColorCardsCustom"];">
+                        <div class="quote-symbol-container">
+                            <center><img class="quote-symbol" src=@Umbraco.Media(Model.MacroParameters["quoteIcon"]).Url /></center>
+                        </div>
+                        <center>
+                            <div class="medium-normal-text pb-5">@Html.Raw(Model.MacroParameters["quote3"])</div>
+                            <br/>
+                            <div class="medium-normal-text">@Html.Raw(Model.MacroParameters["author3"])</div>
+                            <div class="medium-normal-text pb-5">@Html.Raw(Model.MacroParameters["author3line2"])</div>
+                        </center>
+                </div>
+        </div>
+        
+        <div class="mySlides">
+          <div class="numbertext">4 / 5</div>
+                <div class="review-container-single review-container pl-5 pr-5" style="background-color:@Model.MacroParameters["backgroundColorCardsCustom"];">
+                        <div class="quote-symbol-container">
+                            <center><img class="quote-symbol" src=@Umbraco.Media(Model.MacroParameters["quoteIcon"]).Url /></center>
+                        </div>
+                        <center>
+                            <div class="medium-normal-text pb-5">@Html.Raw(Model.MacroParameters["quote4"])</div>
+                            <br/>
+                            <div class="medium-normal-text">@Html.Raw(Model.MacroParameters["author4"])</div>
+                            <div class="medium-normal-text pb-5">@Html.Raw(Model.MacroParameters["author4line2"])</div>
+                        </center>
+                </div>
+        </div>
+        
+        <div class="mySlides">
+          <div class="numbertext">5 / 5</div>
+                <div class="review-container-single review-container pl-5 pr-5" style="background-color:@Model.MacroParameters["backgroundColorCardsCustom"];">
+                        <div class="quote-symbol-container">
+                            <center><img class="quote-symbol" src=@Umbraco.Media(Model.MacroParameters["quoteIcon"]).Url /></center>
+                        </div>
+                        <center>
+                            <div class="medium-normal-text pb-5">@Html.Raw(Model.MacroParameters["quote5"])</div>
+                            <br/>
+                            <div class="medium-normal-text">@Html.Raw(Model.MacroParameters["author5"])</div>
+                            <div class="medium-normal-text pb-5">@Html.Raw(Model.MacroParameters["author5line2"])</div>
+                        </center>
+                </div>
+        </div>
+        
+        <a class="prev" onclick="plusSlides(-1)" style="font-size:40px;">❮</a>
+        <a class="next" onclick="plusSlides(1)" style="font-size:40px;">❯</a>
+        
+        </div>
+        <br>
+        
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span> 
+          <span class="dot" onclick="currentSlide(2)"></span> 
+          <span class="dot" onclick="currentSlide(3)"></span> 
+          <span class="dot" onclick="currentSlide(4)"></span> 
+          <span class="dot" onclick="currentSlide(5)"></span> 
+        </div>
