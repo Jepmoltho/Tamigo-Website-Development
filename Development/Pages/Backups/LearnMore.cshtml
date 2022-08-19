@@ -1,0 +1,97 @@
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@using tamigo_website.Helpers
+@using Umbraco.Web.Models
+
+@if (MacroHelper.IsVisible(Model.MacroParameters))
+{
+    if (string.IsNullOrEmpty(Model.MacroParameters["body2"].ToString()))
+    {
+        <div class="row no-gutters margin-top-100 margin-bottom-100 @Model.MacroParameters["color"] bg-@Model.MacroParameters["backgroundColor"]" id="LearnMore">
+            <div class="col-lg-7 col-sm-10 offset-1">
+                <div class="small-title mt-5">
+                    @Html.Raw(Model.MacroParameters["title"])
+                </div>
+                @if (!string.IsNullOrEmpty(@Model.MacroParameters["body"].ToString()))
+                {
+                    <div class="big-normal-text text-black mt-3 pb-3">
+                        <div>
+                            @Html.Raw(Model.MacroParameters["body"])
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="pb-3"></div>
+                }
+                @if (!string.IsNullOrEmpty(@Model.MacroParameters["button"].ToString()))
+                {
+                    <div class="row no-gutters mt-3 mb-5 @Model.MacroParameters["color"]">
+                        <a class="anchor-plain btn-tamigo-small  bg-@Model.MacroParameters["btn_bg"] @Model.MacroParameters["btn_color"]" href="@Umbraco.Content(Model.MacroParameters["buttonAddress"]).Url" id=@Model.MacroParameters["btn_id"]><span class="medium-normal-text"> @Html.Raw(Model.MacroParameters["button"])<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></span></a>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="row no-gutters margin-top-100 margin-bottom-100 @Model.MacroParameters["color"] bg-@Model.MacroParameters["backgroundColor"]" id="LearnMore">
+            <div class="col-10 offset-1 mt-5">
+                <div class="small-title">
+                    @Html.Raw(Model.MacroParameters["title"])
+                </div>
+            </div>
+            <div class="col-10 offset-1">
+                <div class="row no-gutters">
+                    <div class="col-lg-6 col-sm-12 pr-lg-5 pr-sm-0 ">
+                        @if (!string.IsNullOrEmpty(@Model.MacroParameters["body"].ToString()))
+                        {
+                            <div class="big-normal-text text-black mt-3 pb-3">
+                                <div>
+                                    @Html.Raw(Model.MacroParameters["body"])
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="pb-3"></div>
+                        }
+                        @if (!string.IsNullOrEmpty(@Model.MacroParameters["button"].ToString()))
+                        {
+                            <div class="row no-gutters mt-3 mb-5 @Model.MacroParameters["color"]">
+                                @if (!string.IsNullOrEmpty(Model.MacroParameters["downloadAddress"].ToString()))
+                                {
+                                    <a class="anchor-plain btn-tamigo-small bg-@Model.MacroParameters["btn_bg"] @Model.MacroParameters["btn_color"]" href="@Model.MacroParameters["downloadAddress"]" download target="_blank" id=@Model.MacroParameters["btn_id"]><span class="medium-normal-text"> @Html.Raw(Model.MacroParameters["button"])<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></span></a>
+                                }
+                                else
+                                {
+                                    <a class="anchor-plain btn-tamigo-small bg-@Model.MacroParameters["btn_bg"] @Model.MacroParameters["btn_color"]" href="@Umbraco.Content(Model.MacroParameters["buttonAddress"]).Url" id=@Model.MacroParameters["btn_id"]><span class="medium-normal-text"> @Html.Raw(Model.MacroParameters["button"])<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></span></a>
+                                }
+                            </div>
+                        }
+                    </div>
+
+                    <div class="col-lg-6 col-sm-12 mt-sm-5 mt-lg-0">
+                        @if (!string.IsNullOrEmpty(@Model.MacroParameters["body2"].ToString()))
+                        {
+                            <div class="big-normal-text text-black mt-3 pb-3">
+                                <div>
+                                    @Html.Raw(Model.MacroParameters["body2"])
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="pb-3"></div>
+                        }
+                        @if (!string.IsNullOrEmpty(@Model.MacroParameters["button2"].ToString()))
+                        {
+                            <div class="row no-gutters mt-5 mb-5">
+                                <a class="anchor-plain btn-tamigo-small bg-@Model.MacroParameters["btn_bg2"] @Model.MacroParameters["btn_color2"]" href="@Umbraco.Content(Model.MacroParameters["buttonAddress2"]).Url" id=@Model.MacroParameters["btn_id2"]><span class="medium-normal-text"> @Html.Raw(Model.MacroParameters["button2"])<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></span></a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}

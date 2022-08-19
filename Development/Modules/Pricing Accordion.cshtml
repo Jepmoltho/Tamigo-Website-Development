@@ -1,0 +1,770 @@
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+<style>
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc; 
+}
+
+.panel {
+  padding: 0 0px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+
+.checkmark{
+    max-width: 50px;
+}
+
+.col-sm-2{
+    margin: 10px;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: none;
+}
+
+.flex-container-headlines {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: none;
+  overflow: hidden;
+}
+
+
+.container-responsive-unique {
+          width: 100%;
+          margin-right: auto;
+          margin-left: auto; }
+          @@media (min-width: 576px) {
+            .container-responsive {
+              max-width: 920px; } }
+          @@media (min-width: 768px) {
+            .container-responsive {
+              max-width: 920px; } }
+          @@media (min-width: 992px) {
+            .container-responsive {
+              max-width: 960px; } }
+          @@media (min-width: 1200px) {
+            .container-responsive {
+              max-width: 1140px; } }
+              
+              
+
+</style>
+
+<style>
+.row-color-headline-container1{
+    background-color: @Model.MacroParameters["colorRow1"];
+}
+
+.row-color-headline-container2{
+    background-color: @Model.MacroParameters["colorRow2"];
+}
+
+.row-color-headline-container3{
+    background-color: @Model.MacroParameters["colorRow3"];
+}
+
+.row-color-headline-container4{
+    background-color: @Model.MacroParameters["colorRow4"];
+}
+
+/*
+    .filter-green{
+        filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+    }
+    .filter-test{
+        filter: invert(21%) sepia(56%) saturate(4953%) hue-rotate(352deg) brightness(117%) contrast(101%);
+    }
+    .filter-js{
+        
+    }
+*/
+</style>
+
+
+<div class="accordion-container container-responsive-unique bg-Model.MacroParameters["backgroundColor"] d-Model.MacroParameters["visible"]">
+    
+        <div class="flex-container-headlines">
+ 
+              <div class="col-sm-3">
+                  
+              </div>
+              <div class="row-color-headline-container1 col-sm-2 big-text bg-blue white pt-5 pb-5 pl-4">
+                  <center>
+                    Essential
+                </center>
+              </div>
+              <div class="row-color-headline-container2 col-sm-2 big-text bg-blue white pt-5 pb-5 pl-4">
+                  <center>
+                    Standard
+                  </center>          
+              </div>
+              <div class="row-color-headline-container3 col-sm-2 big-text bg-blue white pt-5 pb-5 pl-4">
+                  <center>
+                    Advanced
+                  </center>          
+              </div>
+              <div class="row-color-headline-container4 col-sm-2 big-text bg-blue white pt-5 pb-5 pl-4">
+                  <center>
+                    Premium
+                  </center>          
+              </div>
+
+          </div>
+    
+    
+    <!-- Panel 1 -->
+    <button class="accordion medium-text panel-1">Section 1</button>
+        <div class="panel">
+        <!-- Row 1 -->
+          <div class="flex-container">
+              <div class="col-sm-3" style="padding-left: 0px;">
+                  This is a description
+              </div>
+              <div class="col-sm-2">
+                  <center>
+                    <img class="checkmark filter-js" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Check_mark_9x9.svg" />
+                  </center>          
+              </div>
+              <div class="col-sm-2">
+                  <center>
+                    <img class="checkmark filter-js2" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Check_mark_9x9.svg" />
+                  </center>                 
+              </div>
+              <div class="col-sm-2">
+                  <center>
+                    <img class="checkmark filter-js3" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Check_mark_9x9.svg" />
+                  </center>                 
+             </div>
+              <div class="col-sm-2">
+                  <center>
+                    <img class="checkmark filter-js4 d-False" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Check_mark_9x9.svg" />
+                  </center>             
+              </div>
+            </div>
+            <!-- Row 2 -->
+            <div class="flex-container">
+              <div class="col-sm-3" style="padding-left: 0px;">
+                  This is a description
+              </div>
+              <div class="col-sm-2">
+                  <center>
+                    <img class="checkmark filter-js d-False" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Check_mark_9x9.svg" />
+                  </center>          
+              </div>
+              <div class="col-sm-2">
+                  <center>
+                    <img class="checkmark filter-js2" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Check_mark_9x9.svg" />
+                  </center>                 
+              </div>
+              <div class="col-sm-2">
+                  <center>
+                    <img class="checkmark filter-js3" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Check_mark_9x9.svg" />
+                  </center>                 
+             </div>
+              <div class="col-sm-2">
+                  <center>
+                    <img class="checkmark filter-js4" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Check_mark_9x9.svg" />
+                  </center>             
+              </div>
+            </div>
+            <!-- Row 3 -->
+            <div class="flex-container pa-1-ro-3">
+              <div class="col-sm-3" style="padding-left: 0px;">
+                  This is a description
+              </div>
+              <div class="col-sm-2">
+                  <center>
+                    <img class="checkmark filter-js" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Check_mark_9x9.svg" />
+                  </center>          
+              </div>
+              <div class="col-sm-2">
+                  <center>
+                    <img class="checkmark filter-js2" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Check_mark_9x9.svg" />
+                  </center>                 
+              </div>
+              <div class="col-sm-2">
+                  <center>
+                    <img class="checkmark filter-js3" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Check_mark_9x9.svg" />
+                  </center>                 
+             </div>
+              <div class="col-sm-2">
+                  <center>
+                    <img class="checkmark filter-js4" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Check_mark_9x9.svg" />
+                  </center>             
+              </div>
+            </div>
+        </div>
+     
+     <!-- Panel 2 -->
+    <button class="accordion panel-2">Section 2</button>
+        <div class="panel">
+        <!-- Row 1 -->
+          <div class="flex-container">
+              <div class="col-sm-3" style="padding-left: 0px;">
+                  This is a description
+              </div>
+              <div class="col-sm-2">
+                  <center>
+                    <img class="checkmark" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Check_mark_9x9.svg" />
+                  </center>          
+              </div>
+              <div class="col-sm-2">
+                  <center>
+                    <img class="checkmark" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Check_mark_9x9.svg" />
+                  </center>                 </div>
+              <div class="col-sm-2">
+                  <center>
+                    <img class="checkmark" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Check_mark_9x9.svg" />
+                  </center>                 </div>
+              <div class="col-sm-2">
+                  <center>
+                    <img class="checkmark" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Check_mark_9x9.svg" />
+                  </center>             
+              </div>
+             </div>
+            <!-- Row 2 -->
+          <div class="flex-container">
+              <div class="col-sm-3" style="padding-left: 0px;">
+                  This is a description
+              </div>
+              <div class="col-sm-2">
+                  <center>
+                    <img class="checkmark" src="" />
+                  </center>          
+              </div>
+              <div class="col-sm-2">
+                  <center>
+                    <img class="checkmark" src="" />
+                  </center>                 </div>
+              <div class="col-sm-2">
+                  <center>
+                    <img class="checkmark" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Check_mark_9x9.svg" />
+                  </center>                 </div>
+              <div class="col-sm-2">
+                  <center>
+                    <img class="checkmark" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Check_mark_9x9.svg" />
+                  </center>             
+              </div>
+            </div>       
+    </div>
+    
+    <!-- Panel 3 -->
+    <button class="accordion panel-3">Section 3</button>
+        <div class="panel">
+        <!-- Row 1 -->
+          <div class="flex-container">
+              <div class="col-sm-3" style="padding-left: 0px;">
+                  This is a description
+              </div>
+              <div class="col-sm-2">
+                  <center>
+                    <img class="checkmark" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Check_mark_9x9.svg" />
+                  </center>          
+              </div>
+              <div class="col-sm-2">
+                  <center>
+                    <img class="checkmark" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Check_mark_9x9.svg" />
+                  </center>                 </div>
+              <div class="col-sm-2">
+                  <center>
+                    <img class="checkmark" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Check_mark_9x9.svg" />
+                  </center>                 </div>
+              <div class="col-sm-2">
+                  <center>
+                    <img class="checkmark" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Check_mark_9x9.svg" />
+                  </center>             
+              </div>
+             </div>
+          <!-- Row 2 -->
+          <div class="flex-container">
+              <div class="col-sm-3" style="padding-left: 0px;">
+                  This is a description
+              </div>
+              <div class="col-sm-2">
+                  <center>
+                    <img class="checkmark" src="" />
+                  </center>          
+              </div>
+              <div class="col-sm-2">
+                  <center>
+                    <img class="checkmark" src="" />
+                  </center>                 </div>
+              <div class="col-sm-2">
+                  <center>
+                    <img class="checkmark" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Check_mark_9x9.svg" />
+                  </center>                 </div>
+              <div class="col-sm-2">
+                  <center>
+                    <img class="checkmark" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Check_mark_9x9.svg" />
+                  </center>             
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- 
+
+ <div class="flex-container">
+              <div class="col-sm-3" style="padding-left: 0px;">
+                  This is a description
+              </div>
+              <div class="col-sm-2">
+                  <center>
+                    <img class="checkmark filter-js" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Check_mark_9x9.svg" />
+                  </center>          
+              </div>
+              <div class="col-sm-2">
+                  <center>
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="270" height="270">
+                        <path fill="#ff0000" d="M 30,180 90,240 240,30" style="stroke:#000; stroke-width:30; fill:none" />
+                    </svg>
+                  </center>                 
+              </div>
+              <div class="col-sm-2">
+                  <center>
+                    <img class="checkmark filter-test" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Check_mark_9x9.svg" />
+                  </center>                 
+             </div>
+              <div class="col-sm-2">
+                  <center>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"><path d="M44.8,49.5c0,1.1,0.8,2.1,1.9,2.3C45.6,51.6,44.8,50.6,44.8,49.5c-0.1-1.1,0.8-2.1,1.9-2.3C45.6,47.4,44.8,48.4,44.8,49.5z   M51.3,47.9c-0.3-0.3-0.8-0.6-1.3-0.7C50.5,47.3,50.9,47.5,51.3,47.9L51.3,47.9z M56.2,45.4C56.2,45.4,56.2,45.4,56.2,45.4l-5,2.5  l0,0L56.2,45.4z M57.9,47.9l-7,3.5c0,0,0,0-0.1,0.1c0.1,0,0.2,0,0.2-0.1L57.9,47.9L57.9,47.9z M65.3,44.2l-7.4,3.7l-7,3.5  c0,0-0.1,0-0.2,0.1c0.1,0,0.1,0,0.1-0.1l7-3.5L65.3,44.2L65.3,44.2z M51.2,47.9c-0.3-0.3-0.8-0.6-1.2-0.7  C50.5,47.3,50.9,47.5,51.2,47.9L51.2,47.9z M78.6,65.4v0.4c-0.2,21.2-6.9,32.8-6.9,32.8H27.1c0,0-6.7-11.6-6.9-32.8v-0.4  c0-5.2-0.6-8.9,9.8-11.7c0.9-0.3,3.3-1.3,4.1-1.6l7.3-4.5c0.8-1.2,1.3-2.5,1.7-3.6c-0.8-0.6-1.7-1.3-2.8-2.2c-3.7-3-2.9-5.1-3.9-8.1  c-0.4,0.7-0.9,0.6-1.6,0.1c-1.1,1-2.5,1.5-4,1.5c-3.3,0-6-2.7-6-5.9v-4.1c0-2.8,1.9-5.1,4.5-5.8C29.9,8.1,37.5,1,49.5,1  c12,0,19.6,7.1,20.1,18.7c2.5,0.7,4.4,3,4.4,5.7v4.1c0,2.8-1.9,5.1-4.5,5.7c0,0.2,0,0.3,0,0.5l-1.1,4.7c-0.3,1.5-1.6,3.1-3,3.7l0,0  l0,0l-7.4,3.7l-7,3.5c0,0,0,0-0.1,0.1c0,0-0.1,0-0.2,0c0,0,0,0-0.1,0c-0.1,0-0.2,0-0.4,0.1c-0.5,0.1-1.4,0.1-3,0.3h0  c-0.1,0-0.3,0-0.4,0c-1.1-0.2-1.9-1.2-1.9-2.3c0-1.1,0.8-2.1,1.9-2.3c0.1,0,0.3,0,0.4,0h2.4c0.2,0,0.3,0,0.5,0  c0.5,0.1,0.9,0.3,1.2,0.7l0,0l0,0l5-2.5l7.8-3.9c0.6-0.3,1.2-1.1,1.4-1.7l1-4.6c-0.9-0.2-1.8-0.7-2.5-1.3c-0.6,0.6-1.2,0.7-1.6,0  c-0.9,3-0.2,5.1-3.9,8.1c-1.1,0.8-1.9,1.6-2.8,2.2c0.1,0.2,0.1,0.4,0.2,0.6L51.3,47c-0.5-0.4-1.1-0.6-1.8-0.6h-2.4  c-1.7,0-3.1,1.4-3.1,3.1c0,1.7,1.4,3.1,3.1,3.1h0.1c3.3-0.2,3.8-0.4,4-0.5l7.4-3.7l6.1,3.8c0.8,0.3,3.1,1.3,4.1,1.6  C79.2,56.5,78.6,60.2,78.6,65.4z M67.9,33.3c2.3,0.8,4.9-0.9,5.2-4c0.1-1.2,0.1-2.5,0-3.7c-0.2-3-2.9-4.8-5.2-4  C69.1,25.4,69.1,29.4,67.9,33.3z M59.1,6.7c3.1,2.1,5.7,5.9,5.9,12.3c0,0.4,0,0.8,0.1,1.2c0.8-0.4,1.6-0.7,2.5-0.7  C67.2,12.7,64.2,8.6,59.1,6.7z M30.8,21.6c-2.3-0.8-4.9,0.9-5.2,4c-0.1,1.2-0.1,2.5,0,3.7c0.2,3,2.9,4.8,5.2,4  C29.6,29.4,29.6,25.4,30.8,21.6z M39.5,6.8c-4.9,2-7.8,6.1-8.1,12.7c0.9,0.1,1.7,0.3,2.4,0.7c0-0.4,0-0.8,0.1-1.2  C34,12.6,36.5,9,39.5,6.8z M51.3,47.9L51.3,47.9c-0.4-0.3-0.8-0.6-1.3-0.7C50.5,47.3,50.9,47.5,51.3,47.9z M65.3,44.2l-7.4,3.7  l-7,3.5c0,0-0.1,0-0.2,0.1c0.1,0,0.1,0,0.1-0.1l7-3.5L65.3,44.2L65.3,44.2z" fill="#ff0000"/></svg>
+                  </center>             
+              </div>
+            </div>
+-->
+
+<script>
+//Visibility of accordion module 
+if (document.getElementsByClassName('accordion-container')[0].classList.contains("d-False")){
+    $(".accordion-container").css("display","none");
+}
+
+
+//Functionality of accordion dropdown 
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
+
+<script>
+var noOfCheckmarks = document.getElementsByClassName('checkmark').length;
+for (let i = 0; i < noOfCheckmarks; i++){
+    if (document.getElementsByClassName('checkmark')[i].classList.contains("d-False")){
+        document.getElementsByClassName('checkmark')[i].classList.add("hideCheckmark")
+        console.log("added")
+    }
+    $(".hideCheckmark").css("display","none")
+    $(".hideCheckmark").hide()
+}
+
+//Hides checkmarks as the last thing after loops and coloring has finished 
+setTimeout(() => {
+  console.log("Delayed for 1 second.");
+     $(".hideCheckmark").css("display","none")
+    $(".hideCheckmark").hide()
+}, "1000")
+
+
+</script>
+
+
+
+<script>
+
+class Color {
+  constructor(r, g, b) {
+    this.set(r, g, b);
+  }
+  
+  toString() {
+    return `rgb(${Math.round(this.r)}, ${Math.round(this.g)}, ${Math.round(this.b)})`;
+  }
+
+  set(r, g, b) {
+    this.r = this.clamp(r);
+    this.g = this.clamp(g);
+    this.b = this.clamp(b);
+  }
+
+  hueRotate(angle = 0) {
+    angle = angle / 180 * Math.PI;
+    const sin = Math.sin(angle);
+    const cos = Math.cos(angle);
+
+    this.multiply([
+      0.213 + cos * 0.787 - sin * 0.213,
+      0.715 - cos * 0.715 - sin * 0.715,
+      0.072 - cos * 0.072 + sin * 0.928,
+      0.213 - cos * 0.213 + sin * 0.143,
+      0.715 + cos * 0.285 + sin * 0.140,
+      0.072 - cos * 0.072 - sin * 0.283,
+      0.213 - cos * 0.213 - sin * 0.787,
+      0.715 - cos * 0.715 + sin * 0.715,
+      0.072 + cos * 0.928 + sin * 0.072,
+    ]);
+  }
+
+  grayscale(value = 1) {
+    this.multiply([
+      0.2126 + 0.7874 * (1 - value),
+      0.7152 - 0.7152 * (1 - value),
+      0.0722 - 0.0722 * (1 - value),
+      0.2126 - 0.2126 * (1 - value),
+      0.7152 + 0.2848 * (1 - value),
+      0.0722 - 0.0722 * (1 - value),
+      0.2126 - 0.2126 * (1 - value),
+      0.7152 - 0.7152 * (1 - value),
+      0.0722 + 0.9278 * (1 - value),
+    ]);
+  }
+
+  sepia(value = 1) {
+    this.multiply([
+      0.393 + 0.607 * (1 - value),
+      0.769 - 0.769 * (1 - value),
+      0.189 - 0.189 * (1 - value),
+      0.349 - 0.349 * (1 - value),
+      0.686 + 0.314 * (1 - value),
+      0.168 - 0.168 * (1 - value),
+      0.272 - 0.272 * (1 - value),
+      0.534 - 0.534 * (1 - value),
+      0.131 + 0.869 * (1 - value),
+    ]);
+  }
+
+  saturate(value = 1) {
+    this.multiply([
+      0.213 + 0.787 * value,
+      0.715 - 0.715 * value,
+      0.072 - 0.072 * value,
+      0.213 - 0.213 * value,
+      0.715 + 0.285 * value,
+      0.072 - 0.072 * value,
+      0.213 - 0.213 * value,
+      0.715 - 0.715 * value,
+      0.072 + 0.928 * value,
+    ]);
+  }
+
+  multiply(matrix) {
+    const newR = this.clamp(this.r * matrix[0] + this.g * matrix[1] + this.b * matrix[2]);
+    const newG = this.clamp(this.r * matrix[3] + this.g * matrix[4] + this.b * matrix[5]);
+    const newB = this.clamp(this.r * matrix[6] + this.g * matrix[7] + this.b * matrix[8]);
+    this.r = newR;
+    this.g = newG;
+    this.b = newB;
+  }
+
+  brightness(value = 1) {
+    this.linear(value);
+  }
+  contrast(value = 1) {
+    this.linear(value, -(0.5 * value) + 0.5);
+  }
+
+  linear(slope = 1, intercept = 0) {
+    this.r = this.clamp(this.r * slope + intercept * 255);
+    this.g = this.clamp(this.g * slope + intercept * 255);
+    this.b = this.clamp(this.b * slope + intercept * 255);
+  }
+
+  invert(value = 1) {
+    this.r = this.clamp((value + this.r / 255 * (1 - 2 * value)) * 255);
+    this.g = this.clamp((value + this.g / 255 * (1 - 2 * value)) * 255);
+    this.b = this.clamp((value + this.b / 255 * (1 - 2 * value)) * 255);
+  }
+
+  hsl() {
+    // Code taken from https://stackoverflow.com/a/9493060/2688027, licensed under CC BY-SA.
+    const r = this.r / 255;
+    const g = this.g / 255;
+    const b = this.b / 255;
+    const max = Math.max(r, g, b);
+    const min = Math.min(r, g, b);
+    let h, s, l = (max + min) / 2;
+
+    if (max === min) {
+      h = s = 0;
+    } else {
+      const d = max - min;
+      s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+      switch (max) {
+        case r:
+          h = (g - b) / d + (g < b ? 6 : 0);
+          break;
+
+        case g:
+          h = (b - r) / d + 2;
+          break;
+
+        case b:
+          h = (r - g) / d + 4;
+          break;
+      }
+      h /= 6;
+    }
+
+    return {
+      h: h * 100,
+      s: s * 100,
+      l: l * 100,
+    };
+  }
+
+  clamp(value) {
+    if (value > 255) {
+      value = 255;
+    } else if (value < 0) {
+      value = 0;
+    }
+    return value;
+  }
+}
+
+class Solver {
+  constructor(target, baseColor) {
+    this.target = target;
+    this.targetHSL = target.hsl();
+    this.reusedColor = new Color(0, 0, 0);
+  }
+
+  solve() {
+    const result = this.solveNarrow(this.solveWide());
+    return {
+      values: result.values,
+      loss: result.loss,
+      filter: this.css(result.values),
+    };
+  }
+
+  solveWide() {
+    const A = 5;
+    const c = 15;
+    const a = [60, 180, 18000, 600, 1.2, 1.2];
+
+    let best = { loss: Infinity };
+    for (let i = 0; best.loss > 25 && i < 3; i++) {
+      const initial = [50, 20, 3750, 50, 100, 100];
+      const result = this.spsa(A, a, c, initial, 1000);
+      if (result.loss < best.loss) {
+        best = result;
+      }
+    }
+    return best;
+  }
+
+  solveNarrow(wide) {
+    const A = wide.loss;
+    const c = 2;
+    const A1 = A + 1;
+    const a = [0.25 * A1, 0.25 * A1, A1, 0.25 * A1, 0.2 * A1, 0.2 * A1];
+    return this.spsa(A, a, c, wide.values, 500);
+  }
+
+  spsa(A, a, c, values, iters) {
+    const alpha = 1;
+    const gamma = 0.16666666666666666;
+
+    let best = null;
+    let bestLoss = Infinity;
+    const deltas = new Array(6);
+    const highArgs = new Array(6);
+    const lowArgs = new Array(6);
+
+    for (let k = 0; k < iters; k++) {
+      const ck = c / Math.pow(k + 1, gamma);
+      for (let i = 0; i < 6; i++) {
+        deltas[i] = Math.random() > 0.5 ? 1 : -1;
+        highArgs[i] = values[i] + ck * deltas[i];
+        lowArgs[i] = values[i] - ck * deltas[i];
+      }
+
+      const lossDiff = this.loss(highArgs) - this.loss(lowArgs);
+      for (let i = 0; i < 6; i++) {
+        const g = lossDiff / (2 * ck) * deltas[i];
+        const ak = a[i] / Math.pow(A + k + 1, alpha);
+        values[i] = fix(values[i] - ak * g, i);
+      }
+
+      const loss = this.loss(values);
+      if (loss < bestLoss) {
+        best = values.slice(0);
+        bestLoss = loss;
+      }
+    }
+    return { values: best, loss: bestLoss };
+
+    function fix(value, idx) {
+      let max = 100;
+      if (idx === 2 /* saturate */) {
+        max = 7500;
+      } else if (idx === 4 /* brightness */ || idx === 5 /* contrast */) {
+        max = 200;
+      }
+
+      if (idx === 3 /* hue-rotate */) {
+        if (value > max) {
+          value %= max;
+        } else if (value < 0) {
+          value = max + value % max;
+        }
+      } else if (value < 0) {
+        value = 0;
+      } else if (value > max) {
+        value = max;
+      }
+      return value;
+    }
+  }
+
+  loss(filters) {
+    // Argument is array of percentages.
+    const color = this.reusedColor;
+    color.set(0, 0, 0);
+
+    color.invert(filters[0] / 100);
+    color.sepia(filters[1] / 100);
+    color.saturate(filters[2] / 100);
+    color.hueRotate(filters[3] * 3.6);
+    color.brightness(filters[4] / 100);
+    color.contrast(filters[5] / 100);
+
+    const colorHSL = color.hsl();
+    return (
+      Math.abs(color.r - this.target.r) +
+      Math.abs(color.g - this.target.g) +
+      Math.abs(color.b - this.target.b) +
+      Math.abs(colorHSL.h - this.targetHSL.h) +
+      Math.abs(colorHSL.s - this.targetHSL.s) +
+      Math.abs(colorHSL.l - this.targetHSL.l)
+    );
+  }
+
+  //Return string with CSS style attrbute and value "filter: invert..."
+  css(filters) {
+    function fmt(idx, multiplier = 1) {
+      return Math.round(filters[idx] * multiplier);
+    }
+    return `filter: invert(${fmt(0)}%) sepia(${fmt(1)}%) saturate(${fmt(2)}%) hue-rotate(${fmt(3, 3.6)}deg) brightness(${fmt(4)}%) contrast(${fmt(5)}%);`;
+  }
+}
+
+function hexToRgb(hex) {
+  // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
+  const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+  hex = hex.replace(shorthandRegex, (m, r, g, b) => {
+    return r + r + g + g + b + b;
+  });
+
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result
+    ? [
+      parseInt(result[1], 16),
+      parseInt(result[2], 16),
+      parseInt(result[3], 16),
+    ]
+    : null;
+}
+
+//Fire for checkmark 1 
+$(document).ready(() => {
+    
+    const rgb = hexToRgb('@Model.MacroParameters["colorRow1"]');
+    if (rgb.length !== 3) {
+      alert('Invalid format!');
+      return;
+    }
+
+    const color = new Color(rgb[0], rgb[1], rgb[2]);
+    const solver = new Solver(color);
+    const result = solver.solve();
+
+    $('.filter-js').attr('style', result.filter);
+
+});
+
+//Fire for checkmark 2
+$(document).ready(() => {
+
+    const rgb = hexToRgb('@Model.MacroParameters["colorRow2"]');
+    if (rgb.length !== 3) {
+      alert('Invalid format!');
+      return;
+    }
+
+    const color = new Color(rgb[0], rgb[1], rgb[2]);
+    const solver = new Solver(color);
+    const result = solver.solve();
+
+    $('.filter-js2').attr('style', result.filter);
+
+});
+
+//Fire for checkmark 3
+$(document).ready(() => {
+
+    const rgb = hexToRgb('@Model.MacroParameters["colorRow3"]');
+    if (rgb.length !== 3) {
+      alert('Invalid format!');
+      return;
+    }
+
+    const color = new Color(rgb[0], rgb[1], rgb[2]);
+    const solver = new Solver(color);
+    const result = solver.solve();
+
+    $('.filter-js3').attr('style', result.filter);
+
+});
+
+//Fire for checkmark 4
+$(document).ready(() => {
+
+    const rgb = hexToRgb('@Model.MacroParameters["colorRow4"]');
+    if (rgb.length !== 3) {
+      alert('Invalid format!');
+      return;
+    }
+
+    const color = new Color(rgb[0], rgb[1], rgb[2]);
+    const solver = new Solver(color);
+    const result = solver.solve();
+
+    $('.filter-js4').attr('style', result.filter);
+
+});
+
+
+</script>
+
