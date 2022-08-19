@@ -211,7 +211,16 @@
                   </center>             
               </div>
             </div>
-        </div>
+
+        @Umbraco.RenderMacro("PricingAccordionCheckmarkRow", new {
+            visible="", 
+            visibleCheck1="", 
+            visibleCheck2="", 
+            visibleCheck3="", 
+            visibleCheck4="d-False"
+        })
+    
+    </div>
      
      <!-- Panel 2 -->
     <button class="accordion panel-2">Section 2</button>
