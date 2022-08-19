@@ -213,12 +213,21 @@
             </div>
 
         @Umbraco.RenderMacro("PricingAccordionCheckmarkRow", new {
+            visible="d-True", 
+            visibleCheck1="", 
+            visibleCheck2="", 
+            visibleCheck3="d-False", 
+            visibleCheck4=""
+        })
+        
+        @Umbraco.RenderMacro("PricingAccordionCheckmarkRow", new {
             visible="", 
             visibleCheck1="", 
             visibleCheck2="", 
             visibleCheck3="", 
             visibleCheck4="d-False"
         })
+    
     
     </div>
      
@@ -387,22 +396,35 @@ for (i = 0; i < acc.length; i++) {
 </script>
 
 <script>
+//Visibility of checkmarks 
 var noOfCheckmarks = document.getElementsByClassName('checkmark').length;
 for (let i = 0; i < noOfCheckmarks; i++){
     if (document.getElementsByClassName('checkmark')[i].classList.contains("d-False")){
         document.getElementsByClassName('checkmark')[i].classList.add("hideCheckmark")
         console.log("added")
     }
-    $(".hideCheckmark").css("display","none")
-    $(".hideCheckmark").hide()
+}
+
+//Visibility of rows 
+var noOfRows = document.getElementsByClassName('checkmark-row').length;
+for (let i = 0; i < noOfRows; i++){
+    if (document.getElementsByClassName('checkmark-row')[i].classList.contains("d-False")){
+        document.getElementsByClassName('checkmark-row')[i].classList.add("hideCheckmarkRow")
+        console.log("added")
+    }
 }
 
 //Hides checkmarks as the last thing after loops and coloring has finished 
 setTimeout(() => {
   console.log("Delayed for 1 second.");
-     $(".hideCheckmark").css("display","none")
-    $(".hideCheckmark").hide()
+    //Checkmarks
+    $(".hideCheckmark").css("display","none")
+    //$(".hideCheckmark").hide()
+    //Rows
+    $(".hideCheckmarkRow").css("display","none")
+    //$(".hideCheckmark").hide()
 }, "1000")
+
 
 
 </script>
