@@ -134,6 +134,7 @@
               </div>
 
           </div>
+          
         <!-- Container for headlines in boxes -->
         <div class="flex-container-headlines">
 
@@ -164,197 +165,96 @@
           </div>
     
     
-    <!-- Panel 1 -->
-    <button class="accordion medium-text panel-1">Section 1</button>
-        <div class="panel">
-        
-        <!-- Row 1 -->
-        @Umbraco.RenderMacro("PricingAccordionCheckmarkRow", new {
-            visible="", 
-            visibleCheck1="", 
-            visibleCheck2="", 
-            visibleCheck3="", 
-            visibleCheck4="",
-            titleOfRow="",
-            backgroundColor=""
-        })
-        
-        <!-- Row 2 -->
-        @Umbraco.RenderMacro("PricingAccordionCheckmarkRow", new {
-            visible="d-True", 
-            visibleCheck1="d-False", 
-            visibleCheck2="", 
-            visibleCheck3="", 
-            visibleCheck4="",
-            titleOfRow="",
-            backgroundColor="#F2F2F2"
-        })
-        
-        <!-- Row 3 -->
-        @Umbraco.RenderMacro("PricingAccordionCheckmarkRow", new {
-            visible="d-True", 
-            visibleCheck1="d-False", 
-            visibleCheck2="", 
-            visibleCheck3="", 
-            visibleCheck4="",
-            titleOfRow="",
-            backgroundColor=""
-        })
-
-        <!-- Row 4 -->
-        @Umbraco.RenderMacro("PricingAccordionCheckmarkRow", new {
-            visible="d-True", 
-            visibleCheck1="d-False", 
-            visibleCheck2="d-False", 
-            visibleCheck3="", 
-            visibleCheck4="",
-            titleOfRow="",
-            backgroundColor="#F2F2F2"
-        })
-    
-        <!-- Row 5 -->    
-        @Umbraco.RenderMacro("PricingAccordionCheckmarkRow", new {
-            visible="", 
-            visibleCheck1="d-False", 
-            visibleCheck2="d-False", 
-            visibleCheck3="d-False", 
-            visibleCheck4="",
-            titleOfRow="",
-            backgroundColor=""
-        })
-        
-        
-        @Html.Raw(Model.MacroParameters["macroRowPicker1"])
-    
-    </div>
-     
-     <!-- Panel 2 -->
-    <button class="accordion medium-text panel-2">Section 2</button>
+        <!-- Panel 1 -->
+        <button class="accordion medium-text panel-1">Section 1</button>
         <div class="panel">
             
-        <!-- Row 1 -->
-        @Umbraco.RenderMacro("PricingAccordionCheckmarkRow", new {
-            visible="", 
-            visibleCheck1="", 
-            visibleCheck2="", 
-            visibleCheck3="", 
-            visibleCheck4="",
-            titleOfRow="",
-            backgroundColor=""
-        })
+            @Html.Raw(Model.MacroParameters["macroRowPicker1"])
         
-        <!-- Row 2 -->
-        @Umbraco.RenderMacro("PricingAccordionCheckmarkRow", new {
-            visible="d-True", 
-            visibleCheck1="d-False", 
-            visibleCheck2="", 
-            visibleCheck3="", 
-            visibleCheck4="",
-            titleOfRow="",
-            backgroundColor="#F2F2F2"
-        })
-        
-        <!-- Row 3 -->
-        @Umbraco.RenderMacro("PricingAccordionCheckmarkRow", new {
-            visible="d-True", 
-            visibleCheck1="d-False", 
-            visibleCheck2="", 
-            visibleCheck3="", 
-            visibleCheck4="",
-            titleOfRow="",
-            backgroundColor=""
-        })
-
-        <!-- Row 4 -->
-        @Umbraco.RenderMacro("PricingAccordionCheckmarkRow", new {
-            visible="d-True", 
-            visibleCheck1="d-False", 
-            visibleCheck2="d-False", 
-            visibleCheck3="", 
-            visibleCheck4="",
-            titleOfRow="",
-            backgroundColor="#F2F2F2"
-        })
-    
-        <!-- Row 5 -->    
-        @Umbraco.RenderMacro("PricingAccordionCheckmarkRow", new {
-            visible="", 
-            visibleCheck1="d-False", 
-            visibleCheck2="d-False", 
-            visibleCheck3="d-False", 
-            visibleCheck4="",
-            titleOfRow="",
-            backgroundColor=""
-        })
-    
-            
-            
-    </div>
-    
-    <!-- Panel 3 -->
-    <button class="accordion medium-text panel-3">Section 3</button>
-        <div class="panel">
-            
-            
-        <!-- Row 1 -->
-        @Umbraco.RenderMacro("PricingAccordionCheckmarkRow", new {
-            visible="", 
-            visibleCheck1="", 
-            visibleCheck2="", 
-            visibleCheck3="", 
-            visibleCheck4="",
-            titleOfRow="",
-            backgroundColor=""
-        })
-        
-        <!-- Row 2 -->
-        @Umbraco.RenderMacro("PricingAccordionCheckmarkRow", new {
-            visible="d-True", 
-            visibleCheck1="d-False", 
-            visibleCheck2="", 
-            visibleCheck3="", 
-            visibleCheck4="",
-            titleOfRow="",
-            backgroundColor="#F2F2F2"
-        })
-        
-        <!-- Row 3 -->
-        @Umbraco.RenderMacro("PricingAccordionCheckmarkRow", new {
-            visible="d-True", 
-            visibleCheck1="d-False", 
-            visibleCheck2="", 
-            visibleCheck3="", 
-            visibleCheck4="",
-            titleOfRow="",
-            backgroundColor=""
-        })
-
-        <!-- Row 4 -->
-        @Umbraco.RenderMacro("PricingAccordionCheckmarkRow", new {
-            visible="d-True", 
-            visibleCheck1="d-False", 
-            visibleCheck2="d-False", 
-            visibleCheck3="", 
-            visibleCheck4="",
-            titleOfRow="",
-            backgroundColor="#F2F2F2"
-        })
-    
-        <!-- Row 5 -->    
-        @Umbraco.RenderMacro("PricingAccordionCheckmarkRow", new {
-            visible="", 
-            visibleCheck1="d-False", 
-            visibleCheck2="d-False", 
-            visibleCheck3="d-False", 
-            visibleCheck4="",
-            titleOfRow="",
-            backgroundColor=""
-        })
-    
-            
-            
-            
         </div>
+         
+         <!-- Panel 2 -->
+        <button class="accordion medium-text panel-2">Section 2</button>
+        <div class="panel">
+                
+            @Html.Raw(Model.MacroParameters["macroRowPicker2"])
+                
+        </div>
+        
+        <!-- Panel 3 -->
+        <button class="accordion medium-text panel-3">Section 3</button>
+        <div class="panel">
+                
+            @Html.Raw(Model.MacroParameters["macroRowPicker3"])
+        
+        </div>
+        
+        <!-- Panel 4 -->
+        <button class="accordion medium-text panel-4">Section 4</button>
+        <div class="panel">
+                
+            @Html.Raw(Model.MacroParameters["macroRowPicker4"])
+        
+        </div>
+        
+        <!-- Panel 5 -->
+        <button class="accordion medium-text panel-5">Section 5</button>
+        <div class="panel">
+                
+            @Html.Raw(Model.MacroParameters["macroRowPicker5"])
+        
+        </div>
+        
+        <!-- Panel 5 -->
+        <button class="accordion medium-text panel-5">Section 5</button>
+        <div class="panel">
+                
+            @Html.Raw(Model.MacroParameters["macroRowPicker5"])
+        
+        </div>
+        
+        <!-- Panel 6 -->
+        <button class="accordion medium-text panel-6">Section 6</button>
+        <div class="panel">
+                
+            @Html.Raw(Model.MacroParameters["macroRowPicker6"])
+        
+        </div>
+        
+        <!-- Panel 7 -->
+        <button class="accordion medium-text panel-7">Section 7</button>
+        <div class="panel">
+                
+            @Html.Raw(Model.MacroParameters["macroRowPicker7"])
+        
+        </div>
+        
+        <!-- Panel 8 -->
+        <button class="accordion medium-text panel-8">Section 8</button>
+        <div class="panel">
+                
+            @Html.Raw(Model.MacroParameters["macroRowPicker8"])
+        
+        </div>
+        
+        <!-- Panel 9 -->
+        <button class="accordion medium-text panel-9">Section 9</button>
+        <div class="panel">
+                
+            @Html.Raw(Model.MacroParameters["macroRowPicker9"])
+        
+        </div>
+        
+        <!-- Panel 10 -->
+        <button class="accordion medium-text panel-10">Section 10</button>
+        <div class="panel">
+                
+            @Html.Raw(Model.MacroParameters["macroRowPicker10"])
+        
+        </div>
+    
+        
+        
     </div>
 </div>      
 
