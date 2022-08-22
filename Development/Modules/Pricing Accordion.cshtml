@@ -143,22 +143,22 @@
               </div>
               <div class="row-color-headline-container1 col-sm-2 big-text bg-blue white pt-5 pb-5 pl-4">
                   <center>
-                    Essential
+                    @Model.MacroParameters["titleBoxRow1"]
                 </center>
               </div>
               <div class="row-color-headline-container2 col-sm-2 big-text bg-blue white pt-5 pb-5 pl-4">
                   <center>
-                    Standard
+                    @Model.MacroParameters["titleBoxRow2"]
                   </center>          
               </div>
               <div class="row-color-headline-container3 col-sm-2 big-text bg-blue white pt-5 pb-5 pl-4">
                   <center>
-                    Advanced
+                    @Model.MacroParameters["titleBoxRow3"]
                   </center>          
               </div>
               <div class="row-color-headline-container4 col-sm-2 big-text bg-blue white pt-5 pb-5 pl-4">
                   <center>
-                    Premium
+                    @Model.MacroParameters["titleBoxRow4"]
                   </center>          
               </div>
 
@@ -166,7 +166,7 @@
     
     
         <!-- Panel 1 -->
-        <button class="accordion medium-text panel-1">Section 1</button>
+        <button class="accordion medium-text panel-1 d-@Model.MacroParameters["visiblePanel1"]">Section 1</button>
         <div class="panel">
             
             @Html.Raw(Model.MacroParameters["macroRowPicker1"])
@@ -174,7 +174,7 @@
         </div>
          
          <!-- Panel 2 -->
-        <button class="accordion medium-text panel-2">Section 2</button>
+        <button class="accordion medium-text panel-2 d-@Model.MacroParameters["visiblePanel2"]">Section 2</button>
         <div class="panel">
                 
             @Html.Raw(Model.MacroParameters["macroRowPicker2"])
@@ -182,7 +182,7 @@
         </div>
         
         <!-- Panel 3 -->
-        <button class="accordion medium-text panel-3">Section 3</button>
+        <button class="accordion medium-text panel-3 d-@Model.MacroParameters["visiblePanel3"]">Section 3</button>
         <div class="panel">
                 
             @Html.Raw(Model.MacroParameters["macroRowPicker3"])
@@ -190,7 +190,7 @@
         </div>
         
         <!-- Panel 4 -->
-        <button class="accordion medium-text panel-4">Section 4</button>
+        <button class="accordion medium-text panel-4 d-@Model.MacroParameters["visiblePanel4"]">Section 4</button>
         <div class="panel">
                 
             @Html.Raw(Model.MacroParameters["macroRowPicker4"])
@@ -198,7 +198,7 @@
         </div>
         
         <!-- Panel 5 -->
-        <button class="accordion medium-text panel-5">Section 5</button>
+        <button class="accordion medium-text panel-5 d-@Model.MacroParameters["visiblePanel5"]">Section 5</button>
         <div class="panel">
                 
             @Html.Raw(Model.MacroParameters["macroRowPicker5"])
@@ -206,52 +206,45 @@
         </div>
         
         <!-- Panel 5 -->
-        <button class="accordion medium-text panel-5">Section 5</button>
-        <div class="panel">
-                
-            @Html.Raw(Model.MacroParameters["macroRowPicker5"])
-        
-        </div>
-        
-        <!-- Panel 6 -->
-        <button class="accordion medium-text panel-6">Section 6</button>
+        <button class="accordion medium-text panel-6 d-@Model.MacroParameters["visiblePanel6"]">Section 6</button>
         <div class="panel">
                 
             @Html.Raw(Model.MacroParameters["macroRowPicker6"])
         
         </div>
         
-        <!-- Panel 7 -->
-        <button class="accordion medium-text panel-7">Section 7</button>
+        <!-- Panel 6 -->
+        <button class="accordion medium-text panel-7 d-@Model.MacroParameters["visiblePanel7"]">Section 7</button>
         <div class="panel">
                 
             @Html.Raw(Model.MacroParameters["macroRowPicker7"])
         
         </div>
         
-        <!-- Panel 8 -->
-        <button class="accordion medium-text panel-8">Section 8</button>
+        <!-- Panel 7 -->
+        <button class="accordion medium-text panel-8 d-@Model.MacroParameters["visiblePanel8"]">Section 8</button>
         <div class="panel">
                 
             @Html.Raw(Model.MacroParameters["macroRowPicker8"])
         
         </div>
         
-        <!-- Panel 9 -->
-        <button class="accordion medium-text panel-9">Section 9</button>
+        <!-- Panel 8 -->
+        <button class="accordion medium-text panel-9 d-@Model.MacroParameters["visiblePanel9"]">Section 9</button>
         <div class="panel">
                 
             @Html.Raw(Model.MacroParameters["macroRowPicker9"])
         
         </div>
         
-        <!-- Panel 10 -->
-        <button class="accordion medium-text panel-10">Section 10</button>
+        <!-- Panel 9 -->
+        <button class="accordion medium-text panel-10 d-@Model.MacroParameters["visiblePanel10"]">Section 10</button>
         <div class="panel">
                 
             @Html.Raw(Model.MacroParameters["macroRowPicker10"])
         
         </div>
+        
     
         
         
@@ -325,7 +318,8 @@ for (let i = 0; i < noOfCheckmarks; i++){
     }
 }
 
-//Visibility of rows 
+//Visibility of rows (Dont think is used anymore)
+/*
 var noOfRows = document.getElementsByClassName('checkmark-row').length;
 for (let i = 0; i < noOfRows; i++){
     if (document.getElementsByClassName('checkmark-row')[i].classList.contains("d-False")){
@@ -333,6 +327,72 @@ for (let i = 0; i < noOfRows; i++){
         console.log("added")
     }
 }
+*/
+
+//Visibility of panels 
+/*
+var noOfPanels = document.getElementsByClassName('panel').length;
+for (let i = 0; i < noOfPanels; i++){
+    if (document.getElementsByClassName('panel-' + i)[0].classList.contains("d-False")){
+    $(".panel-' + i").hide();
+    }
+}
+*/
+
+/*
+var noOfPanels = document.getElementsByClassName('checkmark-row').length;
+for (let i = 0; i < noOfRows; i++){
+    if (document.getElementsByClassName('checkmark-row')[i].classList.contains("d-False")){
+        document.getElementsByClassName('checkmark-row')[i].classList.add("hideCheckmarkRow")
+        console.log("added")
+    }
+}
+*/
+
+//Visibility of panels 
+if (document.getElementsByClassName('panel-1')[0].classList.contains("d-False")){
+    $(".panel-1").css("display","none");
+}
+
+if (document.getElementsByClassName('panel-2')[0].classList.contains("d-False")){
+    $(".panel-2").css("display","none");
+}
+
+if (document.getElementsByClassName('panel-3')[0].classList.contains("d-False")){
+    $(".panel-3").css("display","none");
+}
+
+if (document.getElementsByClassName('panel-4')[0].classList.contains("d-False")){
+    $(".panel-4").css("display","none");
+}
+
+if (document.getElementsByClassName('panel-5')[0].classList.contains("d-False")){
+    $(".panel-5").css("display","none");
+}
+
+if (document.getElementsByClassName('panel-6')[0].classList.contains("d-False")){
+    $(".panel-6").css("display","none");
+}
+
+if (document.getElementsByClassName('panel-7')[0].classList.contains("d-False")){
+    $(".panel-7").css("display","none");
+}
+
+if (document.getElementsByClassName('panel-8')[0].classList.contains("d-False")){
+    $(".panel-8").css("display","none");
+}
+
+if (document.getElementsByClassName('panel-9')[0].classList.contains("d-False")){
+    $(".panel-9").css("display","none");
+}
+
+if (document.getElementsByClassName('panel-10')[0].classList.contains("d-False")){
+    $(".panel-10").css("display","none");
+}
+
+
+
+
 
 //Hides checkmarks as the last thing after loops and coloring has finished 
 setTimeout(() => {
