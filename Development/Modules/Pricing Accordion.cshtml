@@ -95,19 +95,28 @@
 .row-color-headline-container4{
     background-color: @Model.MacroParameters["colorRow4"];
 }
-
-/*
-    .filter-green{
-        filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
-    }
-    .filter-test{
-        filter: invert(21%) sepia(56%) saturate(4953%) hue-rotate(352deg) brightness(117%) contrast(101%);
-    }
-    .filter-js{
-        
-    }
-*/
 </style>
+<style>
+/*Text styling*/
+    .row-color-headline-box{
+        font-size: 1.8rem ;
+    }
+    @@media (max-width: 990px) {
+        .row-color-headline-box {
+        font-size: 1.5rem;
+    } }
+    
+    .panel-btn{
+        font-size: 1.8rem ;
+    }
+    @@media (max-width: 990px) {
+        .panel-btn {
+        font-size: 1.5rem;
+    } }
+    
+    
+</style>
+
 
 
 <div class="padding-accordion-container d-@Model.MacroParameters["visible"]">
@@ -141,22 +150,22 @@
               <div class="col-sm-3">
                   <!-- Is Empty -->
               </div>
-              <div class="row-color-headline-container1 col-sm-2 big-text bg-blue white pt-5 pb-5 pl-4">
+              <div class="row-color-headline-container1 row-color-headline-box col-sm-2 bg-blue white pt-5 pb-5 pl-4">
                   <center>
                     @Model.MacroParameters["titleBoxRow1"]
                 </center>
               </div>
-              <div class="row-color-headline-container2 col-sm-2 big-text bg-blue white pt-5 pb-5 pl-4">
+              <div class="row-color-headline-container2 row-color-headline-box col-sm-2 bg-blue white pt-5 pb-5 pl-4">
                   <center>
                     @Model.MacroParameters["titleBoxRow2"]
                   </center>          
               </div>
-              <div class="row-color-headline-container3 col-sm-2 big-text bg-blue white pt-5 pb-5 pl-4">
+              <div class="row-color-headline-container3 row-color-headline-box col-sm-2 bg-blue white pt-5 pb-5 pl-4">
                   <center>
                     @Model.MacroParameters["titleBoxRow3"]
                   </center>          
               </div>
-              <div class="row-color-headline-container4 col-sm-2 big-text bg-blue white pt-5 pb-5 pl-4">
+              <div class="row-color-headline-container4 row-color-headline-box col-sm-2 bg-blue white pt-5 pb-5 pl-4">
                   <center>
                     @Model.MacroParameters["titleBoxRow4"]
                   </center>          
@@ -166,7 +175,7 @@
     
     
         <!-- Panel 1 -->
-        <button class="accordion medium-text panel-1 d-@Model.MacroParameters["visiblePanel1"]">Section 1</button>
+        <button class="accordion panel-1 panel-btn d-@Model.MacroParameters["visiblePanel1"]">Section 1</button>
         <div class="panel">
             
             @Html.Raw(Model.MacroParameters["macroRowPicker1"])
@@ -174,7 +183,7 @@
         </div>
          
          <!-- Panel 2 -->
-        <button class="accordion medium-text panel-2 d-@Model.MacroParameters["visiblePanel2"]">Section 2</button>
+        <button class="accordion panel-2 panel-btn d-@Model.MacroParameters["visiblePanel2"]">Section 2</button>
         <div class="panel">
                 
             @Html.Raw(Model.MacroParameters["macroRowPicker2"])
@@ -182,7 +191,7 @@
         </div>
         
         <!-- Panel 3 -->
-        <button class="accordion medium-text panel-3 d-@Model.MacroParameters["visiblePanel3"]">Section 3</button>
+        <button class="accordion panel-3 panel-btn d-@Model.MacroParameters["visiblePanel3"]">Section 3</button>
         <div class="panel">
                 
             @Html.Raw(Model.MacroParameters["macroRowPicker3"])
@@ -190,7 +199,7 @@
         </div>
         
         <!-- Panel 4 -->
-        <button class="accordion medium-text panel-4 d-@Model.MacroParameters["visiblePanel4"]">Section 4</button>
+        <button class="accordion panel-4 panel-btn d-@Model.MacroParameters["visiblePanel4"]">Section 4</button>
         <div class="panel">
                 
             @Html.Raw(Model.MacroParameters["macroRowPicker4"])
@@ -198,47 +207,47 @@
         </div>
         
         <!-- Panel 5 -->
-        <button class="accordion medium-text panel-5 d-@Model.MacroParameters["visiblePanel5"]">Section 5</button>
+        <button class="accordion panel-5 panel-btn d-@Model.MacroParameters["visiblePanel5"]">Section 5</button>
         <div class="panel">
                 
             @Html.Raw(Model.MacroParameters["macroRowPicker5"])
         
         </div>
         
-        <!-- Panel 5 -->
-        <button class="accordion medium-text panel-6 d-@Model.MacroParameters["visiblePanel6"]">Section 6</button>
+        <!-- Panel 6 -->
+        <button class="accordion panel-6 panel-btn d-@Model.MacroParameters["visiblePanel6"]">Section 6</button>
         <div class="panel">
                 
             @Html.Raw(Model.MacroParameters["macroRowPicker6"])
         
         </div>
         
-        <!-- Panel 6 -->
-        <button class="accordion medium-text panel-7 d-@Model.MacroParameters["visiblePanel7"]">Section 7</button>
+        <!-- Panel 7 -->
+        <button class="accordion panel-7 panel-btn d-@Model.MacroParameters["visiblePanel7"]">Section 7</button>
         <div class="panel">
                 
             @Html.Raw(Model.MacroParameters["macroRowPicker7"])
         
         </div>
         
-        <!-- Panel 7 -->
-        <button class="accordion medium-text panel-8 d-@Model.MacroParameters["visiblePanel8"]">Section 8</button>
+        <!-- Panel 8 -->
+        <button class="accordion panel-8 panel-btn d-@Model.MacroParameters["visiblePanel8"]">Section 8</button>
         <div class="panel">
                 
             @Html.Raw(Model.MacroParameters["macroRowPicker8"])
         
         </div>
         
-        <!-- Panel 8 -->
-        <button class="accordion medium-text panel-9 d-@Model.MacroParameters["visiblePanel9"]">Section 9</button>
+        <!-- Panel 9 -->
+        <button class="accordion panel-9 panel-btn d-@Model.MacroParameters["visiblePanel9"]">Section 9</button>
         <div class="panel">
                 
             @Html.Raw(Model.MacroParameters["macroRowPicker9"])
         
         </div>
         
-        <!-- Panel 9 -->
-        <button class="accordion medium-text panel-10 d-@Model.MacroParameters["visiblePanel10"]">Section 10</button>
+        <!-- Panel 10 -->
+        <button class="accordion panel-10 panel-btn d-@Model.MacroParameters["visiblePanel10"]">Section 10</button>
         <div class="panel">
                 
             @Html.Raw(Model.MacroParameters["macroRowPicker10"])
@@ -251,37 +260,6 @@
     </div>
 </div>      
 
-
-<!-- 
-
- <div class="flex-container">
-              <div class="col-sm-3" style="padding-left: 0px;">
-                  This is a description
-              </div>
-              <div class="col-sm-2">
-                  <center>
-                    <img class="checkmark filter-js" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Check_mark_9x9.svg" />
-                  </center>          
-              </div>
-              <div class="col-sm-2">
-                  <center>
-                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="270" height="270">
-                        <path fill="#ff0000" d="M 30,180 90,240 240,30" style="stroke:#000; stroke-width:30; fill:none" />
-                    </svg>
-                  </center>                 
-              </div>
-              <div class="col-sm-2">
-                  <center>
-                    <img class="checkmark filter-test" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Check_mark_9x9.svg" />
-                  </center>                 
-             </div>
-              <div class="col-sm-2">
-                  <center>
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"><path d="M44.8,49.5c0,1.1,0.8,2.1,1.9,2.3C45.6,51.6,44.8,50.6,44.8,49.5c-0.1-1.1,0.8-2.1,1.9-2.3C45.6,47.4,44.8,48.4,44.8,49.5z   M51.3,47.9c-0.3-0.3-0.8-0.6-1.3-0.7C50.5,47.3,50.9,47.5,51.3,47.9L51.3,47.9z M56.2,45.4C56.2,45.4,56.2,45.4,56.2,45.4l-5,2.5  l0,0L56.2,45.4z M57.9,47.9l-7,3.5c0,0,0,0-0.1,0.1c0.1,0,0.2,0,0.2-0.1L57.9,47.9L57.9,47.9z M65.3,44.2l-7.4,3.7l-7,3.5  c0,0-0.1,0-0.2,0.1c0.1,0,0.1,0,0.1-0.1l7-3.5L65.3,44.2L65.3,44.2z M51.2,47.9c-0.3-0.3-0.8-0.6-1.2-0.7  C50.5,47.3,50.9,47.5,51.2,47.9L51.2,47.9z M78.6,65.4v0.4c-0.2,21.2-6.9,32.8-6.9,32.8H27.1c0,0-6.7-11.6-6.9-32.8v-0.4  c0-5.2-0.6-8.9,9.8-11.7c0.9-0.3,3.3-1.3,4.1-1.6l7.3-4.5c0.8-1.2,1.3-2.5,1.7-3.6c-0.8-0.6-1.7-1.3-2.8-2.2c-3.7-3-2.9-5.1-3.9-8.1  c-0.4,0.7-0.9,0.6-1.6,0.1c-1.1,1-2.5,1.5-4,1.5c-3.3,0-6-2.7-6-5.9v-4.1c0-2.8,1.9-5.1,4.5-5.8C29.9,8.1,37.5,1,49.5,1  c12,0,19.6,7.1,20.1,18.7c2.5,0.7,4.4,3,4.4,5.7v4.1c0,2.8-1.9,5.1-4.5,5.7c0,0.2,0,0.3,0,0.5l-1.1,4.7c-0.3,1.5-1.6,3.1-3,3.7l0,0  l0,0l-7.4,3.7l-7,3.5c0,0,0,0-0.1,0.1c0,0-0.1,0-0.2,0c0,0,0,0-0.1,0c-0.1,0-0.2,0-0.4,0.1c-0.5,0.1-1.4,0.1-3,0.3h0  c-0.1,0-0.3,0-0.4,0c-1.1-0.2-1.9-1.2-1.9-2.3c0-1.1,0.8-2.1,1.9-2.3c0.1,0,0.3,0,0.4,0h2.4c0.2,0,0.3,0,0.5,0  c0.5,0.1,0.9,0.3,1.2,0.7l0,0l0,0l5-2.5l7.8-3.9c0.6-0.3,1.2-1.1,1.4-1.7l1-4.6c-0.9-0.2-1.8-0.7-2.5-1.3c-0.6,0.6-1.2,0.7-1.6,0  c-0.9,3-0.2,5.1-3.9,8.1c-1.1,0.8-1.9,1.6-2.8,2.2c0.1,0.2,0.1,0.4,0.2,0.6L51.3,47c-0.5-0.4-1.1-0.6-1.8-0.6h-2.4  c-1.7,0-3.1,1.4-3.1,3.1c0,1.7,1.4,3.1,3.1,3.1h0.1c3.3-0.2,3.8-0.4,4-0.5l7.4-3.7l6.1,3.8c0.8,0.3,3.1,1.3,4.1,1.6  C79.2,56.5,78.6,60.2,78.6,65.4z M67.9,33.3c2.3,0.8,4.9-0.9,5.2-4c0.1-1.2,0.1-2.5,0-3.7c-0.2-3-2.9-4.8-5.2-4  C69.1,25.4,69.1,29.4,67.9,33.3z M59.1,6.7c3.1,2.1,5.7,5.9,5.9,12.3c0,0.4,0,0.8,0.1,1.2c0.8-0.4,1.6-0.7,2.5-0.7  C67.2,12.7,64.2,8.6,59.1,6.7z M30.8,21.6c-2.3-0.8-4.9,0.9-5.2,4c-0.1,1.2-0.1,2.5,0,3.7c0.2,3,2.9,4.8,5.2,4  C29.6,29.4,29.6,25.4,30.8,21.6z M39.5,6.8c-4.9,2-7.8,6.1-8.1,12.7c0.9,0.1,1.7,0.3,2.4,0.7c0-0.4,0-0.8,0.1-1.2  C34,12.6,36.5,9,39.5,6.8z M51.3,47.9L51.3,47.9c-0.4-0.3-0.8-0.6-1.3-0.7C50.5,47.3,50.9,47.5,51.3,47.9z M65.3,44.2l-7.4,3.7  l-7,3.5c0,0-0.1,0-0.2,0.1c0.1,0,0.1,0,0.1-0.1l7-3.5L65.3,44.2L65.3,44.2z" fill="#ff0000"/></svg>
-                  </center>             
-              </div>
-            </div>
--->
 
 <script>
 //Visibility of accordion module 
@@ -318,36 +296,6 @@ for (let i = 0; i < noOfCheckmarks; i++){
     }
 }
 
-//Visibility of rows (Dont think is used anymore)
-/*
-var noOfRows = document.getElementsByClassName('checkmark-row').length;
-for (let i = 0; i < noOfRows; i++){
-    if (document.getElementsByClassName('checkmark-row')[i].classList.contains("d-False")){
-        document.getElementsByClassName('checkmark-row')[i].classList.add("hideCheckmarkRow")
-        console.log("added")
-    }
-}
-*/
-
-//Visibility of panels 
-/*
-var noOfPanels = document.getElementsByClassName('panel').length;
-for (let i = 0; i < noOfPanels; i++){
-    if (document.getElementsByClassName('panel-' + i)[0].classList.contains("d-False")){
-    $(".panel-' + i").hide();
-    }
-}
-*/
-
-/*
-var noOfPanels = document.getElementsByClassName('checkmark-row').length;
-for (let i = 0; i < noOfRows; i++){
-    if (document.getElementsByClassName('checkmark-row')[i].classList.contains("d-False")){
-        document.getElementsByClassName('checkmark-row')[i].classList.add("hideCheckmarkRow")
-        console.log("added")
-    }
-}
-*/
 
 //Visibility of panels 
 if (document.getElementsByClassName('panel-1')[0].classList.contains("d-False")){
@@ -391,9 +339,6 @@ if (document.getElementsByClassName('panel-10')[0].classList.contains("d-False")
 }
 
 
-
-
-
 //Hides checkmarks as the last thing after loops and coloring has finished 
 setTimeout(() => {
   console.log("Delayed for 1 second.");
@@ -403,9 +348,7 @@ setTimeout(() => {
     //Rows
     $(".hideCheckmarkRow").css("display","none")
     //$(".hideCheckmark").hide()
-}, "1000")
-
-
+}, "500")
 
 </script>
 
