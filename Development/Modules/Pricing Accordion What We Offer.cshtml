@@ -1,0 +1,117 @@
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+<style>
+.padding-what-we-offer-container{
+    padding-left: 140px;
+    padding-right: 140px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: "";
+    }
+    @@media (max-width: 990px) {
+        .padding-what-we-offer-container {
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 100px;
+            padding-bottom: 100px;
+    } }
+</style>
+
+<style>
+/*Text styling*/
+    .box-h{
+        font-size: 1.8rem ;
+    }
+    @@media (max-width: 990px) {
+        .box-h {
+        font-size: 1.5rem;
+    } }
+    
+    .box-s{
+        font-size: 1.3rem ;
+    }
+    @@media (max-width: 990px) {
+        .box-s {
+        font-size: 1rem;
+    } }
+    
+    .box-b{
+        font-size: 1.3rem ;
+        color: white;
+        margin-bottom: 80px;
+    }
+    @@media (max-width: 990px) {
+        .box-b {
+        font-size: 1rem;
+    } }
+    
+    .box-btn-container{
+        font-size: 1.3rem;
+        color: white;
+    }
+    @@media (max-width: 990px) {
+        .box-btn-container {
+        font-size: 1rem;
+    } }
+    
+    .box-color-container{
+        height: 250px;
+        background-color: purple;
+        
+    }
+    @@media (max-width: 990px) {
+        .box-color-container {
+        height: 250px;
+    } }    
+</style>
+
+<div class="padding-what-we-offer-container">
+    
+    <div class="title pb-5">@Html.Raw(Model.MacroParameters["title"])</div>
+    
+    <div class="row">
+        <div class="col-lg-3">
+            <img class="package-icon" src="https://www.tamigo.nl/media/2686/screenshot-2022-08-19-at-182221.png">
+            <div class="box-h p-2">Essential</div>
+            <div class="box-s p-2">Essential because of many reasons</div>
+            <div class="box-color-container">
+                <div class="box-b p-3">Essential because of many reasons and some stuff</div>
+                <center><div class="box-btn-container p-3"><a>A btn text</a></div></center>
+            </div>
+        </div>
+        
+        <!--
+        <div class="col-lg-3">
+            <img class="package-icon" src="https://www.tamigo.nl/media/2686/screenshot-2022-08-19-at-182221.png">
+            <div class="box-h p-2">Essential</div>
+            <div class="box-s p-2">Essential because of many reasons</div>
+            <div class="box-color-container">
+                <div class="box-b p-3">Essential because of many reasons and some stuff</div>
+                <center><div class="box-btn-container p-3"><a>A btn text</a></div></center>
+            </div>
+        </div>
+        
+        <div class="col-lg-3">
+            <img class="package-icon" src="https://www.tamigo.nl/media/2686/screenshot-2022-08-19-at-182221.png">
+            <div class="box-h p-2">Essential</div>
+            <div class="box-s p-2">Essential because of many reasons</div>
+            <div class="box-color-container">
+                <div class="box-b p-3">Essential because of many reasons and some stuff</div>
+                <center><div class="box-btn-container p-3"><a>A btn text</a></div></center>
+            </div>
+        </div>
+        
+        <div class="col-lg-3">
+            <img class="package-icon" src="https://www.tamigo.nl/media/2686/screenshot-2022-08-19-at-182221.png">
+            <div class="box-h p-2">Essential</div>
+            <div class="box-s p-2">Essential because of many reasons</div>
+            <div class="box-color-container">
+                <div class="box-b p-3">Essential because of many reasons and some stuff</div>
+                <center><div class="box-btn-container p-3"><a>A btn text</a></div></center>
+            </div>
+        </div>
+        
+        -->
+        
+    </div>
+</div>
