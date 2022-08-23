@@ -46,35 +46,44 @@
   overflow: hidden;
 }
 
-.padding-accordion-container{
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 100px;
-    padding-bottom: 100px;
-}
 
 .package-icon-container{
     padding-left: 0px!important;
 }
 
+.padding-accordion-container{
+    padding-left: 140px;
+    padding-right: 140px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    }
+    @@media (max-width: 990px) {
+        .padding-accordion-container {
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 100px;
+            padding-bottom: 100px;
+    } }
 
+
+/*
 .container-responsive-unique {
           width: 100%;
           margin-right: auto;
           margin-left: auto; }
-          @@media (min-width: 576px) {
+          media (min-width: 576px) {
             .container-responsive {
               max-width: 920px; } }
-          @@media (min-width: 768px) {
+          media (min-width: 768px) {
             .container-responsive {
               max-width: 920px; } }
-          @@media (min-width: 992px) {
+          media (min-width: 992px) {
             .container-responsive {
               max-width: 960px; } }
-          @@media (min-width: 1200px) {
+          media (min-width: 1200px) {
             .container-responsive {
               max-width: 1140px; } }
-              
+*/              
               
 
 </style>
@@ -175,7 +184,7 @@
     
     
         <!-- Panel 1 -->
-        <button class="accordion panel-1 panel-btn d-@Model.MacroParameters["visiblePanel1"]">Section 1</button>
+        <button class="accordion panel-1 panel-btn d-@Model.MacroParameters["visiblePanel1"]">@Model.MacroParameters["titlePanel1"]</button>
         <div class="panel">
             
             @Html.Raw(Model.MacroParameters["macroRowPicker1"])
@@ -183,7 +192,7 @@
         </div>
          
          <!-- Panel 2 -->
-        <button class="accordion panel-2 panel-btn d-@Model.MacroParameters["visiblePanel2"]">Section 2</button>
+        <button class="accordion panel-2 panel-btn d-@Model.MacroParameters["visiblePanel2"]">@Model.MacroParameters["titlePanel2"]</button>
         <div class="panel">
                 
             @Html.Raw(Model.MacroParameters["macroRowPicker2"])
@@ -191,7 +200,7 @@
         </div>
         
         <!-- Panel 3 -->
-        <button class="accordion panel-3 panel-btn d-@Model.MacroParameters["visiblePanel3"]">Section 3</button>
+        <button class="accordion panel-3 panel-btn d-@Model.MacroParameters["visiblePanel3"]">@Model.MacroParameters["titlePanel3"]</button>
         <div class="panel">
                 
             @Html.Raw(Model.MacroParameters["macroRowPicker3"])
@@ -199,7 +208,7 @@
         </div>
         
         <!-- Panel 4 -->
-        <button class="accordion panel-4 panel-btn d-@Model.MacroParameters["visiblePanel4"]">Section 4</button>
+        <button class="accordion panel-4 panel-btn d-@Model.MacroParameters["visiblePanel4"]">@Model.MacroParameters["titlePanel4"]</button>
         <div class="panel">
                 
             @Html.Raw(Model.MacroParameters["macroRowPicker4"])
@@ -207,7 +216,7 @@
         </div>
         
         <!-- Panel 5 -->
-        <button class="accordion panel-5 panel-btn d-@Model.MacroParameters["visiblePanel5"]">Section 5</button>
+        <button class="accordion panel-5 panel-btn d-@Model.MacroParameters["visiblePanel5"]">@Model.MacroParameters["titlePanel5"]</button>
         <div class="panel">
                 
             @Html.Raw(Model.MacroParameters["macroRowPicker5"])
@@ -215,7 +224,7 @@
         </div>
         
         <!-- Panel 6 -->
-        <button class="accordion panel-6 panel-btn d-@Model.MacroParameters["visiblePanel6"]">Section 6</button>
+        <button class="accordion panel-6 panel-btn d-@Model.MacroParameters["visiblePanel6"]">@Model.MacroParameters["titlePanel6"]</button>
         <div class="panel">
                 
             @Html.Raw(Model.MacroParameters["macroRowPicker6"])
