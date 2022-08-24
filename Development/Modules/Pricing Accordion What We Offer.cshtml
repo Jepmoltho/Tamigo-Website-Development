@@ -37,46 +37,115 @@
     
     .box-b{
         font-size: 1.3rem ;
-        color: white;
         margin-bottom: 80px;
+        max-height: 130px;
+        color: @Model.MacroParameters["boxBodyAndBtnTextColor"];
     }
     @@media (max-width: 990px) {
         .box-b {
         font-size: 1rem;
     } }
     
-    .box-btn-container{
+
+    .button-text-container{
         font-size: 1.3rem;
-        color: white;
+        padding: 8px;
+        max-width: 200px;
+        position: relative;
+        top: -30px;
     }
     @@media (max-width: 990px) {
-        .box-btn-container {
+        .button-text-container {
         font-size: 1rem;
+        
     } }
+    
     
     .box-color-container{
         height: 250px;
-        background-color: purple;
         
     }
     @@media (max-width: 990px) {
         .box-color-container {
         height: 250px;
     } }    
+    
+    #btnWhatWeOffer:hover{
+        color:white;
+    }
 </style>
 
-<div class="padding-what-we-offer-container">
+<div class="padding-what-we-offer-container d-@Model.MacroParameters["visible"]" style="background-color:@Model.MacroParameters["backgroundColor"]">
     
     <div class="title pb-5">@Html.Raw(Model.MacroParameters["title"])</div>
     
     <div class="row">
+        
+        <!-- Card 1 -->
         <div class="col-lg-3">
-            <img class="package-icon" src="https://www.tamigo.nl/media/2686/screenshot-2022-08-19-at-182221.png">
-            <div class="box-h p-2">Essential</div>
-            <div class="box-s p-2">Essential because of many reasons</div>
-            <div class="box-color-container">
-                <div class="box-b p-3">Essential because of many reasons and some stuff</div>
-                <center><div class="box-btn-container p-3"><a>A btn text</a></div></center>
+            <img class="package-icon" src=@Umbraco.Media(Model.MacroParameters["icon1"]).Url >
+            <div class="box-h p-2">@Model.MacroParameters["titleBox1"]</div>
+            <div class="box-s p-2">@Html.Raw(Model.MacroParameters["subtitleBox1"])</div>
+            <div class="box-color-container" style="background-color:@Model.MacroParameters["backgroundColorBox1"]">
+                <div class="box-b p-3">@Html.Raw(@Model.MacroParameters["bodytextBox1"])</div>
+                    <center>
+                        <div class="button-text-container" style="background-color: @Model.MacroParameters["backgroundColorBtn"]">
+                            <a href="@Model.MacroParameters["btn1Link"]" id="btnWhatWeOffer">
+                                <div style="color:@Model.MacroParameters["boxBodyAndBtnTextColor"]">@Model.MacroParameters["btnText"]</div>
+                            </a>
+                        </div>
+                    </center>
+            </div>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="col-lg-3">
+            <img class="package-icon" src=@Umbraco.Media(Model.MacroParameters["icon2"]).Url  >
+            <div class="box-h p-2">@Model.MacroParameters["titleBox2"]</div>
+            <div class="box-s p-2">@Html.Raw(Model.MacroParameters["subtitleBox2"])</div>
+            <div class="box-color-container" style="background-color:@Model.MacroParameters["backgroundColorBox2"]">
+                <div class="box-b p-3">@Html.Raw(@Model.MacroParameters["bodytextBox2"])</div>
+                    <center>
+                        <div class="button-text-container" style="background-color: @Model.MacroParameters["backgroundColorBtn2"]">
+                            <a href="@Model.MacroParameters["btn2Link"]" id="btnWhatWeOffer">
+                                <div style="color:@Model.MacroParameters["boxBodyAndBtnTextColor"]">@Model.MacroParameters["btnText"]</div>
+                            </a>
+                        </div>
+                    </center>
+            </div>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="col-lg-3">
+            <img class="package-icon" src=@Umbraco.Media(Model.MacroParameters["icon3"]).Url >
+            <div class="box-h p-2">@Model.MacroParameters["titleBox3"]</div>
+            <div class="box-s p-2">@Html.Raw(Model.MacroParameters["subtitleBox3"])</div>
+            <div class="box-color-container" style="background-color:@Model.MacroParameters["backgroundColorBox3"]">
+                <div class="box-b p-3">@Html.Raw(@Model.MacroParameters["bodytextBox3"])</div>
+                    <center>
+                        <div class="button-text-container" style="background-color: @Model.MacroParameters["backgroundColorBtn3"]">
+                            <a href="@Model.MacroParameters["btn3Link"]" id="btnWhatWeOffer">
+                                <div style="color:@Model.MacroParameters["boxBodyAndBtnTextColor"]">@Model.MacroParameters["btnText"]</div>
+                            </a>
+                        </div>
+                    </center>
+            </div>
+        </div>
+        
+        <!-- Card 4 -->
+        <div class="col-lg-3">
+            <img class="package-icon" src=@Umbraco.Media(Model.MacroParameters["icon4"]).Url >
+            <div class="box-h p-2">@Model.MacroParameters["titleBox4"]</div>
+            <div class="box-s p-2">@Html.Raw(Model.MacroParameters["subtitleBox4"])</div>
+            <div class="box-color-container" style="background-color:@Model.MacroParameters["backgroundColorBox4"]">
+                <div class="box-b p-3">@Html.Raw(@Model.MacroParameters["bodytextBox4"])</div>
+                    <center>
+                        <div class="button-text-container" style="background-color: @Model.MacroParameters["backgroundColorBtn4"]">
+                            <a href="@Model.MacroParameters["btn4Link"]" id="btnWhatWeOffer">
+                                <div style="color:@Model.MacroParameters["boxBodyAndBtnTextColor"]">@Model.MacroParameters["btnText"]</div>
+                            </a>
+                        </div>
+                    </center>
             </div>
         </div>
         
