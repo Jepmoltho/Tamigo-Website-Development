@@ -1,0 +1,307 @@
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Pricing>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    Layout = "MasterLayout.cshtml";
+}
+
+
+@Umbraco.RenderMacro("TextImage", new
+{
+    header = @Umbraco.Field("topSectionTitle", removeParagraphTags: true),
+    body = @Umbraco.Field("topSectionBodyPricingPage"),
+    customClass = "min-height-500",
+    buttonText = "",
+    color = @Umbraco.Field("topSectionColor"),
+    tile = "tile-30 tile-right tile-bottom",
+    visible = @Umbraco.Field("hiddenTextImage").ToString() == "False",
+})
+
+@Umbraco.RenderMacro("Prices", new
+{
+    visible = @Umbraco.Field("hiddenPrices").ToString() == "False",
+    title = @Umbraco.Field("pricesTitle"),
+    color1 = @Umbraco.Field("pricesColor1"),
+    color2 = @Umbraco.Field("pricesColor2"),
+    color3 = @Umbraco.Field("pricesColor3"),
+    color4 = @Umbraco.Field("pricesColor4"),
+    color5 = @Umbraco.Field("pricesColor5"),
+    package1 = @Umbraco.Field("pricesPackage1"),
+    package2 = @Umbraco.Field("pricesPackage2"),
+    package3 = @Umbraco.Field("pricesPackage3"),
+    package4 = @Umbraco.Field("pricesPackage4"),
+    package5 = "",
+    usage1 = @Umbraco.Field("pricesUsage1"),
+    usage2 = @Umbraco.Field("pricesUsage2"),
+    usage3 = @Umbraco.Field("pricesUsage3"),
+    usage4 = @Umbraco.Field("pricesUsage4"),
+    usage5 = @Umbraco.Field("pricesUsage5"),
+    from = @Umbraco.Field("pricesFrom"),
+    details = @Umbraco.Field("pricesDetails"),
+    price1 = @Umbraco.Field("pricesPrice1"),
+    price2 = @Umbraco.Field("pricesPrice2"),
+    price3 = @Umbraco.Field("pricesPrice3"),
+    price4 = @Umbraco.Field("pricesPrice4"),
+    price5 = @Umbraco.Field("pricesPrice5"),
+    unit1 = @Umbraco.Field("pricesUnit1"),
+    unit2 = @Umbraco.Field("pricesUnit2"),
+    unit3 = @Umbraco.Field("pricesUnit3"),
+    unit5 = @Umbraco.Field("pricesUnit5"),
+    feature1 = @Umbraco.Field("pricesFeature1"),
+    feature2 = @Umbraco.Field("pricesFeature2"),
+    feature3 = @Umbraco.Field("pricesFeature3"),
+    feature4 = @Umbraco.Field("pricesFeature4"),
+    feature5 = @Umbraco.Field("pricesFeature5"),
+    buttonAddress1 = @Umbraco.Field("pricesButtonAddress1"),
+    buttonText1 = @Umbraco.Field("pricesButtonText1"),
+    btn_id1 = @Umbraco.Field("pricesButtonId1"),
+    btn_color1 = @Umbraco.Field("pricesButtonColor1"),
+    btn_bg1 = @Umbraco.Field("pricesButtonBackground1"),
+    buttonAddress2 = @Umbraco.Field("pricesButtonAddress2"),
+    buttonText2 = @Umbraco.Field("pricesButtonText2"),
+    btn_id2 = @Umbraco.Field("pricesButtonId2"),
+    btn_color2 = @Umbraco.Field("pricesButtonColor2"),
+    btn_bg2 = @Umbraco.Field("pricesButtonBackground2"),
+})
+
+@Umbraco.RenderMacro("Pricetable", new
+{
+    visible = @Umbraco.Field("hiddenImageLine").ToString() == "False",
+    color = @Umbraco.Field("imageLineColor"),
+    title = @Umbraco.Field("imageLineTitle", removeParagraphTags: true),
+    description = @Umbraco.Field("priceTabledescription", removeParagraphTags: true),
+    package1 = @Umbraco.Field("priceTableColumnTitle1"),
+    packageSubtitle1 = @Umbraco.Field("priceTableColumnSubTitle1"),
+    package2 = @Umbraco.Field("priceTableColumnTitle2"),
+    packageSubtitle2 = @Umbraco.Field("priceTableColumnSubTitle2"),
+    package3 = @Umbraco.Field("priceTableColumnTitle3"),
+    packageSubtitle3 = @Umbraco.Field("priceTableColumnSubTitle3"),
+    package4 = @Umbraco.Field("priceTableColumnTitle4"),
+    packageSubtitle4 = @Umbraco.Field("priceTableColumnSubTitle4"),
+    package5 = @Umbraco.Field("priceTableColumnTitle5"),
+    packageSubtitle5 = @Umbraco.Field("priceTableColumnSubTitle5"),
+    package6 = @Umbraco.Field("priceTableColumnTitle6"),
+    packageSubtitle6 = @Umbraco.Field("priceTableColumnSubTitle6"),
+    color1 = @Umbraco.Field("priceTableColumnBgColor1"),
+    color2 = @Umbraco.Field("priceTableColumnBgColor2"),
+    color3 = @Umbraco.Field("priceTableColumnBgColor3"),
+    color4 = @Umbraco.Field("priceTableColumnBgColor4"),
+    color5 = @Umbraco.Field("priceTableColumnBgColor5"),
+    color6 = @Umbraco.Field("priceTableColumnBgColor6")
+})
+
+
+@Umbraco.RenderMacro("TwoParagraphLinks", new
+{
+    visible = @Umbraco.Field("hiddenTwoParagraphLinks").ToString() == "False",
+    title1 = @Umbraco.Field("inTouchTitle1"),
+    title2 = @Umbraco.Field("inTouchTitle2"),
+    body = @Umbraco.Field("inTouchBody1"),
+    linkText1 = @Umbraco.Field("inTouchLink1Text"),
+    linkText2 = @Umbraco.Field("inTouchLink2Text"),
+    linkAddress1 = @Umbraco.Field("inTouchLink1Address"),
+    linkAddress2 = @Umbraco.Field("inTouchLink2Address"),
+    color = @Umbraco.Field("inTouchColor")
+})
+
+@Umbraco.RenderMacro("PricingAccordionWhatWeOffer", new {
+    visible=@Umbraco.Field("visibleWhatWeOffer"), 
+    backgroundColor=@Umbraco.Field("backgroundColorWhatWeOffer"),
+    title=@Umbraco.Field("titleWhatWeOffer"), 
+    titleBox1=@Umbraco.Field("titleBox1WhatWeOffer"),
+    titleBox2=@Umbraco.Field("titleBox2WhatWeOffer"),
+    titleBox3=@Umbraco.Field("titleBox3WhatWeOffer"),
+    titleBox4=@Umbraco.Field("titleBox4WhatWeOffer"),
+    subtitleBox1=@Umbraco.Field("subtitleBox1WhatWeOffer"), 
+    subtitleBox2=@Umbraco.Field("subtitleBox2WhatWeOffer"), 
+    subtitleBox3=@Umbraco.Field("subtitleBox3WhatWeOffer"), 
+    subtitleBox4=@Umbraco.Field("subtitleBox4WhatWeOffer"), 
+    bodytextBox1=@Umbraco.Field("bodyText1WhatWeOffer"), 
+    bodytextBox2=@Umbraco.Field("bodyText2WhatWeOffer"), 
+    bodytextBox3=@Umbraco.Field("bodyText3WhatWeOffer"), 
+    bodytextBox4=@Umbraco.Field("bodyText4WhatWeOffer"), 
+    backgroundColorBox1=@Umbraco.Field("backgroundColorBox1WhatWeOffer"), 
+    backgroundColorBox2=@Umbraco.Field("backgroundColorBox2WhatWeOffer"), 
+    backgroundColorBox3=@Umbraco.Field("backgroundColorBox3WhatWeOffer"), 
+    backgroundColorBox4=@Umbraco.Field("backgroundColorBox4WhatWeOffer"), 
+    backgroundColorBtn=@Umbraco.Field("backgroundColorBtn1WhatWeOffer"), 
+    backgroundColorBtn2=@Umbraco.Field("backgroundColorBtn2WhatWeOffer"), 
+    backgroundColorBtn3=@Umbraco.Field("backgroundColorBtn3WhatWeOffer"), 
+    backgroundColorBtn4=@Umbraco.Field("backgroundColorBtn4WhatWeOffer"), 
+    titleTextColor=@Umbraco.Field("titleTextColorWhatWeOffer"),
+    boxTitleAndSubtitleColor=@Umbraco.Field("boxTopTextColor"),
+    boxBodyAndBtnTextColor=@Umbraco.Field("boxBottomTextColor"),
+    btnText=@Umbraco.Field("btnTextWhatWeOffer"), 
+    btn1Link=@Umbraco.Field("btn1LinkWhatWeOffer"), 
+    btn2Link=@Umbraco.Field("btn2LinkWhatWeOffer"), 
+    btn3Link=@Umbraco.Field("btn3LinkWhatWeOffer"), 
+    btn4Link=@Umbraco.Field("btn4LinkWhatWeOffer"), 
+    icon1=@Umbraco.Field("icon1WhatWeOffer"), 
+    icon2=@Umbraco.Field("icon2WhatWeOffer"),  
+    icon3=@Umbraco.Field("icon3WhatWeOffer"), 
+    icon4=@Umbraco.Field("icon4WhatWeOffer") 
+})
+
+<!--
+Umbraco.RenderMacro("PricingAccordion", new {
+    visible=Umbraco.Field("visiblePricingAccordion"), 
+    backgroundColor=Umbraco.Field("backgroundColorCustomPricingAccordion"), 
+    colorRow1=Umbraco.Field("colorRow1PricingAccordion"), 
+    colorRow2=Umbraco.Field("colorRow2PricingAccordion"), 
+    colorRow3=Umbraco.Field("colorRow3PricingAccordion"), 
+    colorRow4=Umbraco.Field("colorRow4PricingAccordion"),
+    macroRowPicker1=Umbraco.Field("panel1RowsMacroPickerPricingAccordion"), 
+    macroRowPicker2=Umbraco.Field("panel2RowsMacroPickerPricingAccordion"), 
+    macroRowPicker3=Umbraco.Field("panel3RowsMacroPickerPricingAccordion"), 
+    macroRowPicker4=Umbraco.Field("panel4RowsMacroPickerPricingAccordion"), 
+    macroRowPicker5=Umbraco.Field("panel5RowsMacroPickerPricingAccordion"), 
+    macroRowPicker6=Umbraco.Field("panel6RowsMacroPickerPricingAccordion"), 
+    macroRowPicker7=Umbraco.Field("panel7RowsMacroPickerPricingAccordion"), 
+    macroRowPicker8=Umbraco.Field("panel8RowsMacroPickerPricingAccordion"), 
+    macroRowPicker9=Umbraco.Field("panel9RowsMacroPickerPricingAccordion"), 
+    macroRowPicker10=Umbraco.Field("panel10RowsMacroPickerPricingAccordion"),
+    title=Umbraco.Field("titlePricingAccordion"),
+    titleBoxRow1=Umbraco.Field("titleBoxRow1"), 
+    titleBoxRow2=Umbraco.Field("titleBoxRow2"), 
+    titleBoxRow3=Umbraco.Field("titleBoxRow3"), 
+    titleBoxRow4=Umbraco.Field("titleBoxRow4"),
+    visiblePanel1=Umbraco.Field("visiblePanel1PricingAccordion"), 
+    visiblePanel2=Umbraco.Field("visiblePanel2PricingAccordion"), 
+    visiblePanel3=Umbraco.Field("visiblePanel3PricingAccordion"), 
+    visiblePanel4=Umbraco.Field("visiblePanel4PricingAccordion"), 
+    visiblePanel5=Umbraco.Field("visiblePanel5PricingAccordion"), 
+    visiblePanel6=Umbraco.Field("visiblePanel6PricingAccordion"), 
+    visiblePanel7=Umbraco.Field("visiblePanel7PricingAccordion"), 
+    visiblePanel8=Umbraco.Field("visiblePanel8PricingAccordion"), 
+    visiblePanel9=Umbraco.Field("visiblePanel9PricingAccordion"), 
+    visiblePanel10=Umbraco.Field("visiblePanel10PricingAccordion"), 
+    titlePanel1=Umbraco.Field("titlePanel1PricingAccordion"), 
+    titlePanel2=Umbraco.Field("titlePanel2PricingAccordion"), 
+    titlePanel3=Umbraco.Field("titlePanel3PricingAccordion"), 
+    titlePanel4=Umbraco.Field("titlePanel4PricingAccordion"), 
+    titlePanel5=Umbraco.Field("titlePanel5PricingAccordion"),  
+    titlePanel6=Umbraco.Field("titlePanel6PricingAccordion"), 
+    titlePanel7=Umbraco.Field("titlePanel7PricingAccordion"), 
+    titlePanel8=Umbraco.Field("titlePanel8PricingAccordion"), 
+    titlePanel9=Umbraco.Field("titlePanel9PricingAccordion"), 
+    titlePanel10=Umbraco.Field("titlePanel10PricingAccordion"), 
+    icon1=Umbraco.Field("icon1PricingAccordion"), 
+    icon2=Umbraco.Field("icon2PricingAccordion"),  
+    icon3=Umbraco.Field("icon3PricingAccordion"), 
+    icon4=Umbraco.Field("icon4PricingAccordion")
+})
+
+-->
+
+@Umbraco.RenderMacro("LogosCarouselEdited", new
+{
+    visible = @Umbraco.Field("hiddenLogosCarousel").ToString() == "False",
+    color = @Umbraco.Field("logosColor"),
+    backgroundColor = @Umbraco.Field("logosBackgroundColor"),
+})
+
+
+@Umbraco.RenderMacro("ContactUs", new
+{
+    color = @Umbraco.Field("contactUsColor"),
+    title = @Umbraco.Field("contactUsTitle"),
+    body = @Umbraco.Field("contactUsBody"),
+    button = @Umbraco.Field("contactUsButtonText"),
+    image = @Umbraco.Field("contactUsImage"),
+    button1Address = "",
+    btn_id = @Umbraco.Field("contactButtonUsId"),
+    btn_color = @Umbraco.Field("contactUsButtonColor"),
+    btn_bg = @Umbraco.Field("contactUsButtonBackground"),
+    visible = @Umbraco.Field("hiddenContactUs").ToString() == "False",
+    showCaptcha = CurrentPage.AncestorOrSelf(1).showCaptcha
+})
+
+@Umbraco.RenderMacro("DemoNewImage", new 
+{   visible=@Umbraco.Field("demoVisible"), 
+    color=@Umbraco.Field("color"), 
+    demoTitle=@Umbraco.Field("demoTitle"), 
+    demoSubtitle=@Umbraco.Field("demoSubtitle"), 
+    privacy=@Umbraco.Field("privacy"), 
+    buttonText=@Umbraco.Field("buttonText"), 
+    buttonColor=@Umbraco.Field("buttonColor"), 
+    contactTitle=@Umbraco.Field("contactTitle"), 
+    contactSubtitle=@Umbraco.Field("contactSubtitle"), 
+    contactPhone=@Umbraco.Field("contactPhone"), 
+    contactEmail=@Umbraco.Field("contactEmail"), 
+    image=@Umbraco.Field("image"), 
+    name=@Umbraco.Field("placeholderName"), 
+    email=@Umbraco.Field("placeholderEmail"), 
+    phone=@Umbraco.Field("placeholderPhone"), 
+    btn_id=@Umbraco.Field("buttonId"), 
+    btn_color=@Umbraco.Field("buttonColor"), 
+    btn_bg=@Umbraco.Field("buttonBackground"), 
+    showCaptcha="0", 
+    companyName=@Umbraco.Field("placeholderCompany")
+})
+
+
+@Umbraco.RenderMacro("AlternateFreeDemo", new {
+    backgroundColor=@Umbraco.Field("backgroundColorBookDemoAlt"), 
+    visible=@Umbraco.Field("visibleBookDemoAlt", altText:"none"),
+    title=@Umbraco.Field("titleBookDemoAlt"), 
+    subtitle=@Umbraco.Field("subtitleBookDemoAlt"), 
+    backgroundColorButton=@Umbraco.Field("backgroundColorButtonBookDemoAlt"), 
+    textColorButton=@Umbraco.Field("buttonTextColorBookDemoAlt"), 
+    buttonLink=@Umbraco.Field("buttonLinkBookDemoAlt"), 
+    buttonId=@Umbraco.Field("buttonIdBookDemoAlt"), 
+    buttonText=@Umbraco.Field("buttonTextBookDemoAlt"), 
+    textColor=@Umbraco.Field("textColorBookDemoAlt")
+})
+
+
+@Umbraco.RenderMacro("Space", new { color = "white", heigth = "50" })
+
+
+@Umbraco.RenderMacro("ImageParagraphs", new
+{
+    visible = @Umbraco.Field("hiddenImageParagraphs").ToString() == "False",
+    color = @Umbraco.Field("imageParagraphsColor"),
+    title = @Umbraco.Field("imageParagraphsTitle"),
+    itemsFieldName = "imageParagraphsItems"
+})
+
+@Umbraco.RenderMacro("TextAndImageSimple", new {
+    visible=@Umbraco.Field("visibleTextImage4"), 
+    backgroundColor=@Umbraco.Field("backgroundColorTextImage4"), 
+    image=@Umbraco.Field("imagePickTextImage4"), 
+    title=@Umbraco.Field("headlineTextImage4"), 
+    subtitle=@Umbraco.Field("bodyTextImage4"), 
+    titleColor=@Umbraco.Field("titleColorTextImage4"), 
+    bodyColor=@Umbraco.Field("bodyColorTextImage4")
+})
+
+
+
+@Umbraco.RenderMacro("PictureCarousel", new
+{
+    quote1 = @Umbraco.Field("pictureCarouselQuote1", removeParagraphTags: true),
+    image1 = @Umbraco.Field("pictureCarouselImage1"),
+    person1 = @Umbraco.Field("pictureCarouselPerson1"),
+    title1 = @Umbraco.Field("pictureCarouselTitle1"),
+    logo1 = @Umbraco.Field("pictureCarouselLogo1"),
+    quote2 = @Umbraco.Field("pictureCarouselQuote2", removeParagraphTags: true),
+    image2 = @Umbraco.Field("pictureCarouselImage2"),
+    person2 = @Umbraco.Field("pictureCarouselPerson2"),
+    title2 = @Umbraco.Field("pictureCarouselTitle2"),
+    logo2 = @Umbraco.Field("pictureCarouselLogo2"),
+    quote3 = @Umbraco.Field("pictureCarouselQuote3", removeParagraphTags: true),
+    image3 = @Umbraco.Field("pictureCarouselImage3"),
+    person3 = @Umbraco.Field("pictureCarouselPerson3"),
+    title3 = @Umbraco.Field("pictureCarouselTitle3"),
+    logo3 = @Umbraco.Field("pictureCarouselLogo3"),
+    buttonText = @Umbraco.Field("pictureCarouselButtonText"),
+    buttonAddress = @Umbraco.Field("pictureCarouselButtonAddress"),
+    visible = @Umbraco.Field("pictureCarouselVisible").ToString() == "False",
+    color = @Umbraco.Field("pictureCarouselColor"),
+    btn_bg = Umbraco.Field("pictureCarouselButtonBackground"),
+    btn_color = Umbraco.Field("pictureCarouselButtonColor"),
+    btn_id = Umbraco.Field("pictureCarouselButtonId"),
+    rotationInterval = Umbraco.Field("pictureCarouselRotationInterval")
+})
+
+
+@Umbraco.RenderMacro("Space", new { color = "white", heigth = "50" })
