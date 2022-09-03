@@ -19,12 +19,24 @@
 
 <style>
 /*Text styling*/
+
+    .top-top-title{
+        font-size: 2rem;
+    }
+    @@media (max-width: 990px) {
+        .top-top-title{
+        padding-left: 10px;
+        font-size: 4rem;
+    } }
+    
+    
     .box-h{
         font-size: 1.8rem ;
     }
     @@media (max-width: 990px) {
         .box-h {
-        font-size: 2.5rem;
+        font-size: 3.5rem;
+        padding-top: 30px;
     } }
     
     .box-s{
@@ -44,16 +56,17 @@
     }
     @@media (max-width: 990px) {
         .box-b {
-        font-size: 2rem;
+        font-size: 2.5rem;
         margin-bottom: 60px;
+        max-height: 230px;
     } }
     
     .box-price{
-    font-size: 1.3rem;
+        font-size: 1.5rem;
         }
         @@media (max-width: 990px) {
             .box-price{ 
-            font-size: 2rem; 
+            font-size: 2.8rem; 
             margin-bottom: 60px;
     } }  
     
@@ -67,10 +80,11 @@
     }
     @@media (max-width: 990px) {
         .button-text-container {
-        font-size: 2rem;
+        font-size: 2.5rem;
         max-width: 100%;
-        margin-left: 20px;
-        margin-right: 20px; 
+        margin-left: 25px;
+        margin-right: 25px; 
+        padding: 18px;
         top: 0px;
     } }
     
@@ -157,10 +171,11 @@
 
 <div class="padding-what-we-offer-container d-@Model.MacroParameters["visible"]" style="background-color:@Model.MacroParameters["backgroundColor"]">
     
+    <div class="top-top-title pb-5" style="color:@Model.MacroParameters["topTitleTextColor"]">@Html.Raw(Model.MacroParameters["title"])</div>
+    
     <div class="what-we-offer-desktop">
     
-    <div class="title pb-5">@Html.Raw(Model.MacroParameters["title"])</div>
-    
+
     <div class="row">
         
         <!-- Card 1 -->
@@ -257,32 +272,62 @@
     </div>
 
         <div class="row tab pl-4 pr-4">
-          <button class="col-sm-3 tablinks" onclick="openCity(event, 'Essential')" style="background-color:@Model.MacroParameters["backgroundColorBox1"]; color:white;">Essential</button>
-          <button class="col-sm-3 tablinks" onclick="openCity(event, 'Standard')" style="background-color:@Model.MacroParameters["backgroundColorBox2"]; color:white;">Standard</button>
-          <button class="col-sm-3 tablinks" onclick="openCity(event, 'Advanced')" style="background-color:@Model.MacroParameters["backgroundColorBox3"];color:white;">Advanced</button>
-          <button class="col-sm-3 tablinks" onclick="openCity(event, 'Premium')" id="defaultOpen" style="background-color:@Model.MacroParameters["backgroundColorBox4"];color:white;">Premium</button>
+          <button class="col-3 tablinks pt-5 pb-5" onclick="openCity(event, 'Essential')" style="background-color:@Model.MacroParameters["backgroundColorBox1"]; color:white;">@Model.MacroParameters["titleBox1"]</button>
+          <button class="col-3 tablinks pt-5 pb-5" onclick="openCity(event, 'Standard')" style="background-color:@Model.MacroParameters["backgroundColorBox2"]; color:white;">@Model.MacroParameters["titleBox2"]</button>
+          <button class="col-3 tablinks pt-5 pb-5" onclick="openCity(event, 'Advanced')" style="background-color:@Model.MacroParameters["backgroundColorBox3"];color:white;">@Model.MacroParameters["titleBox3"]</button>
+          <button class="col-3 tablinks pt-5 pb-5" onclick="openCity(event, 'Premium')" id="defaultOpen" style="background-color:@Model.MacroParameters["backgroundColorBox4"];color:white;">@Model.MacroParameters["titleBox4"]</button>
         </div>
         
         <div class="tab-indmad-container" style="margin-left: 12px; margin-right: 12px;">
                 <div id="Essential" class="tabcontent" style="background-color:@Model.MacroParameters["backgroundColorBox1"]">
-                    <div class="box-h p-4">@Html.Raw(Model.MacroParameters["subtitleBox1"])</div>
+                    <div class="box-h pt-5 pr-4 pb-2 pl-4">@Html.Raw(Model.MacroParameters["subtitleBox1"])</div>
                     <div class="box-b pb-4 pl-4 pr-4">@Html.Raw(@Model.MacroParameters["bodytextBox1"])</div>
+                      <div class="box-price pb-4 pl-4 pr-4">@Html.Raw(@Model.MacroParameters["price1"])</div>
+                      <div style="pb-4">
+                        <center>
+                            <div class="button-text-container" style="background-color: @Model.MacroParameters["backgroundColorBtn"]">
+                                <a href="@Model.MacroParameters["btn1Link"]" id="btnWhatWeOffer">
+                                    <div style="color:@Model.MacroParameters["boxBodyAndBtnTextColor"]">@Model.MacroParameters["btnText"]</div>
+                                </a>
+                            </div>
+                        </center>
+                      </div> 
                 </div>
 
                 <div id="Standard" class="tabcontent" style="background-color:@Model.MacroParameters["backgroundColorBox2"]">
-                    <div class="box-h p-4">@Html.Raw(Model.MacroParameters["subtitleBox2"])</div>
+                    <div class="box-h pt-5 pr-4 pb-2 pl-4">@Html.Raw(Model.MacroParameters["subtitleBox2"])</div>
                     <div class="box-b pb-4 pl-4 pr-4">@Html.Raw(@Model.MacroParameters["bodytextBox2"])</div>
+                      <div class="box-price pb-4 pl-4 pr-4">@Html.Raw(@Model.MacroParameters["price2"])</div>
+                      <div style="pb-4">
+                        <center>
+                            <div class="button-text-container" style="background-color: @Model.MacroParameters["backgroundColorBtn2"]">
+                                <a href="@Model.MacroParameters["btn2Link"]" id="btnWhatWeOffer">
+                                    <div style="color:@Model.MacroParameters["boxBodyAndBtnTextColor"]">@Model.MacroParameters["btnText"]</div>
+                                </a>
+                            </div>
+                        </center>
+                      </div> 
                 </div>
 
                 <div id="Advanced" class="tabcontent" style="background-color:@Model.MacroParameters["backgroundColorBox3"]">
-                    <div class="box-h p-4">@Html.Raw(Model.MacroParameters["subtitleBox3"])</div>
+                    <div class="box-h pt-5 pr-4 pb-2 pl-4">@Html.Raw(Model.MacroParameters["subtitleBox3"])</div>
                     <div class="box-b pb-4 pl-4 pr-4">@Html.Raw(@Model.MacroParameters["bodytextBox3"])</div>
+                      <div class="box-price pb-4 pl-4 pr-4">@Html.Raw(@Model.MacroParameters["price3"])</div>
+                      <div style="pb-4">
+                        <center>
+                            <div class="button-text-container" style="background-color: @Model.MacroParameters["backgroundColorBtn3"]">
+                                <a href="@Model.MacroParameters["btn3Link"]" id="btnWhatWeOffer">
+                                    <div style="color:@Model.MacroParameters["boxBodyAndBtnTextColor"]">@Model.MacroParameters["btnText"]</div>
+                                </a>
+                            </div>
+                        </center>
+                      </div> 
                 </div>
 
                 <div id="Premium" class="tabcontent" style="background-color:@Model.MacroParameters["backgroundColorBox4"]">
-                  <div class="box-h p-4">@Html.Raw(Model.MacroParameters["subtitleBox4"])</div>
+                  <div class="box-h pt-5 pr-4 pb-2 pl-4">@Html.Raw(Model.MacroParameters["subtitleBox4"])</div>
                   <div class="box-b pb-4 pl-4 pr-4">@Html.Raw(@Model.MacroParameters["bodytextBox4"])</div>
-                  <div class="box-price pb-4 pl-4 pr-4">Custom pricing</div>
+                  <div class="box-price pb-4 pl-4 pr-4">@Html.Raw(@Model.MacroParameters["price"])</div>
                   <div style="pb-4">
                     <center>
                         <div class="button-text-container" style="background-color: @Model.MacroParameters["backgroundColorBtn4"]">
