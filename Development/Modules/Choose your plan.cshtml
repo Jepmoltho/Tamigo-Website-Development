@@ -1,0 +1,120 @@
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+<style>
+.choose-your-plan-container{
+    padding-left: 140px;
+    padding-right: 140px;
+    padding-top: 50px;
+    padding-bottom: 75px;
+    
+    }
+    @@media (max-width: 990px) {
+        .choose-your-plan-container{
+        padding-left: 70px;
+        padding-right: 70px;
+        padding-top: 50px;
+        padding-bottom: 25px;
+    } }
+    
+
+.title-choose-plan{
+    font-size: 2rem;
+    }
+    @@media (max-width: 990px) {
+        .title-choose-plan{
+        font-size: 4rem;
+    } }
+    
+    
+.subtitle-choose-plan{
+    font-size: 1.8rem;
+    }
+    @@media (max-width: 990px) {
+        .subtitle-choose-plan{
+        font-size: 3.5rem;
+        margin-bottom: 40px;
+    } }
+    
+.btn-headline-container{
+    font-size: 1.5rem;
+}@@media (max-width: 990px) {
+    .btn-headline-container{
+    font-size: 3rem;
+} }
+
+.button-cyp-container{
+    font-size: 1.3rem;
+    padding: 8px;
+    max-width: 250px;
+    /*position: relative;*/
+    /*top: -30px;*/
+}
+@@media (max-width: 990px) {
+    .button-cyp-container {
+    font-size: 2.5rem;
+    max-width: 100%;
+    margin-left: 25px;
+    margin-right: 25px; 
+    padding: 34px;
+    margin-bottom: 80px;
+    /*top: 0px;*/
+} }
+    
+</style>
+
+<div class="choose-your-plan-container d-@Model.MacroParameters["visible"]" style="background-color:@Model.MacroParameters["backgroundColor"]">
+    <center>
+        <div class="title-choose-plan pb-2" style="color:@Model.MacroParameters["titleColor"]">@Html.Raw(Model.MacroParameters["title"])</div>
+        <div class="subtitle-choose-plan pb-2" style="color:@Model.MacroParameters["bodyColor"]">@Html.Raw(Model.MacroParameters["subtitle"])</div>
+    </center>
+    <center>
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="btn-headline-container">
+                    @Html.Raw(Model.MacroParameters["btnHeadline1"])
+                </div>
+                <div class="button-cyp-container" style="background-color: @Model.MacroParameters["btnBackgroundColor1"]">
+                        <a href="@Model.MacroParameters["btnLink1"]" id="btnWhatWeOffer">
+                            <div style="color:@Model.MacroParameters["btnTextColor"]">@Model.MacroParameters["btnText1"]<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></div>
+                        </a>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="btn-headline-container">
+                    @Html.Raw(Model.MacroParameters["btnHeadline2"])
+                </div>
+                <div class="button-cyp-container" style="background-color: @Model.MacroParameters["btnBackgroundColor2"]">
+                        <a href="@Model.MacroParameters["btnLink2"]" id="btnWhatWeOffer">
+                            <div style="color:@Model.MacroParameters["btnTextColor"]">@Model.MacroParameters["btnText2"]<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></div>
+                        </a>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="btn-headline-container">
+                    @Html.Raw(Model.MacroParameters["btnHeadline3"])
+                </div>
+                <div class="button-cyp-container" style="background-color: @Model.MacroParameters["btnBackgroundColor3"]">
+                        <a href="@Model.MacroParameters["btnLink3"]" id="btnWhatWeOffer">
+                            <div style="color:@Model.MacroParameters["btnTextColor"]">@Model.MacroParameters["btnText3"]<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></div>
+                        </a>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="btn-headline-container">
+                    @Html.Raw(Model.MacroParameters["btnHeadline4"])
+                </div>
+                <div class="button-cyp-container" style="background-color: @Model.MacroParameters["btnBackgroundColor4"]">
+                        <a href="@Model.MacroParameters["btnLink4"]" id="btnWhatWeOffer">
+                            <div style="color:@Model.MacroParameters["btnTextColor"]">@Model.MacroParameters["btnText4"]<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></div>
+                        </a>
+                </div> 
+            </div>
+        </div>
+    </center>
+</div>
+
+<script>
+if (document.getElementsByClassName('choose-your-plan-container')[0].classList.contains("d-False")){
+    $(".choose-your-plan-container").css("display","none");
+}
+</script>

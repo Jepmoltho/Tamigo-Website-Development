@@ -49,9 +49,9 @@
     } }
     
     .box-b{
-        font-size: 1.3rem ;
-        margin-bottom: 80px;
-        max-height: 130px;
+        font-size: 1.1rem ;
+        margin-bottom: 100px;
+        height: 130px;
         color: @Model.MacroParameters["boxBodyAndBtnTextColor"];
     }
     @@media (max-width: 990px) {
@@ -62,7 +62,7 @@
     } }
     
     .box-price{
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         }
         @@media (max-width: 990px) {
             .box-price{ 
@@ -75,8 +75,8 @@
         font-size: 1.3rem;
         padding: 8px;
         max-width: 200px;
-        position: relative;
-        top: -30px;
+        /*position: relative;*/
+        /*top: -30px;*/
     }
     @@media (max-width: 990px) {
         .button-text-container {
@@ -85,18 +85,22 @@
         margin-left: 25px;
         margin-right: 25px; 
         padding: 18px;
-        top: 0px;
+        /*top: 0px;*/
     } }
     
     
     .box-color-container{
-        height: 250px;
+        min-height: 300px;
         
     }
     @@media (max-width: 990px) {
         .box-color-container {
         height: 250px;
     } }    
+    
+    .box-body-text-container{
+        height: 130px;
+    }
     
     #btnWhatWeOffer:hover{
         color:white;
@@ -184,7 +188,10 @@
             <div class="box-h p-2">@Model.MacroParameters["titleBox1"]</div>
             <div class="box-s p-2">@Html.Raw(Model.MacroParameters["subtitleBox1"])</div>
             <div class="box-color-container" style="background-color:@Model.MacroParameters["backgroundColorBox1"]">
-                <div class="box-b p-3">@Html.Raw(@Model.MacroParameters["bodytextBox1"])</div>
+                <div class="box-b p-3">
+                    <div class="box-body-text-container">@Html.Raw(@Model.MacroParameters["bodytextBox1"])</div>
+                    <div class="box-price">@Html.Raw(@Model.MacroParameters["price1"])</div>
+                </div>
                     <center>
                         <div class="button-text-container" style="background-color: @Model.MacroParameters["backgroundColorBtn"]">
                             <a href="@Model.MacroParameters["btn1Link"]" id="btnWhatWeOffer">
@@ -201,7 +208,10 @@
             <div class="box-h p-2">@Model.MacroParameters["titleBox2"]</div>
             <div class="box-s p-2">@Html.Raw(Model.MacroParameters["subtitleBox2"])</div>
             <div class="box-color-container" style="background-color:@Model.MacroParameters["backgroundColorBox2"]">
-                <div class="box-b p-3">@Html.Raw(@Model.MacroParameters["bodytextBox2"])</div>
+               <div class="box-b p-3">
+                    <div class="box-body-text-container">@Html.Raw(@Model.MacroParameters["bodytextBox2"])</div>
+                    <div class="box-price">@Html.Raw(@Model.MacroParameters["price2"])</div>
+                </div>                    
                     <center>
                         <div class="button-text-container" style="background-color: @Model.MacroParameters["backgroundColorBtn2"]">
                             <a href="@Model.MacroParameters["btn2Link"]" id="btnWhatWeOffer">
@@ -218,7 +228,10 @@
             <div class="box-h p-2">@Model.MacroParameters["titleBox3"]</div>
             <div class="box-s p-2">@Html.Raw(Model.MacroParameters["subtitleBox3"])</div>
             <div class="box-color-container" style="background-color:@Model.MacroParameters["backgroundColorBox3"]">
-                <div class="box-b p-3">@Html.Raw(@Model.MacroParameters["bodytextBox3"])</div>
+               <div class="box-b p-3">
+                    <div class="box-body-text-container">@Html.Raw(@Model.MacroParameters["bodytextBox3"])</div>
+                    <div class="box-price">@Html.Raw(@Model.MacroParameters["price3"])</div>
+                </div>                    
                     <center>
                         <div class="button-text-container" style="background-color: @Model.MacroParameters["backgroundColorBtn3"]">
                             <a href="@Model.MacroParameters["btn3Link"]" id="btnWhatWeOffer">
@@ -235,7 +248,10 @@
             <div class="box-h p-2">@Model.MacroParameters["titleBox4"]</div>
             <div class="box-s p-2">@Html.Raw(Model.MacroParameters["subtitleBox4"])</div>
             <div class="box-color-container" style="background-color:@Model.MacroParameters["backgroundColorBox4"]">
-                <div class="box-b p-3">@Html.Raw(@Model.MacroParameters["bodytextBox4"])</div>
+               <div class="box-b p-3">
+                    <div class="box-body-text-container">@Html.Raw(@Model.MacroParameters["bodytextBox4"])</div>
+                    <div class="box-price">@Html.Raw(@Model.MacroParameters["price"])</div>
+                </div>                    
                     <center>
                         <div class="button-text-container" style="background-color: @Model.MacroParameters["backgroundColorBtn4"]">
                             <a href="@Model.MacroParameters["btn4Link"]" id="btnWhatWeOffer">
