@@ -1,5 +1,6 @@
 @inherits Umbraco.Web.Macros.PartialViewMacroPage
 
+
 <style>
 .accordion {
   background-color: #eee;
@@ -13,11 +14,16 @@
   font-size: 15px;
   transition: 0.4s;
 }
+</style>
 
+<!--
+<style>
 .active, .accordion:hover {
   background-color: #ccc; 
 }
-
+</style>
+-->
+<style>
 .panel {
   padding: 0 0px;
   display: none;
@@ -26,11 +32,15 @@
 }
 
 .checkmark{
-    max-width: 50px;
+    max-width: 60px;
 }
 
 .col-sm-2{
-    margin: 10px;
+    /*margin: 10px;*/
+    margin-top: 10px;
+    margin-right: 0px;
+    margin-bottom: 10px;
+    margin-left: 20px;
 }
 
 .flex-container {
@@ -50,6 +60,9 @@
 .package-icon-container{
     padding-left: 0px!important;
 }
+</style>
+
+<style>
 
 .padding-accordion-container{
     padding-left: 140px;
@@ -66,26 +79,6 @@
             padding-bottom: 100px;
     } }
 
-
-/*
-.container-responsive-unique {
-          width: 100%;
-          margin-right: auto;
-          margin-left: auto; }
-          media (min-width: 576px) {
-            .container-responsive {
-              max-width: 920px; } }
-          media (min-width: 768px) {
-            .container-responsive {
-              max-width: 920px; } }
-          media (min-width: 992px) {
-            .container-responsive {
-              max-width: 960px; } }
-          media (min-width: 1200px) {
-            .container-responsive {
-              max-width: 1140px; } }
-*/              
-              
 
 </style>
 
@@ -108,22 +101,60 @@
 </style>
 <style>
 /*Text styling*/
+    .top-top-title{
+        font-size: 2rem;
+    }
+    @@media (max-width: 990px) {
+        .top-top-title{
+        padding-left: 10px;
+        font-size: 4rem;
+    } }
+
     .row-color-headline-box{
         font-size: 1.8rem ;
     }
     @@media (max-width: 990px) {
         .row-color-headline-box {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
     } }
     
     .panel-btn{
-        font-size: 1.8rem ;
+        font-size: 1.5rem ;
     }
     @@media (max-width: 990px) {
         .panel-btn {
+        font-size: 2rem;
+    } }
+    
+    .checkmark-row{
+        font-size: 1.2rem;
+    }
+    @@media (max-width: 990px) {
+        .checkmark-row {
         font-size: 1.5rem;
     } }
     
+    .package-text-center-box{
+    
+    }@@media (max-width: 990px) {
+        .package-text-center-box {
+        left: -5px;
+        position: relative;
+    } }
+    
+    .disclaimer-container-pr-ac{
+        font-size: 1.5rem;
+    }@@media (max-width: 990px) {
+        .disclaimer-container-pr-ac {
+            font-size: 1.5rem;
+    } }
+    
+    .download-pricing-plan{
+            font-size: 1.5rem;
+    }@@media (max-width: 990px) {
+        .download-pricing-plan {
+            font-size: 2.2rem;
+    } }
     
 </style>
 
@@ -132,7 +163,7 @@
 <div class="padding-accordion-container d-@Model.MacroParameters["visible"]">
 
     <div class="accordion-container container-responsive-unique">
-        <div class="title pb-5">@Html.Raw(Model.MacroParameters["title"])</div>
+        <div class="top-top-title pb-5" style="color:@Model.MacroParameters["topTitleTextColor"]">@Html.Raw(Model.MacroParameters["title"])</div>
     
         <!-- Container for images above boxes -->
         <div class="flex-container-headlines">
@@ -140,16 +171,16 @@
                   <!-- Is Empty -->
               </div>
               <div class="col-sm-2 package-icon-container">
-                  <img class="package-icon" src="https://www.tamigo.nl/media/2686/screenshot-2022-08-19-at-182221.png">
+                  <img class="package-icon" src=@Umbraco.Media(Model.MacroParameters["icon1"]).Url >
               </div>
               <div class="col-sm-2 package-icon-container">
-                  <img class="package-icon" src="https://www.tamigo.nl/media/2687/screenshot-2022-08-19-at-182225.png">
+                  <img class="package-icon" src=@Umbraco.Media(Model.MacroParameters["icon2"]).Url >
               </div>
               <div class="col-sm-2 package-icon-container">
-                    <img class="package-icon" src="https://www.tamigo.nl/media/2688/screenshot-2022-08-19-at-182230.png">
+                    <img class="package-icon" src=@Umbraco.Media(Model.MacroParameters["icon3"]).Url >
               </div>
               <div class="col-sm-2 package-icon-container">
-                <img class="package-icon" src="https://www.tamigo.nl/media/2689/screenshot-2022-08-19-at-182234.png">      
+                <img class="package-icon" src=@Umbraco.Media(Model.MacroParameters["icon4"]).Url >      
               </div>
 
           </div>
@@ -161,22 +192,22 @@
                   <!-- Is Empty -->
               </div>
               <div class="row-color-headline-container1 row-color-headline-box col-sm-2 bg-blue white pt-5 pb-5 pl-4">
-                  <center>
+                  <center class="package-text-center-box">
                     @Model.MacroParameters["titleBoxRow1"]
                 </center>
               </div>
               <div class="row-color-headline-container2 row-color-headline-box col-sm-2 bg-blue white pt-5 pb-5 pl-4">
-                  <center>
+                  <center class="package-text-center-box">
                     @Model.MacroParameters["titleBoxRow2"]
                   </center>          
               </div>
               <div class="row-color-headline-container3 row-color-headline-box col-sm-2 bg-blue white pt-5 pb-5 pl-4">
-                  <center>
+                  <center class="package-text-center-box">
                     @Model.MacroParameters["titleBoxRow3"]
                   </center>          
               </div>
               <div class="row-color-headline-container4 row-color-headline-box col-sm-2 bg-blue white pt-5 pb-5 pl-4">
-                  <center>
+                  <center class="package-text-center-box">
                     @Model.MacroParameters["titleBoxRow4"]
                   </center>          
               </div>
@@ -185,7 +216,7 @@
     
     
         <!-- Panel 1 -->
-        <button class="accordion panel-1 panel-btn d-@Model.MacroParameters["visiblePanel1"]">@Model.MacroParameters["titlePanel1"]</button>
+        <button class="accordion panel-1 panel-btn d-@Model.MacroParameters["visiblePanel1"]" id="defaultOpenPanel1">@Model.MacroParameters["titlePanel1"]</button>
         <div class="panel">
             
             @Html.Raw(Model.MacroParameters["macroRowPicker1"])
@@ -264,8 +295,8 @@
         
         </div>
         
-    
-        
+        <div class="disclaimer-container-pr-ac pt-3">@Model.MacroParameters["disclaimerText"]</div>
+        <a href="@Model.MacroParameters["downloadFullPricingLink"]" style="color:#646464; text-decoration: underline; cursor: auto;"><div class="download-pricing-plan pt-4" style="text-align: right;">@Model.MacroParameters["downloadFullPricingText"]</div></a>
         
     </div>
 </div>      
@@ -347,6 +378,9 @@ if (document.getElementsByClassName('panel-9')[0].classList.contains("d-False"))
 if (document.getElementsByClassName('panel-10')[0].classList.contains("d-False")){
     $(".panel-10").css("display","none");
 }
+
+document.getElementById("defaultOpenPanel1").click();
+
 
 
 //Hides checkmarks as the last thing after loops and coloring has finished 
@@ -731,6 +765,7 @@ $(document).ready(() => {
 
 
 </script>
+
 
 
 <!-- Media --> 
