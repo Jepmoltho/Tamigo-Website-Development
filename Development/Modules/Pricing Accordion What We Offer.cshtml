@@ -366,6 +366,12 @@ if (document.getElementsByClassName('padding-what-we-offer-container')[0].classL
 }
 
 
+if (document.getElementsByClassName('padding-what-we-offer-container')[0].classList.contains("d-True") && screen.width < 991){
+    $(".title-container-pricing-unique")[0].style.marginLeft = "45px";
+}
+
+
+
 function openCity(evt, cityName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
