@@ -3,8 +3,8 @@
 
 <style>
 .accordion {
-  background-color: #eee;
-  color: #444;
+  background-color: "" /* #eee;*/
+  color: /*#444;*/
   cursor: pointer;
   padding: 18px;
   width: 100%;
@@ -14,6 +14,30 @@
   font-size: 15px;
   transition: 0.4s;
 }
+</style>
+<style>
+    /*Overrides default css for buttons*/
+    button:focus{
+        /*
+        outline: 5px auto -webkit-focus-ring-color;
+        outline-color: #ff0000;
+        outline-style: auto;
+        outline-width: 5px;
+        */
+        outline: none;
+        /*border-left: 8px solid blue;*/
+    }
+    .active-panel-unique{
+        border-left: 8px solid @Model.MacroParameters["topTitleTextColor"];
+    }
+    /*
+    button:focus{
+        outline: 5px auto -webkit-focus-ring-color;
+        outline-color: -webkit-focus-ring-color;
+        outline-style: auto;
+        outline-width: 5px;
+    }
+    */
 </style>
 
 <!--
@@ -316,6 +340,7 @@ var i;
 for (i = 0; i < acc.length; i++) {
   acc[i].addEventListener("click", function() {
     this.classList.toggle("active");
+    this.classList.toggle("active-panel-unique"); /*Here*/
     var panel = this.nextElementSibling;
     if (panel.style.display === "block") {
       panel.style.display = "none";
@@ -379,6 +404,7 @@ if (document.getElementsByClassName('panel-10')[0].classList.contains("d-False")
     $(".panel-10").css("display","none");
 }
 
+//Clicks on the first panel by default
 document.getElementById("defaultOpenPanel1").click();
 
 
