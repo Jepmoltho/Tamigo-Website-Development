@@ -904,7 +904,27 @@ $(document).ready(() => {
 
 </script>
 
+<script>
+  //document.getElementsByClassName("title-of-row-acc")[6].clientHeight
 
+  //document.getElementsByClassName("title-of-row-acc")[4].parentElement.parentElement.style.height = "72px"
+  
+  function extendRowSize(){
+    var lenghtOfRows = document.getElementsByClassName("title-of-row-acc").length;
+    for (i = 0; i < lenghtOfRows; i++){
+      if (document.getElementsByClassName("title-of-row-acc")[i].clientHeight < 25){
+        document.getElementsByClassName("title-of-row-acc")[i].parentElement.parentElement.style.height = "50px"
+      }
+      if (document.getElementsByClassName("title-of-row-acc")[i].clientHeight > 25 && document.getElementsByClassName("title-of-row-acc")[i].clientHeight < 71){
+          document.getElementsByClassName("title-of-row-acc")[i].parentElement.parentElement.style.height = "66px"
+      }
+      if (document.getElementsByClassName("title-of-row-acc")[i].clientHeight > 71){
+          document.getElementsByClassName("title-of-row-acc")[i].parentElement.parentElement.style.height = "85px"
+      }
+    }
+  }
+
+</script>
 
 <!-- Media --> 
 <!-- src=Umbraco.Media(Model.MacroParameters["mediaPickerTest"]).Url -->
