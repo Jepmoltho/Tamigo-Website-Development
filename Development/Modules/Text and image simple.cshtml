@@ -4,8 +4,8 @@
 
 .container-text-image-simple {
   width: 100%;
-    padding-left: 140px;
-    padding-right: 140px;
+    padding-left: 100px;
+    padding-right: 100px;
     padding-top: 50px;
     padding-bottom: 100px;
     margin-right: auto;
@@ -23,6 +23,7 @@
 /*Text styling*/
     .ti-title{
         font-size: 2rem ;
+        padding-left: 3rem;
     }
     @@media (max-width: 990px) {
         .ti-title {
@@ -31,34 +32,49 @@
     
     .ti-body{
         font-size: 1.4rem ;
+        padding-left: 3rem;
     }
     @@media (max-width: 990px) {
         .ti-body {
         font-size: 2.5rem;
+        padding-right: 50px;
     } }
 </style>
 
 <style>
     .img-pad{
-        padding-right: 50px;
+        padding-right: 0px;
     }
     @@media (max-width: 990px) {
         .img-pad {
         padding-right: 0px;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
     } }
+    
+    .img-pad-container{
+        padding-left: 0px;
+        padding-right: 0px;
+    }@@media (max-width: 990px) {
+        .img-pad-container{
+        padding-left: 30px;
+        padding-right: 30px;
+    } }
+    
 </style>
     
 
 
-<div class="backgroundcolorcontainer text-image-simple-container pb-5 bg-@Model.MacroParameters["backgroundColor"] d-@Model.MacroParameters["visible"]">
+<div class="backgroundcolorcontainer text-image-simple-container bg-@Model.MacroParameters["backgroundColor"] d-@Model.MacroParameters["visible"]">
     <div class="container-text-image-simple flex-column-reverse">
         <div class="row">
-            <div class="col-lg pb-3" style="margin:auto;">
+            <div class="col-lg pb-3 img-pad-container" style="margin:auto;">
                 <center>
-                    <img src=@Umbraco.Media(Model.MacroParameters["image"]).Url class="img-fluid img-pad mb-4"></img>
+                    <img src=@Umbraco.Media(Model.MacroParameters["image"]).Url class="img-fluid img-pad"></img>
                 </center>
             </div>
-            <div class="col-lg pl-5 pr-5 mr-3 ml-3" style="margin:auto;">
+            <div class="col-lg" style="margin:auto;">
                 <!-- <img src=Umbraco.Media(Model.MacroParameters["icon"]).Url class="mb-2 mini-icon-responsive" style="max-height:60px;"></img>-->
                 <div class="ti-title @Model.MacroParameters["titleColor"]" style="padding-bottom: 10px;">
                     @Html.Raw(Model.MacroParameters["title"]) 

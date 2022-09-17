@@ -59,6 +59,17 @@
     margin-bottom: 80px;
     /*top: 0px;*/
 } }
+
+.btn-for-scaleup{
+    transition: transform .2s;
+}
+.btn-for-scaleup:hover{
+     transform: scale(1.1);
+}
+
+#btnWhatWeOffer:hover{
+    text-decoration:none;    
+}
     
 </style>
 
@@ -73,7 +84,7 @@
                 <div class="btn-headline-container">
                     @Html.Raw(Model.MacroParameters["btnHeadline1"])
                 </div>
-                <div class="button-cyp-container" style="background-color: @Model.MacroParameters["btnBackgroundColor1"]">
+                <div class="button-cyp-container btn-for-scaleup" style="background-color: @Model.MacroParameters["btnBackgroundColor1"]">
                         <a href="@Model.MacroParameters["btnLink1"]" id="btnWhatWeOffer">
                             <div style="color:@Model.MacroParameters["btnTextColor"]">@Model.MacroParameters["btnText1"]<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></div>
                         </a>
@@ -83,7 +94,7 @@
                 <div class="btn-headline-container">
                     @Html.Raw(Model.MacroParameters["btnHeadline2"])
                 </div>
-                <div class="button-cyp-container" style="background-color: @Model.MacroParameters["btnBackgroundColor2"]">
+                <div class="button-cyp-container btn-for-scaleup" style="background-color: @Model.MacroParameters["btnBackgroundColor2"]">
                         <a href="@Model.MacroParameters["btnLink2"]" id="btnWhatWeOffer">
                             <div style="color:@Model.MacroParameters["btnTextColor"]">@Model.MacroParameters["btnText2"]<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></div>
                         </a>
@@ -93,7 +104,7 @@
                 <div class="btn-headline-container">
                     @Html.Raw(Model.MacroParameters["btnHeadline3"])
                 </div>
-                <div class="button-cyp-container" style="background-color: @Model.MacroParameters["btnBackgroundColor3"]">
+                <div class="button-cyp-container btn-for-scaleup" style="background-color: @Model.MacroParameters["btnBackgroundColor3"]">
                         <a href="@Model.MacroParameters["btnLink3"]" id="btnWhatWeOffer">
                             <div style="color:@Model.MacroParameters["btnTextColor"]">@Model.MacroParameters["btnText3"]<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></div>
                         </a>
@@ -103,7 +114,7 @@
                 <div class="btn-headline-container">
                     @Html.Raw(Model.MacroParameters["btnHeadline4"])
                 </div>
-                <div class="button-cyp-container" style="background-color: @Model.MacroParameters["btnBackgroundColor4"]">
+                <div class="button-cyp-container btn-for-scaleup" style="background-color: @Model.MacroParameters["btnBackgroundColor4"]">
                         <a href="@Model.MacroParameters["btnLink4"]" id="btnWhatWeOffer">
                             <div style="color:@Model.MacroParameters["btnTextColor"]">@Model.MacroParameters["btnText4"]<i class="fa fa-long-arrow-right ml-3" aria-hidden="true"></i></div>
                         </a>
