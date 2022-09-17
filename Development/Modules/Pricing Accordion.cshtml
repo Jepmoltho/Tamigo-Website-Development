@@ -203,11 +203,11 @@
     } }
     
     .checkmark-row{
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     @@media (max-width: 990px) {
         .checkmark-row {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     } }
     
     .package-text-center-box{
@@ -291,6 +291,8 @@
  background-color: Model.MacroParameters["backgroundColorEvenRows"];
 }
 */
+
+
     
 </style>
 
@@ -439,6 +441,23 @@
 
 
 <script>
+//Function to extend row height based on lines inside them
+ function extendRowSize(){
+    var lenghtOfRows = document.getElementsByClassName("title-of-row-acc").length;
+    for (i = 0; i < lenghtOfRows; i++){
+      if (document.getElementsByClassName("title-of-row-acc")[i].clientHeight < 25){
+        document.getElementsByClassName("title-of-row-acc")[i].parentElement.parentElement.style.height = "50px"
+      }
+      if (document.getElementsByClassName("title-of-row-acc")[i].clientHeight > 25 && document.getElementsByClassName("title-of-row-acc")[i].clientHeight < 71){
+          document.getElementsByClassName("title-of-row-acc")[i].parentElement.parentElement.style.height = "66px"
+      }
+      if (document.getElementsByClassName("title-of-row-acc")[i].clientHeight > 71){
+          document.getElementsByClassName("title-of-row-acc")[i].parentElement.parentElement.style.height = "85px"
+      }
+    }
+ }
+
+
 //Visibility of accordion module 
 if (document.getElementsByClassName('padding-accordion-container')[0].classList.contains("d-False")){
     $(".padding-accordion-container").css("display","none");
@@ -459,6 +478,7 @@ for (i = 0; i < acc.length; i++) {
     } else {
       panel.style.display = "block";
     }
+    extendRowSize(); /*Here*/
   });
 }
 </script>
@@ -904,27 +924,7 @@ $(document).ready(() => {
 
 </script>
 
-<script>
-  //document.getElementsByClassName("title-of-row-acc")[6].clientHeight
 
-  //document.getElementsByClassName("title-of-row-acc")[4].parentElement.parentElement.style.height = "72px"
-  
-  function extendRowSize(){
-    var lenghtOfRows = document.getElementsByClassName("title-of-row-acc").length;
-    for (i = 0; i < lenghtOfRows; i++){
-      if (document.getElementsByClassName("title-of-row-acc")[i].clientHeight < 25){
-        document.getElementsByClassName("title-of-row-acc")[i].parentElement.parentElement.style.height = "50px"
-      }
-      if (document.getElementsByClassName("title-of-row-acc")[i].clientHeight > 25 && document.getElementsByClassName("title-of-row-acc")[i].clientHeight < 71){
-          document.getElementsByClassName("title-of-row-acc")[i].parentElement.parentElement.style.height = "66px"
-      }
-      if (document.getElementsByClassName("title-of-row-acc")[i].clientHeight > 71){
-          document.getElementsByClassName("title-of-row-acc")[i].parentElement.parentElement.style.height = "85px"
-      }
-    }
-  }
-
-</script>
 
 <!-- Media --> 
 <!-- src=Umbraco.Media(Model.MacroParameters["mediaPickerTest"]).Url -->
