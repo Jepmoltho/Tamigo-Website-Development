@@ -16,6 +16,7 @@
     visible = @Umbraco.Field("hiddenTextImage").ToString() == "False",
 })
 
+
 @Umbraco.RenderMacro("Prices", new
 {
     visible = @Umbraco.Field("hiddenPrices").ToString() == "False",
@@ -198,7 +199,8 @@
     downloadFullPricingText=@Umbraco.Field("downloadFullPricingTextPricingAccordion"),
     downloadFullPricingLink=@Umbraco.Field("downloadFullPricingLinkPricingAccordion"),
     backgroundColorFirstPanel=@Umbraco.Field("backgroundColorFirstPanelPricingAccordion"),
-    backgroundColorSecondPanel=@Umbraco.Field("backgroundColorSecondPanelPricingAccordion")
+    backgroundColorSecondPanel=@Umbraco.Field("backgroundColorSecondPanelPricingAccordion"),
+    backgroundColorEvenRows=@Umbraco.Field("backgroundColorEvenRowNumbersPricingAccordion")
 })
 
 

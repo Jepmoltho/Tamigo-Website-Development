@@ -32,6 +32,7 @@
     
     .box-h{
         font-size: 1.8rem ;
+        font-weight: 500;
     }
     @@media (max-width: 990px) {
         .box-h {
@@ -40,7 +41,8 @@
     } }
     
     .box-s{
-        font-size: 1.3rem;
+        font-size: 1.1rem;
+        line-height: 1.3rem;
         min-height: 95px; <!-- To make subtitle box same height independent of text lenght -->
     }
     @@media (max-width: 990px) {
@@ -367,7 +369,7 @@ if (document.getElementsByClassName('padding-what-we-offer-container')[0].classL
 
 
 if (document.getElementsByClassName('padding-what-we-offer-container')[0].classList.contains("d-True") && screen.width < 991){
-    $(".title-container-pricing-unique")[0].style.marginLeft = "45px";
+    $(".title-container-pricing-unique")[0].style.marginLeft = "45px"
 }
 
 
