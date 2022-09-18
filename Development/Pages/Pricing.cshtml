@@ -204,6 +204,61 @@
 })
 
 
+<script>
+
+
+
+
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  
+  //FROM HERE
+  var mobileTabContent = document.getElementsByClassName("pricing-acc-mobile");
+  for (i = 0; i < mobileTabContent.length; i++) {
+    mobileTabContent[i].style.display = "none";
+  }
+  //TO HERE
+  
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+  
+  //FROM HERE
+  if (evt.currentTarget.classList.contains("premium-btn-dupl") && evt.currentTarget.classList.contains("active")){
+      console.log("true");
+      document.getElementsByClassName("premium-btn-dupl")[1].style.display = "block";
+  }
+   if (evt.currentTarget.classList.contains("advanced-btn-dupl") && evt.currentTarget.classList.contains("active")){
+      document.getElementsByClassName("advanced-btn-dupl")[1].style.display = "block";
+  }
+  if (evt.currentTarget.classList.contains("standard-btn-dupl") && evt.currentTarget.classList.contains("active")){
+      document.getElementsByClassName("standard-btn-dupl")[1].style.display = "block";
+  }
+   if (evt.currentTarget.classList.contains("essential-btn-dupl") && evt.currentTarget.classList.contains("active")){
+      document.getElementsByClassName("essential-btn-dupl")[1].style.display = "block";
+  }
+  //console.log(evt.currentTarget.classList);
+}
+ //TO HERE
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
+
+
+
+
+
+</script>
+
+
 @Umbraco.RenderMacro("LogosCarouselEdited", new
 {
     visible = @Umbraco.Field("hiddenLogosCarousel").ToString() == "False",

@@ -335,11 +335,30 @@
     
 </style>
 
+<!-- FROM HERE -->
+<style>
+    .pricing-acc-desktop {
+    }
+    @@media (max-width: 991px) {
+        .pricing-acc-desktop {
+        display: none !important;
+    } }
+    
+    .pricing-acc-mobile {
+    }
+    @@media (min-width: 990px) {
+        .pricing-acc-mobile {
+        display: none !important;
+    } }
+          
+</style>
+<!-- TO HERE -->
+
 
 
 <div class="padding-accordion-container d-@Model.MacroParameters["visible"]">
 
-    <div class="accordion-container container-responsive-unique">
+    <div class="accordion-container container-responsive-unique pricing-acc-desktop"> <!-- FROM HERE: pricing-acc-desktop -->
     <div class="sticky-container">
         <div class="top-top-title pb-5" style="color:@Model.MacroParameters["topTitleTextColor"]">@Html.Raw(Model.MacroParameters["title"])</div>
     
@@ -477,6 +496,21 @@
         <a href="@Model.MacroParameters["downloadFullPricingLink"]" style="color:#646464; text-decoration: underline; cursor: auto;"><div class="download-pricing-plan pt-4" style="text-align: right;">@Model.MacroParameters["downloadFullPricingText"]</div></a>
         
     </div>
+    
+    <!-- FROM HERE -->
+    <div class="pricing-acc-mobile title premium-mobile-module premium-btn-dupl">
+        Premium mobile module shown here
+    </div>
+    <div class="pricing-acc-mobile title advanced-mobile-module advanced-btn-dupl">
+        Advanced mobile module shown here
+    </div>
+    <div class="pricing-acc-mobile title standard-mobile-module standard-btn-dupl">
+        Standard mobile module shown here
+    </div>
+    <div class="pricing-acc-mobile title essential-mobile-module essential-btn-dupl">
+        Essential mobile module shown here
+    </div>
+    <!-- TO HERE -->
 </div>      
 
 

@@ -22,5 +22,50 @@
         }
     }
 </script>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks, mobileTabContent;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  //FROM HERE
+  //var mobileTabContent = document.getElementsByClassName("pricing-acc-mobile");
+  //console.log(mobileTabContent);
+  //TO HERE
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+    //FROM HERE
+    //mobileTabContent[i].style.display = "none";
+    //TO HERE
+    //console.log(tabcontent[i]);
+  }
+  //FROM HERE
+  mobileTabContent = document.getElementsByClassName("pricing-acc-mobile");
+  console.log(mobileTabContent);
+  mobileTabContent[0].style.display = "none";
+  for (i = 0; i < mobileTabContent.length; i++) {
+    console.log(mobileTabContent);
+    mobileTabContent[i].style.display = "none";
+    //FROM HERE
+    //mobileTabContent[i].style.display = "none";
+    //TO HERE
+    console.log(mobileTabContent[i]);
+  }
+  //TO HERE
+  
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+  //console.log(evt.currentTarget);
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
+</script>
+
+
 </body>
 </html>

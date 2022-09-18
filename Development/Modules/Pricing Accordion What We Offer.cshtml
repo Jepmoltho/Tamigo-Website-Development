@@ -321,10 +321,10 @@
     </div>
 
         <div class="row tab pl-4 pr-4">
-          <button class="col-3 tablinks pt-5 pb-5" onclick="openCity(event, 'Essential')" style="background-color:@Model.MacroParameters["backgroundColorBox1"]; color:white;">@Model.MacroParameters["titleBox1"]</button>
-          <button class="col-3 tablinks pt-5 pb-5" onclick="openCity(event, 'Standard')" style="background-color:@Model.MacroParameters["backgroundColorBox2"]; color:white;">@Model.MacroParameters["titleBox2"]</button>
-          <button class="col-3 tablinks pt-5 pb-5" onclick="openCity(event, 'Advanced')" style="background-color:@Model.MacroParameters["backgroundColorBox3"];color:white;">@Model.MacroParameters["titleBox3"]</button>
-          <button class="col-3 tablinks pt-5 pb-5" onclick="openCity(event, 'Premium')" id="defaultOpen" style="background-color:@Model.MacroParameters["backgroundColorBox4"];color:white;">@Model.MacroParameters["titleBox4"]</button>
+          <button class="col-3 tablinks pt-5 pb-5 essential-btn-dupl" onclick="openCity(event, 'Essential')" style="background-color:@Model.MacroParameters["backgroundColorBox1"]; color:white;">@Model.MacroParameters["titleBox1"]</button>
+          <button class="col-3 tablinks pt-5 pb-5 standard-btn-dupl" onclick="openCity(event, 'Standard')" style="background-color:@Model.MacroParameters["backgroundColorBox2"]; color:white;">@Model.MacroParameters["titleBox2"]</button>
+          <button class="col-3 tablinks pt-5 pb-5 advanced-btn-dupl" onclick="openCity(event, 'Advanced')" style="background-color:@Model.MacroParameters["backgroundColorBox3"];color:white;">@Model.MacroParameters["titleBox3"]</button>
+          <button class="col-3 tablinks pt-5 pb-5 premium-btn-dupl" onclick="openCity(event, 'Premium')" id="defaultOpen" style="background-color:@Model.MacroParameters["backgroundColorBox4"];color:white;">@Model.MacroParameters["titleBox4"]</button>
         </div>
         
         <div class="tab-indmad-container" style="margin-left: 12px; margin-right: 12px;">
@@ -404,7 +404,7 @@ if (document.getElementsByClassName('padding-what-we-offer-container')[0].classL
 }
 
 
-
+/*
 function openCity(evt, cityName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
@@ -421,5 +421,5 @@ function openCity(evt, cityName) {
 
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
-
+*/
 </script>
