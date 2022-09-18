@@ -323,7 +323,14 @@
         left: -15px; 
     } }
 
-
+.sticky-container{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: @Model.MacroParameters["backgroundColor"];
+    z-index: 3;
+    margin-left: -1px;
+}
 
     
 </style>
@@ -333,6 +340,7 @@
 <div class="padding-accordion-container d-@Model.MacroParameters["visible"]">
 
     <div class="accordion-container container-responsive-unique">
+    <div class="sticky-container">
         <div class="top-top-title pb-5" style="color:@Model.MacroParameters["topTitleTextColor"]">@Html.Raw(Model.MacroParameters["title"])</div>
     
         <!-- Container for images above boxes -->
@@ -383,8 +391,8 @@
               </div>
 
           </div>
-    
-    
+        </div>
+        
         <!-- Panel 1 -->
         <button class="accordion panel-1 panel-btn d-@Model.MacroParameters["visiblePanel1"]" id="defaultOpenPanel1">@Model.MacroParameters["titlePanel1"]<img class="dropdown-symbol-pa" src="https://www.tamigo.nl/media/2710/expand-arrow.png"/></button>
         <div class="panel">
@@ -473,6 +481,7 @@
 
 
 <script>
+
 //Function to extend row height based on lines inside them
  function extendRowSize(){
     var lenghtOfRows = document.getElementsByClassName("title-of-row-acc").length;
@@ -488,6 +497,7 @@
       }
     }
  }
+
 
 
 //Visibility of accordion module 
@@ -513,6 +523,8 @@ for (i = 0; i < acc.length; i++) {
     extendRowSize(); /*Here*/
   });
 }
+
+
 </script>
 
 <script>
@@ -572,6 +584,7 @@ if (document.getElementsByClassName('panel-10')[0].classList.contains("d-False")
 document.getElementById("defaultOpenPanel1").click();
 
 
+    
 
 //Hides checkmarks as the last thing after loops and coloring has finished 
 setTimeout(() => {
@@ -583,6 +596,7 @@ setTimeout(() => {
     $(".hideCheckmarkRow").css("display","none")
     //$(".hideCheckmark").hide()
 }, "500")
+
 
 </script>
 

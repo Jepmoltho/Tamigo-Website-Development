@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function colorSecondRow(){
+        var rowLength = document.getElementsByClassName("checkmark-row").length;
+        for (i = 0; i < rowLength; i++){
+            if(i & 1){
+                //odd 
+                document.getElementsByClassName("checkmark-row")[i].style.background = "blue"
+            }
+            else{
+                //even
+                document.getElementsByClassName("checkmark-row")[i].style.background = "none"
+            }
+        }
+    }
+</script>
+</body>
+</html>
