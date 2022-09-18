@@ -39,9 +39,9 @@ function openCity(evt, cityName) {
     //console.log(tabcontent[i]);
   }
   //FROM HERE
-  mobileTabContent = document.getElementsByClassName("pricing-acc-mobile");
+  var mobileTabContent = document.getElementsByClassName("pricing-acc-mobile");
   console.log(mobileTabContent);
-  mobileTabContent[0].style.display = "none";
+  //mobileTabContent[0].style.display = "none";
   for (i = 0; i < mobileTabContent.length; i++) {
     console.log(mobileTabContent);
     mobileTabContent[i].style.display = "none";
@@ -65,6 +65,88 @@ function openCity(evt, cityName) {
 document.getElementById("defaultOpen").click();
 
 </script>
+
+
+<style>
+    .row-to-be-hidden{
+        display: none;
+    }
+</style>
+
+
+<script>
+
+
+
+
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  
+  //FROM HERE
+  var mobileTabContent = document.getElementsByClassName("pricing-acc-mobile");
+  for (i = 0; i < mobileTabContent.length; i++) {
+    mobileTabContent[i].style.display = "none";
+  }
+  //TO HERE
+  
+  /*
+  //FROM HERE
+  var mobileTabRowContent = document.getElementsByClassName("checkmark-row-mobile");
+  for (i = 0; i < mobileTabRowContent.length; i++) {
+    mobileTabRowContent[i].style.display = "none";
+  }
+  //TO HERE
+  */
+  
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+  
+  //FROM HERE
+  var premrow, advrow, stanrow, essrow;
+  premrow = document.getElementsByClassName("check-row-mobile-premium");
+  advrow = document.getElementsByClassName("check-row-mobile-advanced");
+
+  //FROM HERE
+  if (evt.currentTarget.classList.contains("premium-btn-dupl") && evt.currentTarget.classList.contains("active")){
+      console.log("true");
+      document.getElementsByClassName("premium-btn-dupl")[1].style.display = "block";
+      //document.getElementsByClassName("check-row-mobile-premium")[1].style.display = "block";
+      for (i = 0; i < advrow.length; i++){
+          //console.log(advrow[i])
+          advrow[i].classList.add("row-to-be-hidden");
+      }
+  }
+   if (evt.currentTarget.classList.contains("advanced-btn-dupl") && evt.currentTarget.classList.contains("active")){
+      document.getElementsByClassName("advanced-btn-dupl")[1].style.display = "block";
+  }
+  if (evt.currentTarget.classList.contains("standard-btn-dupl") && evt.currentTarget.classList.contains("active")){
+      document.getElementsByClassName("standard-btn-dupl")[1].style.display = "block";
+  }
+   if (evt.currentTarget.classList.contains("essential-btn-dupl") && evt.currentTarget.classList.contains("active")){
+      document.getElementsByClassName("essential-btn-dupl")[1].style.display = "block";
+  }
+  //console.log(evt.currentTarget.classList);
+}
+ //TO HERE
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
+
+
+
+
+
+</script>
+
 
 
 </body>
