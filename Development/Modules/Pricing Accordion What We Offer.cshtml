@@ -214,7 +214,10 @@
   padding-bottom: 30px;
   /*border: 1px solid #ccc;*/
   border-top: none;
+  position: relative;
+  top: -2px;
   }
+  
     
 </style>
 
@@ -343,7 +346,7 @@
         </div>
         
         <div class="tab-indmad-container" style="margin-left: 12px; margin-right: 12px;">
-                <div id="Essential" class="tabcontent" style="background-color:@Model.MacroParameters["backgroundColorBox1"]">
+                <div id="Essential" class="tabcontent tabcontent-essential" style="background-color:@Model.MacroParameters["backgroundColorBox1"]">
                     <div class="box-h pt-5 pr-4 pb-2 pl-4">@Html.Raw(Model.MacroParameters["subtitleBox1"])</div>
                     <div class="box-b pb-4 pl-4 pr-4">@Html.Raw(@Model.MacroParameters["bodytextBox1"])</div>
                     <div class="box-price pb-4 pl-4 pr-4">@Html.Raw(@Model.MacroParameters["price1"])</div>
@@ -358,7 +361,7 @@
                       </div> 
                 </div>
 
-                <div id="Standard" class="tabcontent" style="background-color:@Model.MacroParameters["backgroundColorBox2"]">
+                <div id="Standard" class="tabcontent tabcontent-standard" style="background-color:@Model.MacroParameters["backgroundColorBox2"]">
                     <div class="box-h pt-5 pr-4 pb-2 pl-4">@Html.Raw(Model.MacroParameters["subtitleBox2"])</div>
                     <div class="box-b pb-4 pl-4 pr-4">@Html.Raw(@Model.MacroParameters["bodytextBox2"])</div>
                       <div class="box-price pb-4 pl-4 pr-4">@Html.Raw(@Model.MacroParameters["price2"])</div>
@@ -373,7 +376,7 @@
                       </div> 
                 </div>
 
-                <div id="Advanced" class="tabcontent" style="background-color:@Model.MacroParameters["backgroundColorBox3"]">
+                <div id="Advanced" class="tabcontent tabcontent-advanced" style="background-color:@Model.MacroParameters["backgroundColorBox3"]">
                     <div class="box-h pt-5 pr-4 pb-2 pl-4">@Html.Raw(Model.MacroParameters["subtitleBox3"])</div>
                     <div class="box-b pb-4 pl-4 pr-4">@Html.Raw(@Model.MacroParameters["bodytextBox3"])</div>
                       <div class="box-price pb-4 pl-4 pr-4">@Html.Raw(@Model.MacroParameters["price3"])</div>
@@ -388,7 +391,7 @@
                       </div> 
                 </div>
 
-                <div id="Premium" class="tabcontent" style="background-color:@Model.MacroParameters["backgroundColorBox4"]">
+                <div id="Premium" class="tabcontent tabcontent-premium" style="background-color:@Model.MacroParameters["backgroundColorBox4"]">
                   <div class="box-h pt-5 pr-4 pb-2 pl-4">@Html.Raw(Model.MacroParameters["subtitleBox4"])</div>
                   <div class="box-b pb-4 pl-4 pr-4">@Html.Raw(@Model.MacroParameters["bodytextBox4"])</div>
                   <div class="box-price pb-4 pl-4 pr-4">@Html.Raw(@Model.MacroParameters["price"])</div>
@@ -419,22 +422,4 @@ if (document.getElementsByClassName('padding-what-we-offer-container')[0].classL
 }
 
 
-/*
-function openCity(evt, cityName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-*/
 </script>
