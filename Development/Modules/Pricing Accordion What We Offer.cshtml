@@ -157,6 +157,20 @@
         .what-we-offer-mobile {
         display: none !important;
     } }
+    
+    .top-top-title-mobile {
+    }
+    @@media (min-width: 990px) {
+        .top-top-title-mobile {
+        display: none !important;
+    } }
+    
+    .top-top-title-desktop {
+    }
+    @@media (max-width: 991px) {
+        .top-top-title-desktop {
+        display: none !important;
+    } }
           
 </style>
 
@@ -208,8 +222,9 @@
 
 <div class="padding-what-we-offer-container d-@Model.MacroParameters["visible"]" style="background-color:@Model.MacroParameters["backgroundColor"]">
     
-    <div class="top-top-title pb-5" style="color:@Model.MacroParameters["topTitleTextColor"]">@Html.Raw(Model.MacroParameters["title"])</div>
-    
+    <div class="top-top-title top-top-title-desktop pb-5" style="color:@Model.MacroParameters["topTitleTextColor"]">@Html.Raw(Model.MacroParameters["title"])</div>
+    <div class="top-top-title top-top-title-mobile pb-5" style="color:@Model.MacroParameters["topTitleTextColor"]">@Html.Raw(Model.MacroParameters["titleMobile"])</div>
+
     <div class="what-we-offer-desktop">
     
 
@@ -248,7 +263,7 @@
                     <center>
                         <div class="button-text-container btn-for-scaleup" style="background-color: @Model.MacroParameters["backgroundColorBtn2"]">
                             <a href="@Model.MacroParameters["btn2Link"]" id="btnWhatWeOffer">
-                                <div style="color:@Model.MacroParameters["boxBodyAndBtnTextColor"]">@Model.MacroParameters["btnText"]</div>
+                                <div style="color:@Model.MacroParameters["boxBodyAndBtnTextColor"]">@Model.MacroParameters["btnText2"]</div>
                             </a>
                         </div>
                     </center>
@@ -268,7 +283,7 @@
                     <center>
                         <div class="button-text-container btn-for-scaleup" style="background-color: @Model.MacroParameters["backgroundColorBtn3"]">
                             <a href="@Model.MacroParameters["btn3Link"]" id="btnWhatWeOffer">
-                                <div style="color:@Model.MacroParameters["boxBodyAndBtnTextColor"]">@Model.MacroParameters["btnText"]</div>
+                                <div style="color:@Model.MacroParameters["boxBodyAndBtnTextColor"]">@Model.MacroParameters["btnText3"]</div>
                             </a>
                         </div>
                     </center>
@@ -288,7 +303,7 @@
                     <center>
                         <div class="button-text-container btn-for-scaleup" style="background-color: @Model.MacroParameters["backgroundColorBtn4"]">
                             <a href="@Model.MacroParameters["btn4Link"]" id="btnWhatWeOffer">
-                                <div style="color:@Model.MacroParameters["boxBodyAndBtnTextColor"]">@Model.MacroParameters["btnText"]</div>
+                                <div style="color:@Model.MacroParameters["boxBodyAndBtnTextColor"]">@Model.MacroParameters["btnText4"]</div>
                             </a>
                         </div>
                     </center>
@@ -351,7 +366,7 @@
                         <center>
                             <div class="button-text-container btn-for-scaleup" style="background-color: @Model.MacroParameters["backgroundColorBtn2"]">
                                 <a href="@Model.MacroParameters["btn2Link"]" id="btnWhatWeOffer">
-                                    <div style="color:@Model.MacroParameters["boxBodyAndBtnTextColor"]">@Model.MacroParameters["btnText"]</div>
+                                    <div style="color:@Model.MacroParameters["boxBodyAndBtnTextColor"]">@Model.MacroParameters["btnText2"]</div>
                                 </a>
                             </div>
                         </center>
@@ -366,7 +381,7 @@
                         <center>
                             <div class="button-text-container btn-for-scaleup" style="background-color: @Model.MacroParameters["backgroundColorBtn3"]">
                                 <a href="@Model.MacroParameters["btn3Link"]" id="btnWhatWeOffer">
-                                    <div style="color:@Model.MacroParameters["boxBodyAndBtnTextColor"]">@Model.MacroParameters["btnText"]</div>
+                                    <div style="color:@Model.MacroParameters["boxBodyAndBtnTextColor"]">@Model.MacroParameters["btnText3"]</div>
                                 </a>
                             </div>
                         </center>
@@ -381,7 +396,7 @@
                     <center>
                         <div class="button-text-container btn-for-scaleup" style="background-color: @Model.MacroParameters["backgroundColorBtn4"]">
                             <a href="@Model.MacroParameters["btn4Link"]" id="btnWhatWeOffer">
-                                <div style="color:@Model.MacroParameters["boxBodyAndBtnTextColor"]">@Model.MacroParameters["btnText"]</div>
+                                <div style="color:@Model.MacroParameters["boxBodyAndBtnTextColor"]">@Model.MacroParameters["btnText4"]</div>
                             </a>
                         </div>
                     </center>

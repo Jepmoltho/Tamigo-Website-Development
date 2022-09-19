@@ -108,6 +108,7 @@
     visible=@Umbraco.Field("visibleWhatWeOffer"), 
     backgroundColor=@Umbraco.Field("backgroundColorWhatWeOffer"),
     title=@Umbraco.Field("titleWhatWeOffer"), 
+    titleMobile=@Umbraco.Field("titleMobileWhatWeOffer"),
     titleBox1=@Umbraco.Field("titleBox1WhatWeOffer"),
     titleBox2=@Umbraco.Field("titleBox2WhatWeOffer"),
     titleBox3=@Umbraco.Field("titleBox3WhatWeOffer"),
@@ -131,7 +132,10 @@
     titleTextColor=@Umbraco.Field("titleTextColorWhatWeOffer"),
     boxTitleAndSubtitleColor=@Umbraco.Field("boxTopTextColor"),
     boxBodyAndBtnTextColor=@Umbraco.Field("boxBottomTextColor"),
-    btnText=@Umbraco.Field("btnTextWhatWeOffer"), 
+    btnText=@Umbraco.Field("btnTextWhatWeOffer"),
+    btnText2=@Umbraco.Field("btnText2WhatWeOffer"),
+    btnText3=@Umbraco.Field("btnText3WhatWeOffer"), 
+    btnText4=@Umbraco.Field("btnText4WhatWeOffer"),
     btn1Link=@Umbraco.Field("btn1LinkWhatWeOffer"), 
     btn2Link=@Umbraco.Field("btn2LinkWhatWeOffer"), 
     btn3Link=@Umbraco.Field("btn3LinkWhatWeOffer"), 
@@ -204,7 +208,17 @@
     planHeadlineMobile1=@Umbraco.Field("planTitle1MobilePricingAccordion"), 
     planHeadlineMobile2=@Umbraco.Field("planTitle2MobilePricingAccordion"), 
     planHeadlineMobile3=@Umbraco.Field("planTitle3MobilePricingAccordion"), 
-    planHeadlineMobile4=@Umbraco.Field("planTitle4MobilePricingAccordion")
+    planHeadlineMobile4=@Umbraco.Field("planTitle4MobilePricingAccordion"),
+    titleMobilePanel1=@Umbraco.Field("titleMobilePanel1PricingAccordion"),
+    titleMobilePanel2=@Umbraco.Field("titleMobilePanel2PricingAccordion"),
+    titleMobilePanel3=@Umbraco.Field("titleMobilePanel3PricingAccordion"),
+    titleMobilePanel4=@Umbraco.Field("titleMobilePanel4PricingAccordion"),
+    titleMobilePanel5=@Umbraco.Field("titleMobilePanel5PricingAccordion"),
+    titleMobilePanel6=@Umbraco.Field("titleMobilePanel6PricingAccordion"),
+    titleMobilePanel7=@Umbraco.Field("titleMobilePanel7PricingAccordion"),
+    titleMobilePanel8=@Umbraco.Field("titleMobilePanel8PricingAccordion"),
+    titleMobilePanel9=@Umbraco.Field("titleMobilePanel9PricingAccordion"),
+    titleMobilePanel10=@Umbraco.Field("titleMobilePanel10PricingAccordion")
 })
 
 
@@ -219,8 +233,6 @@
 <script>
 
 
-
-
 function openCity(evt, cityName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
@@ -228,21 +240,10 @@ function openCity(evt, cityName) {
     tabcontent[i].style.display = "none";
   }
   
-  //FROM HERE
   var mobileTabContent = document.getElementsByClassName("pricing-acc-mobile");
   for (i = 0; i < mobileTabContent.length; i++) {
     mobileTabContent[i].style.display = "none";
   }
-  //TO HERE
-  
-  /*
-  //FROM HERE
-  var mobileTabRowContent = document.getElementsByClassName("checkmark-row-mobile");
-  for (i = 0; i < mobileTabRowContent.length; i++) {
-    mobileTabRowContent[i].style.display = "none";
-  }
-  //TO HERE
-  */
   
   tablinks = document.getElementsByClassName("tablinks");
   for (i = 0; i < tablinks.length; i++) {
@@ -251,7 +252,6 @@ function openCity(evt, cityName) {
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
   
-  //FROM HERE
   var premrow, advrow, stanrow, essrow;
   premrow = document.getElementsByClassName("check-row-mobile-premium");
   advrow = document.getElementsByClassName("check-row-mobile-advanced");
@@ -259,14 +259,10 @@ function openCity(evt, cityName) {
   essrow = document.getElementsByClassName("check-row-mobile-essential");
 
 
-
-  //FROM HERE
   if (evt.currentTarget.classList.contains("premium-btn-dupl") && evt.currentTarget.classList.contains("active")){
       console.log("true");
       document.getElementsByClassName("premium-btn-dupl")[1].style.display = "block";
-      //document.getElementsByClassName("check-row-mobile-premium")[1].style.display = "block";
       for (i = 0; i < advrow.length; i++){
-          //console.log(advrow[i])
           advrow[i].classList.add("row-to-be-hidden");
           standrow[i].classList.add("row-to-be-hidden");
           essrow[i].classList.add("row-to-be-hidden");
@@ -277,7 +273,6 @@ function openCity(evt, cityName) {
       document.getElementsByClassName("advanced-btn-dupl")[1].style.display = "block";
       //
       for (i = 0; i < advrow.length; i++){
-          //console.log(advrow[i])
           standrow[i].classList.add("row-to-be-hidden");
           essrow[i].classList.add("row-to-be-hidden");
           premrow[i].classList.add("row-to-be-hidden");
@@ -287,7 +282,6 @@ function openCity(evt, cityName) {
   if (evt.currentTarget.classList.contains("standard-btn-dupl") && evt.currentTarget.classList.contains("active")){
       document.getElementsByClassName("standard-btn-dupl")[1].style.display = "block";
       for (i = 0; i < standrow.length; i++){
-          //console.log(advrow[i])
           essrow[i].classList.add("row-to-be-hidden");
           premrow[i].classList.add("row-to-be-hidden");
           advrow[i].classList.add("row-to-be-hidden");
@@ -305,16 +299,10 @@ function openCity(evt, cityName) {
       }
   }
   extendRowSize();
-  //console.log(evt.currentTarget.classList);
 }
- //TO HERE
 
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
-
-
-
-
 
 
 </script>
