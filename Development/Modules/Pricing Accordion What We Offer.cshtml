@@ -171,6 +171,12 @@
         .top-top-title-desktop {
         display: none !important;
     } }
+    
+    .btn-desk{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
           
 </style>
 
@@ -244,7 +250,7 @@
                     <div class="box-price">@Html.Raw(@Model.MacroParameters["price1"])</div>
                 </div>
                     <center>
-                        <div class="button-text-container btn-for-scaleup" style="background-color: @Model.MacroParameters["backgroundColorBtn"]">
+                        <div class="button-text-container btn-for-scaleup btn-desk" style="background-color: @Model.MacroParameters["backgroundColorBtn"]">
                             <a href="@Model.MacroParameters["btn1Link"]" id="btnWhatWeOffer">
                                 <div style="color:@Model.MacroParameters["boxBodyAndBtnTextColor"]">@Model.MacroParameters["btnText"]</div>
                             </a>
@@ -264,7 +270,7 @@
                     <div class="box-price">@Html.Raw(@Model.MacroParameters["price2"])</div>
                 </div>                    
                     <center>
-                        <div class="button-text-container btn-for-scaleup" style="background-color: @Model.MacroParameters["backgroundColorBtn2"]">
+                        <div class="button-text-container btn-for-scaleup btn-desk" style="background-color: @Model.MacroParameters["backgroundColorBtn2"]">
                             <a href="@Model.MacroParameters["btn2Link"]" id="btnWhatWeOffer">
                                 <div style="color:@Model.MacroParameters["boxBodyAndBtnTextColor"]">@Model.MacroParameters["btnText2"]</div>
                             </a>
@@ -284,7 +290,7 @@
                     <div class="box-price">@Html.Raw(@Model.MacroParameters["price3"])</div>
                 </div>                    
                     <center>
-                        <div class="button-text-container btn-for-scaleup" style="background-color: @Model.MacroParameters["backgroundColorBtn3"]">
+                        <div class="button-text-container btn-for-scaleup btn-desk" style="background-color: @Model.MacroParameters["backgroundColorBtn3"]">
                             <a href="@Model.MacroParameters["btn3Link"]" id="btnWhatWeOffer">
                                 <div style="color:@Model.MacroParameters["boxBodyAndBtnTextColor"]">@Model.MacroParameters["btnText3"]</div>
                             </a>
@@ -304,7 +310,7 @@
                     <div class="box-price">@Html.Raw(@Model.MacroParameters["price"])</div>
                 </div>                    
                     <center>
-                        <div class="button-text-container btn-for-scaleup" style="background-color: @Model.MacroParameters["backgroundColorBtn4"]">
+                        <div class="button-text-container btn-for-scaleup btn-desk" style="background-color: @Model.MacroParameters["backgroundColorBtn4"]">
                             <a href="@Model.MacroParameters["btn4Link"]" id="btnWhatWeOffer">
                                 <div style="color:@Model.MacroParameters["boxBodyAndBtnTextColor"]">@Model.MacroParameters["btnText4"]</div>
                             </a>
@@ -420,6 +426,23 @@ if (document.getElementsByClassName('padding-what-we-offer-container')[0].classL
 if (document.getElementsByClassName('padding-what-we-offer-container')[0].classList.contains("d-True") && screen.width < 991){
     $(".title-container-pricing-unique")[0].style.marginLeft = "45px"
 }
+
+function extendBtnSize(){
+      var btnLength = document.getElementsByClassName("btn-desk").length;
+      var isTall = false; 
+      for (i = 0; i < btnLength; i++){
+        if (document.getElementsByClassName("button-text-container")[i].clientHeight > 65){
+          isTall = true; 
+        }
+      }
+      if (isTall = true){
+        for (i = 0; i < btnLength; i++){
+          document.getElementsByClassName("btn-desk")[i].style.height = "78px";
+        }
+    }
+}
+
+extendBtnSize();
 
 
 </script>
