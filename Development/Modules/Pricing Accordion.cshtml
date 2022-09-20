@@ -172,6 +172,7 @@
 
     .row-color-headline-box{
         font-size: 1.8rem ;
+        padding-right: 25px; /*To center headlines*/
     }
     @@media (max-width: 1300px) {
         .row-color-headline-box {
@@ -1012,14 +1013,28 @@ document.getElementsByClassName("default-open-mobile-panel-4")[0].click();
 
 //Hides checkmarks as the last thing after loops and coloring has finished 
 setTimeout(() => {
-  console.log("Delayed for 1 second.");
     //Checkmarks
     $(".hideCheckmark").css("display","none")
-    //$(".hideCheckmark").hide()
     //Rows
     $(".hideCheckmarkRow").css("display","none")
     //$(".hideCheckmark").hide()
 }, "500")
+
+setTimeout(() => {
+    //Checkmarks
+    $(".hideCheckmark").css("display","none")
+    //Rows
+    $(".hideCheckmarkRow").css("display","none")
+    //$(".hideCheckmark").hide()
+}, "1000")
+
+setTimeout(() => {
+    //Checkmarks
+    $(".hideCheckmark").css("display","none")
+    //Rows
+    $(".hideCheckmarkRow").css("display","none")
+    //$(".hideCheckmark").hide()
+}, "4000")
 
 
 </script>

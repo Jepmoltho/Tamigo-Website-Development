@@ -232,6 +232,11 @@
 
 <script>
 
+function hideThemCheckMarks(){
+    $(".hideCheckmark").css("display","none");
+    $(".hideCheckmarkRow").css("display","none");
+}
+
 
 function openCity(evt, cityName) {
   var i, tabcontent, tablinks;
@@ -299,6 +304,7 @@ function openCity(evt, cityName) {
       }
   }
   extendRowSize();
+  hideThemCheckMarks();
 }
 
 // Get the element with id="defaultOpen" and click on it
