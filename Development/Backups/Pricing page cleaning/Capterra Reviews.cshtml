@@ -71,6 +71,7 @@
     .capterra-star-logo{
         max-width: 200px;
         position: relative;
+        /*top: -13rem;*/
         left: 5rem;
     }
     @@media (max-width: 990px) {
@@ -129,6 +130,11 @@
   href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
 />
 <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<!-- Slider js end -->
+
+
+
+
 
 
 
@@ -151,11 +157,11 @@
                             <div class="normal-text pb-3">@Html.Raw(Model.MacroParameters["author1line2"])</div>
                         </center>
                     </div>
-                    
+                    <!-- Here -->
                     <div class="capterra-star-logo-container-desktop-only">
                         <img class="capterra-star-logo" src=@Umbraco.Media(Model.MacroParameters["capterraIcon"]).Url style="width:100%;height:100%;"/>
                     </div> 
-
+                    <!-- To here --> 
                 </div>
                 <div class="col-lg-4">
                     <div class="review-container" style="background-color:@Model.MacroParameters["backgroundColorCardsCustom"];">
@@ -201,7 +207,7 @@
                         </center>
                     </div>
                 </div>
-                <!-- Capterra logo -->
+                <!-- Capterra logo with stars-->
                 <div class="capterra-star-logo-container">
                     <img class="capterra-star-logo" src=@Umbraco.Media(Model.MacroParameters["capterraIcon"]).Url style="width:100%;height:100%;"/>
                 </div>        
@@ -216,7 +222,7 @@
         </div>
 
         
-        <!-- Swiping -->
+        <!-- Swiping begins here -->
         <div class="swiper-container" style="overflow:hidden;">
             <div class="swiper-wrapper">
                 
@@ -306,7 +312,7 @@
                 
             </div>
             
-        <!-- Capterra logo -->
+        <!-- Capterra logo with stars-->
                 <div class="capterra-star-logo-container-mobil pb-5 mb-4">
                     <center>
                         <img class="capterra-star-logo" src=@Umbraco.Media(Model.MacroParameters["capterraIcon"]).Url style="width:100%;height:100%;"/>
@@ -317,6 +323,8 @@
         <script>
           var mySwiper = new Swiper ('.swiper-container');
         </script>
+
+        <!-- End of swiper js --> 
         
     </div>
     
@@ -325,6 +333,8 @@
 
 <style>
 
+
+/* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
   position: absolute;
@@ -340,6 +350,7 @@
   user-select: none;
 }
 
+/* Position the "next button" to the right */
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;

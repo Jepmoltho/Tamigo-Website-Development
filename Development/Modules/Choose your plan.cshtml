@@ -140,6 +140,9 @@ function extendPlanHeadline(){
       if (isTallHeadline == true && $(window).width() > 1020){
         for (i = 0; i < planLength; i++){
           document.getElementsByClassName("btn-headline-container")[i].style.height = "88px";
+          document.getElementsByClassName("btn-headline-container")[i].style.display = "flex";
+          document.getElementsByClassName("btn-headline-container")[i].style.justifyContent = "center";
+          document.getElementsByClassName("btn-headline-container")[i].style.alignItems = "center";
         }
     }
 }

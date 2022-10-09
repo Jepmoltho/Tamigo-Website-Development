@@ -1,8 +1,9 @@
 @inherits Umbraco.Web.Macros.PartialViewMacroPage
 
+
 <style>
 .accordion {
-  background-color: "";
+  background-color: "" /* #eee;*/;
   color: #444;
   cursor: pointer;
   padding: 18px;
@@ -15,11 +16,11 @@
 }
 </style>
 <style>
-    
+    /*Overrides default css for buttons*/
     button:focus{
         outline: none;
     }
-    
+    /*Colors left side of panel after class has been injected by JS upon click*/
     .active-panel-unique{
         border-left: 8px solid @Model.MacroParameters["topTitleTextColor"];
     }
@@ -38,7 +39,13 @@
     }
 </style>
 
-
+<!--
+<style>
+.active, .accordion:hover {
+  background-color: #ccc; 
+}
+</style>
+-->
 <style>
 .panel {
   padding: 0 0px;
@@ -54,6 +61,7 @@
 }
 
 .col-sm-2{
+    /*margin: 10px;*/
     margin-top: 10px;
     margin-right: 0px;
     margin-bottom: 10px;
@@ -111,9 +119,11 @@
         position: relative; 
         left: -25px; 
     } }
+
 </style>
 
 <style>
+
 .padding-accordion-container{
     padding-left: 140px;
     padding-right: 140px;
@@ -128,6 +138,8 @@
             padding-top: 100px;
             padding-bottom: 100px;
     } }
+
+
 </style>
 
 <style>
@@ -148,7 +160,7 @@
 }
 </style>
 <style>
-    /*Text styling*/
+/*Text styling*/
     .top-top-title{
         font-size: 2rem;
     }
@@ -290,6 +302,12 @@
  background-color: @Model.MacroParameters["backgroundColorSecondPanel"];
 }
 
+/*
+.check-markrow-bg-col{
+ background-color: Model.MacroParameters["backgroundColorEvenRows"];
+}
+*/
+
 .img-in-div{
     display: flex;
     justify-content: center;
@@ -334,6 +352,7 @@
     
 </style>
 
+<!-- FROM HERE -->
 <style>
     .pricing-acc-desktop {
     }
@@ -371,18 +390,20 @@
         border: none;
     }
 </style>
+<!-- TO HERE -->
+
 
 
 <div class="padding-accordion-container d-@Model.MacroParameters["visible"]">
 
-    <div class="accordion-container container-responsive-unique pricing-acc-desktop"> 
+    <div class="accordion-container container-responsive-unique pricing-acc-desktop"> <!-- FROM HERE: pricing-acc-desktop -->
     <div class="sticky-container">
         <div class="top-top-title pb-5" style="color:@Model.MacroParameters["topTitleTextColor"]">@Html.Raw(Model.MacroParameters["title"])</div>
     
         <!-- Container for images above boxes -->
         <div class="flex-container-headlines">
               <div class="col-sm-3">
-                
+                  <!-- Is Empty -->
               </div>
               <div class="col-sm-2 package-icon-container">
                   <img class="package-icon package-icon-acc" src=@Umbraco.Media(Model.MacroParameters["icon1"]).Url >
@@ -403,7 +424,7 @@
         <div class="flex-container-headlines">
 
               <div class="col-sm-3">
-
+                  <!-- Is Empty -->
               </div>
               <div class="row-color-headline-container1 row-color-headline-box col-sm-2 bg-blue white pt-4 pb-4 pl-4">
                   <center class="package-text-center-box">
@@ -514,10 +535,10 @@
         
     </div>
     
+    <!-- FROM HERE -->
     <!-- PREMIUM MOBILE ROWS  -->
     <div class="pricing-acc-mobile premium-mobile-module premium-btn-dupl">
         <div class="title pb-3" style="color: @Model.MacroParameters["colorRow4"]">@Html.Raw(Model.MacroParameters["planHeadlineMobile1"])</div>
-        
         <!-- Panel 1 -->
         <button class="accordion panel-1 panel-btn default-open-mobile-panel pan-prem-mobile d-@Model.MacroParameters["visiblePanel1"]" id="defaultOpenPanel1">@Model.MacroParameters["titleMobilePanel1"]<img class="dropdown-symbol-pa" src="https://www.tamigo.nl/media/2710/expand-arrow.png"/></button>
             <div class="panel panel-mobile">
@@ -608,7 +629,6 @@
     <!-- ADVANCED MOBILE ROWS -->
     <div class="pricing-acc-mobile title advanced-mobile-module advanced-btn-dupl">
         <div class="title pb-3" style="color: @Model.MacroParameters["colorRow3"]">@Html.Raw(Model.MacroParameters["planHeadlineMobile2"])</div>
-        
         <!-- Panel 1 -->
         <button class="accordion panel-1 default-open-mobile-panel-2 pan-adv-mobile panel-btn d-@Model.MacroParameters["visiblePanel1"]" id="defaultOpenPanel1">@Model.MacroParameters["titleMobilePanel1"]<img class="dropdown-symbol-pa" src="https://www.tamigo.nl/media/2710/expand-arrow.png"/></button>
             <div class="panel panel-mobile">
@@ -880,6 +900,7 @@
 
     </div>
 
+    <!-- TO HERE -->
 </div>      
 
 
@@ -902,6 +923,7 @@
  }
 
 
+
 //Visibility of accordion module 
 if (document.getElementsByClassName('padding-accordion-container')[0].classList.contains("d-False")){
     $(".padding-accordion-container").css("display","none");
@@ -915,14 +937,15 @@ var i;
 for (i = 0; i < acc.length; i++) {
   acc[i].addEventListener("click", function() {
     this.classList.toggle("active");
-    this.classList.toggle("active-panel-unique"); 
+    this.classList.toggle("active-panel-unique"); /*Here*/
     var panel = this.nextElementSibling;
     if (panel.style.display === "block") {
       panel.style.display = "none";
     } else {
       panel.style.display = "block";
     }
-    extendRowSize(); 
+    extendRowSize(); /*Here*/
+    //$(".hideCheckmark").css("display","none");
   });
 }
 
@@ -933,8 +956,10 @@ for (i = 0; i < acc.length; i++) {
 //Visibility of checkmarks 
 var noOfCheckmarks = document.getElementsByClassName('checkmark').length;
 for (let i = 0; i < noOfCheckmarks; i++){
+    //    if (document.getElementsByClassName('checkmark')[i].classList.contains("d-False")){
     if (document.getElementsByClassName('checkmark')[i].classList.contains("d-0")){
         document.getElementsByClassName('checkmark')[i].classList.add("hideCheckmark")
+        console.log("added")
     }
 }
 
@@ -988,12 +1013,16 @@ document.getElementsByClassName("default-open-mobile-panel-3")[0].click();
 document.getElementsByClassName("default-open-mobile-panel-4")[0].click();
 
 
+    
+
 //Hides checkmarks as the last thing after loops and coloring has finished 
 setTimeout(() => {
     //Checkmarks
     $(".hideCheckmark").css("display","none")
+    //console.log("fire05")
     //Rows
     $(".hideCheckmarkRow").css("display","none")
+    //$(".hideCheckmark").hide()
 }, "500")
 
 setTimeout(() => {
@@ -1389,3 +1418,11 @@ $(document).ready(() => {
 
 </script>
 
+
+
+<!-- Media --> 
+<!-- src=Umbraco.Media(Model.MacroParameters["mediaPickerTest"]).Url -->
+
+<!-- Values --> 
+<!-- Html.Raw(Model.MacroParameters["demoTitle"]) -->
+<!-- Model.MacroParameters["buttonText"] --> 

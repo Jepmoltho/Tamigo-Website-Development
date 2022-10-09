@@ -41,6 +41,7 @@
 </style>
 
 
+<!-- Control the default size of input text and bigger size for input text for small screens: Replaced commented out styling for hs-input in the bottom of this page -->
 <style>
 .hs-input {
     width: 100%;
@@ -55,6 +56,7 @@
 </style>
 
 
+<!-- Controls default size of button for desktop and a larger textsize and padding for mobile -->
 <style>
 .hs-button.primary {
     padding: 8px 30px;
@@ -83,6 +85,7 @@
 </style>
 
 
+<!-- Controls default size privacy text for desktop and larger privacy text for mobile -->
 <style>
 .hs-form-booleancheckbox-display input[type="checkbox"].hs-input + span {
     margin-left: 0; }
@@ -91,6 +94,7 @@
     font-size: 1.5rem; }}
 </style>
 
+<!-- Controls default size of checkbox for desktop and a larger size for mobile - note the before tag -->
 <style>
     .hs-form-booleancheckbox-display input[type="checkbox"].hs-input + span:before {
     content: "\f323";
@@ -103,6 +107,7 @@
     font: normal normal normal 24px/1 "FontAwesome"; }}
 </style>
 
+<!-- Padding between privacy text and CTA button -->
 <style>
 div.legal-consent-container{
     margin-bottom: 1rem; }
@@ -117,7 +122,6 @@ div.legal-consent-container{
 @if (MacroHelper.IsVisible(Model.MacroParameters))
 {
     <div class="row" id="Demo">
-        
         <!-- Column left -->
         <div class="col-lg bg-@Model.MacroParameters["color"]">
 
@@ -322,6 +326,16 @@ color: #fff !important;
     display: block;
 }
 
+/*
+.hs-input {
+    width: 100%;
+    font-size: 1.2rem;
+    background-color: transparent;
+    border: 2px solid #fff;
+    padding: 10px !important;
+    color: #fff;
+}
+*/
 
 .hs-input::placeholder {
     color: rgba(255,255,255, .5);
@@ -345,10 +359,49 @@ input[type="checkbox"].hs-input {
     left: -99999px;
 }
 
+/*
+.hs-form-booleancheckbox-display input[type="checkbox"].hs-input + span {
+    margin-left: 0;
+}
+*/
+
+/*
+.hs-form-booleancheckbox-display input[type="checkbox"].hs-input + span:before {
+    content: "\f323";
+    font: normal normal normal 14px/1 "FontAwesome";
+    display: inline-block;
+    vertical-align: middle;
+    margin: -4px 10px 0 0;
+}
+*/
 
 .hs-form-booleancheckbox-display input[type="checkbox"].hs-input:checked + span:before {
     content: "\f17f";
 }
+
+/*
+.hs-button.primary {
+    padding: 8px 30px;
+    min-width: 10rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 0;
+    height: 59px;
+    border: 0;
+    cursor: pointer;
+    outline: none !important;
+    text-align: center;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    color: #fff !important;
+    background-color: #ff6e5a;
+}
+*/
 
 .hs_error_rollup .hs-error-msgs {
     position: static;
