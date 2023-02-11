@@ -1,0 +1,41 @@
+.container-responsive {
+  width: 100%;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 576px) {
+  .container-responsive {
+    max-width: 920px;
+  }
+}
+@media (min-width: 768px) {
+  .container-responsive {
+    max-width: 920px;
+  }
+}
+@media (min-width: 992px) {
+  .container-responsive {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container-responsive {
+    max-width: 960px;
+  }
+}
+
+.button-text-container {
+  line-height: 1.2;
+}
+@media (max-width: 990px) {
+  .button-text-container {
+    font-size: 3.3rem;
+  }
+}
+@media (min-width: 990px) {
+  .button-text-container {
+    font-size: 1.6rem;
+  }
+}

@@ -1,0 +1,150 @@
+.container-responsive {
+  width: 100%;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 3rem;
+  margin-right: auto;
+  margin-left: auto;
+  min-height: 800px;
+}
+@media (min-width: 576px) {
+  .container-responsive {
+    max-width: 920px;
+  }
+}
+@media (min-width: 768px) {
+  .container-responsive {
+    max-width: 920px;
+  }
+}
+@media (min-width: 992px) {
+  .container-responsive {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container-responsive {
+    max-width: 1140px;
+  }
+}
+
+.review-container {
+  min-height: 100px;
+  background-color: white;
+  margin-bottom: 2rem;
+  padding: 20px;
+}
+
+.review-container-mobile {
+  min-height: 1100px;
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.quote-symbol-container {
+  margin-bottom: 20px;
+}
+
+.quote-symbol {
+  max-width: 45px;
+  height: 45px;
+}
+@media (max-width: 990px) {
+  .quote-symbol {
+    max-width: 100px;
+    height: 70px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+}
+
+.headline-container {
+  font-size: 1.5rem;
+}
+@media (max-width: 990px) {
+  .headline-container {
+    font-size: 3.4rem;
+    padding-left: 35px;
+  }
+}
+
+.mo-text {
+  font-size: 2.6rem !important;
+}
+
+.capterra-star-logo {
+  max-width: 200px;
+  position: relative;
+  left: 5rem;
+}
+@media (max-width: 990px) {
+  .capterra-star-logo {
+    max-width: 400px;
+    position: inherit;
+  }
+}
+
+.capterra-star-logo-container {
+  width: 100%;
+  text-align: left;
+}
+@media (min-width: 990px) {
+  .capterra-star-logo-container {
+    display: none !important;
+  }
+}
+
+.capterra-desktop {
+  padding-bottom: 35px;
+}
+@media (max-width: 991px) {
+  .capterra-desktop {
+    display: none !important;
+  }
+}
+
+.capterra-star-logo-container-desktop-only {
+}
+@media (max-width: 991px) {
+  .capterra-star-logo-container-desktop-only {
+    display: none !important;
+  }
+}
+
+.capterra-mobile {
+}
+@media (min-width: 990px) {
+  .capterra-mobile {
+    display: none !important;
+  }
+}
+
+.phone-disable-saf {
+  pointer-events: none;
+  color: inherit !important;
+}
+.phone-disable-saf > a {
+  text-decoration: none;
+  color: inherit !important;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}

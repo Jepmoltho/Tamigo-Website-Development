@@ -1,0 +1,380 @@
+.accordion {
+  background-color: "";
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+button:focus {
+  outline: none;
+}
+
+.active-panel-unique {
+  border-left: 8px solid "@Model.MacroParameters[" topTitleTextColor "];";
+}
+
+.active-panel-unique.pan-prem-mobile {
+  border-left: 8px solid "@Model.MacroParameters[" colorRow4 "];";
+}
+.active-panel-unique.pan-adv-mobile {
+  border-left: 8px solid "@Model.MacroParameters[" colorRow3 "];";
+}
+.active-panel-unique.pan-stan-mobile {
+  border-left: 8px solid "@Model.MacroParameters[" colorRow2 "];";
+}
+.active-panel-unique.pan-ess-mobile {
+  border-left: 8px solid "@Model.MacroParameters[" colorRow1 "];";
+}
+
+.panel {
+  padding: 0 0px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: "@Model.MacroParameters[" topTitleTextColor "];";
+}
+
+.checkmark {
+  max-width: 30px;
+}
+
+.col-sm-2 {
+  margin-top: 10px;
+  margin-right: 0px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: none;
+}
+
+.flex-container-headlines {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: none;
+  overflow: hidden;
+}
+
+.package-icon-container {
+  padding-left: 0px !important;
+}
+
+.package-icon-acc {
+  position: relative;
+  left: -5px;
+}
+@media (max-width: 1300px) {
+  .package-icon-acc {
+    position: relative;
+    left: -15px;
+  }
+}
+@media (max-width: 1200px) {
+  .package-icon-acc {
+    position: relative;
+    left: -15px;
+  }
+}
+@media (max-width: 1150px) {
+  .package-icon-acc {
+    position: relative;
+    left: -20px;
+  }
+}
+@media (max-width: 1100px) {
+  .package-icon-acc {
+    position: relative;
+    left: -25px;
+  }
+}
+@media (max-width: 991px) {
+  .package-icon-acc {
+    position: relative;
+    left: -25px;
+  }
+}
+@media (max-width: 990px) {
+  .package-icon-acc {
+    position: relative;
+    left: -25px;
+  }
+}
+
+.padding-accordion-container {
+  padding-left: 140px;
+  padding-right: 140px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: "@Model.MacroParameters[" backgroundColor "];";
+}
+@media (max-width: 990px) {
+  .padding-accordion-container {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+.row-color-headline-container1 {
+  background-color: "@Model.MacroParameters[" colorRow1 "];";
+}
+
+.row-color-headline-container2 {
+  background-color: "@Model.MacroParameters[" colorRow2 "];";
+}
+
+.row-color-headline-container3 {
+  background-color: "@Model.MacroParameters[" colorRow3 "];";
+}
+
+.row-color-headline-container4 {
+  background-color: "@Model.MacroParameters[" colorRow4 "];";
+}
+
+/*Text styling*/
+.top-top-title {
+  font-size: 2rem;
+}
+@media (max-width: 990px) {
+  .top-top-title {
+    padding-left: 10px;
+    font-size: 4rem;
+  }
+}
+
+.row-color-headline-box {
+  font-size: 1.8rem;
+  padding-right: 25px; /*To center headlines*/
+}
+@media (max-width: 1300px) {
+  .row-color-headline-box {
+    font-size: 1.6rem;
+    position: relative;
+    left: -15px;
+  }
+}
+@media (max-width: 1200px) {
+  .row-color-headline-box {
+    font-size: 1.5rem;
+    position: relative;
+    left: -15px;
+  }
+}
+@media (max-width: 1150px) {
+  .row-color-headline-box {
+    font-size: 1.3rem;
+    position: relative;
+    left: -20px;
+  }
+}
+@media (max-width: 1100px) {
+  .row-color-headline-box {
+    font-size: 1.2rem;
+    position: relative;
+    left: -25px;
+  }
+}
+@media (max-width: 991px) {
+  .row-color-headline-box {
+    font-size: 1.2rem;
+    position: relative;
+    left: -25px;
+  }
+}
+@media (max-width: 990px) {
+  .row-color-headline-box {
+    font-size: 1.7rem;
+  }
+}
+
+.panel-btn {
+  font-size: 1.2rem;
+  margin-top: 16px;
+}
+@media (max-width: 990px) {
+  .panel-btn {
+    font-size: 2rem;
+  }
+}
+
+.checkmark-row {
+  font-size: 1rem;
+}
+@media (max-width: 990px) {
+  .checkmark-row {
+    font-size: 1.3rem;
+  }
+}
+
+.package-text-center-box {
+}
+@media (max-width: 990px) {
+  .package-text-center-box {
+    left: -5px;
+    position: relative;
+  }
+}
+
+.disclaimer-container-pr-ac {
+  font-size: 1.2rem;
+}
+@media (max-width: 990px) {
+  .disclaimer-container-pr-ac {
+    font-size: 1.5rem;
+  }
+}
+
+.download-pricing-plan {
+  font-size: 1.5rem;
+}
+@media (max-width: 990px) {
+  .download-pricing-plan {
+    font-size: 2.2rem;
+  }
+}
+
+.dropdown-symbol-pa {
+  float: right;
+  max-height: 25px;
+  position: relative;
+  top: 6px;
+}
+@media (max-width: 990px) {
+  .dropdown-symbol-pa {
+    top: 12px;
+  }
+}
+
+.panel-1 {
+  background-color: "@Model.MacroParameters[" backgroundColorFirstPanel "];";
+}
+
+.panel-2 {
+  background-color: "@Model.MacroParameters[" backgroundColorSecondPanel "];";
+}
+
+.panel-3 {
+  background-color: "@Model.MacroParameters[" backgroundColorFirstPanel "];";
+}
+
+.panel-4 {
+  background-color: "@Model.MacroParameters[" backgroundColorSecondPanel "];";
+}
+
+.panel-5 {
+  background-color: "@Model.MacroParameters[" backgroundColorFirstPanel "];";
+}
+
+.panel-6 {
+  background-color: "@Model.MacroParameters[" backgroundColorSecondPanel "];";
+}
+
+.panel-7 {
+  background-color: "@Model.MacroParameters[" backgroundColorFirstPanel "];";
+}
+
+.panel-8 {
+  background-color: "@Model.MacroParameters[" backgroundColorSecondPanel "];";
+}
+
+.panel-9 {
+  background-color: "@Model.MacroParameters[" backgroundColorFirstPanel "];";
+}
+
+.panel-10 {
+  background-color: "@Model.MacroParameters[" backgroundColorSecondPanel "];";
+}
+
+.img-in-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 1300px) {
+  .img-in-div {
+    left: -15px;
+  }
+}
+@media (max-width: 1200px) {
+  .img-in-div {
+    left: -15px;
+  }
+}
+@media (max-width: 1150px) {
+  .img-in-div {
+    left: -20px;
+  }
+}
+@media (max-width: 1100px) {
+  .img-in-div {
+    left: -25px;
+  }
+}
+@media (max-width: 991px) {
+  .img-in-div {
+    left: -25px;
+  }
+}
+@media (max-width: 990px) {
+  .img-in-div {
+    left: -15px;
+  }
+}
+
+.sticky-container {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  margin-left: -1px;
+  background-color: "@Model.MacroParameters[" backgroundColor "];";
+}
+
+.hideCheckmark {
+  display: none;
+}
+
+.pricing-acc-desktop {
+}
+@media (max-width: 991px) {
+  .pricing-acc-desktop {
+    display: none !important;
+  }
+}
+
+.pricing-acc-mobile {
+}
+@media (min-width: 990px) {
+  .pricing-acc-mobile {
+    display: none !important;
+  }
+}
+
+.pricing-acc-mobile {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.checkmark-row-mobile {
+  height: 70px;
+  font-size: 30px;
+}
+
+.checkmark-mobile {
+  height: 30px;
+}
+
+.panel-mobile {
+  border: none;
+}
